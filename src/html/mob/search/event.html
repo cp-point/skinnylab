@@ -1,0 +1,102 @@
+{%
+	set pageInfo = {
+		section: 'search',
+		title: '통합검색',
+		order: '3'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header search">
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title hide">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-event">
+	
+	<form action="about:blank" method="get" class="search-box">
+		<div class="search js-text-clear">
+			<label for="search" class="hide">검색</label>
+			<input type="text" id="search" name="search" value="" placeholder="검색어를 입력하세요." class="input">
+			<button type="button" class="btn-clear">입력값 지우기</button>
+			<button type="button" class="btn-submit">검색하기</button>
+		</div>
+	</form>	
+
+	<!-- 스와이퍼 탭 메뉴// -->
+	<div class="tab-menu tab4 overline">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="./product.html">
+						상품 (17)
+					</a>
+				</li>
+				<li>
+					<a href="./review.html">
+						리뷰 (185)
+					</a>
+				</li>
+				<li>
+					<a href="./exhibition.html">
+						기획전(21)
+					</a>
+				</li>
+				<li class="is-active">
+					<a href="./event.html">
+						이벤트(15)
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //스와이퍼 탭 메뉴 -->
+
+	<div class="main-wrap">
+		
+		<!-- 이벤트 목록// -->
+		<ul class="event-list">
+			{% for i in range(1, 13) %}
+			<li class="wrap">
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img01.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<p class="title">
+										[특별구성] 자기관리의 시작, 시서스 시작자기관리의 시작, 시서스 시작
+									</p>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+									<button type="button" class="btn-share">바로가기</button>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+			</li>
+			{% endfor %}
+			<!-- 검색 결과 없을때 // -->
+			<!-- <li class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</li> -->
+			<!-- // 검색 결과 없을때 -->
+		</ul>
+
+		<div class="btn-group center">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>
+		<!--// 이벤트 목록 -->
+	</div>
+</div>
+{%- endblock %}

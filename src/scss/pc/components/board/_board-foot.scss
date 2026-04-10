@@ -1,0 +1,11 @@
+.board-foot {
+	.btn-area {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+
+		.btn {
+			&:not(:first-child) { margin-left: 20px; }
+		}
+	}
+}

@@ -1,0 +1,222 @@
+{%
+	set pageInfo = {
+		section: 'cart',
+		title: '장바구니',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-general">
+	<div class="tab-menu tab4 cart-page-tab">
+		<div class="wrap">
+			<ul class="list">
+				<li class="is-active">
+					<a href="#">
+						일반배송 (4)
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						정기배송 (0)
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="cart-main-wrap no-item-wrap">
+		<!-- 구매 제품 목록 -->
+		<div class="list-cont-wrap">
+
+			<!-- 장바구니 제품 없음 msg -->
+			<div class="no-item">
+				<div class="msg">
+					장바구니에 담긴 상품이 없습니다.<br>
+					<strong>다양한 상품을 확인</strong>하고<br>장바구니에 담아보세요!
+				</div>
+				<div class="btn-group">
+					<a href="#" class="btn outline primary motion">
+						<span>홈으로</span>
+					</a>
+				</div>
+			</div>
+			<!--// 장바구니 제품 없음 msg -->
+
+		</div>
+		<!--// 구매 제품 목록 -->
+	</div>
+
+	<!-- 추천 상품 영역 -->
+	<div class="recommend-product">
+		<div class="head">
+			<h3 class="title">이런 상품은 어떠세요?</h3>
+		</div>
+		<div class="swiper-container">
+			<ul class="goods-list2 swiper-wrapper">
+				{% for i in range(0, 10) %}
+				<li class="swiper-slide">
+					<div class="item">
+						<a href="#">
+							<figure class="prod-col-item recom">
+								<div class="img">
+									<a href="../product/product-detail.html">
+										<img src="{{base}}/img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+									</a>
+								</div>
+								<figcaption class="content">
+									<div class="info">
+										<div class="store-name">스키니랩</div>
+										<div class="title">
+											가벼워지는 시서스다이어트
+											14포 X 4박스 + 석류 콜라겐
+											14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+										</div>
+									</div>
+									<div class="price">
+										<div class="member">
+											<div class="inner-box">
+												<!-- <span><strong class="discount">67%</strong></span> -->
+												<span class="num"><strong>128,600</strong>원</span>
+											</div>
+										</div>
+									</div>
+								</figcaption>
+							
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<!--// 추천 상품 영역 -->
+
+	<div class="cart-notice">
+		<p class="title">유의사항</p>
+		<div class="content">
+			<ul>
+				<li>장바구니에 담긴 상품은 50개까지 저장되며, 최대 30일 동안 보관됩니다.</li>
+				<li>일시품절 상품은 별도로 표기됩니다.</li>
+				<li>결제 예정 금액은 쿠폰 및 마일리지 사용에 따라 변경될 수 있습니다.</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 일반배송 스와이프 영역// -->
+	<div class="sticky-bottom">
+		<div class="content-area">
+			<button type="button" class="btn-open" onclick="$(this).parents('.sticky-bottom').find('.con-detail, .payment-area, .btn-open').toggleClass('on'); return false;">결제 예정 정보 버튼</button>
+			<div class="order-info">
+				<div class="con-detail bill">
+					<div class="box">
+						<dl class="list">
+							<dt>상품금액</dt>
+							<dd>
+								<span class="price">290,000</span>원
+							</dd>
+						</dl>
+						<dl class="list">
+							<dt>할인금액</dt>
+							<dd class="str"><span class="price">-0</span>원
+							</dd>
+						</dl>
+						<dl class="list">
+							<dt>배송비</dt>
+							<dd><span class="price">0</span>원
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="con-main">
+					<dl>
+						<dt><strong>결제예정금액</strong></dt>
+						<dd>
+							<span class="price">290,000</span>원
+						</dd>
+					</dl>
+					<div class="con-detail">
+						<div class="box">
+							<dl class="list">
+								<dt>적립예정 마일리지</dt>
+								<dd class="str">
+									<span class="price">2,680</span>원
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="payment-area">
+					<p class="noti">※ 네이버 N페이 서비스를 이용 시 <span class="secondary">스키니랩 회원혜택은 미적용</span> 됩니다.</p>
+					<div class="naverpay-box">
+
+						<!-- 네이버 페이 api 영역 // -->
+						<script type="text/javascript" src="https://test-pay.naver.com/customer/js/mobile/naverPayButton.js" charset="UTF-8"></script>
+						<script type="text/javascript" >
+						//<![CDATA[
+							naver.NaverPayButton.apply({
+								TYPE: "C", // 버튼 모음 종류 설정
+								COLOR: 1, // 버튼 모음의 색 설정
+								COUNT: 2, // 버튼 개수 설정. 구매하기 버튼만 있으면(장바구니 페이지) 1, 관심상품 버튼도 있으면(상품 상세 페이지) 2를 입력.
+								ENABLE: "Y", // 품절 등의 이유로 버튼 모음을 비활성화할 때에는 "N" 입력
+								"":""
+							});
+						//]]>
+						</script>
+						<!-- // 네이버 페이 api 영역 -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="btn-area">
+			<a href="#" class="btn outline2 btn-gift">
+				<span>
+					<span class="icon-gift"></span>
+					선물하기
+				</span>
+			</a>
+			<a href="#" class="btn large secondary btn-order">
+				<span>주문하기(2)</span>
+			</a>
+		</div>
+
+	</div>
+	<!-- //일반배송 스와이프 영역 -->
+
+</div>
+
+<script>
+	$(function() {
+		
+		// 추천상품 슬라이드
+		var recomCarouselSwiper = new Swiper('.recommend-product .swiper-container', {
+			slidesPerView: 1.8,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 30,
+			breakpoints: {
+				768: {
+					slidesPerView: 3.5,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 5,
+				}
+			}
+		});
+	
+	});
+	
+</script>
+{%- endblock %}

@@ -1,0 +1,147 @@
+.dropdown {
+	width: auto;
+	min-width: 300px;
+	position: relative;
+	z-index: 3;
+
+	&:hover .title .btn-open { box-shadow: 0 8px 6px -6px rgba(134,135,138,.48); }
+
+	&.small {
+		min-width: 200px;
+
+		.title {
+			.btn-open {
+				line-height: 38px;
+				border-width: 2px;
+				font-size: 16px;
+
+				&:after {
+					width: 16px;
+					height: 16px;
+					background-image: url('@@img/pc/common/arrow-dropdown-small.png');
+					top: 12px;
+					right: 4px;
+				}
+			}
+		}
+
+		.content {
+			top: 40px;
+
+			.list {
+				a, button {
+					line-height: 34px;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	&.ghost {
+		.title {
+			.btn-open {
+				color: #fff;
+				background-color: $primary-color;
+				border-color: #fff;
+
+				&:after { background-image: url('@@img/pc/common/arrow-dropdown-ghost.png'); }
+			}
+		}
+
+		.content {
+			background-color: $primary-color;
+
+			.list {
+				a, button {
+					color: #d5d5d7;
+
+					&:hover { color: #fff; }
+				}
+			}
+		}
+	}
+
+	.title {
+		.btn-open {
+			width: 100%;
+			line-height: 57px;
+			padding: 0 30px 0 7px;
+			background-color: #fff;
+			border-bottom: solid 3px $line-color1;
+			color: $text-color1;
+			font-weight: 700;
+			font-size: 20px;
+			text-align: left;
+			position: relative;
+			transition: all .2s;
+
+			&:after {
+				content: '';
+				display: block;
+				width: 24px;
+				height: 24px;
+				background: url('@@img/pc/common/arrow-dropdown.png') no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 18px;
+				right: 6px;
+				transform: rotate(0);
+				transition: all .2s;
+			}
+
+			&.on {
+				&:after { transform: rotate(180deg); }
+			}
+		}
+	}
+
+	.content {
+		display: none;
+		width: 100%;
+		background-color: #fff;
+		position: absolute;
+		top: 60px;
+		left: 0;
+
+		.list {
+			width: 100%;
+			padding: 10px 0;
+
+			a, button {
+				display: block;
+				color: $text-color1;
+				line-height: 50px;
+				padding: 0 12px;
+				font-weight: 500;
+				font-size: 20px;
+				text-align: left;
+				letter-spacing: -.025em;
+				transition: all .2s;
+
+				&:hover {
+					font-weight: 800;
+
+					span {
+						&:after { width: 100%; }
+					}
+				}
+
+				span {
+					position: relative;
+
+					&:after {
+						content: '';
+						display: inline-block;
+						width: 0;
+						height: 2px;
+						background-color: #9b9b9c;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						transition: all .2s;
+					}
+				}
+			}
+		}
+	}
+}

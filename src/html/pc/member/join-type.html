@@ -1,0 +1,42 @@
+{%
+	set pageInfo = {
+		section: 'join',
+		title: '회원가입'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-member member-join-type">
+	<div class="join-type">
+		<h2 class="hide">회원가입 유형 선택</h2>
+		<p class="title">회원가입 유형을 선택해주세요.</p>
+		<div class="content">
+			<div class="box-wrap">
+				<div class="box">
+					<div class="logo sl"></div>
+					<h3 class="title">기존 스키니랩 회원 전환</h3>
+					<p class="desc">기존 스키니랩의 계정이 있는 경우, <br><span class="str">계정을 확인 후 회원가입이 진행됩니다.</span></p>
+					<div class="btn-area">
+						<a href="#" class="btn large primary motion">
+							<span>기존회원 전환하기</span>
+						</a>
+					</div>
+				</div>
+				<div class="box">
+					<div class="logo hb"></div>
+					<h3 class="title">헬스밸런스 통합 회원 가입</h3>
+					<p class="desc">스키니랩에 아직 가입하지 않으신 경우 <br><span class="str">신규 통합 회원으로 가입합니다.</span></p>
+					<div class="btn-area">
+						<a href="#" class="btn large secondary motion">
+							<span>신규회원 가입하기</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

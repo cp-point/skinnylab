@@ -1,0 +1,728 @@
+{%
+	set pageInfo = {
+		section: 'product',
+		title: 'THIN소재',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-product product-list">
+	<div class="container-wrap">
+		<!-- Breadcrumb // -->
+		<div class="breadcrumb">
+			<div class="wrap">
+				<ul class="list">
+					<li class="home">
+						<a href="../main/index.html">홈으로</a>
+					</li>
+					<li class="depth-1">
+						<a href="#">SHOP</a>
+					</li>
+					<li class="depth-2">
+						<a href="#">THIN소재</a>
+						<div class="sub">
+							<div class="wrap">
+								<ul class="list">
+									<li>
+										<a href="#">메뉴1</a>
+									</li>
+									<li>
+										<a href="#">메뉴2</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- // Breadcrumb -->
+
+		<div class="page-head">
+			<h2 class="title">THIN소재</h2>
+		</div>
+
+		<div class="visual-carousel">
+			<div class="carousel swiper-container">
+				<ul class="list swiper-wrapper">
+					<li class="swiper-slide">
+						<a href="#">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/visual-carousel-img01.jpg" alt="배너1">
+							</div>
+						</a>
+					</li>
+					<li class="swiper-slide">
+						<a href="#">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/visual-carousel-img02.jpg" alt="배너2">
+							</div>
+						</a>
+					</li>
+					<li class="swiper-slide">
+						<a href="#">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/visual-carousel-img01.jpg" alt="배너3">
+							</div>
+						</a>
+					</li>
+					<li class="swiper-slide">
+						<a href="#">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/visual-carousel-img02.jpg" alt="배너4">
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="action">
+				<p class="pagination"></p>
+				<div class="play">
+					<button type="button" class="btn-prev swiper-button-prev"></button>
+					<button type="button" class="btn-autoplay swiper-button-autoplay"></button>
+					<button type="button" class="btn-next swiper-button-next"></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="recommend-product">
+			<div class="head line">
+				<h3 class="title">THIN소재 추천상품</h3>
+			</div>
+			<ul class="goods-list2">
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="sub">
+											스키니랩
+										</span>
+										<span class="main">
+											가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 이후
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="like">
+								<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							</div>
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<!-- <div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="sub">
+											스키니랩
+										</span>
+										<span class="main">
+											행복한 시서스 다이어트 14정 x 8박스 16주분
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="like">
+								<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							</div>
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="sub">
+											스키니랩
+										</span>
+										<span class="main">
+											마시는 시네트롤 자몽 다이어트 14포 x 1박스 
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<!-- <div class="util">
+							<div class="like">
+								<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							</div>
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li class="selected">
+					<a href="#">전체</a>
+				</li>
+				<li>
+					<a href="#">시네트롤</a>
+				</li>
+				<li>
+					<a href="#">시서스</a>
+				</li>
+				<li>
+					<a href="#">레몬밤</a>
+				</li>
+				<li>
+					<a href="#">시네트롤</a>
+				</li>
+				<li>
+					<a href="#">시서스</a>
+				</li>
+				<li>
+					<a href="#">레몬밤</a>
+				</li>
+				<li>
+					<a href="#">시네트롤</a>
+				</li>
+				<li>
+					<a href="#">시서스</a>
+				</li>
+				<li>
+					<a href="#">레몬밤</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<div class="goods-layout">
+			<div class="goods-util">
+				<p class="count">
+					전체상품
+					<span class="num">
+						34
+					</span>
+					개
+				</p>
+				<div class="util">
+					<div class="sort">
+						<span class="select-wrap">
+							<label for="boardSort">게시물 정렬</label>
+							<select id="boardSort" name="boardSort" class="select2" style="width: 100px;">
+								<option value="">추천순</option>
+								<option value="">인기순</option>
+								<option value="">낮은가격순</option>
+								<option value="">높은가격순</option>
+								<option value="">상품평순</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+					<div class="filter">
+						<button type="button" class="btn-filter">상세검색 열기</button>
+						<div class="option-area">
+							<div class="wrap">
+								<div class="type">
+									<label class="check"><input type="checkbox"> <span>품절상품 제외</span></label>
+									<label class="check"><input type="checkbox" checked> <span>정기배송</span></label>
+								</div>
+								<div class="option">
+									<dl class="row">
+										<dt class="tit">기능</dt>
+										<dd class="con">
+											<label class="check-btn"><input type="checkbox"> <span>체지방 감소</span></label>
+											<label class="check-btn"><input type="checkbox" checked> <span>탄력 단백질</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>배변활동</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>지방 전환 억제</span></label>
+										</dd>
+									</dl>
+									<dl class="row">
+										<dt class="tit">제형</dt>
+										<dd class="con">
+											<label class="check-btn"><input type="checkbox" checked> <span>정제</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>캡슐</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>배변활동</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>지방 전환 억제</span></label>
+										</dd>
+									</dl>
+									<dl class="row">
+										<dt class="tit">혜택</dt>
+										<dd class="con">
+											<label class="check-btn"><input type="checkbox"> <span>사은품</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>쿠폰</span></label>
+											<label class="check-btn"><input type="checkbox" checked> <span>무료배송</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>1+1</span></label>
+										</dd>
+									</dl>
+									<dl class="row">
+										<dt class="tit">가격</dt>
+										<dd class="con">
+											<div class="filter-con-slider">
+												<div class="range-slider-wrap">
+													<div class="bar">
+														<div id="rangeSlider" class="range-slider"></div>
+													</div>
+												</div>
+												<div class="content">
+													<dl class="result min">
+														<dt class="hide">최소</dt>
+														<dd class="num">
+															<span class="value"></span>
+															<span class="won">원</span>
+														</dd>
+													</dl>
+													<dl class="result max">
+														<dt class="hide">최고</dt>
+														<dd class="num">
+															<span class="value"></span>
+															<span class="won">원</span>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="goods-list">
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="sub">
+											스키니랩
+										</span>
+										<span class="main">
+											가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+											가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="like">
+								<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							</div>
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<!-- <div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<p class="title">
+										<span class="main">
+											행복한 시서스 다이어트 14정 x 8박스 16주분
+										</span>
+									</p>
+									<p class="price non">
+										<!-- <span class="tit">비회원가</span> -->
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<!-- <span class="tit">회원가</span> -->
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="like">
+								<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							</div>
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<!-- <div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</li>
+				{% for i in range(0, 6) %}
+				<li>
+					<div class="item disabled">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="sub">
+											스키니랩
+										</span>
+										<span class="main">
+											가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="like">
+								<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							</div>
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" onclick="UI.showLayerPop('', { url: './popup-restock-notification-register.html' }); return false;" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 상품이 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">
+						등록된 상품이 없습니다.<br>
+						더 좋은 상품으로 찾아뵙겠습니다.
+					</p>
+				</li> -->
+				<!-- // 상품이 없을때 -->
+			</ul>
+			<div class="goods-foot">
+				<div class="common-pagination">
+					<a href="#" class="paging-btn prev">Prev</a>
+					<span class="paging-num">
+						<a href="#" class="on">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+					</span>
+					<a href="#" class="paging-btn next">Next</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var visualCarouselSwiper = new Swiper('.visual-carousel .swiper-container', {
+			autoplay: {
+				delay: 3000
+			},
+			speed: 1000,
+			loop: true,
+			allowTouchMove: false,
+			effect: 'fade',
+			pagination: {
+				el: '.visual-carousel .pagination',
+				type: 'fraction',
+				formatFractionCurrent: function(number) {
+					return number < 10 ? '0' + number : number;
+				},
+				formatFractionTotal: function(number) {
+					return number < 10 ? '0' + number : number;
+				}
+			},
+			navigation: {
+				nextEl: '.visual-carousel .swiper-button-next',
+				prevEl: '.visual-carousel .swiper-button-prev',
+			}
+		});
+
+		$('.visual-carousel .btn-autoplay').on('click', function() {
+			var $this = $(this);
+
+			if($this.hasClass('is-stop')) {
+				visualCarouselSwiper.autoplay.start();
+			} else {
+				visualCarouselSwiper.autoplay.stop();
+			}
+
+			$this.toggleClass('is-stop');
+		});
+
+		$('.btn-filter').on('click', function() {
+			var $this = $(this);
+			var $optionArea = $(this).parents('.filter').find('.option-area');
+
+			if($optionArea.is(':visible')) {
+				$this.removeClass('is-active');
+				$optionArea.slideUp(200);
+			} else {
+				$this.addClass('is-active');
+				$optionArea.slideDown(200);
+			}
+		});
+
+		$(".filter-con-slider #rangeSlider").slider({
+			range: true,
+			min: 0,
+			max: 500000,
+			values: [0,220000],
+			slide: function(event, ui) {
+				$(".filter-con-slider .min .value").text(ui.values[0].toLocaleString());
+				$(".filter-con-slider .max .value").text(ui.values[1].toLocaleString());
+			}
+		});
+
+		$(".filter-con-slider .min .value").text($("#rangeSlider").slider("values",0).toLocaleString());
+		$(".filter-con-slider .max .value").text($("#rangeSlider").slider("values",1).toLocaleString());
+	});
+</script>
+<!-- // Content -->
+{%- endblock %}

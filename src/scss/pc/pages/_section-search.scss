@@ -1,0 +1,103 @@
+// 통합검색 공통
+.section-search {
+	width: 100%;
+	padding: 80px 0 200px;
+
+	.common-pagination {
+		margin: 60px auto 0;
+		padding-top: 40px;
+		border-top: 1px solid $line-color2;
+	}
+
+	.tab-menu {
+		width: 100%;
+		&::before {
+			display: block;
+			position: relative;
+			height: 1px;
+			background: #eaeaeb;
+			content: '';
+		}
+		& + .container-wrap { margin-top: 80px; }
+	}
+
+	.integrated-search {
+		width: 1280px;
+		margin: 0 auto;
+		padding: 40px 0 80px;
+		text-align: center;
+		.search-box {
+			margin: 0 auto;
+			.btn-wrap {
+				transform: translateX(-22px);
+				.btn-search {
+					display: block;
+					position: relative;
+					width: 29px;
+					height: 29px;
+					background: url('@@img/pc/common/btn-search.png') no-repeat;
+					transform: translate(568px,-38px);
+				}
+				.btn-clear {
+					display: block;
+					position: relative;
+					width: 26px;
+					height: 26px;
+					background: url('@@img/pc/common/btn-clear01.png') no-repeat;
+					transform: translate(-55px,22px);
+					text-indent: -9999px;
+					&::after {
+						opacity: 0;
+					}
+				}
+			}
+		}
+		.result {
+			@include font(24px,$bold);
+			.str {
+				color: $secondary-color1;
+			}
+		}
+	}
+
+	.btn-share {
+		display: inline-block;
+		position: absolute;
+		width: 36px;
+		height: 0;
+		max-height: 0;
+		overflow: hidden;
+		padding-top: 36px;
+		background: url('@@img/pc/common/icon-share.png') no-repeat;
+		background-size: 22px 21px;
+		background-position: center center;
+	}
+
+	.empty {
+		width: 1200px;
+		margin: 0 auto;
+		padding: 100px 0;
+		&::before {
+			display: block;
+			content: '';
+			width: 100px;
+			height: 100px;
+			margin: 0 auto 25px;
+			background: url('@@img/pc/common/icon-error-2.png') no-repeat;
+			background-size: cover;
+		}
+		p {
+			@include font(28px,$extra-bold,1);
+			color: $text-color1;
+			text-align: center;
+		}
+	}
+
+	.product-wrap {
+		width: 1200px;
+		margin: 0 auto;
+		.goods-list { margin: 60px 0 100px; }
+	}
+
+	.event-list { padding: 0; }
+}

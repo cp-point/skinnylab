@@ -1,0 +1,783 @@
+{%
+	set pageInfo = {
+		section: 'fit-skinnylab',
+		title: '나만의 스키니랩',
+		order: '2'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header customer">
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/customer.html') }}
+</header>
+<div id="content-main" class="common-container {{pageInfo.section}} {{pageInfo.section}}-survey-form">
+	<div class="survey-layout">
+		<div class="survey-head">
+			<div class="page-progress step2">
+				<div class="fill"></div>
+			</div>
+			<h2 class="title">
+				<span class="str">step 2.</span>
+				다이어트 목표 / 생활습관 분석
+			</h2>
+			<p class="desc">
+				<span class="name">
+					홍길동
+				</span>
+				님의 맞춤형 상품을 위해 <br>간단한 설문을 진행해주세요.
+			</p>
+		</div>
+		<form action="about:blank" method="post" class="survey-form">
+			<div class="item reason">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="reason">
+							<span class="num">Q1.</span>
+							<span class="txt">
+								다이어트!<br>
+								이것때문에 해요!
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="reason" id="reason1" class="input-radio">
+							<label for="reason1">체중 감량</label>
+							<input type="radio" name="reason" id="reason2" class="input-radio">
+							<label for="reason2">체중 유지</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item abdom">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="abdom">
+							<span class="num">Q2.</span>
+							<span class="txt">
+								복부지방, 허리둘레에 대한 <span class="br"></span>
+								고민이 있나요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="abdom" id="abdom1" class="input-radio ox">
+							<label for="abdom1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="abdom" id="abdom2" class="input-radio ox">
+							<label for="abdom2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item muscle">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="muscle">
+							<span class="num">Q3.</span>
+							<span class="txt">
+								근육량 유지 또는 <span class="br"></span>
+								증가되기를 원하나요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="muscle" id="muscle1" class="input-radio ox">
+							<label for="muscle1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="muscle" id="muscle2" class="input-radio ox">
+							<label for="muscle2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item yoyo">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="yoyo">
+							<span class="num">Q4.</span>
+							<span class="txt">
+								빠졌다! 줄었다!<br>
+								요요현상이 나에게?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="yoyo" id="yoyo1" class="input-radio ox">
+							<label for="yoyo1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="yoyo" id="yoyo2" class="input-radio ox">
+							<label for="yoyo2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item worry" data-check-min="1" data-check-max="3">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="worry">
+							<span class="num">Q5.</span>
+							<span class="txt">
+								최근 다이어트 하면서 이런고민이 있어요!<br>
+								<span class="sub">(우선순위 3개 선택)</span>
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="input-area">
+							<input type="checkbox" name="worry" id="worry1" class="input-check">
+							<label for="worry1">피부건강(탄력/보습)</label>
+							<input type="checkbox" name="worry" id="worry2" class="input-check">
+							<label for="worry2">영양불균형</label>
+							<input type="checkbox" name="worry" id="worry3" class="input-check">
+							<label for="worry3">월경 전 증후군</label>
+							<input type="checkbox" name="worry" id="worry4" class="input-check">
+							<label for="worry4">탈모/머리푸석/헤어</label>
+							<input type="checkbox" name="worry" id="worry5" class="input-check">
+							<label for="worry5">면역</label>
+							<input type="checkbox" name="worry" id="worry6" class="input-check">
+							<label for="worry6">피곤함</label>
+							<input type="checkbox" name="worry" id="worry7" class="input-check">
+							<label for="worry7">뼈 건강</label>
+							<input type="checkbox" name="worry" id="worry8" class="input-check">
+							<label for="worry8">혈행</label>
+							<input type="checkbox" name="worry" id="worry9" class="input-check">
+							<label for="worry9">손톱갈라짐</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item amount">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="amount">
+							<span class="num">Q6.</span>
+							<span class="txt">
+								먹는 양을 줄이면서 <span class="br"></span>
+								식사를 조절하나요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="amount" id="amount1" class="input-radio ox">
+							<label for="amount1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="amount" id="amount2" class="input-radio ox">
+							<label for="amount2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item much">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="much">
+							<span class="num">Q7.</span>
+							<span class="txt">
+								대체적으로 많이 <span class="br"></span>
+								먹는편인가요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="much" id="much1" class="input-radio ox">
+							<label for="much1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="much" id="much2" class="input-radio ox">
+							<label for="much2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item out">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="out">
+							<span class="num">Q8.</span>
+							<span class="txt">
+								외식을 집밥보다 <span class="br"></span>
+								자주하는편인가요?<br>
+								<span class="sub">(외식은 배달음식 포함)</span>
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="out" id="out1" class="input-radio ox">
+							<label for="out1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="out" id="out2" class="input-radio ox">
+							<label for="out2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item night">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="night">
+							<span class="num">Q9.</span>
+							<span class="txt">
+								야식을 주 1~2회 <span class="br"></span>
+								이상으로 즐겨 먹나요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="night" id="night1" class="input-radio ox">
+							<label for="night1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="night" id="night2" class="input-radio ox">
+							<label for="night2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item snack">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="snack">
+							<span class="num">Q10.</span>
+							<span class="txt">
+								식사 끼니 사이에 <span class="br"></span>
+								간식은 자주 먹는편인가요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="snack" id="snack1" class="input-radio ox">
+							<label for="snack1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="snack" id="snack2" class="input-radio ox">
+							<label for="snack2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item instant">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="instant">
+							<span class="num">Q11.</span>
+							<span class="txt">
+								인스턴트 식품이나 <span class="br"></span>
+								삼겹살, 튀긴음식과 같은 <span class="br"></span>
+								기름진 음식을 좋아하나요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="instant" id="instant1" class="input-radio ox">
+							<label for="instant1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="instant" id="instant2" class="input-radio ox">
+							<label for="instant2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item flour">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="flour">
+							<span class="num">Q12.</span>
+							<span class="txt">
+								빵, 밥, 국수를 <span class="br"></span>
+								즐겨 먹는 편인가요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="flour" id="flour1" class="input-radio ox">
+							<label for="flour1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="flour" id="flour2" class="input-radio ox">
+							<label for="flour2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item milk">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="milk">
+							<span class="num">Q13.</span>
+							<span class="txt">
+								우유, 유제품을 <span class="br"></span>
+								자주 먹는 편인가요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="milk" id="milk1" class="input-radio ox">
+							<label for="milk1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="milk" id="milk2" class="input-radio ox">
+							<label for="milk2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item machine">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="machine">
+							<span class="num">Q14.</span>
+							<span class="txt">
+								매일 체중계에 <span class="br"></span>
+								올라가보나요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="machine" id="machine1" class="input-radio ox">
+							<label for="machine1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="machine" id="machine2" class="input-radio ox">
+							<label for="machine2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item water">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="water">
+							<span class="num">Q15.</span>
+							<span class="txt">
+								평균 하루 2L 이상 <span class="br"></span>
+								물을 마시나요? 
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="water" id="water1" class="input-radio ox">
+							<label for="water1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="water" id="water2" class="input-radio ox">
+							<label for="water2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item exercise">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="exercise">
+							<span class="num">Q16.</span>
+							<span class="txt">
+								숨이 찰 정도의 운동을 <span class="br"></span>
+								주 3회 이상 하나요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="exercise" id="exercise1" class="input-radio ox">
+							<label for="exercise1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="exercise" id="exercise2" class="input-radio ox">
+							<label for="exercise2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item sun">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="sun">
+							<span class="num">Q17.</span>
+							<span class="txt">
+								1일 30분 이상 햇빛에 <span class="br"></span>
+								노출되는 경우가 일주일에 <span class="br"></span>
+								2~3회 이상인가요?
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="sun" id="sun1" class="input-radio ox">
+							<label for="sun1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="sun" id="sun2" class="input-radio ox">
+							<label for="sun2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="item sleep">
+				<dl class="wrap">
+					<dt class="title">
+						<label for="sleep">
+							<span class="num">Q18.</span>
+							<span class="txt">
+								평소 밤에 잠이 들면 <span class="br"></span>
+								깊은 꿀잠을 자나요?<br>
+								<span class="sub">(한번 잠들면 업어가도 몰라요!)</span>
+							</span>
+						</label>
+					</dt>
+					<dd class="content">
+						<span class="img"></span>
+						<span class="input-area">
+							<input type="radio" name="sleep" id="sleep1" class="input-radio ox">
+							<label for="sleep1">
+								<span>O</span>
+							</label>
+							<input type="radio" name="sleep" id="sleep2" class="input-radio ox">
+							<label for="sleep2">
+								<span>X</span>
+							</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+		</form>
+		<div class="survey-foot">
+			<p class="contents-progress">
+				<span class="count">
+					총 
+					<span class="total">
+						
+					</span>
+					개 항목 중 <br>
+					<span class="current">
+						
+					</span>
+					개의 항목이 남았습니다.
+				</span>
+				<a href="#" class="btn-prev">이전페이지</a>
+				<a href="#" class="submit" onclick="submitAction();">결과보기</a>
+				<span class="bar">
+					<span class="fill"></span>
+				</span>
+			</p>
+		</div>
+		<div class="survey-loading">
+			<div class="box">
+				<div class="graph">
+					<div class="bar bar1"></div>
+					<div class="bar bar2"></div>
+					<div class="bar bar3"></div>
+					<div class="bar bar4"></div>
+					<div class="bar bar5"></div>
+				</div>
+				<p class="desc">
+					<span class="counting">
+						<span class="num">100</span>
+						<span class="percent">%</span>
+					</span>
+					<span class="txt">
+						Total Care Program<br>
+						분석 중…
+					</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$window = $(window);
+
+	// 숫자카운팅
+	function numberCounting() {
+		var $count = $('.survey-loading .counting .num');
+
+		$count.prop('Counter', 0).animate(
+			{
+				Counter: $count.text(),
+			},
+			{
+				duration: 4000,
+				easing: 'swing',
+				step: function (now) {
+					$count.text(Math.ceil(now));
+				},
+			}
+		);
+	}
+
+	// 설문 완료
+	function submitAction() {
+		if(!$('.survey-foot .contents-progress').hasClass('completed')) return false;
+
+		console.log('asdif')
+
+		$('html').addClass('scroll-fixed');
+		$('.survey-loading').addClass('is-active');
+		numberCounting();
+	}
+
+	// 초기셋팅
+	function init() {
+		// 옵션클래스 진행상태기능 활성화
+		$('.survey-foot .contents-progress').addClass('ongoing');
+
+		// 옵션클래스 설문항목들 비활성화
+		$('.survey-form .item').each(function(index, element) {
+			$(element).attr('data-index', index);
+
+			if(index === 0) {
+				$(element).addClass('input');
+			} else {
+				$(element).addClass('disabled');
+			}
+		});
+	}
+	init();
+
+	$(function() {
+		// 스크롤링
+		function scrolling(props) {
+			var $tgItem;
+
+			if(typeof props === 'object') {
+				$tgItem = props;
+			} else if(props === 'last') {
+				$tgItem = $('.survey-foot .submit');
+			}
+
+			if($tgItem.height() < $(window).height()) {
+				$('html, body').animate({
+					scrollTop: $tgItem.offset().top - (($(window).height() - $tgItem.height()) / 2)
+				}, 600);
+			} else {
+				$('html, body').animate({
+					scrollTop: $tgItem.offset().top - $('.page-header').height()
+				}, 600);
+			}
+		}
+
+		// 진행상태 업데이트
+		function updateInfo() {
+			var $items = $('.survey-form .item');
+
+			var $surveyFoot = $('.survey-foot');
+			var $contentsProgress = $surveyFoot.find('.contents-progress');
+			var $progressBar = $contentsProgress.find('.fill');
+			var $countTotal = $contentsProgress.find('.count .total');
+			var $countCurrent = $contentsProgress.find('.count .current');
+
+			var totalLen = $items.length;
+			var completedLen = $items.filter(function(index, element) {
+				return $(element).hasClass('completed');
+			}).length;
+			var currentIndex = $items.filter(function(index, element) {
+				return $(element).hasClass('input');
+			}).attr('data-index')*1;
+			var nextIndex = currentIndex + 1;
+
+			// Progress 업데이트
+			$progressBar.css('width', ((completedLen / totalLen) * 100).toFixed(2) + '%');
+			totalLen === completedLen ? $contentsProgress.addClass('completed') : $contentsProgress.removeClass('completed')
+			$countCurrent.text(totalLen - completedLen);
+			$countTotal.text(totalLen);
+		}
+		updateInfo();
+
+		// 현재문항 입력완료시
+		function completeInput(prop, scroll) {
+			var $currentItem = prop;
+			var currentIndex = $currentItem.attr('data-index')*1;
+			var $nextItem;
+
+			// 다른 문항을 입력시 입력 중이였던 항목을 .dsiabled
+			$currentItem.parents('.survey-form').find('.item').each(function(index, element) {
+				if($(element).hasClass('input')) $(element).removeClass('input').addClass('disabled');
+			});
+
+			// 현재 문항기준으로 순차진행
+			$nextItem = $($currentItem.parents('.survey-form').find('.item').filter(function(index, element) {
+				return index > currentIndex && $(element).hasClass('disabled')
+			})[0]);
+
+			// 현재 문항기준으로 다음 문항이 없을시 전체기준으로 다음 문항 찾기
+			if($nextItem.length === 0) {
+				$nextItem = $($currentItem.parents('.survey-form').find('.item').filter(function(index, element) {
+					return $(element).hasClass('disabled')
+				})[0]);
+			}
+
+			$nextItem.removeClass('disabled completed').addClass('input');
+			$currentItem.removeClass('disabled input').addClass('completed');
+
+			if(scroll === false) return false;
+
+			$currentItem.attr('data-index') !== $nextItem.attr('data-index') ? scrolling($nextItem) : scrolling('last')
+		}
+
+		// 현재문항 입력수정시
+		function cancelInput(props) {
+			var $currentItem = props;
+			var currentndex = $currentItem.attr('data-index')*1;
+
+			// 다른 문항을 입력시 입력 중이였던 항목을 .dsiabled
+			$currentItem.parents('.survey-form').find('.item').each(function(index, element) {
+				if($(element).hasClass('input')) $(element).removeClass('input').addClass('disabled');
+			});
+
+			$currentItem.removeClass('disabled completed').addClass('input');
+
+			scrolling($currentItem);
+		}
+
+		// 라디오버튼 설문조사
+		$('.survey-form .item').on('change', '.input-radio', function(e) {
+			var $tgRadio = $(e.target);
+			var $tgItem = $tgRadio.parents('.item');
+
+			// 추가입력 있을시 예외처리
+			if($tgRadio.hasClass('more-input')) {
+				cancelInput($tgItem);
+				$tgItem.find('.more-input-content').addClass('input');
+
+				updateInfo();
+
+				return false;
+			} else if($tgItem.find('.more-input')) {
+				$tgItem.find('.more-input-content').removeClass('input').addClass('disabled');
+			}
+
+			completeInput($tgItem);
+			updateInfo();
+		});
+
+		// 체크박스 설문조사
+		$('.survey-form .item').on('change', '.input-check', function(e) {
+			var $tgCheck = $(e.target);
+			var $tgItem = $tgCheck.parents('.item');
+			var $inputCheck = $tgItem.find('.input-check');
+			var checkMin = $tgItem.attr('data-check-min')*1;
+			var checkMax = $tgItem.attr('data-check-max')*1;
+
+			var current = $tgItem.find('.input-check').filter(function(index, element) {
+				return $(element).is(':checked');
+			}).length;
+
+			if(current >= checkMax) {
+				completeInput($tgItem);
+				$inputCheck.each(function(index, element) {
+					if(!$(element).is(':checked')) $(element).prop('disabled', true);
+				});
+			} else if(current < checkMax && current >= checkMin) {
+				completeInput($tgItem, false);
+				$inputCheck.each(function(index, element) {
+					if($(element).is(':disabled')) $(element).prop('disabled', false);
+				});
+			} else {
+				cancelInput($tgItem);
+			}
+
+			updateInfo();
+		});
+
+		// Q4 건강식품 추가입력
+		$('.survey-form .item.food .more-input-food input[type=text]').on('focusout', function(e) {
+			var $tgText = $(e.target);
+			var $tgItem = $tgText.parents('.item');
+			var $text = $tgText.parents('.more-input-food').find('input[type=text]');
+
+			var count = $text.filter(function(index, element) {
+				return $(element).val().length !== 0;
+			}).length;
+
+			if($text.length === count) {
+				completeInput($tgItem);
+			} else if($text.length > count) {
+				cancelInput($tgItem);
+			}
+
+			updateInfo();
+		});
+
+		$window.on('load scroll', function() {
+			var scrollTop = $window.scrollTop();
+
+			if(scrollTop < $('.survey-foot').offset().top - $window.height() + $('.survey-foot .contents-progress').height()) {
+				$('.survey-foot .contents-progress').addClass('is-fixed');
+			} else {
+				$('.survey-foot .contents-progress').removeClass('is-fixed');
+			}
+		});
+	});
+</script>
+{%- endblock %}

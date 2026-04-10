@@ -1,0 +1,27 @@
+.card-list {
+	width: calc(100% + 10px);
+	position: relative;
+	left: -5px;
+
+	&.third .list .item { width: calc(33.33% - 10px); }
+	&.quarter .list .item { width: calc(25% - 10px); }
+	&.fifth .list .item { width: calc(20% - 10px); }
+
+	.list {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+
+	.item {
+		float: left;
+		box-sizing: border-box;
+		width: calc(50% - 10px);
+		background-color: #666;
+		margin-bottom: 10px;
+		margin-left: calc(10px / 2);
+		margin-right: calc(10px / 2);
+	}
+}

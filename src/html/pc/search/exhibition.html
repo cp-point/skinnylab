@@ -1,0 +1,122 @@
+{%
+	set pageInfo = {
+		section: 'search',
+		title: '통합검색'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- content // -->
+<div id="content-main" class="common-container section-search search-exhibition">
+	<h2 class="hide">통합검색</h2>
+	<div class="integrated-search">
+		<div class="search-box">
+			<div class="search js-text-clear">
+				<label for="search01" class="hide">검색</label>
+				<input type="text" id="search01" name="search" value="" placeholder="궁금하신 내용을 입력해주세요." class="input">
+				<button type="button" class="btn-clear">입력값 지우기</button>
+				<button type="button" class="btn-submit">검색하기</button>
+			</div>
+		</div>
+		<p class="result"><span class="str">'시서스'</span>에 대한 검색결과</p>
+	</div>
+	<div class="tab-menu">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">
+						상품
+						<span>(17)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						리뷰
+						<span>(185)</span>
+					</a>
+				</li>
+				<li class="selected">
+					<a href="#">
+						기획전
+						<span>(21)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						이벤트
+						<span>(15)</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container-wrap">
+		<!-- 기획전 목록// -->
+		<ul class="exhibition-list">
+			{% for i in range(1, 5) %}
+			<li class="wrap">
+				<div class="item">
+					<a href="#">
+						<figure>
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/exhibition-thumb-img0{{i}}.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<p class="title">
+									신제품 출시 기념 기획전
+								</p>
+								<p class="date">
+									<span class="start">2021-05-01</span>~<span class="finish">2021-06-30</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+					<ul class="mapping-list">
+						<li>
+							<a href="#">
+								<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="기획전 관련 상품 이미지">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="기획전 관련 상품 이미지">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="기획전 관련 상품 이미지">
+							</a>
+						</li>
+						<li class="more">
+							<a href="#">
+								<img src="{{base}}/img/pc/common/icon-close.png" alt="더보기">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			{% endfor %}
+			<!-- 검색 결과 없을때 // -->
+			<!-- <li class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</li> -->
+			<!-- // 검색 결과 없을때 -->
+		</ul>
+		<!--//product-->
+		<div class="common-pagination">
+			<a href="#" class="paging-btn prev">Prev</a>
+			<span class="paging-num">
+				<a href="#" class="on">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+			</span>
+			<a href="#" class="paging-btn next">Next</a>
+		</div>
+	</div>
+</div>
+<!-- // content -->
+{%- endblock %}

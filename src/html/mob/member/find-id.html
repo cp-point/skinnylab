@@ -1,0 +1,74 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '아이디 찾기',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-find">
+	
+	<div class="container-wrap">
+		<div class="page-top-desc">
+			<div class="com-txt">
+				아이디가 기억나지 않으세요?<br>
+				등록된 회원 정보로<br>
+				<strong>아이디를 찾으실 수</strong> 있습니다.
+			</div>
+		</div>
+		
+		<div class="form-layout large">
+			<dl class="row">
+				<dt class="title">
+					<label for="userName">이름 <span class="emphasis">*</span></label>
+				</dt>
+				<dd class="content">
+					<span class="input-text-del"> 
+						<input type="text" id="userName" name="userName" placeholder="이름 입력" class="text block large underline"> <!-- 입력오류일때: .is-invalid -->
+					</span>
+					<p class="error-msg is-invalid" style="display: none;">이름을 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt class="title">
+					<label for="userPhone">휴대폰 번호 <span class="emphasis">*</span></label>
+				</dt>
+				<dd class="content">
+					<div class="input-certification-send">
+						<input type="text" id="userPhone" name="userPhone" placeholder="휴대폰 번호 입력" class="text large underline"> <!-- 입력오류일때: .is-invalid -->
+						<button class="btn outline thin primary btn-send"><span>인증번호 발송</span></button> <!-- 비활성화 일때 .disabled 추가 -->
+					</div>
+					<p class="error-msg is-invalid" style="display: none;">휴대폰번호를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt class="title">
+					<label for="certifyNum">인증번호 <span class="emphasis">*</span></label>
+				</dt>
+				<dd class="content">
+					<div class="input-certify">
+						<input type="text" id="certifyNum" name="certifyNum" placeholder="인증번호 입력" class="text large block underline" maxlength="20"> <!-- 입력오류일때: .is-invalid -->
+						<span class="timer">5:00</span>
+					</div>
+					<p class="error-msg is-invalid" style="display: none;">인증번호를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+				</dd>
+			</dl>
+		</div>
+
+		<div class="btn-group center">
+			<button type="button" class="btn large primary block disabled" onclick="UI.showLayerPop('',{ url: './find-id-complete.html'}); return false;">아이디 찾기</button> <!-- 인증확인일때 .disabled 삭제-->
+		</div>
+
+	</div>
+</div>
+{%- endblock %}

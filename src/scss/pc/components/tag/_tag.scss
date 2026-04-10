@@ -1,0 +1,33 @@
+.tag {
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 52px;
+	line-height: 22px;
+	padding: 0 6px;
+	background-color: #97979b;
+	border: 1px solid #97979b;
+	color: $text-color1;
+	font-weight: 700;
+	font-size: 13px;
+	text-align: center;
+
+	&.primary {
+		background-color: $primary-color;
+		border-color: $primary-color;
+		color: #fff;
+	}
+	&.secondary {
+		background-color: $secondary-color1;
+		border-color: $secondary-color1;
+		color: #fff;
+	}
+	&.white {
+		background-color: #fff;
+		border-color: #ddd;
+	}
+	&.review {
+		background-color: #ff5050;
+		border-color: #ff5050;
+		color: #fff;
+	}
+}

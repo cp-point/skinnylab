@@ -1,0 +1,85 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [5,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-pw-modify">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">{{pageInfo.title}}</h2>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h3 class="title">비밀번호 수정</h3>
+				</div>
+				<div class="content-inner-wrap">
+					<div class="form-layout">
+						<dl class="row">
+							<dt class="title">
+								<label for="userNowPw">현재 비밀번호</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="password" id="userNowPw" name="userNowPw" value="" placeholder="현재 비밀번호 입력" class="text block" minlength="8">
+								</span>
+								<!-- 오류 메세지 -->
+								<!-- <p class="error-msg is-invalid">현재 비밀번호를 입력해 주세요.</p> -->
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="userNewPw01">신규 비밀번호</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="password" id="userNewPw01" name="userNewPw01" value="" placeholder="신규 비밀번호 입력" class="text block" minlength="8">
+								</span>
+								<!-- 오류 메세지 -->
+								<!-- <p class="error-msg is-invalid">신규 비밀번호를 입력해 주세요.</p> -->
+								<span class="input-check pw-check">
+									<input type="checkbox" name="pwCheck" id="pwCheck01" class="check">
+									<label for="pwCheck01">영문</label>
+									<input type="checkbox" name="pwCheck" id="pwCheck02" class="check">
+									<label for="pwCheck02">숫자</label>
+									<input type="checkbox" name="pwCheck" id="pwCheck03" class="check">
+									<label for="pwCheck03">특수문자</label>
+									<input type="checkbox" name="pwCheck" id="pwCheck04" class="check">
+									<label for="pwCheck04">최소 8자</label>
+								</span>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="userNewPw02">신규 비밀번호 확인</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="password" id="userNewPw02" name="userNewPw02" value="" placeholder="신규 비밀번호 확인" class="text block" minlength="8">
+								</span>
+								<!-- 오류 메세지 -->
+								<!-- <p class="error-msg is-invalid">신규 비밀번호 확인을 입력해 주세요.</p> -->
+							</dd>
+						</dl>
+					</div>
+					<div class="btn-wrap">
+						<a href="#" class="btn large primary">
+							<span>저장</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

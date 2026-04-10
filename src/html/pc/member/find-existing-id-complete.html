@@ -1,0 +1,55 @@
+{%
+	set pageInfo = {
+		section: 'login',
+		title: '기존 아이디 찾기 &lt; 로그인'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-member member-find-existing-id-complete">
+	<div class="member-layout">
+		<h2 class="hide">로그인</h2>
+
+		<div class="head">
+			<h3 class="title">기존 회원 아이디 찾기</h3>
+			<p class="desc">고객님의 회원정보를 확인 후<br>통합 멤버십 가입하기를 눌러 <strong>기존 멤버십에<br>있던 정보를 통합</strong>해주세요!</p>
+		</div>
+
+		<div class="body">
+			<div class="form-layout vertical">
+				<dl class="row">
+					<dt class="title">가입 된 ID</dt>
+					<dd class="content">
+						<p class="data">sk******************************************************************************************b@abc.com</p>
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt class="title">회원 가입일</dt>
+					<dd class="content">
+						<p class="data">2020.02.10</p>
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt class="title">멤버십 등급</dt>
+					<dd class="content">
+						<p class="data">일반회원 > Family</p>
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt class="title">보유 마일리지 / 쿠폰</dt>
+					<dd class="content">
+						<p class="data">10,000원 / 3개</p>
+					</dd>
+				</dl>
+				<a href="#" class="btn primary large long motion mgt30">
+					<span>통합 멤버십 가입하기</span>
+				</a>
+				<p class="caution">통합 멤버십 가입을 위해서는 본인인증 후 회원가입을 통하여 고객님께서<br>기존 가지고 있던, 회원등급, 마일리지, 쿠폰을 통합할 수 있습니다.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

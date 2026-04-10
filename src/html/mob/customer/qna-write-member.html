@@ -1,0 +1,236 @@
+{%
+	set pageInfo = {
+		section: 'customer',
+		title: '1:1문의'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header customer">
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/customer.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-qna-write">
+	<div class="main-wrap">
+		<ul class="add-explain">
+			<li>문의하신 내용에 대한 답변은 마이페이지 > 나의 활동 내역 > 1:1문의내역에서 확인 하실 수 있습니다.</li>
+		</ul>
+	
+		<div class="board-write">
+			<dl class="row">
+				<dt>문의 유형<span class="emphasis"></span></dt>
+				<dd class="qna-type">
+					<div class="type-wrap">
+						<span class="select-wrap">
+							<select id="qnaType" name="qnaType" class="select">
+								<option value="">유형 선택</option>
+								<option value="">회원/멤버십</option>
+								<option value="">주문/결제</option>
+								<option value="">배송</option>
+								<option value="">취소/교환/반품</option>
+								<option value="">영수증/증빙서류</option>
+								<option value="">상품/이벤트</option>
+								<option value="">기타</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+						<!-- 주문 상품 선택 버튼 -->
+						<span class="btn-wrap">
+							<button type="button" onclick="UI.showLayerPop('',{ url: './popup-qna-order-select.html'}); return false;" class="btn outline thin primary">
+								<span>주문 상품 선택</span>
+							</button>
+						</span>
+						<!-- //주문 상품 선택 버튼 -->
+					</div>
+					<!-- 선택 주문 상품 노출 -->
+					<ul class="view-wrap">
+						<li class="view">
+							<button type="button" class="btn-close"><span>닫기</span></button>
+							<p class="order-wrap">
+								<span class="order">주문번호 :
+									<span class="num">2021040914352712345</span>
+								</span>
+							</p>
+							<ul class="product-list">
+								<li class="product-item">
+									<figure>
+										<div class="img">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												<span class="sub">
+													스키니랩
+												</span>
+												<span class="main">
+													마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 모두 노출
+												</span>
+											</p>
+											<p class="option">
+												<span class="tit">옵션</span>
+												<span class="desc">옵션명 모두 노출</span>
+											</p>
+											<p class="num">
+												<span class="product">1</span>개
+												<span class="price">79,600</span>원
+											</p>
+										</figcaption>
+									</figure>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- //선택 주문 상품 노출 -->
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>제목<span class="emphasis"></span></dt>
+				<dd>
+					<input type="text" id="qnaTitle" name="qnaTitle" value="" placeholder="제목 입력" class="text block" maxlength="40">
+				</dd>
+			</dl>
+			<dl class="row content">
+				<dt class="hide">내용<span class="emphasis"></span></dt>
+				<dd class="content-wrap">
+					<!-- 에디터 영역 // -->
+					<div class="editor">
+						<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="문의 내용 입력" class="txt" maxlength="1000"></textarea>
+						<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+					</div>
+					<!-- // 에디터 영역 -->
+					<div class="image-upload">
+						<p class="hide">이미지업로드</p>
+						<ul class="list">
+							<li class="item">
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile1" name="imageFile1" class="input-file">
+										<label for="imageFile1" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile2" name="imageFile2" class="input-file">
+										<label for="imageFile2" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile3" name="imageFile3" class="input-file">
+										<label for="imageFile3" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile4" name="imageFile4" class="input-file">
+										<label for="imageFile4" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile5" name="imageFile5" class="input-file">
+										<label for="imageFile5" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<ul class="add-explain">
+							<li>최대 5개 / 100MB 이하의 파일만 등록 가능합니다.</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>알림선택<span class="emphasis"></span></dt>
+				<dd class="input-radio-wrap">
+					<span class="input-radio-text">
+						<input type="radio" id="noti1" name="noti" class="radio" checked>
+						<label for="noti1">휴대폰 번호</label>
+						<input type="text" id="userPhone" name="userPhone" value="" placeholder="010-1234-5678" class="text" disabled>
+					</span>
+					<span class="input-radio-text">
+						<input type="radio" id="noti2" name="noti" class="radio">
+						<label for="noti2">이메일</label>
+						<input type="text" id="userEmail" name="userEmail" value="" placeholder="sknylab@abc.com" class="text" disabled>
+					</span>
+				</dd>
+			</dl>
+		</div>
+		<div class="btn-group row">
+			<button type="button" class="btn large outline primary js-pop-close">취소</button>
+			<button type="button" class="btn large primary">등록</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+		// 문의 유형 - 선택 주문 상품 노출 닫기
+		$('.customer-qna-write .board-write .view-wrap .view .btn-close').click(function(){
+			$(this).parent().hide()
+		})
+
+		// textarea 글자수 체크
+		$('#qnaEditor').keyup(function(){
+			var content = $(this).val();
+			$('.character .num').html(content.length);
+		});
+	})
+</script>
+{%- endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-address-manage" class="common-popup">
+	<div class="common-popup-inner popup-address-manage">
+		<div class="header">
+			<h1 class="title">배송지 관리</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="head">
+				<div class="btn-group right">
+					<button onclick="UI.showLayerPop('',{ url: './popup-address-register.html'}); return false;" class="btn small outline thin primary">신규 배송지 등록</button>
+				</div>
+			</div>
+			<div class="body">
+				<ul class="address-list">
+					<li class="item">
+						<div class="btn-group between util-group">
+							<div>
+								<span class="label">기본 배송지</span> <!-- 기본 배송지 일 때 노출-->
+								우리집
+							</div>
+							<div>
+								<button type="button" class="btn small outline2">
+									<span>수정</span>
+								</button>
+							</div>
+						</div>
+						<dl class="info-member">
+							<dt>홍길동</dt>
+							<dd>010-1234-5678</dd>
+						</dl>
+						<div class="info-addr">
+							(06569) 서울시 강남구 영동대로 511(트레이드 타워) 2104호 헬스밸런스 주소가 긴 경우 주소가 긴 경우
+						</div>
+					</li>
+					<li class="item">
+						<div class="btn-group between util-group">
+							<div>회사</div>
+							<div>
+								<button type="button" class="btn small outline2">
+									<span>수정</span>
+								</button>
+								<button type="button" class="btn small outline2">
+									<span>삭제</span>
+								</button>
+							</div>
+						</div>
+						<dl class="info-member">
+							<dt>홍길동</dt>
+							<dd>010-1234-5678</dd>
+						</dl>
+						<div class="info-addr">
+							(12345) 서울시 서초구 방배천로 118, 1F 에이디앤스타일
+						</div>
+					</li>
+					<li class="item">
+						<div class="btn-group between util-group">
+							<div>회사</div>
+							<div>
+								<button type="button" class="btn small outline2">
+									<span>수정</span>
+								</button>
+								<button type="button" class="btn small outline2">
+									<span>삭제</span>
+								</button>
+							</div>
+						</div>
+						<dl class="info-member">
+							<dt>부모님댁</dt>
+							<dd>010-1234-5678</dd>
+						</dl>
+						<div class="info-addr">
+							(22222) 서울시 종로구 땡땡땡로 땡땡길 123
+						</div>
+					</li>
+					<li class="empty">
+						<div class="result-txt is-error">
+							<p class="com-txt">등록된 배송지가 없습니다.</p>
+						</div>
+					</li>
+				</ul>
+
+				<div class="btn-group center">
+					<button type="button" class="btn-list-more">
+						더보기
+						<span class="icon-plus"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

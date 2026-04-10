@@ -1,0 +1,146 @@
+.board-write {
+	padding: 25px 0 35px;
+	border-top: 1px solid $primary-color;
+	border-bottom: 1px solid #eaeaeb;
+
+	& > .row {
+		display: flex;
+		align-items: flex-start;
+		width: 100%;
+		font-size: 16px;
+
+		&:first-child { border-top: 0; }
+
+		dt {
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			width: 150px;
+			min-height: 50px;
+			padding: 5px 8px;
+			color: $text-color1;
+			font-weight: 500;
+			font-size: 16px;
+			vertical-align: top;
+			word-wrap: break-word;
+
+			.mark {
+				color: #e6440c;
+				vertical-align: top;
+			}
+		}
+
+		dd {
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			width: calc(100% - 150px);
+			min-height: 50px;
+			line-height: 1.6;
+			padding: 5px 8px;
+			color: $text-color2;
+			font-weight: 500;
+			font-size: 16px;
+			word-wrap: break-word;
+		}
+	}
+
+	& > .prevnext {
+		border-top: 1px solid #aaa;
+
+		& > .prev,
+		& > .next {
+			@include clearfix;
+
+			&:hover {
+				dt,
+				dd { background-color: #f8fafc; }
+			}
+
+			dt {
+				box-sizing: border-box;
+				float: left;
+				width: 150px;
+				min-height: 50px;
+				padding: 13px 14px;
+				color: $text-color1;
+				font-weight: 500;
+				font-size: 16px;
+				vertical-align: top;
+				word-wrap: break-word;
+			}
+
+			dd {
+				box-sizing: border-box;
+				float: left;
+				width: calc(100% - 150px);
+				min-height: 50px;
+				line-height: 1.6;
+				padding: 13px 14px;
+				color: $text-color1;
+				font-weight: 500;
+				font-size: 16px;
+				word-wrap: break-word;
+
+				a {
+					display: inline-block;
+					width: auto;
+					height: 25px;
+					line-height: 25px;
+					max-width: 100%;
+					color: $text-color1;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					word-wrap: break-word;
+					word-break: break-all;
+					vertical-align: top;
+
+					&:hover { text-decoration: underline; }
+				}
+			}
+		}
+
+		& > .prev {
+			span {
+				padding-right: 34px;
+				position: relative;
+
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 14px;
+					height: 9px;
+					background: url('@@img/pc/common/arrow-board-prev.png') no-repeat;
+					background-size: cover;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%);
+				}
+			}
+
+			& + .next { border-top: 1px solid #e8e8e8; }
+		}
+
+		& > .next {
+			span {
+				padding-right: 34px;
+				position: relative;
+
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 14px;
+					height: 9px;
+					background: url('@@img/pc/common/arrow-board-next.png') no-repeat;
+					background-size: cover;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+}

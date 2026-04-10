@@ -1,0 +1,97 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [3,3]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-join-event">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h3 class="title">{{pageInfo.title}}</h3>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h4 class="title">참여이벤트</h4>
+				</div>
+				<div class="content-inner-wrap">
+					<ul class="list-wrap">
+						<li>
+							<div class="item-cont">
+								<div class="item info-item">
+									<span class="status ing"></span> <!-- 진행중 이벤트: .ing, 종료된 이벤트: .end -->
+									<span class="tit">이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명</span>
+								</div>
+								<div class="item date-item">
+									<dl>
+										<dt>이벤트 기간</dt>
+										<dd>2021.04.01 ~ 2021.05.01</dd>
+									</dl>
+									<dl>
+										<dt>당첨자 발표</dt>
+										<dd>2021.05.10</dd>
+									</dl>
+									<dl>
+										<dt>참여일자</dt>
+										<dd>2021.05.01</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+						{% for i in range(0, 4) %}
+						<li>
+							<div class="item-cont">
+								<div class="item info-item">
+									<span class="status end"></span> <!-- 진행중 이벤트: .ing, 종료된 이벤트: .end -->
+									<span class="tit">이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명 이벤트명</span>
+								</div>
+								<div class="item date-item">
+									<dl>
+										<dt>이벤트 기간</dt>
+										<dd>2021.04.01 ~ 2021.05.01</dd>
+									</dl>
+									<dl>
+										<dt>당첨자 발표</dt>
+										<dd>2021.05.10</dd>
+									</dl>
+									<dl>
+										<dt>참여일자</dt>
+										<dd>2021.05.01</dd>
+									</dl>
+								</div>
+							</div>
+							<a href="#" class="btn outline thin small primary">당첨자발표 바로가기</a>
+						</li>
+						{% endfor %}
+						<li class="empty"> <!-- 데이터 없을 때 -->
+							<p class="desc">이벤트 참여내역이 없습니다.</p>
+						</li>
+					</ul>
+
+					<div class="common-pagination">
+						<a href="#" class="paging-btn prev">Prev</a>
+						<span class="paging-num">
+							<a href="#" class="on">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="paging-btn next">Next</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

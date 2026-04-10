@@ -1,0 +1,43 @@
+//
+// 환경변수 설정
+// --------------------------------------------------
+
+/* 기본 컬러 */
+$default-color: #757575;
+$primary-color: #353537;
+$secondary-color1: #ff725c;
+$secondary-color2: #ff5050;
+$secondary-color-gradient: linear-gradient(to top,#ff725c,#ff5050);
+$disabled-color: #97979b;
+
+/* 버튼 컬러 */
+$btn-default-color: #757575;
+$btn-primary-color: #353537;
+$btn-secondary-color: #ff725c;
+$btn-disabled-color: #97979b;
+
+/* 텍스트 컬러 */
+$text-color1: #353537;
+$text-color2: #6e6e72;
+$text-color3: #97979b;
+
+/* 라인 컬러 */
+$line-color1: #353537;
+$line-color2: #d5d5d7;
+
+/* 배경 컬러 */
+$bg-color1: #f4f4f6;
+$bg-color2: #eaeaeb;
+
+/* 강조 컬러 */
+$strong-color: #e61f0c;
+
+/* 상태 컬러 */
+$warning-color: #e63030;
+
+/* font weight */
+$extra-bold: 800;
+$bold : 700;
+$medium : 500;
+$regular : 400;
+$light : 300;

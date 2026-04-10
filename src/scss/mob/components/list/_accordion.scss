@@ -1,0 +1,270 @@
+.accordion-list {
+	// border-top: 1px solid #222;
+	// border-bottom: 1px solid #aaa;
+
+	& > .item {
+		&:last-child > .title { border-bottom: 1px solid #fbfbfc; }
+
+		&.on {
+			& > .title {
+				background-color: #fbfbfc;
+				&:after { transform: rotate(180deg); }
+			}
+		}
+
+		&.is-open {
+			& > .title {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				padding: 12px 46px 13px 4px;
+				background-color: #fbfbfc;
+				&:after { content: none; }
+				a { padding: 0; }
+			}
+			& > .content { display: block; }
+		}
+
+		&.row {
+			box-sizing: border-box;
+			display: flex;
+			width: 100%;
+			min-height: 60px;
+			padding: 15px 20px;
+			border-top: 1px solid #eaeaeb;
+
+			& > .title {
+				flex-shrink: 0;
+				min-height: auto;
+				padding: 0;
+				border-top: 1px solid #fff;
+				border-bottom: 1px solid #fff;
+				&:after { content: none; }
+			}
+
+			& > .content {
+				flex-grow: 1;
+				display: flex;
+				padding: 0;
+
+				& > .wrap {
+					margin-left: auto;
+				}
+			}
+		}
+
+		& > .title {
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			min-height: 60px;
+			background-color: #fff;
+			border-top: 1px solid $line-color1;
+			border-bottom: 1px solid #eaeaeb;
+			font-weight: 800;
+			color: $text-color1;
+			font-size: 18px;
+			word-break: break-all;
+			position: relative;
+			transition: all .3s;
+
+			&:after {
+				content: '';
+				display: block;
+				width: 16px;
+				height: 16px;
+				background: url('@@img/mob/common/arrow-accordion.png') no-repeat;
+				background-size: 16px 16px;
+				position: absolute;
+				top: 22px;
+				right: 22px;
+				transition: all .3s;
+			}
+
+			a {
+				box-sizing: border-box;
+				padding: 10px 46px 10px 4px;
+				word-break: break-all;
+			}
+		}
+
+		& > .content {
+			display: none;
+			padding: 30px 4px 20px 4px;
+			@include font(14px,$regular);
+			color: #222;
+			word-break: break-all;
+		}
+	}
+
+	&.qna-list {
+		& > .item {
+			&:not(:nth-child(1)) { 
+				& > .title { border-color: #eaeaeb; }
+			}
+
+			&:first-child { border-top: 1px solid #353537; }
+			&:last-child { 
+				& > .title { border-bottom: 1px solid #eaeaeb; }
+			}
+
+			& > .title {
+				font-size: 16px;
+				border-top: none;
+
+				&::before {
+					@include before-after();
+					content: 'Q';
+					top: 13px;
+					left: 10px;
+					font-size: 22px;
+					color: $text-color1;
+				}
+
+				&::after {
+					top: 22px;
+					right: 10px;
+				}
+
+				a {
+					box-sizing: border-box;
+					width: 100%;
+					padding: 10px 59px 10px 42px;
+
+					.main { font-weight: $extra-bold; }
+					.sub { font-weight: $medium; }
+				}
+			}
+
+			& > .content {
+				padding: 0;
+				border-bottom: 1px solid #eaeaeb;
+
+				.txt {
+					position: relative;
+					padding: 32px 59px;
+					color: $text-color1;
+					font-weight: $medium;
+
+					&::before {
+						@include before-after();
+						content: 'A';
+						top: 29px;
+						left: 25px;
+						font-size: 22px;
+						font-weight: $extra-bold;
+						color: $secondary-color1;
+					}
+				}
+			}
+		}
+	}
+
+	&.order-accordion {
+		border-bottom: 1px solid #eaeaeb;
+
+		& > .item {
+			&:not(:first-child) {
+				& > .title {
+					border-bottom: 1px solid #fff;
+				}
+			}
+
+			&.is-open {
+				& > .title { padding: 12px 20px 13px 20px; }
+			}
+
+			&.row {
+				& > .title {
+					border-top: 1px solid #fff;
+					border-bottom: 1px solid #fff;
+				}
+				& > .content { padding: 0; }
+			}
+
+			& > .title {
+				border-top: 1px solid #eaeaeb;
+				border-bottom: 1px solid #fbfbfc;
+
+				a {
+					box-sizing: border-box;
+					display: flex;
+					align-items: center;
+					width: 100%;
+					padding: 10px 46px 10px 20px;
+				}
+
+				.tit {
+					flex-shrink: 0;
+					margin-right: auto;
+					color: $primary-color;
+					font-weight: 800;
+					font-size: 18px;
+				}
+
+				.info {
+					flex-grow: 1;
+					display: flex;
+					justify-content: flex-end;
+					padding-left: 20px;
+					margin-left: auto;
+				}
+
+				.name {
+					color: $primary-color;
+					font-weight: 800;
+					font-size: 16px;
+				}
+
+				.amount {
+					display: flex;
+
+					.num {
+						color: $primary-color;
+						font-weight: 800;
+						font-size: 18px;
+						text-align: right;
+						word-break: break-all;
+					}
+
+					.unit {
+						align-self: flex-end;
+						color: $primary-color;
+						font-weight: 500;
+						font-size: 14px;
+						transform: translateY(-3px);
+					}
+				}
+
+				.price {
+					display: flex;
+
+					.num {
+						color: $primary-color;
+						font-weight: 800;
+						font-size: 18px;
+						text-align: right;
+						word-break: break-all;
+					}
+
+					.unit {
+						align-self: flex-end;
+						color: $primary-color;
+						font-weight: 500;
+						font-size: 14px;
+						transform: translateY(-3px);
+					}
+				}
+
+				.payment {
+					color: $primary-color;
+					font-weight: 800;
+					font-size: 14px;
+					text-align: right;
+				}
+			}
+
+			& > .content { padding: 16px 20px 30px 20px; }
+		}
+	}
+}

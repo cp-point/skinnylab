@@ -1,0 +1,122 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '고객님께서 문의하신 1:1문의 답변입니다.'
+	}
+%}
+
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<tr>
+	<td>
+		<table class="email-common-container" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width: 60px;"></td>
+				<td class="container-wrap">
+					<table class="page-content" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="txt com-txt1">
+								고객님께서 문의하신<br>
+								1:1문의 답변이 등록되었습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt2">
+								안녕하세요. <strong class="color01">브랜드명</strong>입니다.<br> 
+								<strong class="color01">고객님</strong>이 등록하신 1:1문의에 답변이 등록되었습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 30px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt4 color02">
+								답변 내역은 <strong class="color01"><a href="#" target="_blank" class="btn-link">마이페이지 &gt; 나의 활동 내역 &gt; 1:1문의내역</a></strong>에서도 확인하실 수 있습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 58px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>답변 내용</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 120px;">아이디</th>
+										<td style="width: 560px;">
+											<strong>{회원아이디}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 120px;">문의 유형</th>
+										<td style="width: 560px;">
+											<table cellspacing="0" cellpadding="0">
+												<tr>
+													<td style="border: none; border-bottom: none; padding: 0;">
+														<strong>{상품문의}</strong><br>
+													</td>
+												</tr>
+												<tr>
+													<td style="width: 120px; border: none; border-bottom: none; padding: 0;">
+														<img src="{{base}}/img/email/goods-thumb-img140x140.jpg" alt="주문 상품 이미지" style="width: 100px; height: 100px;">
+													</td>
+													<td style="width: 395px; border: none; border-bottom: none; padding: 0; vertical-align: middle;">
+														<strong>{상품명 모두 노출상품명 모두 노출상품명 모두 노출상품명 모두 노출상품명 모두 노출}</strong>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 120px;">제목</th>
+										<td style="width: 560px;">
+											<strong>{제목 노출}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 120px;">문의 내용</th>
+										<td style="width: 560px;">
+											<strong>{문의내용 모두 노출}</strong>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 60px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="info-table">
+									<tr>
+										<td style="width: 240px;height: 60px;"></td>
+										<td style="width: 200px;height: 60px;">
+											<a href="#" target="_blank">
+												<img src="{{base}}/img/email/btn-skinnylab01.png" alt="답변 보러 가기" style="width: 200px; height:60px;">
+											</a>
+										</td>
+										<td style="width: 240px;height: 60px;"></td>
+									</tr>	
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td style="width: 60px;"></td>
+			</tr>
+			{{ include('./notice.html') }}
+		</table>
+	</td>
+</tr>
+{%- endblock %}

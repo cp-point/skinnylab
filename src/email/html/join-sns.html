@@ -1,0 +1,124 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '회원가입을 축하드립니다.',
+		BI: 'logo2'
+	}
+%}
+
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<tr>
+	<td>
+		<table class="email-common-container" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width: 60px;"></td>
+				<td class="container-wrap">
+					<table class="page-content" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="txt com-txt1">
+								{{pageInfo.title}}
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt2">
+								<strong>고객명님</strong>의,<br> 
+								헬스밸런스 통합멤버십 회원가입을 축하드립니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 30px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt4">
+								다양한 상품정보와 함께 언제나 만족스런 쇼핑을 하실 수 있도록<br>
+								최선을 다하는 <strong class="color01">{브랜드명}</strong>이 되겠습니다.<br><br>
+								항상 새롭고 신선한 뉴스와 이벤트로 고객님의 알찬 쇼핑을 제안하고자<br>
+								더욱 열심히 노력하겠습니다.<br><br>
+								SNS로 가입하신 회원님의 경우, SNS 간편 로그인에서<br>
+								가입하신 SNS로 로그인하셔야 합니다.<br><br>
+
+								감사합니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 58px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>회원가입정보</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 125px;">가입 아이디</th>
+										<td style="width: 305px;">
+											<strong>회원아이디</strong>
+										</td>
+										<td style="width: 250px;"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>광고성 정보 수신동의 여부</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 125px;">SMS</th>
+										<td style="width: 305px;">
+											<strong>동의상태</strong>
+										</td>
+										<td class="data color02" style="width: 250px;">
+											설정변경일: {회원가입일}
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 125px;">이메일</th>
+										<td style="width: 305px;">
+											<strong>동의상태</strong>
+										</td>
+										<td class="data color02" style="width: 250px;">
+											설정변경일: {회원가입일}
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 125px;">전화(상담)</th>
+										<td style="width: 305px;">
+											<strong>동의상태</strong>
+										</td>
+										<td class="data color02" style="width: 250px;">
+											설정변경일: {회원가입일}
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td style="width: 60px;"></td>
+			</tr>
+			{{ include('./notice.html') }}
+		</table>
+	</td>
+</tr>
+{%- endblock %}

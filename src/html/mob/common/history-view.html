@@ -1,0 +1,79 @@
+{%
+	set pageInfo = {
+		section: 'common',
+		title: '최근 본 상품',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-history">
+	
+	<div class="container-wrap">
+		<div class="history-view">
+			<div class="wrap">
+				<div class="head">
+					<p class="count">
+						전체
+						<span class="num">
+							8
+						</span>
+						개
+					</p>
+					<div class="action">
+						<button type="button" class="btn small outline2">전체삭제</button>
+					</div>
+				</div>
+				<div class="body">
+					<ul class="list">
+						{% for i in range(1, 4) %}
+						<li>
+							<a href="#">
+								<figure class="prod-row-item">
+									<span class="img">
+										<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+									</span>
+									<figcaption class="content">
+										<div class="title">
+											[NIGHT패키지] 래피드 솔루션 다이어트
+											4주분+이지슬리밍 잔티젠 다이어트 4주분
+											[NIGHT패키지] 래피드 솔루션 다이어트
+											4주분+이지슬리밍 잔티젠 다이어트 4주분
+										</div>
+										<div class="utility">
+											<div class="price">
+												<span class="rate">
+													<span class="hide">할인율</span>
+													<strong>37%</strong>
+												</span>
+												<span>
+													<strong>19,800</strong>원
+												</span>
+											</div>
+										</div>
+									</figcaption>
+								</figure>
+							</a>
+						</li>
+						{% endfor %}
+						<li class="empty">
+							<div class="result-txt is-error">
+								<p class="com-txt">최근 본 상품이 없습니다.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+{%- endblock %}

@@ -1,0 +1,116 @@
+// 달력 재정의
+.ui-datepicker {
+	margin-top: -1px;
+	@include size(325px,314px);
+	padding: 20px 25px 25px;
+	box-sizing: border-box;
+	border-radius: 0;
+	box-shadow: 0 8px 6px -6px rgba(134,135,138,.48);
+	&.ui-widget.ui-widget-content {
+		border-color: $line-color1;
+	}
+	.ui-datepicker-title {
+		@include font(20px,$bold);
+		margin: 0;
+		font-family: 'Apple SD Gothic Neo', Poppins, sans-serif;
+		.ui-datepicker-year {
+			position: relative;
+			margin-right: 15px;
+			margin-left: -10px;
+			line-height: 1;
+			&::after {
+				@include before-after();
+				content: '년';
+				top: 6px;
+				@include font(16px,$medium);
+			}
+		}
+		.ui-datepicker-month {
+			position: relative;
+			line-height: 1;
+			&::after {
+				@include before-after();
+				content: '월';
+				top: 6px;
+				@include font(16px,$medium);
+			}
+		}
+	}
+	.ui-widget-header {
+		width: 70%;
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		background: #fff;
+		.ui-datepicker-prev,
+		.ui-datepicker-next {
+			span { margin-top: -5px; }
+			&.ui-state-hover {
+				border: none;
+				background: none;
+				top: 2px;
+				cursor: pointer;
+			}
+		}
+		.ui-datepicker-prev.ui-state-hover {
+			left: 2px;
+		}
+		.ui-datepicker-next.ui-state-hover {
+			right: 2px;
+		}
+		.ui-icon {
+			@include size(16px,16px);
+			background: url('@@img/mob/common/icon-calendar-arrow.png') no-repeat;
+			background-position: 0 0;
+			&.ui-icon-circle-triangle-e {
+				transform: rotate(180deg);
+			}
+		}
+	}
+	.ui-datepicker-calendar {
+		font-family: 'Apple SD Gothic Neo', Poppins, sans-serif;
+		th {
+			@include font(12px,$medium);
+			color: #6e6e72;
+			&.ui-datepicker-week-end:first-child { color: #e63030; }
+		}
+		td {
+			padding: 1px 0;
+			a, span {
+				display: block;
+				margin: 0 auto;
+				padding: 0;
+				box-sizing: border-box;
+				@include size(32px,32px);
+				line-height: 28px;
+				font-size: 14px;
+				text-align: center;
+				border: none;
+				background: none;
+				&:hover {
+					border: none;
+					background: none;
+				}
+				&.ui-state-active {
+					color: $text-color1;
+					border: 2px solid $line-color1;
+					border-radius: 100%;
+				}
+				&.ui-state-highlight.ui-state-active {
+					color: $text-color1;
+					background: #ffe3de;
+					border-radius: 100%;
+					border: 1px solid #ffe3de;
+				}
+			}
+		}
+	}
+}
+
+#ui-datepicker-div {
+	position: fixed !important;
+	left: 50% !important;
+	top: 50% !important;
+	z-index: 9999 !important;
+	transform: translate(-50%,-50%);
+}

@@ -1,0 +1,515 @@
+{%
+	set pageInfo = {
+		section: 'bulletin',
+		title: '상품리뷰',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-review-list">
+	<div class="page-head">
+		<h2 class="hide">상품리뷰</h2>
+	</div>
+
+	<!-- // HTML 영역 -->
+	<div class="html-area">
+		내용
+	</div>
+	<!-- HTML 영역 // -->
+
+	<!-- 베스트 리뷰// -->
+	<div class="best-review">
+		<div class="wrap">
+			<p class="title">이달의 Best Review로<br>선정되었어요!</p>
+			<div class="review-list-swiper swiper-container">
+				<ul class="review-list type2 swiper-wrapper">
+					{% for i in range(1, 8) -%}
+					<li class="wrap swiper-slide">
+						<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+							<figure class="review-item">
+								<div class="img">
+									<img src="{{base}}/img/mob/@dummy/review-thumb-img0{{i}}.jpg" alt="">
+									<span class="photo-num">5</span>
+									<span class="flag">
+										<span>Best</span>
+										<span class="num">0{{i}}</span>
+									</span>
+								</div>
+								<figcaption class="content">
+									<div class="point">
+										<em>4.8</em>
+										<p class="grade-star h14">
+											<span class="fill" style="width: 80%;">4점</span>
+										</p>										
+									</div>
+									<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+									<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 상 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 상</p>
+									<p class="name">홍*동</p>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //베스트 리뷰 -->
+
+	<!-- 상품리뷰쓰기 // -->
+	<p class="review-write">
+		<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-review-write.html'}); return false;">상품리뷰쓰기</button>
+	</p>
+	<!-- // 상품리뷰쓰기 -->
+
+	<!-- 탭 리스트 // -->
+	<div class="tab-group-wrap">
+		<div class="tab-menu">
+			<div class="wrap">
+				<ul class="list tab-menu-box">
+					<li class="is-active tab">
+						<button type="button">전체</button>
+					</li>
+					<li class="tab">
+						<button type="button">다이어트</button>
+					</li>
+					<li class="tab">
+						<button type="button">이너뷰티</button>
+					</li>
+					<li class="tab">
+						<button type="button">뉴트리션</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<form action="about:blank" method="get" class="search-box">
+				<div class="search js-text-clear">
+					<label for="search1" class="hide">검색</label>
+					<input type="text" id="search1" name="search1" value="" placeholder="검색어를 입력하세요." class="input">
+					<button type="button" class="btn-clear">입력값 지우기</button>
+					<button type="button" class="btn-submit">검색하기</button>
+				</div>
+			</form>
+			<div class="board-head">
+				<div class="wrap">
+					<div class="filter">
+						<button type="button" class="active">
+							전체
+							<span class="count">
+							153
+							</span>
+						</button>
+					</div>
+					<div class="action">
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">전체</option>
+								<option value="">일반리뷰</option>
+								<option value="">포토리뷰</option>
+								<option value="">한달리뷰</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">최신순</option>
+								<option value="">별점 높은 순</option>
+								<option value="">별점 낮은 순</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<ul class="review-list">
+				{% for i in range(0, 20) -%}
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img01.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img02.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="result-txt is-error">
+					<p class="com-txt">검색 결과가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<form action="about:blank" method="get" class="search-box">
+				<div class="search js-text-clear">
+					<label for="search2" class="hide">검색</label>
+					<input type="text" id="search2" name="search2" value="" placeholder="검색어를 입력하세요." class="input">
+					<button type="button" class="btn-clear">입력값 지우기</button>
+					<button type="button" class="btn-submit">검색하기</button>
+				</div>
+			</form>
+			<div class="board-head">
+				<div class="wrap">
+					<div class="filter">
+						<button type="button" class="active">
+							전체
+							<span class="count">
+							153
+							</span>
+						</button>
+					</div>
+					<div class="action">
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">전체</option>
+								<option value="">일반리뷰</option>
+								<option value="">포토리뷰</option>
+								<option value="">한달리뷰</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">최신순</option>
+								<option value="">별점 높은 순</option>
+								<option value="">별점 낮은 순</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<ul class="review-list">
+				{% for i in range(0, 20) -%}
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img03.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img04.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="result-txt is-error">
+					<p class="com-txt">검색 결과가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<form action="about:blank" method="get" class="search-box">
+				<div class="search js-text-clear">
+					<label for="search3" class="hide">검색</label>
+					<input type="text" id="search3" name="search3" value="" placeholder="검색어를 입력하세요." class="input">
+					<button type="button" class="btn-clear">입력값 지우기</button>
+					<button type="button" class="btn-submit">검색하기</button>
+				</div>
+			</form>
+			<div class="board-head">
+				<div class="wrap">
+					<div class="filter">
+						<button type="button" class="active">
+							전체
+							<span class="count">
+							153
+							</span>
+						</button>
+					</div>
+					<div class="action">
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">전체</option>
+								<option value="">일반리뷰</option>
+								<option value="">포토리뷰</option>
+								<option value="">한달리뷰</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">최신순</option>
+								<option value="">별점 높은 순</option>
+								<option value="">별점 낮은 순</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<ul class="review-list">
+				{% for i in range(0, 20) -%}
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img05.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img06.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="result-txt is-error">
+					<p class="com-txt">검색 결과가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<form action="about:blank" method="get" class="search-box">
+				<div class="search js-text-clear">
+					<label for="search4" class="hide">검색</label>
+					<input type="text" id="search4" name="search4" value="" placeholder="검색어를 입력하세요." class="input">
+					<button type="button" class="btn-clear">입력값 지우기</button>
+					<button type="button" class="btn-submit">검색하기</button>
+				</div>
+			</form>
+			<div class="board-head">
+				<div class="wrap">
+					<div class="filter">
+						<button type="button" class="active">
+							전체
+							<span class="count">
+							153
+							</span>
+						</button>
+					</div>
+					<div class="action">
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">전체</option>
+								<option value="">일반리뷰</option>
+								<option value="">포토리뷰</option>
+								<option value="">한달리뷰</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">최신순</option>
+								<option value="">별점 높은 순</option>
+								<option value="">별점 낮은 순</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<ul class="review-list">
+				{% for i in range(0, 20) -%}
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img07.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li class="wrap">
+					<a href="#" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+						<figure class="review-item">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img08.jpg" alt="">
+								<span class="photo-num">5</span>
+							</div>
+							<figcaption class="content">
+								<div class="point">
+									<em>4.5</em>
+									<p class="grade-star h14">
+										<span class="fill" style="width: 80%;">4점</span>
+									</p>
+								</div>
+								<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐 행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐</p>
+								<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약</p>
+								<p class="name">홍*동</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="result-txt is-error">
+					<p class="com-txt">검색 결과가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 탭 리스트 -->
+</div>
+
+<script>
+	$(function() {
+		var bestReviewSwiper = new Swiper('.best-review .swiper-container', {
+			allowTouchMove: true,
+			slidesPerView: 1.8,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 30,
+			breakpoints: {
+				768: {
+					slidesPerView: 3.5,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 5,
+				}
+			}
+		});
+	});
+</script>
+{%- endblock %}

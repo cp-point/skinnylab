@@ -1,0 +1,120 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '회원가입',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-join">
+	
+	<div class="container-wrap">
+		<div class="page-top-desc">
+			<div class="com-txt">
+				가입방법을 <strong>선택 후 진행</strong>해주세요.
+			</div>
+		</div>
+		<div class="self-auth-wrap">
+			<p class="com-txt title">헬스밸런스 통합 회원</p>
+			<div class="com-txt3">
+				헬스밸런스 통합회원 가입 후<br>
+				<strong>다양한 서비스와 혜택을 이용</strong>해보세요.
+			</div>
+			<div class="btn-group center">
+				<button type="button" class="btn large primary block">휴대폰 본인인증</button>
+			</div>
+		</div>
+		
+		<div class="sns-login">
+			<p class="section-sub-tit">SNS 간편 회원가입</p>
+			<div class="caution com-txt5">
+				SNS 계정을 연동하여 빠르고 쉽고 안전하게 회원가입<br>
+				할 수 있습니다.<br>
+				이 과정에서 고객님의 데이터는 철저하게 보호됩니다.
+			</div>
+			<div class="btn-group between">
+				<button type="button" class="sns-btn kakao"><span class="hide">카카오</span></button>
+				<button type="button" class="sns-btn naver"><span class="hide">네이버</span></button>
+				<button type="button" class="sns-btn google"><span class="hide">구글</span></button>
+			</div>
+		</div>
+
+		<!-- 통합회원전환 팝업 // -->
+		<article id="popup-noti-membership" data-motion-in="1000" data-motion-out="1000" class="common-popup bottom" style="display: none;">
+			<div class="common-popup-inner popup-noti-membership">
+				<div class="header">
+					<h1 class="title">
+						통합회원전환
+					</h1>
+				</div>
+				<div class="container">
+					<div class="noti-membership">
+						<div class="banner">
+							<div class="img">
+								<a href="#" title="통합회원 전환하기">
+									<img src="{{base}}/img/mob/member/existing-membership-img01.jpg" alt="2021년 10월 7일부터 고객님의 기존 스키니랩 ID사용이 제한되며, 헬스밸런스 통합회원 ID와 비밀번호로만 서비스를 이용하실 수 있습니다.">
+								</a>
+							</div>
+						</div>
+						<div class="btn-group row">
+							<button type="button" class="btn-cookie"><span>오늘 하루 보지 않기</span></button>
+							<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<script>
+			// 쿠키
+			function setCookie(name, value, expiredays){
+				var today = new Date();
+
+				today.setDate(today.getDate() + expiredays);
+				document.cookie = name + '=' + escape(value) + '; expires=' + today.toGMTString();
+			}
+
+			function getCookie(name) {
+				var cookie = document.cookie;
+
+				if (document.cookie != "") {
+					var cookie_array = cookie.split("; ");
+
+					for ( var index in cookie_array) {
+						var cookie_name = cookie_array[index].split("=");
+
+						if (cookie_name[0] == "skinnylabExistingMembership") return cookie_name[1];
+					}
+				}
+
+				return;
+			}
+
+			$("#popup-noti-membership .btn-cookie").click(function() {
+				UI.closeLayerPop('#popup-noti-membership');
+				setCookie("skinnylabExistingMembership", 'popupEnd', 1);
+			});
+
+			var checkCookie = getCookie("skinnylabExistingMembership");
+
+			if(checkCookie == 'popupEnd') {
+				$("#popup-noti-membership").removeClass('is-layer');
+				$('html').removeClass('scroll-fixed');
+			} else {
+				UI.showLayerPop('#popup-noti-membership');
+			}
+		</script>
+		<!-- // 통합회원전환 팝업 -->
+	</div>
+</div>
+{%- endblock %}

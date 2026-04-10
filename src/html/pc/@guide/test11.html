@@ -1,0 +1,44 @@
+{%
+	set pageInfo = {
+		section: 'news',
+		title: 'Depth2 &lt; Depth1',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-news newws-list">
+	<input type="radio" id="radioSample1" name="radioSample" checked>
+	<label for="radioSample1">옵션1</label>
+	<input type="radio" id="radioSample2" name="radioSample">
+	<label for="radioSample2">옵션2</label>
+	<input type="radio" id="radioSample3" name="radioSample">
+	<label for="radioSample3">옵션3</label>
+	<br><br><br><br><br><br>
+	<input type="checkbox" name="checkSample" id="checkSample1" checked>
+	<label for="checkSample1">옵션1</label>
+	<input type="checkbox" name="checkSample" id="checkSample2">
+	<label for="checkSample2">옵션2</label>
+	<input type="checkbox" name="checkSample" id="checkSample3">
+	<label for="checkSample3">옵션3</label>
+	<br><br><br><br><br><br>
+	<input type="radio" id="radioSample21" name="radioSamplee" class="radio" checked>
+	<label for="radioSample1">옵션1</label>
+	<input type="radio" id="radioSample22" name="radioSamplee" class="radio">
+	<label for="radioSample2">옵션2</label>
+	<input type="radio" id="radioSample23" name="radioSamplee" class="radio" checked>
+	<label for="radioSample1">옵션1</label>
+	<input type="radio" id="radioSample24" name="radioSamplee" class="radio">
+	<label for="radioSample2">옵션2</label>
+	<br><br><br><br><br><br>
+	<input type="checkbox" name="checkSamplee" id="checkSamplee1" class="check" checked>
+	<label for="checkSample1">옵션1</label>
+	<input type="checkbox" name="checkSamplee" id="checkSamplee2" class="check">
+	<label for="checkSample2">옵션2</label>
+	<input type="checkbox" name="checkSamplee" id="checkSamplee3" class="check">
+	<label for="checkSample3">옵션3</label>
+</div>
+<!-- // Content -->
+{%- endblock %}

@@ -1,0 +1,144 @@
+.common-footer {
+	background-color: $primary-color;
+	color: #fff;
+	box-sizing: border-box;
+	& > .wrap {
+		width: calc(100% - 40px);
+		max-width: 480px;
+		margin: 0 auto;
+		padding: 40px 0 30px;
+	}
+	.footer-menu {
+		display: flex;
+		justify-content: space-between;
+		a {
+			@include font(14px,$bold);
+		}
+	}
+	.utility {
+		position: relative;
+		margin: 22px 0 0;
+		.contact {
+			width: 190px;
+			.tel {
+				@include font(28px,$bold);
+				
+			}
+			.time {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				margin: 5px 0 0;
+				dt,
+				dd { width: 50%; }
+				dd { text-align: right; }
+			}
+			.notice {
+				margin: 10px 0 0;
+				color: #c1c1c3;
+				@include font(12px, $regular);
+			}
+		}
+		
+		.dropdown {
+			position: absolute;
+			top: 0;
+			right: 0;
+			min-width: 120px;
+			height: 30px;
+			.title .btn-open {
+				font-size: 14px;
+				line-height: 30px;
+				padding: 0 18px 0 2px;
+				border-bottom: 1px solid #fff;
+				&::after {
+					top: 4px;
+					right: 2px;
+					background-image: url('@@img/mob/common/arrow-dropdown-ghost-footer.png');
+					background-size: 14px 10px;
+				}
+			}
+			.content {
+				top: 32px;
+				.list {
+					padding: 5px 0;
+					a {
+						font-size: 14px;
+						line-height: 30px;
+					}
+				}
+			}
+		}
+	}
+
+	.logo {
+		@include size(154px,22px);
+		margin: 25px 0 0;
+		background: url("@@img/mob/common/logo-footer.png") 0 0 no-repeat;
+		background-size: cover;
+	}
+
+	.info {
+		margin: 12px 0 0;
+		@include font(12px,$regular);
+		color: #c1c1c3;
+		address {
+			margin-bottom: 3px;
+			font-weight: $medium;
+			letter-spacing: -.02em;
+		}
+		dl {
+			dt,
+			dd {
+				display: inline-block;
+				font-weight: $medium;
+			}
+			dt { letter-spacing: -.02em; }
+			dd {
+				letter-spacing: .015em;
+				& + dt { margin-left: 12px; }
+			}
+			& + dl { margin-top: 3px; }
+			& + address { margin-top: 3px; }
+		}
+		.btn-info {
+			position: relative;
+			color: #fff;
+			height: 16px;
+			&::after {
+				@include before-after();
+				top: 50%;
+				right: -15px;
+				margin-top: -6px;
+				transform: rotate(-90deg);
+				@include size(13px,13px);
+				background: url("@@img/mob/common/arrow-dropdown-ghost.png") 0 0 no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+	.service {
+		margin: 20px 0 0;
+		@include font(12px,$regular);
+		color: #c1c1c3;
+		letter-spacing: -.06em;
+	}
+
+	.btn-group {
+		display: flex;
+		justify-content: space-between;
+		margin: 12px 0 0;
+		a {
+			position: relative;
+			@include font(12px,$regular);
+			color: #c1c1c3;
+			&::after {
+				@include before-after();
+				left: 0;
+				bottom: 0;
+				@include size(100%,1px);
+				background-color: #c1c1c3;
+			}
+		}
+	}
+}

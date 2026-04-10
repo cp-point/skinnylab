@@ -1,0 +1,28 @@
+{% macro include(fileName) -%}
+	{% include fileName ignore missing -%}
+{% endmacro -%}
+<!DOCTYPE html>
+<html lang="ko">
+{{ include('./head.html') }}
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+
+	<div class="wrapper">
+		<!-- Header // -->
+		{{ include('./header.html') }}
+		<!-- // Header -->
+
+		<!-- Content // -->
+		{% block content -%}{%- endblock %}
+		<!-- // Content -->
+
+		<!-- Footer // -->
+		{{ include('./footer.html') }}
+		<!-- // Footer -->
+
+		<!-- Floating Menu // -->
+		{{ include('./floating-menu.html') }}
+		<!-- // Floating Menu -->
+	</div>
+</body>
+</html>

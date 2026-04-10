@@ -1,0 +1,74 @@
+.file-upload {
+	.input {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.input-file { @include hidden; }
+
+		.btn-area { float: left; }
+
+		.info {
+			float: left;
+			display: table;
+			max-width: calc(100% - 90px);
+
+			.title {
+				box-sizing: border-box;
+				display: table-cell;
+				height: 36px;
+				line-height: 1.4;
+				padding: 2px 14px;
+				color: #b3b3b3;
+				font-family: 'Apple SD Gothic Neo', 'Poppins';
+				font-weight: 300;
+				font-size: 16px;
+				word-wrap: break-word;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.list {
+		margin-top: 12px;
+
+		.file {
+			margin-top: 8px;
+
+			&:first-child { margin-top: 0; }
+		}
+
+		.info {
+			display: inline-block;
+			padding-right: 34px;
+			text-align: left;
+			position: relative;
+		}
+
+		.title {
+			float: left;
+			color: #666;
+			font-family: 'Apple SD Gothic Neo', 'Poppins';
+			font-weight: 500;
+			font-size: 14px;
+		}
+
+		.btn-file-del {
+			float: left;
+			width: 30px;
+			height: 0;
+			max-height: 0;
+			padding-top: 30px;
+			margin-top: -4px;
+			overflow: hidden;
+			background: url('@@img/mob/common/btn-file-del.png') no-repeat;
+			background-size: 10px 10px;
+			background-position: center center;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+}

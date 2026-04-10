@@ -1,0 +1,168 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 재입고 알림 신청 // -->
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popupRestockNotificationRegister" class="common-popup">
+	<div class="common-popup-inner popup-restock-notification-register">
+		<div class="header">
+			<h1 class="title">
+				재입고 알림 신청
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="notification-register">
+				<h2 class="title">
+					<span class="sub">상품명</span>
+					<span class="main">
+						[브랜드명] 애플페논 풋사과 다이어트 젤리 
+					</span>
+				</h2>
+				<div class="content">
+					<dl class="input-row">
+						<dt class="tit">
+							알림선택
+						</dt>
+						<dd class="con">
+							<span class="input-radio-text">
+								<input type="radio" id="noti1" name="noti" class="radio" checked>
+								<label for="noti1">휴대폰 번호</label>
+								<input type="text" id="userPhone" name="userPhone" value="" placeholder="'-' 없이 숫자만 입력해주세요." class="text">
+							</span>
+						</dd>
+						<dd class="con">
+							<span class="input-radio-text">
+								<input type="radio" id="noti2" name="noti" class="radio">
+								<label for="noti2">이메일</label>
+								<input type="text" id="userEmail" name="userEmail" value="" placeholder="이메일을 입력해주세요." class="text" disabled>
+							</span>
+						</dd>
+					</dl>
+				</div>
+				<ul class="add-list">
+					<li>재입고 알림 신청일로부터 최대 1개월 이내 재 입고가 될 경우 알림이 발송됩니다.</li>
+					<li>재입고 알림은 먼저 신청한 순서대로 발송되며, 재 입고 알림을 받았더라도 구매 시점에 따라 품절이 발생할 수 있습니다.</li>
+					<li>재입고 알림 신청은 마이페이지 &gt; 나의 활동 내역 &gt; 재입고 알림 신청내역 메뉴에서 확인하실 수 있습니다.</li>
+				</ul>
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<a href="#" class="btn large outline primary cancel motion">
+						<span>취소</span>
+					</a>
+					<a href="#" class="btn large primary submit motion">
+						<span>신청</span>
+					</a>
+				</div>
+			</div>
+			<div class="product-thumbnail">
+				<p class="title">품절 상품과 관련 있는 상품은 어떠세요?</p>
+				<div class="list swiper-container">
+					<ul class="inner swiper-wrapper">
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="wrap">
+										<div class="img">
+											<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="이너컷 오버엑스 레몬밤 다이어트 2개월분">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												이너컷 오버엑스 레몬밤 다이어트 2개월분
+											</p>
+											<p class="price">
+												<span class="hide">가격</span>
+												<span class="con">
+													<span class="num">
+														128,600
+													</span>
+													<span class="won">원</span>
+												</span>
+											</p>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="wrap">
+										<div class="img">
+											<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="이너컷 오버엑스 레몬밤 다이어트 2개월분">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												더블케어 프로바이오 다이어트 14포 X 2박스 4부준
+											</p>
+											<p class="price">
+												<span class="hide">가격</span>
+												<span class="con">
+													<span class="num">
+														128,600
+													</span>
+													<span class="won">원</span>
+												</span>
+											</p>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="wrap">
+										<div class="img">
+											<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="이너컷 오버엑스 레몬밤 다이어트 2개월분">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												이너컷 오비엑스 레몬밤 다이어트
+											</p>
+											<p class="price">
+												<span class="hide">가격</span>
+												<span class="con">
+													<span class="num">
+														128,600
+													</span>
+													<span class="won">원</span>
+												</span>
+											</p>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="action">
+					<div class="play">
+						<div class="btn-prev swiper-button-prev"></div>
+						<div class="btn-next swiper-button-next"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+
+<script>
+	var preoductThumbnailSwiper = new Swiper('.product-thumbnail .swiper-container', {
+			autoplay: false,
+			speed: 1000,
+			loop: true,
+			slidesPerView: 3,
+			slidesPerGroup: 3 ,
+			initialSlide: 0,
+			spaceBetween: 30,
+			allowTouchMove: false,
+			navigation: {
+				nextEl: '.product-thumbnail .swiper-button-next',
+				prevEl: '.product-thumbnail .swiper-button-prev',
+			}
+		});
+</script>
+<!-- // 재입고 알림 신청 -->
+{%- endblock %}

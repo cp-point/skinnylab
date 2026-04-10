@@ -1,0 +1,884 @@
+// 고객센터 공통
+.section-customer {
+	padding-top: 70px;
+	.main-wrap {
+		width: calc(100% - 40px);
+		margin: 0 auto;
+	}
+	
+	.intergrated-search {
+		text-align: center;
+		.search-box {
+			width: 100%;
+			margin: 0 auto;
+			padding: 20px 0 28px;
+			.search {
+				.input {
+					width: 100%;
+					padding: 0 68px 0 6px;
+					@include font(22px,$bold);
+					letter-spacing: -.03em;
+				}
+				.btn-clear {
+					width: 38px;
+					right: 32px;
+					&::after {
+						@include size(22px,22px);
+					}
+				}
+			}
+		}
+	
+		.result {
+			margin-bottom: 24px;
+			@include font(16px,$bold);
+			.str {
+				color: $secondary-color1;
+			}
+		}
+	}
+
+	.empty {
+		width: 100%;
+		margin: 0 auto;
+		padding: 130px 0;
+		&::before {
+			display: block;
+			content: '';
+			@include size(70px, 70px);
+			margin: 0 auto 25px;
+			background: url('@@img/mob/common/icon-error-2.png') no-repeat;
+			background-size: cover;
+		}
+		.desc {
+			@include font(20px,$extra-bold);
+			text-align: center;
+		}
+	}
+
+	.tab-button {
+		.tab-swiper {
+			padding-bottom: 28px;
+			.swiper-slide { width: auto; }
+		}
+		.list {
+			justify-content: flex-start;
+		}
+		li {
+			margin: 0 5px 0 0;
+			a {
+				@include font(14px,$extra-bold);
+				padding: 9px 24px;
+			}
+		}
+	}
+
+	.accordion-list {
+		& > .item {
+			letter-spacing: -.03em;
+
+			&.on {
+				& > .title {
+					background-color: #fff;
+				}
+			}
+
+			.title {
+				&::before { left: 4px; }
+				a {
+					padding: 20px 59px 20px 38px;
+					@include font(14px,$regular);
+					word-break: keep-all;
+				}
+			}
+
+			.content {
+				.txt {
+					padding: 18px 5px 18px 40px;
+					color: $text-color2;
+					&::before { 
+						top: 13px;
+						left: 8px;
+					}
+				}
+			}
+		}
+	}
+
+	.btn-group {
+		margin-top: 28px;
+	}
+
+	.add-explain {
+		margin: 14px 0 0 10px;
+		@include font(12px,$light);
+		li {
+			position: relative;
+			color: #828287;
+			&::before {
+				position: absolute;
+				@include before-after();
+				top: 6px;
+				left: -10px;
+				@include size(3px,3px);
+				border-radius: 100px;
+				background: #222;
+			}
+		}
+		a {
+			display: inline-block;
+			padding-right: 10px;
+			line-height: 17px;
+			color: #353537;
+			font-weight: 800;
+			background: url('@@img/mob/common/arrow-landing.png') right 5px no-repeat;
+			background-size: 6px 8px;
+		}
+	}
+
+	.board-list {
+			
+		.item {
+			padding: 18px 2px;
+			border-bottom: 1px solid #eaeaeb;
+			&:first-child { border-top: 1px solid #353537; }
+
+			dt {
+				display: -webkit-inline-box;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				@include font(14px,$regular);
+			}
+			dd {
+				padding-top: 8px;
+				@include font(12px,$light);
+				color: $text-color3;
+			}
+
+			.type { font-weight: $extra-bold; }
+		}
+	}
+
+	.str { color: $secondary-color1; }
+	.emphasis {
+		display: inline-block;
+		transform: translate(3px,-6px);
+		@include size(4px,4px);
+		border-radius: 100px;
+		background: $secondary-color1;
+	}
+}
+
+//faq
+.customer-faq {}
+
+//고객센터
+.customer-service-center {
+	.question {
+		display: flex;
+		flex-direction: row;
+		@include size(100%,auto);
+		min-height: 160px;
+		border: 2px solid #f4f4f6;
+		box-sizing: border-box;
+		text-align: center;
+	
+		a {
+			position: relative;
+			display: block;
+			@include size(50%,100%);
+			@include font(18px,$bold);
+
+			&::before {
+				display: block;
+				content: '';
+				@include size(70px,70px);
+				margin: 25px auto 15px;
+				border-radius: 50%;
+			}
+
+			&:first-child {
+				&::before { background: url('@@img/mob/common/icon-question.png') center center/40% no-repeat #f4f4f6; }
+				
+				&::after {
+					@include before-after();
+					@include size(1px,120px);
+					background-color: #eaeaeb;
+					top: 55%;
+					right: 0;
+					transform: translateY(-50%);
+				}
+			}
+
+			&:last-child {
+				&::before { background: url('@@img/mob/common/icon-review.png') center center/40% no-repeat #f4f4f6; }
+			}
+
+			span { font-weight: $extra-bold; }
+		}
+	}
+
+	.center-info {
+		margin-top: 50px;
+
+		&:last-child {
+			color: $text-color1;
+
+			.contact {
+				position: relative;
+				width: 100%;
+
+				.title {
+					@include font(22px,$extra-bold);
+					margin-bottom: 24px;
+				}
+
+				dd {
+					&.phone { @include font(40px,$bold,1); }
+
+					&.email {
+						margin: 8px 0 14px;
+
+						a {
+							@include font(20px,$bold);
+							border-bottom: 1px solid $line-color1;
+						}
+					}
+
+					&.time { @include font(14px,$medium); }
+				}
+			}
+
+
+		}
+
+
+	}
+}
+
+//팝업 1:1 답변확인
+.popup-qna-answer-confirm {
+	.common-popup > & {
+		& > .container { padding-top: 40px; }
+	}
+	.head {
+		strong {
+			border-bottom: 1px solid #222;
+		}
+	}
+	.add-list {
+		@include font(12px,$light);
+		li {
+			position: relative;
+			margin: 14px 0 0 10px;
+			color: #828287;
+			&::before {
+				position: absolute;
+				@include before-after();
+				top: 6px;
+				left: -10px;
+				@include size(3px,3px);
+				border-radius: 100px;
+				background: #222;
+			}
+		}
+	}
+	.body {
+		margin-top: 28px;
+		label {
+			margin-right: 20px;
+			font-weight: $medium;
+		}
+		.title {
+			margin-top: 14px;
+			& > label {
+				position: relative;
+				&::after {
+					position: absolute;
+					@include before-after();
+					top: 5px;
+					right: -5px;
+					@include size(4px,4px);
+					border-radius: 100px;
+					background: $secondary-color1;
+				}
+			}
+		}
+		.content { margin-top: 10px; }
+
+	}
+	.foot {
+		.btn-group {
+			.btn {
+				&:first-child { flex: 1; }
+				&:last-child { flex: 2; }
+			}
+		}
+	}
+}
+
+//1:1문의
+.customer-qna-write {
+	.board-write {
+		.row {
+			margin-top: 18px;
+			&.content { margin-top: 10px; }
+			dt { margin-bottom: 8px; }
+			dd {
+				& > .input-radio-text {
+					width: auto;
+					margin-bottom: 10px;
+					input.radio + label { width: 105px; }
+					input[type='text'] { width: 100%; }
+				}
+			}
+		}
+		.type-wrap {
+			.select-wrap { width: 100%; }
+			.btn-wrap {
+				display: flex;
+				margin-top: 10px;
+				button {
+					flex: 1;
+					font-weight: $extra-bold;
+				}
+			}
+			.add-explain { margin: 8px 12px 0; }
+		}
+		.view-wrap {
+			.view {
+				position: relative;
+				width: 100%;
+				margin-top: 10px;
+				padding: 14px 10px;
+				border: 1px solid #eaeaeb;
+				box-sizing: border-box;
+				@include font(12px,$medium);
+
+				.btn-close {
+					position: absolute;
+					top: 12px;
+					right: 12px;
+					@include size(10px,10px);
+					background: url('@@img/mob/common/btn-option-close.png') no-repeat;
+					background-size: 10px 10px;
+					text-indent: -99999px;
+				}
+
+				.order-wrap {
+					padding-bottom: 10px;
+					border-bottom: 1px solid #eaeaeb;
+					color: $text-color1;
+				}
+
+				.product-list {
+					.product-item {
+						figure {
+							display: flex;
+							margin: 10px 0 0 10px;
+
+							.img {
+								@include size(80px,80px);
+								background-color: #f4f4f6;
+								flex-shrink: 0;
+								margin-right: 10px;
+
+								img { width: 100%; }
+							}
+
+							.content {
+								width: calc(100% - 90px);
+								.title {
+									color: $text-color1;
+
+									.sub {
+										display: block;
+										font-size: 12px;
+										margin-bottom: 5px;
+									}
+
+									.main {
+										@include font(14px,$bold);
+										font-weight: $bold;
+										letter-spacing: -.4px;
+									}
+								}
+
+								.option {
+									display: flex;
+									justify-content: flex-start;
+									font-size: 12px;
+									margin-top: 5px;
+
+									.tit {
+										position: relative;
+										padding-right: 10px;
+										margin-right: 10px;
+
+										&::after {
+											@include size (1px,12px);
+											@include before-after();
+											background-color: $line-color2;
+											top: -3px;
+											right: 0;
+											margin-top: 6px;
+										}
+									}
+
+									.desc {
+										width: 170px;
+										color: $text-color1;
+									}
+								}
+
+								.num {
+									margin-top: 18px;
+									@include font(14px,$extra-bold);
+									color: $text-color1;
+
+									.price { margin-left: 20px; }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.editor {
+			.character { @include font(12px,400); }
+		}
+		
+		.image-upload {
+			margin-top: 10px;
+
+			.list {
+				li,
+				.item {
+					.file {
+						position: relative;
+
+						.input {
+							@include size(62px,62px);
+							background: url('@@img/mob/common/btn-add-image.png') no-repeat center center/40% #f4f4f6;
+
+							.input-file {
+								@include size(100%,100%);
+								text-indent: -99999px;
+							}
+
+							.btn-upload {
+								position: absolute;
+								top: -99999px;
+							}
+						}
+
+						.result {
+							position: absolute;
+							top: 0;
+							left: 0;
+							@include size(62px,62px);
+							background-color: #f4f4f6;
+
+							.content {
+								@include size(100%,100%);
+
+								img { width: 100%; }
+							}
+
+							.btn-del {
+								position: absolute;
+								top: 2px;
+								right: 2px;
+								@include size(20px,20px);
+								background: url('@@img/mob/common/btn-clear01.png') no-repeat;
+								background-size: 20px 20px;
+								text-indent: -99999px;
+							}
+						}
+					}
+				}
+			}
+			
+			.add-explain {
+				li {
+					position: relative;
+					@include font(12px,$medium);
+					color: #828287;
+
+					&::before {
+						@include before-after();
+						@include size(3px,3px);
+						border-radius: 50%;
+						background-color: $primary-color;
+						left: 0;
+						top: 49%;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+	}
+
+	.user-agreement {
+		.wrap {
+			margin-top: 20px;
+			padding-bottom: 12px;
+			border-bottom: 1px solid $line-color2;
+		}
+		.desc { margin-top: 14px; }
+	}
+}
+
+//공지사항
+.customer-notice-list {
+	.board-list {
+		& > .item {
+			padding-right: 20px;
+			dt { -webkit-line-clamp: 2; }
+		}
+	}
+}
+
+//공지사항 상세
+.customer-notice-detail {
+	.board-detail-wrap {
+		border-top: 1px solid $line-color1;
+		border-bottom: 1px solid #eaeaeb;
+	
+		& > .row {
+			display: flex;
+			align-items: flex-start;
+			width: 100%;
+			font-size: 14px;
+			border-top: 1px solid #e7e7e7;
+	
+			&:first-child { border-top: 0; }
+	
+			& > dd {
+				box-sizing: border-box;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				width: calc(100% - 150px);
+				min-height: 70px;
+				line-height: 1.6;
+				padding: 14px 4px;
+				color: $text-color2;
+				@include font(14px,$medium);
+				word-wrap: break-word;
+
+				img {
+					width: 100% !important;
+					height: auto !important;
+				}
+
+				& > .title {
+					display: flex;
+					flex-wrap: wrap;
+					width: 100%;
+					position: relative;
+
+					.wrap {
+						flex-grow: 1;
+						display: flex;
+						flex-direction: column;
+					}
+
+					.desc {
+						width: 100%;
+						@include font(16px,$extra-bold);
+						color: $text-color1;
+						letter-spacing: -.5px;
+					}
+
+					.date {
+						display: block;
+						width: 100%;
+						margin-top: 8px;
+						@include font(12px,$light);
+						color: #97979b;
+					}
+				}
+
+				& > .txt {
+					width: 100%;
+				}
+
+				.web-editor-contents { min-height: auto; }
+			}
+		}
+
+		& > .prevnext {
+			border-top: 1px solid #eaeaeb;
+
+			& > .prev,
+			& > .next {
+				@include clearfix;
+
+				& > dt {
+					box-sizing: border-box;
+					float: left;
+					min-width: 65px;
+					min-height: 48px;
+					padding: 16px 8px;
+					color: $text-color1;
+					@include font(14px,$medium);
+					vertical-align: top;
+					word-wrap: break-word;
+				}
+
+				& > dd {
+					box-sizing: border-box;
+					float: left;
+					width: calc(100% - 65px);
+					min-height: 48px;
+					padding: 16px 8px;
+					color: $text-color1;
+					@include font(14px,$medium);
+					word-wrap: break-word;
+
+					a {
+						display: inline-block;
+						width: auto;
+						max-width: calc(100% - 80.45px);
+						color: $text-color1;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						word-wrap: break-word;
+						word-break: break-all;
+						vertical-align: top;
+					}
+
+					.type {
+						display: inline-block;
+						width: auto;
+						font-weight: $extra-bold;
+					}
+				}
+			}
+
+			& > .prev {
+				span {
+					padding-right: 24px;
+					position: relative;
+
+					&:before {
+						content: '';
+						display: inline-block;
+						@include size(12px,8px);
+						background: url('@@img/mob/common/arrow-board-prev.png') no-repeat;
+						background-size: cover;
+						position: absolute;
+						top: 50%;
+						right: 0;
+						transform: translateY(-50%);
+					}
+				}
+
+				& + .next { border-top: 1px solid #e8e8e8; }
+			}
+
+			& > .next {
+				span {
+					padding-right: 24px;
+					position: relative;
+
+					&:before {
+						content: '';
+						display: inline-block;
+						@include size(12px,8px);
+						background: url('@@img/mob/common/arrow-board-next.png') no-repeat;
+						background-size: cover;
+						position: absolute;
+						top: 50%;
+						right: 0;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+
+		&.hidden-title {
+			& > .row {
+				& > dt {
+					position: absolute;
+					left: -9999px;
+				}
+				& > dd { width: 100%; }
+			}
+		}
+	}
+}
+
+// 고객센터 - 주문상품 선택
+.popup-qna-order-select {
+	.common-popup > & {
+		max-width: 600px;
+		width: 100%;
+	}
+
+	.container {
+		margin: 28px 0;
+		
+		.select-list {
+			.head {
+				margin-bottom: 18px;
+				
+				.title { @include font(14px,$medium); }
+			}
+
+			.pop-view-wrap {
+				.view {
+					width: 100%;
+					padding: 20px 14px 14px;
+					border: 1px solid #eaeaeb;
+					border-top: 1px solid $line-color1;
+					box-sizing: border-box;
+					margin-bottom: 20px;
+
+					&:last-child { margin-bottom: 0; }
+
+					.order-wrap {
+						display: flex;
+						flex-direction: column;
+						padding-bottom: 10px;
+						border-bottom: 1px solid #eaeaeb;
+						@include font(14px,$medium);
+						color: $text-color1;
+					}
+
+					.product-list {
+						.product-item {
+							padding: 14px 0;
+							border-bottom: 1px solid #eaeaeb;
+
+							&:last-child {
+								padding-bottom: 0;
+								border-bottom: none;
+							}
+
+							figure {
+								display: flex;
+
+								.input-radio {
+									align-self: center;
+									input.radio {
+										& + label {
+											min-width: 30px;
+											padding: 4px 5px 40px 25px;
+											text-indent: -99999px;
+										}
+									}
+								}
+
+								.img {
+									@include size(80px,80px);
+									background-color: #f4f4f6;
+									flex-shrink: 0;
+									margin-right: 12px;
+
+									img { width: 100%; }
+								}
+
+								.content {
+									display: flex;
+									flex-direction: column;
+									justify-content: space-between;
+									width: calc(100% - 115px);
+
+									.title {
+										color: $text-color1;
+
+										.sub {
+											display: block;
+											@include font(12px,$regular);
+										}
+
+										.main {
+											@include font(14px,$bold);
+											letter-spacing: -.5px;
+											overflow: hidden;
+											text-overflow: ellipsis;
+											display: -webkit-box;
+											-webkit-line-clamp: 2;
+											-webkit-box-orient: vertical;
+										}
+
+										.option {
+											display: flex;
+											justify-content: flex-start;
+											margin-top: 5px;
+											@include font(12px,$regular);
+
+											.tit {
+												position: relative;
+												padding-right: 5px;
+												margin-right: 5px;
+
+												&::after {
+													@include size (1px,12px);
+													@include before-after();
+													background-color: $line-color2;
+													top: 0;
+													right: 0;
+													margin-top: 4px;
+												}
+											}
+
+											.desc {
+												width: 80%;
+												@include ellipsis;
+												font-weight: $bold;
+												color: $text-color1;
+											}
+										}
+									}
+
+									.num {
+										margin-top: 7px;
+										@include font(14px,$extra-bold);
+										color: $text-color1;
+
+										.price {
+											@include font(14px,$extra-bold);
+											margin-left: 14px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.empty {
+			width: 100%;
+			margin: 0 auto;
+			padding: 130px 0;
+			&::before {
+				display: block;
+				content: '';
+				@include size(70px, 70px);
+				margin: 0 auto 25px;
+				background: url('@@img/mob/common/icon-error-2.png') no-repeat;
+				background-size: cover;
+			}
+			.desc {
+				@include font(20px,$extra-bold);
+				text-align: center;
+			}
+			.btn-group { margin-top: 24px; }
+		}
+	}
+
+	.foot {
+		.btn-group {
+			.btn { flex: 1; }
+		}
+	}
+}

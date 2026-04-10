@@ -1,0 +1,569 @@
+// 서브페이지 공통
+
+.content-com-tit {
+	@include font(24px,$bold);
+	color: $primary-color;
+}
+
+// 추천상품 영역
+.recommend-product {
+	width: calc(100% - 20px);
+	padding: 54px 0 0 20px;
+	margin: 0 auto;
+	.head {
+		margin-bottom: 20px;
+		.title { @include font(24px,$extra-bold); }
+	}
+	.prod-col-item {
+		height: 340px;
+		margin-bottom: 20px;
+		.title { @include font(16px,$bold,1.6); }
+	}
+}
+
+// 본문내용 하단영역
+.page-foot {
+	box-sizing: border-box;
+	padding: 20px;
+	margin-top: 40px;
+	& > .btn-area {
+		.btn {
+			&:not(:first-child) { margin-left: 15px; }
+		}
+	}
+}
+
+.sticky-bottom {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	bottom: 0;
+	left: 0;
+	z-index: 9;
+
+	.con-detail, .payment-area {
+		display: none;
+		opacity: 0;
+		&.on {
+			display: block;
+			opacity: 1;
+			transition: all .3s;
+		}
+	}
+
+	.content-area {
+		padding: 20px 0;
+		background-color: #fff;
+		box-shadow: 0 -30px 40px 0 rgba(134,135,138,.2);
+		&::before {
+			content: '';
+			display: block;
+			@include size(80px,20px);
+			background: url('@@img/mob/common/arrow-accordion-bg.png') no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: -19px;
+			left: calc(50vw - 40px);
+		}
+		& > button {
+			position: absolute;
+			width: 120px;
+			height: 40px;
+			left: calc(50vw - 60px);
+			top: -20px;
+			text-indent: -9999px;
+			&:after {
+				content: '';
+				display: block;
+				width: 14px;
+				height: 8px;
+				background: url('@@img/mob/common/arrow-accordion-open.png') no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 10px;
+				left: 52px;
+				transition: all .3s;
+			}
+			&.on {
+				&:after { transform: rotate(180deg); }
+			}
+		}
+		.order-info {
+			& > div {
+				width: calc(100% - 40px);
+				margin: 0 auto;
+			}
+
+			dl {
+				display: flex;
+				flex-wrap: wrap;
+				padding-top: 4px;
+				align-items: center;
+				dt { width: 50%; }
+				dd {
+					width: 50%;
+					text-align: right;
+				}
+			}
+
+			.con-main {
+				& > dt, dd { @include font(16px,$regular); }
+				.price { @include font(24px,$extra-bold); }
+				& > .con-detail {
+					display: none;
+					&.on {
+						display: block;
+						opacity: 1;
+						transition: all .3s;
+						dt, dd { @include font(14px,$regular); }
+						.price { @include font(18px,$extra-bold); }
+					}
+				}
+			}
+
+			.payment-area {
+				display: none;
+				padding: 20px 0 20px;
+				margin-top: 14px;
+				border-top: 1px solid #d5d5d7;
+
+				&.on { display: block; }
+
+				.noti {
+					margin-bottom: 5px;
+					color: #6e6e72;
+					font-weight: 500;
+					font-size: 12px;
+					text-align: center;
+
+					.secondary { color: #ff725c; }
+				}
+
+				.naverpay-box {
+					display: flex;
+					justify-content: center;
+				}
+			}
+		}
+	}
+
+	.btn-area {
+		box-sizing: border-box;
+		display: flex;
+		width: 100%;
+		background-color: #fff;
+		.btn {
+			flex: 1;
+			height: 60px;
+			line-height: 60px;
+			@include font(20px,$bold);
+		}
+	}
+}
+
+// 나에게 맞는 상품 목록
+.customized-prod-list {
+	li {
+		&:not(:first-child) { margin-top: 24px; }
+	}
+}
+
+// 나에게 맞는 상품 제품
+.customized-prod-item {
+	position: relative;
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+	& > div {
+		font-size: 0;
+		position: relative;
+	}
+	& > .img,
+	& > div > .img {
+		flex-shrink: 0;
+		position: relative;
+		display: block;
+		margin-right: 14px;
+		@include size(130px,130px);
+		a {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		& + .title { margin-top: 0; }
+		& + .content {
+			& > .add {
+				width: calc(100% + 100px);
+				margin-left: -100px;
+			}
+		}
+	}
+	.check-like {
+		position: absolute;
+		top: 0;
+		left: 100px;
+	}
+	.item-check {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+	.utility-group {
+		position: absolute;
+		top: -5px;
+		right: 0;
+		display: flex;
+		align-items: center;
+		.check-like {
+			position: relative;
+			top: 0;
+		}
+		.btn-del {
+			display: inline-block;
+			@include size(20px,20px);
+			background: url("@@img/pc/common/icon-del01.png") 0 0 no-repeat;
+			margin-left: 5px;
+		}
+	}
+	& > .content {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 90px;
+		& > .tag-group {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 12px;
+			.tag {
+				&:not(:last-child) { margin-right: 5px; }
+			}
+		}
+		& > .store-name {
+			margin: 7px 0 5px;
+			@include font(12px,$regular,1);
+		}
+		& > .title {
+			display: -webkit-box;
+			width: 100%;
+			max-height: 63px;
+			@include font(14px,$bold);
+			letter-spacing: -.025em;
+			word-wrap: break-word;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+		& > .option-title {
+			padding-left: 20px;
+			margin-top: 10px;
+			color: #6e6e72;
+			@include font(12px,$medium);
+			position: relative;
+			&:after {
+				content: '';
+				display: block;
+				width: 7px;
+				height: 7px;
+				border-left: 2px solid $secondary-color1;
+				border-bottom: 2px solid $secondary-color1;
+				position: absolute;
+				top: 2px;
+				left: 2px;
+			}
+		}
+		& > .option {
+			display: flex;
+			align-items: center;
+			margin: 8px 0 0;
+			@include font(12px,$regular);
+			dt {
+				flex-shrink: 0;
+				align-self: flex-start;
+				color: $text-color2;
+			}
+			dd {
+				flex-grow: 1;
+				position: relative;
+				margin-left: 5px;
+				padding-left: 5px;
+				letter-spacing: -.025em;
+				&::before {
+					@include before-after();
+					top: 4px;
+					left: 0;
+					@include size(1px,10px);
+					background: #d5d5d7;
+				}
+			}
+		}
+		& > .utility {
+			display: flex;
+			margin: 12px 0 0;
+			align-items: center;
+			.option {
+				display: flex;
+				margin-top: 0;
+				margin-right: auto;
+				dt {
+					@include font(12px,$medium);
+					color: #6e6e72;
+					padding-right: 6px;
+					margin-right: 6px;
+					position: relative;
+					&:after {
+						content: '';
+						display: block;
+						width: 1px;
+						height: 12px;
+						background-color: #d5d5d7;
+						position: absolute;
+						top: 4px;
+						right: 0;
+					}
+				}
+				dd {
+					display: flex;
+					align-items: center;
+					@include font(12px,$medium);
+					strong { @include font(12px,$extra-bold); }
+				}
+			}
+			.price {
+				display: flex;
+				align-items: center;
+				margin-left: auto;
+				font-size: 14px;
+				strong {
+					line-height: 1.2;
+					@include font(18px,$bold);
+					transform: translateY(-1px);
+				}
+				&.discount {
+					@include font(12px,$medium);
+					color: #999;
+					text-decoration: line-through;
+				}
+			}
+			& + .utility { margin-top: 0; }
+		}
+		& > .price {
+			.nonmember {
+				display: flex;
+				margin: 10px 0 0;
+				color: #999;
+				@include font(12px,$regular);
+				span {
+					&.tit { margin-right: 5px; }
+					&:last-child { text-decoration: line-through; }
+				}
+			}
+			.member {
+				.tit {
+					@include font(12px,$medium);
+				}
+				.inner-box {
+					display: flex;
+					align-items: center;
+					@include font(14px,$regular);
+					strong {
+						@include font(18px,$bold);
+						&.discount { color: $secondary-color1; }
+					}
+					.num { margin-left: 7px; }
+				}
+			}
+		}
+	}
+	.soldout-box { display: none; }
+	&.soldout {
+		.img > a { pointer-events: none; }
+		.soldout-box {
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			color: #fff;
+			@include size(100%,100px);
+			text-align: center;
+			background: rgba(53,53,55,.8);
+			.inner-box {
+				position: relative;
+				box-sizing: border-box;
+				padding: 20px 0;
+				height: 100%;
+			}
+			.txt {
+				@include font(14px,$bold);
+			}
+			.btn {
+				position: absolute;
+				z-index: 2;
+				bottom: 20px;
+				left: 50%;
+				transform: translate(-50%,0);
+				margin-top: 10px;
+				color: #fff;
+				border-color: #fff;
+				height: 30px;
+				min-width: 100px;
+				font-size: 13px;
+			}
+		}
+	}
+}
+
+// 정기배송 가이드 - 메인 / 상품 상세
+#popupDeliveryGuide {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: rgba(53,53,55,.7);
+
+	.popup-delivery-guide {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		@include size(335px,310px);
+
+		&:focus { outline: 0; }
+
+		.header {
+			height: 60px;
+
+			&::after { display: none; }
+		}
+
+		.container {
+			min-height: auto;
+			padding: 0 20px 0 30px;
+
+			.delivery-guide {
+				.list {
+					li {
+						padding: 15px 0;
+						border-bottom: 1px solid #eaeaeb;
+
+						&:first-child { padding-top: 0; }
+
+						&:last-child {
+							padding-bottom: 0;
+							border-bottom: none;
+						}
+
+						.item {
+							display: flex;
+							align-items: center;
+
+							.num {
+								margin-right: 20px;
+								width: 24px;
+								text-align: right;
+								@include font(32px,$bold);
+								color: $text-color1;
+							}
+
+							.icon {
+								margin-right: 24px;
+								@include size(50px,50px);
+
+								&.request {
+									background: url('@@img/mob/common/icon-guide-request.png') no-repeat center center;
+									background-size: 40px 44px;
+								}
+
+								&.select {
+									background: url('@@img/mob/common/icon-guide-select.png') no-repeat center center;
+									background-size: 44px 44px;
+								}
+
+								&.delivery {
+									background: url('@@img/mob/common/icon-guide-delivery.png') no-repeat center center;
+									background-size: 48px 38px;
+								}
+							}
+
+							.desc {
+								font-size: 16px;
+								color: $text-color1;
+
+								.str {
+									font-weight: $extra-bold;
+									border-bottom: 1px solid $primary-color;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.popup-license {
+	.popup-license-wrap {
+		&:not(:first-child) { margin-top: 17px; }
+		&:first-child {
+			.popup-license-title { margin-top: 0; }
+		}
+		.popup-license-title {
+			margin-bottom: 11px;
+			color: $text-color1;
+			font-weight: 800;
+			font-size: 16px;
+			letter-spacing: -.02em;
+		}
+		.popup-license-tit {
+			margin-bottom: 6px;
+			color: $text-color1;
+			font-weight: 800;
+			font-size: 14px;
+			letter-spacing: -.02em;
+			& + .popup-license-desc { margin-top: 6px; }
+			& + .popup-license-list { margin-top: 6px; }
+		}
+		.popup-license-desc {
+			line-height: 1.54;
+			margin-top: 13px;
+			color: $text-color2;
+			font-weight: 500;
+			font-size: 14px;
+			letter-spacing: -.012em;
+			&:first-child { margin-top: 0; }
+		}
+		.popup-license-con {
+			color: $text-color2;
+			font-weight: 500;
+			font-size: 14px;
+		}
+		.popup-license-list {
+			margin-top: 16px;
+			& > li {
+				line-height: 1.5;
+				color: $text-color2;
+				font-weight: 500;
+				font-size: 14px;
+				&:not(:first-child) { margin-top: 22px; }
+				.tit { display: block; }
+				ul {
+					margin-top: 6px;
+					margin-bottom: -10px;
+					li { color: #6e6e72; }
+				}
+			}
+		}
+		.popup-license-table {}
+	}
+}

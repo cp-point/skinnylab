@@ -1,0 +1,48 @@
+{%
+	set pageInfo = {
+		section: 'login',
+		title: '휴면 계정 안내 &lt; 로그인'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-member member-inactive-account-guide">
+	<div class="member-layout">
+		<h2 class="hide">로그인</h2>
+
+		<div class="head">
+			<h3 class="title">휴면 계정 안내</h3>
+			<p class="desc">회원님의 계정은 1년 이상 로그인을 하지 않아<br><strong>휴면 계정으로 전환</strong>되었습니다.</p>
+			<p class="txt">계정 활성화를 원하시면<br><strong>휴면 해제 버튼</strong>을 눌러 주세요.</p>
+		</div>
+
+		<div class="body">
+			<div class="form-layout vertical">
+				<dl class="row">
+					<dt class="title">
+						가입 된 ID
+					</dt>
+					<dd class="content">
+						<p class="data">sk******b@abc.com</p>
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt class="title">
+						회원 가입일
+					</dt>
+					<dd class="content">
+						<p class="data">2020.02.10</p>
+					</dd>
+				</dl>
+				<a href="#" class="btn primary large long motion mgt30">
+					<span>휴면 해제</span>
+				</a>
+				<p class="caution">스키니랩은 관련 법률에 의거하여 1년 이상 로그인하지 않은 회원님의 개인정보를<br>안전하게 보호하기 위해 휴면 계정 정책을 시행하고 있습니다.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

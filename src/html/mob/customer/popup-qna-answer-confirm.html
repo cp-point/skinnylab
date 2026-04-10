@@ -1,0 +1,60 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- .common-popup 옵션클래스: top, bottom, left, right -->
+<article id="popupQnaAnswerConfirm" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-qna-answer-confirm">
+		<div class="header">
+			<h1 class="title">1:1 답변확인</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button><!-- .js-pop-close 팝업 닫기 기능 -->
+		</div>
+		<div class="container">
+			<div class="head">
+				<p class="title">회원 고객님의 경우, <strong>로그인 버튼</strong>을 눌러 로그인해주세요.<br>비회원 고객님의 경우, 아래 정보를 입력 후 <strong>비회원 답변<br>확인 버튼</strong>을 눌러주세요.</p>
+				<ul class="add-list">
+					<li>비회원 1:1문의 시 입력하셨던 정보를 정확히 입력해주세요.</li>
+				</ul>
+			</div>
+			<div class="body">
+				<dl class="row">
+					<dt class="hide">
+						<label for="name">작성자</label>
+					</dt>
+					<dd class="content">
+						<span class="input-radio-wrap2">
+							<input type="radio" id="nameType1" name="nameType" class="radio" checked>
+							<label for="nameType1">휴대폰 번호</label>
+							<input type="radio" id="nameType2" name="nameType" class="radio">
+							<label for="nameType2">이메일</label>
+						</span>
+					</dd>
+					<dd class="content">
+						<span class="input-text-del">
+							<input type="text" id="phone" name="phone" placeholder="'-'없이 숫자만 입력" class="text block" maxlength="50">
+						</span>
+						<!-- <span class="input-text-del">
+							<input type="text" id="email" name="email" placeholder="이메일 주소 입력" class="text block">
+						</span> -->
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt class="title">
+						<label for="passwd">문의 비밀번호</label>
+					</dt>
+					<dd class="content">
+						<span class="input-text-del">
+							<input type="password" id="passwd" name="passwd" value="" placeholder="비밀번호 입력" class="text block" minlength="8">
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="foot">
+				<div class="btn-group row">
+					<button type="button" class="btn large outline primary js-pop-close">로그인</button>
+					<button type="button" class="btn large primary">비회원 답변 확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

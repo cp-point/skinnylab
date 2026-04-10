@@ -1,0 +1,88 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-order-detail-receive" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-order-detail-receive">
+		<div class="header">
+			<h1 class="title">선물함</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<h2 class="sub-title">선물 상품</h2>
+				<ul class="list-cont">
+					<li>
+						<p class="order-num">주문번호 : 2021040914352712345</p>
+						<div class="item">
+							<span class="img">
+								<img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지">
+							</span>
+							<div class="info">
+								<p class="name">
+									가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 3줄 노출 이후 대 3줄 노출
+								</p>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</dd>
+								</dl>
+								<div class="utility">
+									1개
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+				<div class="sub-title">
+					<h2>배송 정보</h2>
+					<button type="button" class="small-btn-util" onclick="UI.showLayerPop('',{ url: './popup-address-manage.html'}); return false;">배송지 변경</button>
+				</div>
+				<div class="gift-info-wrap">
+					<dl>
+						<dt>받는 분</dt>
+						<dd>홍길동</dd>
+						<dt>휴대폰번호</dt>
+						<dd>010-1234-1234</dd>
+						<dt>배송지</dt>
+						<dd>서울 강남구 영동대로 511(트레이드타워) 2104호</dd>
+						<dt>배송메시지</dt>
+						<dd>부재 시, 연락 바랍니다.</dd>
+					</dl>
+				</div>
+				<div class="sub-title">
+					<h2>보낸 사람</h2>
+				</div>
+				<div class="gift-info-wrap">
+					<dl>
+						<dt>보낸 사람</dt>
+						<dd>김헬스</dd>
+					</dl>
+					<div class="gift-item" style="background-image:url('{{base}}/img/pc/@dummy/bg-gift01.png');">
+						<span class="img">
+							<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="상품 이미지">
+						</span>
+						<div class="msg">
+							다이어트도 너랑나랑 같이 하자!! 이번 다이어트는 성공적으로~~<br>
+							다이어트도 너랑나랑 같이 하자!! 이번 다이어트는 성공적으로~~<br>
+							다이어트도 너랑나랑 같이 하자!! 이번 다이어트는 성공적으로~~
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<button class="btn large primary js-pop-close">확인</button>
+				</div>
+
+				<h2 class="sub-title">안내사항</h2>
+				<ul class="dot-list">
+					<li>선물 상품의 취소/교환/반품은 선물 보내신 분이 진행할 수 있습니다.</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</article>	
+{%- endblock %}

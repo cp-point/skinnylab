@@ -1,0 +1,761 @@
+{%
+	set pageInfo = {
+		section: 'promotion',
+		title: '기획전',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-promotion promotion-detail">
+	<div class="page-head">
+		<h2 class="title">기획전</h2>
+	</div>
+
+	<div class="board-detail hidden-title">
+		<dl class="row">
+			<dt>제목</dt>
+			<dd>
+				<div class="title">
+					<div class="wrap">
+						<h3 class="desc">
+							신제품 출시 기념 기획전
+						</h3>
+						<p class="date">
+							2021-01-01 ~ 2021-12-31
+						</p>
+					</div>
+					<div class="util">
+						<div class="share">
+							<button type="button" class="btn-open" onclick="$(this).parents('.share').find('.content').show(); return false;">공유하기 열기</button>
+							<div class="content">
+								<div class="box">
+									<ul class="list">
+										<li>
+											<a href="#">
+												<span class="icon facebook"></span>
+												<span class="tit">페이스북</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon kakao"></span>
+												<span class="tit">카카오톡</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon url"></span>
+												<span class="tit">URL복사</span>
+											</a>
+										</li>
+									</ul>
+									<button type="button" class="btn-close" onclick="$(this).parents('.share').find('.content').hide(); return false;">공유하기 닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</dd>
+		</dl>
+		<dl class="row">
+			<dt>내용</dt>
+			<dd>
+				<div class="detail-content">
+					<!-- HTML 영역 // -->
+					<div class="html-area">
+						HTML 내용
+					</div>
+					<!-- HTML 영역 // -->
+				</div>
+			</dd>
+		</dl>
+	</div>
+
+	<ul class="goods-list vertical4">
+		<li>
+			<div class="item">
+				<a href="#">
+					<figure class="wrap">
+						<div class="img">
+							<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+						</div>
+						<figcaption class="content">
+							<p class="info">
+								<span class="tag primary">신제품</span>
+								<span class="tag secondary">베스트</span>
+								<span class="tag white">사은품</span>
+							</p>
+							<p class="title">
+								<span class="sub">
+									스키니랩
+								</span>
+								<span class="main">
+									가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+								</span>
+							</p>
+							<p class="price non">
+								<span class="tit">비회원가</span>
+								<span class="con">
+									<span class="num">
+										321,000
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+							<p class="price">
+								<span class="tit">회원가</span>
+								<span class="con">
+									<span class="rate">
+										<span class="hide">할인율</span>
+										37%
+									</span>
+									<span class="num">
+										128,600
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+						</figcaption>
+					</figure>
+				</a>
+				<div class="util">
+					<div class="like">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+					</div>
+					<div class="action">
+						<div class="wrap">
+							<button type="button" class="btn-util payment">바로결제하기</button>
+							<button type="button" class="btn-util cart">장바구니넣기</button>
+							<button type="button" class="btn-util gift">선물하기</button>
+						</div>
+					</div>
+					<!-- <div class="status">
+						<p class="tit">일시품절</p>
+						<div class="btn-area">
+							<button type="button" class="btn ghost thin">
+								<span>재입고 알림</span>
+							</button>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item">
+				<a href="#">
+					<figure class="wrap">
+						<div class="img">
+							<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+						</div>
+						<figcaption class="content">
+							<p class="title">
+								<span class="main">
+									행복한 시서스 다이어트 14정 x 8박스 16주분
+								</span>
+							</p>
+							<p class="price non">
+								<!-- <span class="tit">비회원가</span> -->
+								<span class="con">
+									<span class="num">
+										321,000
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+							<p class="price">
+								<!-- <span class="tit">회원가</span> -->
+								<span class="con">
+									<span class="rate">
+										<span class="hide">할인율</span>
+										37%
+									</span>
+									<span class="num">
+										128,600
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+						</figcaption>
+					</figure>
+				</a>
+				<div class="util">
+					<div class="like">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+					</div>
+					<div class="action">
+						<div class="wrap">
+							<button type="button" class="btn-util payment">바로결제하기</button>
+							<button type="button" class="btn-util cart">장바구니넣기</button>
+							<button type="button" class="btn-util gift">선물하기</button>
+						</div>
+					</div>
+					<!-- <div class="status">
+						<p class="tit">일시품절</p>
+						<div class="btn-area">
+							<button type="button" class="btn ghost thin">
+								<span>재입고 알림</span>
+							</button>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item disabled">
+				<a href="#">
+					<figure class="wrap">
+						<div class="img">
+							<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+						</div>
+						<figcaption class="content">
+							<p class="info">
+								<span class="tag primary">신제품</span>
+								<span class="tag secondary">베스트</span>
+								<span class="tag white">사은품</span>
+							</p>
+							<p class="title">
+								<span class="sub">
+									스키니랩
+								</span>
+								<span class="main">
+									가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+								</span>
+							</p>
+							<p class="price non">
+								<span class="tit">비회원가</span>
+								<span class="con">
+									<span class="num">
+										321,000
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+							<p class="price">
+								<span class="tit">회원가</span>
+								<span class="con">
+									<span class="rate">
+										<span class="hide">할인율</span>
+										37%
+									</span>
+									<span class="num">
+										128,600
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+						</figcaption>
+					</figure>
+				</a>
+				<div class="util">
+					<div class="like">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+					</div>
+					<div class="action">
+						<div class="wrap">
+							<button type="button" class="btn-util payment">바로결제하기</button>
+							<button type="button" class="btn-util cart">장바구니넣기</button>
+							<button type="button" class="btn-util gift">선물하기</button>
+						</div>
+					</div>
+					<div class="status">
+						<p class="tit">일시품절</p>
+						<div class="btn-area">
+							<button type="button" class="btn ghost thin">
+								<span>재입고 알림</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="item disabled">
+				<a href="#">
+					<figure class="wrap">
+						<div class="img">
+							<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+						</div>
+						<figcaption class="content">
+							<p class="info">
+								<span class="tag primary">신제품</span>
+								<span class="tag secondary">베스트</span>
+								<span class="tag white">사은품</span>
+							</p>
+							<p class="title">
+								<span class="sub">
+									스키니랩
+								</span>
+								<span class="main">
+									가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+								</span>
+							</p>
+							<p class="price non">
+								<span class="tit">비회원가</span>
+								<span class="con">
+									<span class="num">
+										321,000
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+							<p class="price">
+								<span class="tit">회원가</span>
+								<span class="con">
+									<span class="rate">
+										<span class="hide">할인율</span>
+										37%
+									</span>
+									<span class="num">
+										128,600
+									</span>
+									<span class="won">원</span>
+								</span>
+							</p>
+						</figcaption>
+					</figure>
+				</a>
+				<div class="util">
+					<div class="like">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+					</div>
+					<div class="action">
+						<div class="wrap">
+							<button type="button" class="btn-util payment">바로결제하기</button>
+							<button type="button" class="btn-util cart">장바구니넣기</button>
+							<button type="button" class="btn-util gift">선물하기</button>
+						</div>
+					</div>
+					<div class="status">
+						<p class="tit">일시품절</p>
+						<div class="btn-area">
+							<button type="button" class="btn ghost thin">
+								<span>재입고 알림</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<!-- 상품이 없을때 // -->
+		<!-- <li class="empty">
+			<p class="desc">
+				등록된 상품이 없습니다.<br>
+				더 좋은 상품으로 찾아뵙겠습니다.
+			</p>
+		</li> -->
+		<!-- // 상품이 없을때 -->
+	</ul>
+
+	<div class="reply-area">
+		<div class="reply-head">
+			<p class="count">
+				총
+				<span class="num">
+					10
+				</span>
+				개
+			</p>
+		</div>
+		<div class="reply-write">
+			<div class="write">
+				<div class="wrap">
+					<div class="input">
+						<div class="editor">
+							<label for="qnaEditor" class="hide">댓글 내용</label>
+							<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+							<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+						</div>
+					</div>
+					<div class="btn-area">
+						<button type="button" class="btn primary">
+							<span>댓글 등록</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="reply-list">
+			<ul class="list">
+				<li>
+					<div class="item">
+						<!-- 댓글 상세 // -->
+						<div class="detail">
+							<div class="head">
+								<span class="info">
+									<span class="name">김******************동</span>
+									<span class="date">2021.04.16</span>
+								</span>
+								<div class="action">
+									<!-- <button type="button" class="btn small outline thin primary">
+										<span>수정</span>
+									</button>
+									<button type="button" class="btn small outline thin primary">
+										<span>삭제</span>
+									</button> -->
+								</div>
+							</div>
+							<div class="body">
+								<span class="content">
+									출석 체크 했습니다!
+								</span>
+							</div>
+							<div class="foot">
+								<div class="btn-area">
+									<button type="button" class="btn small outline2">
+										<span>답글</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- // 댓글 상세 -->
+						<!-- 댓글 수정 // -->
+						<div class="modify" style="display: none;">
+							<div class="wrap">
+								<div class="input">
+									<div class="editor">
+										<label for="qnaEditor2" class="hide">댓글 내용</label>
+										<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+										<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+									</div>
+								</div>
+								<div class="btn-area">
+									<button type="button" class="btn primary">
+										<span>댓글 등록</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- // 댓글 수정 -->
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<!-- 댓글 상세 // -->
+						<div class="detail">
+							<div class="head">
+								<span class="info">
+									<span class="name">김******************동</span>
+									<span class="date">2021.04.16</span>
+								</span>
+								<div class="action">
+									<button type="button" class="btn small outline thin primary">
+										<span>수정</span>
+									</button>
+									<button type="button" class="btn small outline thin primary">
+										<span>삭제</span>
+									</button>
+								</div>
+							</div>
+							<div class="body">
+								<span class="content">
+									출석체크 완료! 사은품 꼭 보내주세요!
+								</span>
+							</div>
+							<div class="foot">
+								<div class="btn-area">
+									<button type="button" class="btn small outline2">
+										<span>취소</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- // 댓글 상세 -->
+						<!-- 댓글 수정 // -->
+						<div class="modify" style="display: none;">
+							<div class="wrap">
+								<div class="input">
+									<div class="editor">
+										<label for="qnaEditor2" class="hide">댓글 내용</label>
+										<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+										<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+									</div>
+								</div>
+								<div class="btn-area">
+									<button type="button" class="btn primary">
+										<span>댓글 등록</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- // 댓글 수정 -->
+					</div>
+					<ul class="sub">
+						<li>
+							<div class="item">
+								<!-- 답글 상세 // -->
+								<div class="detail">
+									<div class="head">
+										<span class="info">
+											<span class="name">김******************동</span>
+											<span class="date">2021.04.16</span>
+										</span>
+										<div class="action">
+											<button type="button" class="btn small outline thin primary">
+												<span>수정</span>
+											</button>
+											<button type="button" class="btn small outline thin primary">
+												<span>삭제</span>
+											</button>
+										</div>
+									</div>
+									<div class="body">
+										<span class="content">
+											저도 출석 체크 했어요!
+										</span>
+									</div>
+								</div>
+								<!-- // 답글 상세 -->
+								<!-- 답글 수정 // -->
+								<div class="modify" style="display: none;">
+									<div class="wrap">
+										<div class="input">
+											<div class="editor">
+												<label for="qnaEditor2" class="hide">댓글 내용</label>
+												<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+												<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+											</div>
+										</div>
+										<div class="btn-area">
+											<button type="button" class="btn primary">
+												<span>댓글 등록</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<!-- // 답글 수정 -->
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<!-- 답글 상세 // -->
+								<div class="detail" style="display: none;">
+									<div class="head">
+										<span class="info">
+											<span class="name">김******************동</span>
+											<span class="date">2021.04.16</span>
+										</span>
+										<div class="action">
+											<button type="button" class="btn small outline thin primary">
+												<span>수정</span>
+											</button>
+											<button type="button" class="btn small outline thin primary">
+												<span>삭제</span>
+											</button>
+										</div>
+									</div>
+									<div class="body">
+										<span class="content">
+											출석 체크 했습니다!
+										</span>
+									</div>
+								</div>
+								<!-- // 답글 상세 -->
+								<!-- 답글 수정 // -->
+								<div class="modify" style="display: none;">
+									<div class="wrap">
+										<div class="input">
+											<div class="editor">
+												<label for="qnaEditor2" class="hide">댓글 내용</label>
+												<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+												<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+											</div>
+										</div>
+										<div class="btn-area">
+											<button type="button" class="btn primary">
+												<span>댓글 등록</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<!-- // 답글 수정 -->
+								<!-- 답글 작성 // -->
+								<div class="write">
+									<div class="wrap">
+										<div class="input">
+											<div class="editor">
+												<label for="qnaEditor2" class="hide">댓글 내용</label>
+												<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+												<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+											</div>
+										</div>
+										<div class="btn-area">
+											<button type="button" class="btn primary">
+												<span>댓글 등록</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<!-- // 답글 작성 -->
+							</div>
+						</li>
+					</ul>
+				</li>
+				{% for i in range(0, 8) -%}
+				<li>
+					<div class="item">
+						<!-- 댓글 상세 // -->
+						<div class="detail">
+							<div class="head">
+								<span class="info">
+									<span class="name">김******************동</span>
+									<span class="date">2021.04.16</span>
+								</span>
+								<div class="action">
+									<!-- <button type="button" class="btn small outline thin primary">
+										<span>수정</span>
+									</button>
+									<button type="button" class="btn small outline thin primary">
+										<span>삭제</span>
+									</button> -->
+								</div>
+							</div>
+							<div class="body">
+								<span class="content">
+									출석 체크 했습니다!
+								</span>
+							</div>
+							<div class="foot">
+								<div class="btn-area">
+									<button type="button" class="btn small outline2">
+										<span>답글</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- // 댓글 상세 -->
+						<!-- 댓글 수정 // -->
+						<div class="modify" style="display: none;">
+							<div class="wrap">
+								<div class="input">
+									<div class="editor">
+										<label for="qnaEditor2" class="hide">댓글 내용</label>
+										<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+										<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+									</div>
+								</div>
+								<div class="btn-area">
+									<button type="button" class="btn primary">
+										<span>댓글 등록</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- // 댓글 수정 -->
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 댓글이 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">등록된 댓글이 없습니다.</p>
+				</li> -->
+				<!-- // 댓글이 없을때 -->
+			</ul>
+		</div>
+		<div class="common-pagination">
+			<a href="#" class="paging-btn prev">Prev</a>
+			<span class="paging-num">
+				<a href="#" class="on">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+			</span>
+			<a href="#" class="paging-btn next">Next</a>
+		</div>
+	</div>
+
+	<div class="recommend-banner2">
+		<div class="head">
+			<p class="title">다른 기획전도 둘러보세요!</p>
+		</div>
+		<div class="list swiper-container">
+			<ul class="wrap swiper-wrapper">
+				{% for i in range(0, 4) %}
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/pc/@dummy/recommend-board-img01.jpg" alt="배너1">
+						</div>
+					</a>
+				</li>
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/pc/@dummy/recommend-board-img02.jpg" alt="배너2">
+						</div>
+					</a>
+				</li>
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/pc/@dummy/recommend-board-img03.jpg" alt="배너2">
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+				<!-- // 다른 게시물이 없을때 -->
+				<!-- <li class="swiper-slide">
+					<p class="empty">
+						다른 게시물이 없습니다.
+					</p>
+				</li> -->
+				<!-- 다른 게시물이 없을때 // -->
+			</ul>
+		</div>
+		<div class="action">
+			<p class="pagination"></p>
+			<div class="play">
+				<button type="button" class="btn-prev swiper-button-prev"></button>
+				<button type="button" class="btn-autoplay swiper-button-autoplay"></button>
+				<button type="button" class="btn-next swiper-button-next"></button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+	// 관련기획전 캐러셀
+	var recommendBannerSwiper = new Swiper('.recommend-banner2 .list', {
+		autoplay: {
+			delay: 3000
+		},
+		speed: 1000,
+		loop: true,
+		slidesPerView: 3,
+		slidesPerGroup: 3 ,
+		initialSlide: 0,
+		spaceBetween: 45,
+		allowTouchMove: false,
+		pagination: {
+			el: '.recommend-banner2 .pagination',
+			type: 'fraction',
+			formatFractionCurrent: function(number) {
+				return number < 10 ? '0' + number : number;
+			},
+			formatFractionTotal: function(number) {
+				return number < 10 ? '0' + number : number;
+			}
+		},
+		navigation: {
+			nextEl: '.recommend-banner2 .swiper-button-next',
+			prevEl: '.recommend-banner2 .swiper-button-prev',
+		}
+	});
+
+	$('.recommend-banner2 .btn-autoplay').on('click', function() {
+		var $this = $(this);
+		
+		if($this.hasClass('is-stop')) {
+			recommendBannerSwiper.autoplay.start();
+		} else {
+			recommendBannerSwiper.autoplay.stop();
+		}
+
+		$this.toggleClass('is-stop');
+	});
+</script>
+{%- endblock %}

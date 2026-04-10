@@ -1,0 +1,255 @@
+{%
+	set pageInfo = {
+		section: 'login',
+		title: '로그인'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-member member-login">
+	<div class="member-layout">
+
+		<div class="head">
+			<h2 class="title">로그인</h2>
+			<p class="desc"><strong>아직 스키니랩 회원이 아니신가요?</strong></p>
+			<p class="txt">지금 회원가입을 하시면 스키니랩의<br><strong>다양한 할인 혜택</strong>들이 기다리고 있어요!</p>
+			<div class="btn-wrap">
+				<a href="./join.html" class="btn outline thin primary">
+					<span>회원가입 하기</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="body">
+			<div class="tab-menu2">
+				<div class="wrap">
+					<ul class="list">
+						<li>
+							<a href="javascript:void(0);">회원</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">비회원 주문조회</a>
+						</li>
+					</ul>
+					<div class="list-content-wrap">
+						<!-- 회원 탭 -->
+						<dlv class="list-content lc01">
+							<div class="form-layout vertical">
+								<dl class="row">
+									<dt class="title">
+										<label for="userId">아이디(이메일)</label>
+									</dt>
+									<dd class="content">
+										<span class="input-text-del">
+											<!-- [ 공통 ] input class="is-invalid" 추가 시, 선 색상 변경 -->
+											<input type="text" id="userId" name="userId" placeholder="아이디(이메일) 입력" class="text block underline is-invalid" maxlength="20">
+										</span>
+										<!-- 오류 메세지 -->
+										<p class="error-msg is-invalid">아이디를 입력해 주세요.</p>
+									</dd>
+								</dl>
+								<dl class="row">
+									<dt class="title">
+										<label for="userPw">비밀번호</label>
+									</dt>
+									<dd class="content">
+										<span class="input-text-del">
+											<input type="password" id="userPw" name="userPw" value="" placeholder="비밀번호 입력" class="text block underline"  maxlength="16">
+										</span>
+										<!-- 오류 메세지 -->
+										<!-- <p class="error-msg is-invalid">비밀번호를 입력해주세요.</p> -->
+									</dd>
+								</dl>
+								<a href="#" class="btn primary large long motion">
+									<span>로그인</span>
+								</a>
+								<div class="account-sf">
+									<span class="input-check">
+										<input type="checkbox" name="userIdSave" id="userIdSave" class="check">
+										<label for="userIdSave">아이디 저장</label>
+									</span>
+									<ul>
+										<li><a href="./find-existing-id.html">기존 아이디 찾기</a></li>
+										<li><a href="./find-id.html">아이디 찾기</a></li>
+										<li><a href="./find-pw.html">비밀번호 찾기</a></li>
+									</ul>
+								</div>
+							</div>
+				
+							<div class="sns-login">
+								<p>SNS 간편 로그인</p>
+								<ul>
+									<li><a href="#">카카오</a></li>
+									<li><a href="#">네이버</a></li>
+									<li><a href="#">구글</a></li>
+								</ul>
+							</div>
+						</dlv>
+						<!-- // 회원 탭 -->
+						<!-- 비회원 탭 -->
+						<dlv class="list-content lc02">
+							<div class="form-layout vertical">
+								<dl class="row">
+									<dt class="title">
+										<label for="orderNum">주문번호</label>
+									</dt>
+									<dd class="content">
+										<span class="input-text-del">
+											<input type="text" id="orderNum" name="orderNum" placeholder="주문번호 입력" class="text block underline">
+										</span>
+										<!-- 오류 메세지 -->
+										<!-- <p class="error-msg is-invalid">주문번호를 입력해주세요.</p> -->
+									</dd>
+								</dl>
+								<dl class="row">
+									<dt class="title">
+										<label for="orderNumPw">주문 비밀번호</label>
+									</dt>
+									<dd class="content">
+										<span class="input-text-del">
+											<input type="password" id="orderNumPw" name="orderNumPw" value="" placeholder="주문 비밀번호 입력" class="text block underline"  maxlength="16">
+										</span>
+										<!-- 오류 메세지 -->
+										<!-- <p class="error-msg is-invalid">주문 비밀번호를 입력해주세요.</p> -->
+									</dd>
+								</dl>
+								<p class="caution">비회원 구매 시 입력하셨던 정보를 정확히 입력해주세요.</p>
+								<a href="#" class="btn primary large long motion">
+									<span>조회</span>
+								</a>
+							</div>
+						</dlv>
+						<!-- // 비회원 탭 -->
+					</div>
+				</div>
+			</div>
+
+			<div class="event-banner">
+				<div class="swiper-container eventswiper">
+					<div class="swiper-wrapper">
+						{% for i in range(0,4) %}
+						<div class="swiper-slide">
+							<a href="#"><img src="{{base}}/img/pc/@dummy/member-event-banner.jpg" alt="스키니랩 BEST 3 지금 구매하면 9,900원"></a>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="swiper-controls">
+						<div class="swiper-pagination"></div>
+						<button type="button" class="pause">정지</button>
+						<button type="button" class="play">재생</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 통합회원전환 팝업 // -->
+	<article id="popup-noti-membership" class="common-popup hidden-title is-layer" style="display: none;">
+		<div class="common-popup-inner popup-noti-membership">
+			<div class="header">
+				<h1 class="title">
+					통합회원전환
+				</h1>
+			</div>
+			<div class="container">
+				<div class="noti-membership">
+					<div class="banner">
+						<div class="img">
+							<a href="#" title="통합회원 전환하기">
+								<img src="{{base}}/img/pc/member/existing-membership-img01.jpg" alt="2021년 10월 7일부터 고객님의 기존 스키니랩 ID사용이 제한되며, 헬스밸런스 통합회원 ID와 비밀번호로만 서비스를 이용하실 수 있습니다.">
+							</a>
+						</div>
+					</div>
+					<div class="btn-area">
+						<button type="button" class="btn-cookie"><span>오늘 하루 보지 않기</span></button>
+						<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<script>
+		// 쿠키
+		function setCookie(name, value, expiredays){
+			var today = new Date();
+
+			today.setDate(today.getDate() + expiredays);
+			document.cookie = name + '=' + escape(value) + '; expires=' + today.toGMTString();
+		}
+
+		function getCookie(name) {
+			var cookie = document.cookie;
+
+			if (document.cookie != "") {
+				var cookie_array = cookie.split("; ");
+
+				for ( var index in cookie_array) {
+					var cookie_name = cookie_array[index].split("=");
+
+					if (cookie_name[0] == "skinnylabExistingMembership") return cookie_name[1];
+				}
+			}
+
+			return;
+		}
+
+		$("#popup-noti-membership .btn-cookie").click(function() {
+			UI.closeLayerPop('#popup-noti-membership');
+			setCookie("skinnylabExistingMembership", 'popupEnd', 1);
+		});
+
+		var checkCookie = getCookie("skinnylabExistingMembership");
+
+		if(checkCookie == 'popupEnd') {
+			$("#popup-noti-membership").removeClass('is-layer');
+			$('html').removeClass('scroll-fixed');
+		} else {
+			UI.showLayerPop('#popup-noti-membership');
+		}
+	</script>
+	<!-- // 통합회원전환 팝업 -->
+</div>
+<!-- // Content -->
+
+<script>
+	$('.tab-menu2 .list li').click(function(){
+		var index = $(this).index()
+
+		$('.tab-menu2 .list li').removeClass('selected')
+		$(this).addClass('selected')
+
+		$('.tab-menu2 .list-content-wrap .list-content').hide()
+		$('.tab-menu2 .list-content-wrap .list-content').eq(index).show()
+	})
+	$('.tab-menu2 .list li').eq(0).trigger('click')
+
+	var swiper = new Swiper(".eventswiper", {
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		loop: true,
+		speed: 700,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+	});
+	
+	$('.play').hide();
+	$('.pause').click(function(){
+		swiper.autoplay.stop();
+		$(this).hide();
+		$(this).siblings('.play').show();
+	})
+
+	$('.play').click(function(){
+		swiper.autoplay.start();
+		$(this).hide();
+		$(this).siblings('.pause').show();
+	})
+</script>
+{%- endblock %}

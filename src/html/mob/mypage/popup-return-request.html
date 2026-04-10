@@ -1,0 +1,294 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-order-cancel" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-order-cancel">
+		<div class="header">
+			<h1 class="title">반품 신청</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<h2 class="com-txt2 sub-title">반품 상품</h2>
+				<ul class="prod-detail-list">
+					{% for i in range(1, 3) %}
+					<li>
+						<figure class="prod-row-item">
+							<div class="item-check">
+								<div class="check-only"><input type="checkbox"><span></span></div>
+							</div>
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								{% if i == 1 -%}<p class="store-name">스키니랩</p> <!-- 입점사 있을 때 노출 -->{% endif %}
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									<span class="select-wrap">
+										<select id="testSelect{{i}}" name="testSelect{{i}}" class="select small" style="width: 60px;">
+											<option value="1">1개</option>
+											<option value="2">2개</option>
+											<option value="3">3개</option>
+											<option value="4">4개</option>
+										</select>
+										<span class="arrow"></span>
+									</span>
+									<div class="price">
+										<strong>19,800</strong>원
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</li>
+					{% endfor %}
+				</ul>
+				
+				<h2 class="com-txt2 sub-title">반품 사유</h2>
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title hide">
+							<label for="type">반품 사유</label>
+						</dt>
+						<dd class="content">
+							<span class="select-wrap" style="width: 100%;">
+								<select id="type" name="type" class="select" title="반품 사유 선택 목록">
+									<option value="0">반품 사유를 선택해 주세요.</option>
+									<option value="1">고객 단순 변심</option>
+									<option value="2">주문 정보 변경</option>
+									<option value="3">상품 불만족</option>
+									<option value="4">상품 불량</option>
+									<option value="5">상품 파손</option>
+									<option value="6">배송 지연</option>
+									<option value="7">직접 입력</option>
+								</select>
+								<span class="arrow"></span>
+							</span>
+						</dd>
+						<dd class="content">
+							<!-- 에디터 영역 -->
+							<div class="editor">
+								<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="사유를 입력해 주세요." class="editor-cont txt" maxlength="1000"></textarea>
+								<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+							</div>
+							<!-- // 에디터 영역 -->
+						</dd>
+					</dl>
+				</div>
+
+				<h2 class="com-txt2 sub-title">반품 회수지 정보</h2>
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title">
+							<label for="returnPlace01">배송지명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-with-btn info-input">
+								<input type="text" id="returnPlace01" name="returnPlace01" placeholder="배송지명 입력" class="text block">
+								<button type="button" class="btn outline thin primary">
+									<span>배송지 관리</span>
+								</button>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="returnUser01">회수자명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="returnUser01" name="returnUser01" placeholder="회수자명 입력" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="returnPhone01">휴대폰 번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="returnPhone01" name="returnPhone01" placeholder="‘-’ 없이 숫자만 입력" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userZipcode">주소 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-with-btn info-input">
+								<input type="text" id="userZipcode" name="userZipcode" class="text block" readonly disabled>
+								<button type="button" class="btn outline thin primary">
+									<span>우편번호 찾기</span>
+								</button>
+							</span>
+						</dd>
+						<dd class="content">
+							<span class="input-text-del">
+								<label for="returnAddr01" class="hide">상세주소 입력</label>
+								<input type="text" id="returnAddr01" name="returnAddr01" placeholder="상세주소 입력" class="text block">
+							</span>
+						</dd>
+						<dd class="content">
+							<span class="select-wrap" style="width: 100%">
+								<select id="returnMsg01" name="returnMsg01" class="select" style="width: 100%" title="배송메시지 선택 목록">
+									<option value="0">배송메시지 선택</option>
+								</select>
+								<span class="arrow"></span>
+							</span>
+						</dd>
+					</dl>
+				</div>
+
+				<h2 class="com-txt2 sub-title">반품 배송비</h2>
+				<p class="desc">상품을 반품하시면 아래와 같이 배송비가 발생되며 환불예정금액에서 해당 금액 만큼 차감됩니다.</p>
+				<div class="refund-wrap">
+					<dl>
+						<dt>회수 배송비</dt>
+						<dd><strong>2,500</strong>원</dd>
+					</dl>
+					<dl class="total">
+						<dt>배송비</dt>
+						<dd>
+							<span><strong>5,000</strong>원</span>
+						</dd>
+					</dl>
+				</div>
+
+				<h2 class="com-txt2 sub-title">환불 내역</h2>
+				<div class="refund-wrap">
+					<dl>
+						<dt>취소 상품 금액</dt>
+						<dd><strong>60,000</strong>원</dd>
+						<dt>배송비</dt>
+						<dd><strong>0</strong>원</dd>
+						<dt>쿠폰할인금액 차감</dt>
+						<dd><strong>0</strong>원</dd>
+						<dt>마일리지 복원 금액</dt>
+						<dd><strong>0</strong>원</dd>
+					</dl>
+					<dl class="total">
+						<dt>환불예정금액</dt>
+						<dd>
+							<span><strong>60,000</strong>원</span>
+							<span class="msg">카카오페이 결제 취소</span>
+						</dd>
+					</dl>
+				</div>
+
+				<h2 class="com-txt2 sub-title">환불 계좌 정보</h2>
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title">
+							<label for="accountHolder">예금주 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="accountHolder" name="accountHolder" value="홍길동" placeholder="예금주 입력" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="bankName">은행명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<div class="select-wrap" style="width: 100%">
+								<select id="bankName" name="bankName" class="select" style="width: 100%" title="은행 선택 목록">
+									<option value="0">은행 선택</option>
+									<option value="1">산업</option>
+									<option value="2">기업</option>
+									<option value="3">KB국민</option>
+									<option value="4">외환</option>
+									<option value="5">수협</option>
+									<option value="6">농협</option>
+									<option value="7">우리</option>
+									<option value="8">SC제일</option>
+									<option value="9">씨티</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">광주</option>
+									<option value="13">제주</option>
+									<option value="14">전북</option>
+									<option value="15">경남</option>
+									<option value="16">새마을금고</option>
+									<option value="17">신협</option>
+									<option value="18">우체국</option>
+									<option value="19">하나</option>
+									<option value="20">신한</option>
+									<option value="21">카카오뱅크</option>
+								</select>
+								<span class="arrow"></span>
+							</div>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="accountNum">계좌번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="accountNum" name="accountNum" placeholder="계좌번호 입력(‘-’제외)" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="">이용동의</label>
+						</dt>
+						<dd class="content">
+							<div class="user-agreement">
+								<div class="wrap">
+									<div class="row">
+										<div class="content block">
+											<div class="info">
+												<ul class="list">
+													<li>- 개인정보 수집 목적 : 취소 반품 시 환불 처리</li>
+													<li>- 개인정보 수집 항목 : 예금주, 은행명, 계좌번호</li>
+													<li>- 보유 및 이용기간 : 고객 삭제 또는 회원 탈퇴 시까지</li>
+													<li class="right">(1년간 환불 기록 없는 경우 삭제)</li>
+												</ul>
+												<p class="caution">개인정보 제공에 대한 동의를 거부할 권리가 있으며, 단 거부할 경우<br>환불계좌 등록을 하실 수 없습니다.</p>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<input type="checkbox" name="agree" id="agree01" class="check">
+										<label for="agree01">(선택) 개인정보 수집 및 이용 동의</label>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div>
+
+			</div>
+			<div class="foot">
+				<div class="btn-group center">
+					<button type="button" class="btn large outline primary js-pop-close">취소</button> <!-- 팝업 닫기 .js-pop-close -->
+					<button type="button" class="btn large primary">반품 신청</button>
+				</div>
+				<div class="pop-bot-notice">
+					<p class="com-txt2">취소/교환/반품 안내</p>
+					<ul class="com-txt5 dot-list">
+						<li>주문 취소/반품으로 인한 환불은 주문했던 결제수단으로 환불되며, <span>무통장입금으로 결제하신 경우에는 주문 당시 설정하셨던 환불계좌로 환불 처리 됩니다.</span></li>
+						<li>교환은 동일 상품으로만 교환할 수 있습니다. 다른 상품을 원하시면 <span>반품 신청 후 재주문 해주시기 바랍니다.</span></li>
+						<li>교환/반품 사유 및 도서산간 지역에 따라 추가 배송비가 발생될 <span>수 있습니다.</span></li>
+						<li>증정품의 교환/반품을 원하시면 고객센터를 통해 문의 주시기 바랍니다.</li>
+						<li>증정품이 있는 상품을 반품하시는 경우 증정품도 함께 반품해주셔야 <span>합니다.</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

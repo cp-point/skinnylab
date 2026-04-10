@@ -1,0 +1,666 @@
+// 회원 공통
+.section-member {
+	.section-sub-tit {
+		@include font(24px,$bold);
+	}
+	.event-banner {
+		max-width: 335px;
+		margin: 0 auto;
+		.swiper-container {
+			height: 235px;
+			
+			& > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction { bottom: -2px; }
+			.swiper-slide {
+				width: 335px;
+				height: 210px;
+				position: relative;
+
+				a {
+					width: 335px;
+					height: 210px;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+
+			.swiper-controls {
+				position: absolute;
+				// left: 50%;
+				left: 0;
+				bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				// transform: translateX(-60%);
+
+				.swiper-pagination {
+					position: static;
+					display: inline-block;
+					transition: none;
+					.swiper-pagination-bullet {
+						width: 7px;
+						height: 7px;
+						margin: 0 2px;
+						opacity: 1;
+						background-color: $line-color2;
+						transition: all .2s ease-in-out;
+						transform: translateZ(0);
+
+						&.swiper-pagination-bullet-active {
+							width: 65px;
+							border-radius: 50px;
+							background-color: $primary-color;
+						}
+					}
+				}
+
+				button {
+					display: inline-block;
+					@include size(6px,10px);
+					text-indent: -99999px;
+					margin-top: 3px;
+					margin-left: 13px;
+				}
+
+				.pause {
+					background: url('@@img/pc/common/btn-carousel-pause.png') center center no-repeat;
+					background-size: 6px 10px;
+					&:hover { background-image: url('@@img/pc/common/btn-carousel-pause-active.png'); }
+				}
+
+				.play { 
+					background: url('@@img/pc/common/btn-carousel-play.png') center center no-repeat;
+					background-size: 6px 10px;
+					&:hover { background-image: url('@@img/pc/common/btn-carousel-play-active.png'); }
+				}
+			}
+		}
+	}
+	.page-top-desc {
+		.com-txt {
+			font-weight: $regular;
+			strong {
+				font-weight: $extra-bold;
+			}
+		}
+		.find-id {
+			font-family: 'Poppins';
+			color: $secondary-color1;
+			font-weight: $bold;
+			border-bottom: 1px solid $secondary-color1;
+		}
+	}
+	.form-layout {
+		&.large {
+			.title { margin-bottom: 0; }
+		}
+		.input-with-btn {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+	}
+	.caution {
+		position: relative;
+		margin: 20px 0 0;
+		padding-left: 25px;
+		color: #828287;
+		&::before {
+			@include before-after();
+			top: 0;
+			left: 0;
+			@include size(18px,18px);
+			background: url("@@img/mob/member/icon-caution.png") 0 0 no-repeat;
+			background-size: cover;
+		}
+	}
+	.btn-group {
+		.btn.block + .btn.block { margin-top: 15px; }
+	}
+
+	.sns-login {
+		margin-top: 59px;
+		.btn-group {
+			margin-top: 29px;
+			.sns-btn {
+				display: block;
+				box-sizing: border-box;
+				@include size(32%,40px);
+				text-align: center;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				&.kakao {
+					background-image: url("@@img/mob/member/icon-kakao.png");
+					background-color: #f9e000;
+					background-size: 26px 26px;
+				}
+				&.naver {
+					background-image: url("@@img/mob/member/icon-naver.png");
+					background-color: #03cf5d;
+					background-size: 14px 14px;
+				}
+				&.google {
+					border: 1px solid $line-color2;
+					background-image: url("@@img/mob/member/icon-google.png");
+					background-color: #fff;
+					background-size: 18px 18px;
+				}
+			}
+		}
+	}
+	.join-type {
+		padding: 25px 20px;
+		& > .title {
+			margin-bottom: 22px;
+			color: $text-color1;
+			font-weight: 800;
+			font-size: 20px;
+			text-align: center;
+			letter-spacing: -.045em;
+		}
+		.box-wrap {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+		.box {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			max-width: 500px;
+			min-height: 270px;
+			padding: 30px;
+			border: 1px solid #c1c1c3;
+			transition: all .2s;
+			& + .box { margin-top: 20px; }
+			.logo {
+				margin-bottom: 17px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				&.sl {
+					width: 94px;
+					height: 24px;
+					background-image: url('@@img/mob/member/logo-type-sl.png');
+				}
+				&.hb {
+					width: 141px;
+					height: 20px;
+					background-image: url('@@img/mob/member/logo-type-hb.png');
+				}
+			}
+			.title {
+				color: $text-color1;
+				font-weight: 800;
+				font-size: 24px;
+				text-align: center;
+				letter-spacing: -.025em;
+			}
+			.desc {
+				margin-top: 7px;
+				margin-bottom: 16px;
+				color: $text-color1;
+				font-weight: 500;
+				font-size: 16px;
+				text-align: center;
+				letter-spacing: -.025em;
+				.str { font-weight: 800; }
+			}
+			.btn-area {
+				display: flex;
+				width: 100%;
+				margin-top: auto;
+				.btn {
+					flex: 1;
+					& + .btn { margin-left: 10px; }
+				}
+			}
+		}
+	}
+}
+
+// 로그인
+.member-login {
+	.tab-group-wrap .tab-content {
+		padding: 39px 0 0;
+	}
+	.check-wrap {
+		margin-top: 20px;
+		.check + .check { margin-left: 10px; }
+	}
+	.btn-group {
+		margin-top: 40px;
+	}
+	.utility-group {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+		li {
+			position: relative;
+			padding: 0 4%;
+			letter-spacing: -1px;
+			@include font(14px,$regular);
+			&::before {
+				@include before-after();
+				top: 50%;
+				left: 0;
+				transform: translate(0,-50%);
+				@include size(1px,14px);
+				background: $line-color2;
+			}
+			&:first-child::before { display: none; }
+		}
+	}
+
+	.sns-login {
+		margin-top: 59px;
+	}
+
+	.membership-desc {
+		border-top: 1px solid $bg-color2;
+		margin-top: 30px;
+		padding-top: 30px;
+		.com-txt { font-weight: $extra-bold; }
+		.desc {
+			margin-top: 15px;
+			font-weight: $regular;
+			strong {
+				font-weight: $extra-bold;
+			}
+		}
+		.btn-group { margin-top: 19px; }
+	}
+
+	.event-banner {
+		margin-top: 40px;
+	}
+}
+
+// 정보 찾기(아이디, 이전아이디, 비밀번호찾기)
+.member-find {
+	.form-layout {
+		margin-top: 45px;
+		.input-certification-send {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			.text { width: calc(100% - 125px); }
+			.btn-send {
+				width: 115px;
+				min-width: 115px;
+				font-size: 14px;
+			}
+		}
+		.input-certify {
+			position: relative;
+			.timer {
+				position: absolute;
+				top: 50%;
+				transform: translate(0,-50%);
+				right: 0;
+				font-family: 'Apple SD Gothic Neo';
+				@include font(14px,$bold);
+				color: $primary-color;
+			}
+		}
+	}
+	.btn-group { margin-top: 40px; }
+	.page-top-desc {
+		& + .tab-group-wrap { margin-top: 33px; }
+	}
+}
+
+.popup-member-find {
+	& > .container {
+		padding-top: 40px !important;
+	}
+	.foot {
+		margin-top: 40px !important;
+		padding-top: 0 !important;
+		border-top: 0;
+	}
+	.page-top-desc {
+		.com-txt {
+			font-weight: $regular;
+			strong {
+				font-weight: $extra-bold;
+			}
+		}
+		.desc {
+			margin-top: 15px;
+			font-weight: $regular;
+		}
+		.find-id {
+			font-family: 'Poppins';
+			color: $secondary-color1;
+			font-weight: $bold;
+			border-bottom: 1px solid $secondary-color1;
+			width: 80%;
+			overflow: hidden;
+			word-break: break-all;
+		}
+	}
+	.form-layout {
+		margin-top: 40px;
+		&.large {
+			.title { margin-bottom: 0; }
+		}
+		&.view {
+			.title { margin-bottom: 0; }
+			.txt-box {
+				box-sizing: border-box;
+				height: 60px;
+				line-height: 60px;
+				border-bottom: 2px solid #d5d5d7;
+				@include font(16px,$bold);
+				color: $text-color1;
+				&.id {
+					overflow: hidden;
+					display: flex;
+					align-items: center;
+					word-break: break-all;
+					min-height: 60px;
+					height: auto;
+					padding: 5px 0;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+	.caution {
+		position: relative;
+		margin: 20px 0 0;
+		padding-left: 25px;
+		color: #828287;
+		&::before {
+			@include before-after();
+			top: 0;
+			left: 0;
+			@include size(18px,18px);
+			background: url("@@img/mob/member/icon-caution.png") 0 0 no-repeat;
+			background-size: cover;
+		}
+	}
+	&.existing {
+		.com-txt,
+		.com-txt3 {
+			span {
+				display: block;
+				@include tab-only() { display: inline; }
+			}
+		}
+		.result {
+			margin-top: 23px;
+		}
+		.brand {
+			@include font(24px,$extra-bold);
+		}
+		.com-txt3 {
+			margin-top: 25px;
+			font-weight: $regular;
+		}
+	}
+}
+
+// 회원가입
+.member-join {
+	.page-top-desc {
+		letter-spacing: -.05em;
+		span {
+			display: block;
+			@include tab-only() { display: inline; }
+		}
+	}
+
+	.join-tit { margin-top: 40px; }
+	.self-auth-wrap {
+		margin-top: 30px;
+		padding-top: 30px;
+		border-top: 1px solid $bg-color2;
+		.title { font-size: 24px; }
+		.com-txt3 { font-weight: $regular; }
+		.btn-group { margin-top: 29px; }
+	}
+	.sns-login {
+		margin-top: 30px;
+		padding-top: 30px;
+		border-top: 1px solid $bg-color2;
+		.com-txt5 { margin-top: 12px; }
+		.btn-group { margin-top: 20px; }
+	}
+	.form-layout {
+		margin-top: 25px;
+		.input-with-btn {
+			&.id-check {
+				@include text-with-btn(90px);
+			}
+			&.birthday-check {
+				@include text-with-btn(105px);
+				.btn {
+					width: 50px;
+					min-width: 50px;
+					&.is-active {
+						color: #fff;
+						background-color: $btn-primary-color;
+					}
+				}
+			}
+			&.addr-input {
+				@include text-with-btn(105px);
+			}
+		}
+	}
+	.input-check {
+		position: relative;
+		&.pw-check {
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 30px;
+				z-index: 1;
+			}
+			
+			input.check {
+				&:checked + label:before { background-image: url('@@img/mob/common/round-check-on.png'); }
+				
+				& + label {
+					margin: 10px 5px 0 0;
+					@include font(14px,$regular,1.2);
+					color: $primary-color;
+					cursor: auto;
+
+					&:before {
+						@include size(20px,20px);
+						background: url('@@img/mob/common/round-check.png') no-repeat;
+						background-size: 20px 20px;
+					}
+				}
+				&:checked + label { font-weight: $bold; }
+			}
+		}
+	}
+	.input-radio {
+		position: relative;
+		input.radio {
+			&:checked + label {
+				background-color: $primary-color;
+				color: #fff;
+			}
+			& + label {
+				text-align: center;
+				@include size(50px,40px);
+				padding: 0;
+				line-height: 40px;
+				font-weight: $bold;
+
+				&::before { display: none; }
+			}
+		}
+	}
+
+	.user-agreement {
+		margin-top: 60px;
+		.row .info {
+			bottom: 0;
+			margin-top: 10px;
+		}
+		.caution::before { background-image: none; }
+		.markting-check {
+			display: flex;
+			.item { margin-right: 10px; }
+		}
+	}
+
+	.transfer {
+		margin-top: 40px;
+		// margin-bottom: 60px;
+
+		dl {
+			display: flex;
+			font-size: 16px;
+			&.first { margin-top: 20px; }
+			&.column {
+				flex-direction: column;
+
+				dd {
+					margin-top: 8px;
+					padding-left: 12px;
+
+					p {
+						position: relative;
+						font-size: 16px;
+						color: #828287;
+						padding-left: 10px;
+						
+						&::before {
+							content: '';
+							position: absolute;
+							top: 50%;
+							left: 0;
+							transform: translateY(-50%);
+							width: 3px;
+							height: 3px;
+							background-color: $primary-color;
+							border-radius: 50%;
+						}
+					}
+				}
+			}
+
+			dt { font-weight: $bold; }
+		}
+	}
+
+	.btn-group.join { margin-top: 40px; }
+
+}
+
+// 회원가입 완료
+.member-join-completed {
+	.result-txt {
+		strong {
+			color: $secondary-color1;
+			font-weight: $extra-bold;
+		}
+		.com-txt3 {
+			margin-top: 15px;
+			font-weight: $regular;
+		}
+	}
+	.btn-group { margin-top: 40px; }
+
+	.recommend-product {
+		.prod-col-item {
+			height: 460px;
+			.tag-box {
+				font-size: 14px;
+				color: $text-color2;
+			}
+		}
+	}
+}
+
+// 이용약관 팝업
+.popup-terms {
+	.common-popup > & {
+		& > .container { padding-top: 25px; }
+	}
+}
+
+// 개인정보 팝업
+.popup-privacy {
+	.common-popup > & {
+		& > .container { padding-top: 25px; }
+	}
+}
+
+// HB멤버십계정통합안내 팝업
+.popup-existing-membership-info {
+	.common-popup > & {
+		& > .container {
+			padding-top: 25px;
+			& > .foot { margin-top: 50px; }
+		}
+	}
+	.page-top-desc {
+		.com-txt {
+			font-weight: 400;
+			letter-spacing: -.025em;
+			strong { letter-spacing: -.065em; }
+		}
+		.name { word-break: break-all; }
+	}
+	.user-info {
+		margin-top: 28px;
+		.item {
+			.title {
+				color: $text-color1;
+				font-weight: 700;
+				font-size: 22px;
+			}
+			.content {
+				color: $text-color2;
+				font-weight: 700;
+				font-size: 22px;
+				.info-id {
+					color: #ff725c;
+					text-decoration: underline;
+					word-break: break-all;
+				}
+			}
+		}
+	}
+	.caution {
+		position: relative;
+		margin: 20px 0 0;
+		padding-left: 25px;
+		color: #828287;
+		&::before {
+			@include before-after();
+			top: 0;
+			left: 0;
+			@include size(18px,18px);
+			background: url("@@img/mob/member/icon-caution.png") 0 0 no-repeat;
+			background-size: cover;
+		}
+		.str { font-weight: 800; }
+	}
+}

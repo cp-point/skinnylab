@@ -1,0 +1,127 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-order-cancel" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-order-cancel">
+		<div class="header">
+			<h1 class="title">주문 취소</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<h2 class="com-txt2 sub-title">취소 상품</h2>
+				<ul class="prod-detail-list">
+					{% for i in range(1, 3) %}
+					<li>
+						<figure class="prod-row-item"> <!-- 입금대기 주문 취소 일 때 체크박스 및 셀렉트박스 비활성화 -->
+							<div class="item-check">
+								<div class="check-only"><input type="checkbox" {% if i > 1 -%}disabled{% endif %}><span></span></div>
+							</div>
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								{% if i == 1 -%}<p class="store-name">스키니랩</p> <!-- 입점사 있을 때 노출 -->{% endif %}
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									<span class="select-wrap">
+										<select id="testSelect{{i}}" name="testSelect{{i}}" class="select small" style="width: 60px;" {% if i > 1 -%}disabled{% endif %}>
+											<option value="1">1개</option>
+											<option value="2">2개</option>
+											<option value="3">3개</option>
+											<option value="4">4개</option>
+										</select>
+										<span class="arrow"></span>
+									</span>
+									<div class="price">
+										<strong>19,800</strong>원
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</li>
+					{% endfor %}
+				</ul>
+				
+				<h2 class="com-txt2 sub-title">취소 사유</h2>
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title hide">
+							<label for="type">취소 사유</label>
+						</dt>
+					</dl>
+					<dd class="content">
+						<span class="select-wrap" style="width: 100%;" title="취소 사유 선택 목록">
+							<select id="type" name="type" class="select">
+								<option value="0">취소 사유를 선택해 주세요.</option>
+								<option value="1">고객 단순 변심</option>
+								<option value="2">주문 정보 변경</option>
+								<option value="3">구매 의사 없어짐</option>
+								<option value="4">배송 지연</option>
+								<option value="5">직접 입력</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</dd>
+					<dd class="content">
+						<!-- 에디터 영역 -->
+						<div class="editor">
+							<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="사유를 입력해 주세요." class="editor-cont txt" maxlength="1000"></textarea>
+							<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+						</div>
+						<!-- // 에디터 영역 -->
+					</dd>
+				</div>
+
+				<h2 class="com-txt2 sub-title">환불 내역</h2>
+				<div class="refund-wrap">
+					<dl>
+						<dt>취소 상품 금액</dt>
+						<dd><strong>60,000</strong>원</dd>
+						<dt>배송비</dt>
+						<dd><strong>0</strong>원</dd>
+						<dt>쿠폰할인금액 차감</dt>
+						<dd><strong>0</strong>원</dd>
+						<dt>마일리지 복원 금액</dt>
+						<dd><strong>0</strong>원</dd>
+					</dl>
+					<dl class="total">
+						<dt>환불예정금액</dt>
+						<dd>
+							<span><strong>60,000</strong>원</span>
+							<span class="msg">카카오페이 결제 취소</span>
+						</dd>
+					</dl>
+				</div>
+
+			</div>
+			<div class="foot">
+				<div class="btn-group center">
+					<button type="button" class="btn large outline primary js-pop-close">취소</button> <!-- 팝업 닫기 .js-pop-close -->
+					<button type="button" class="btn large primary">주문 취소</button>
+				</div>
+				<div class="pop-bot-notice">
+					<p class="com-txt2">취소/교환/반품 안내</p>
+					<ul class="com-txt5 dot-list">
+						<li>주문 취소/반품으로 인한 환불은 주문했던 결제수단으로 환불되며, <span>무통장입금으로 결제하신 경우에는 주문 당시 설정하셨던 환불계좌로 환불 처리 됩니다.</span></li>
+						<li>교환은 동일 상품으로만 교환할 수 있습니다. 다른 상품을 원하시면 <span>반품 신청 후 재주문 해주시기 바랍니다.</span></li>
+						<li>교환/반품 사유 및 도서산간 지역에 따라 추가 배송비가 발생될 <span>수 있습니다.</span></li>
+						<li>증정품의 교환/반품을 원하시면 고객센터를 통해 문의 주시기 바랍니다.</li>
+						<li>증정품이 있는 상품을 반품하시는 경우 증정품도 함께 반품해주셔야 <span>합니다.</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

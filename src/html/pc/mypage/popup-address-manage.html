@@ -1,0 +1,92 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-address-manage" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-address-manage">
+		<div class="header">
+			<h1 class="title">배송지 관리</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="head">
+				<div class="btn-group right">
+					<button onclick="UI.showLayerPop('',{ url: './popup-address-register.html'}); return false;" class="btn outline thin primary">신규 배송지 등록</button>
+				</div>
+			</div>
+			<div class="body">
+				<ul class="address-list">
+					<li class="item">
+						<div class="btn-group between util-group">
+							<div>
+								<span class="label">기본 배송지</span> <!-- 기본 배송지 일 때 노출-->
+								우리집
+							</div>
+							<div>
+								<button class="btn outline2 small">수정</button>
+							</div>
+						</div>
+						<dl class="info-member">
+							<dt>홍길동</dt>
+							<dd>010-1234-5678</dd>
+						</dl>
+						<div class="info-addr">
+							(06569) 서울시 강남구 영동대로 511(트레이드 타워) 2104호 헬스밸런스 주소가 긴 경우 주소가 긴 경우
+						</div>	
+					</li>
+					<li class="item">
+						<div class="btn-group between util-group">
+							<div>회사</div>
+							<div>
+								<button class="btn outline2 small">수정</button>
+								<button class="btn outline2 small">삭제</button>
+							</div>
+						</div>
+						<dl class="info-member">
+							<dt>홍길동</dt>
+							<dd>010-1234-5678</dd>
+						</dl>
+						<div class="info-addr">
+							(12345) 서울시 서초구 방배천로 118, 1F 에이디앤스타일
+						</div>	
+					</li>
+					<li class="item">
+						<div class="btn-group between util-group">
+							<div>회사</div>
+							<div>
+								<button class="btn outline2 small">수정</button>
+								<button class="btn outline2 small">삭제</button>
+							</div>
+						</div>
+						<dl class="info-member">
+							<dt>부모님댁</dt>
+							<dd>010-1234-5678</dd>
+						</dl>
+						<div class="info-addr">
+							(22222) 서울시 종로구 땡땡땡로 땡땡길 123
+						</div>
+					</li>
+					<li class="empty">
+						<p class="desc">
+							등록된 배송지가 없습니다.
+						</p>
+					</li>
+				</ul>
+				
+				<div class="common-pagination">
+					<a href="#" class="paging-btn prev">Prev</a>
+					<span class="paging-num">
+						<a href="#" class="on">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+					</span>
+					<a href="#" class="paging-btn next">Next</a>
+				</div>	
+
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

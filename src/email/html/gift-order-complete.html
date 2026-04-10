@@ -1,0 +1,287 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '선물하기 주문이 완료되었습니다.'
+	}
+%}
+
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<tr>
+	<td>
+		<table class="email-common-container" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width: 60px;"></td>
+				<td class="container-wrap">
+					<table class="page-content" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="txt com-txt1">
+								{{pageInfo.title}}
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt2">
+								<strong class="color01">주문자명</strong>님,<br> 
+								저희 쇼핑몰을 이용하여 주셔서 감사합니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 30px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt4">
+								<strong class="color01">받는분</strong>님이 배송정보를 입력하시면 배송이 시작됩니다.<br>
+								주문내역 및 배송정보는 <strong class="color01"><a href="#" target="_blank" class="btn-link">마이페이지 &gt; 나의 쇼핑내역 &gt; 보낸 선물함</a></strong>에서도 확인하실 수 있습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 58px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>주문정보</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 170px;">주문자</th>
+										<td style="width: 510px;">
+											<strong>{주문자명} / {휴대폰번호} / {이메일주소}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">주문일자</th>
+										<td style="width: 510px;">
+											<strong>{2021-06-15}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">주문번호</th>
+										<td style="width: 510px;">
+											<strong>{주문번호}</strong>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>선물 상품 정보</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<td style="padding: 0;">
+											<table cellspacing="0" cellpadding="0" class="content-table product">
+												<tr>
+													<td style="height: 30px; border: 0;" colspan="5"></td>
+												</tr>
+												<tr>
+													<td style="width: 140px;">
+														<img src="{{base}}/img/email/goods-thumb-img140x140.jpg" alt="주문 상품 이미지">
+													</td>
+													<td style="width: 20px;"></td>
+													<td style="width: 360px;">
+														<table cellspacing="0" cellpadding="0" class="info-table">
+															<tr>
+																<td class="brand">브랜드명</td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="name">
+																	<div class="box">상품명 최대 1줄 노출 상품명 최대 1줄 노출</div>
+																</td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="quantity">수량 <span class="line"></span> <strong class="color01">1,000개</strong></td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="name01">
+																	<div class="box">1+1 상품명 최대 1줄 노출1+1 상품명 최대 1줄 노</div>
+																</td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="quantity">수량 <span class="line"></span> <strong class="color01">1,000개</strong></td>
+															</tr>
+														</table>
+													</td>
+													<td class="price" style="width: 140px;">
+														<strong>999,999,000</strong>원
+													</td>
+													<td style="width: 20px;"></td>
+												</tr>
+												<tr>
+													<td style="height: 30px; border: 0;" colspan="5"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>사은품 정보</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 430px;" class="com-txt4">
+											<strong class="color01">{사은품명사은품명사은품명사은품명사은품명사은품명}</strong>
+										</th>
+										<td class="data color02" style="width: 250px;">
+											증정기간 : {증정기간노출}
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 430px;" class="com-txt4">
+											<strong class="color01">{사은품명사은품명사은품명사은품명사은품명사은품명}</strong>
+										</th>
+										<td class="data color02" style="width: 250px;">
+											증정기간 : {증정기간노출}
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>받는 분 정보</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 170px;">받는분</th>
+										<td style="width: 510px;">
+											<strong>{받는분} {연락처친구}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">휴대폰 번호</th>
+										<td style="width: 510px;">
+											<strong>{받는분휴대폰번호}</strong>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>결제 정보</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 170px;">전체 상품</th>
+										<td style="width: 510px;">
+											<strong>{상품합계}개</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">상품금액</th>
+										<td style="width: 510px;">
+											<strong>{상품금액총합계}원</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">할인금액</th>
+										<td style="width: 510px;">
+											<strong>-{할인금액합계}원</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">주문혜택 할인</th>
+										<td style="width: 510px;">
+											<strong>-{주문혜택할인합계}원</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">마일리지 사용</th>
+										<td style="width: 510px;">
+											<strong>-{마일리지사용금액}원</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">배송비</th>
+										<td style="width: 510px;">
+											<strong>{배송비합계}원</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">
+											<strong class="color01">총 결제 금액</strong>
+										</th>
+										<td style="width: 510px;">
+											<strong>{총결제금액}원</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 170px;">결제수단</th>
+										<td style="width: 510px;">
+											<strong>{결제수단}{결제금액}원 {결제 년/월/일/시/분/초}</strong>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td style="width: 60px;"></td>
+			</tr>
+			{{ include('./notice.html') }}
+		</table>
+	</td>
+</tr>
+{%- endblock %}

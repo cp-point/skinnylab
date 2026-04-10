@@ -1,0 +1,12 @@
+{% macro include(fileName) -%}
+	{% include fileName ignore missing -%}
+{% endmacro -%}
+<!DOCTYPE html>
+<html lang="ko">
+{{ include('./head.html') }}
+<body>
+	<!-- content // -->
+	{% block content -%}{%- endblock %}
+	<!-- // content -->
+</body>
+</html>

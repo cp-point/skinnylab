@@ -1,0 +1,67 @@
+{%
+	set pageInfo = {
+		section: 'common',
+		title: '개인정보처리방침',
+		order: [1,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/common.html') }}
+</header>
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-privacy">
+	<div class="content">
+		<div class="license-wrap intro">
+			<p class="license-desc">헬스밸런스㈜는 이용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개하며, 본 개인정보 처리방침을 홈페이지 첫 화면에 공개함으로써 이용자들이 언제나 용이하게 보실 수 있도록 조치하고 있습니다. 개인정보 처리방침은 정부의 법률 및 지침 변경이나 회사의 내부 방침 변경 등으로 인하여 수시로 변경될 수 있고, 이에 따른 개인정보 처리방침의 지속적인 개선을 위하여 필요한 절차를 정하고 있습니다. 이용자들께서는 사이트 방문 시 수시로 확인하시기 바랍니다.</p>
+			<p class="license-desc">헬스밸런스㈜의 개인정보 처리방침은 다음과 같은 내용을 담고 있습니다.</p>	
+		</div>
+		<div class="license-wrap">
+			<div class="license-box">
+				<ul class="license-list">
+					<li class="tit">1. 개인정보 수집에 대한 동의.</li>
+					<li class="tit">2. 수집하는 개인정보 항목 및 수집방법</li>
+					<li class="tit">3. 개인정보의 수집 및 이용목적</li>
+					<li class="tit">4. 수집하는 개인정보의 보유 및 이용기간</li>
+					<li class="tit">5. 개인정보의 파기 절차 및 방법</li>
+					<li class="tit">6. 이용자 자신의 개인정보 관리(열람, 정정, 삭제 등)에 관한 사항</li>
+					<li class="tit">7. 쿠키(Cookie)의 운용 및 거부</li>
+					<li class="tit">8. 개인정보의 위탁처리</li>
+					<li class="tit">9. 개인정보보호를 위한 기술적/관리적 대책</li>
+					<li class="tit">10. 개인정보 관련 의견수렴 및 불만처리에 관한 사항</li>
+					<li class="tit">11. 개인정보 보호책임자 및 담당자의 소속-성명 및 연락처</li>
+					<li class="tit">12. 이용자 및 법정대리인의 권리와 그 행사방법</li>
+					<li class="tit">13. 권익침해 구제방법</li>
+					<li class="tit">14. 고지의 의무</li>
+				</ul>
+			</div>
+		</div>
+		<div class="license-wrap">
+			<p class="license-tit">1. 개인정보 수집에 대한 동의</p>
+			<p class="license-desc attached">헬스밸런스㈜는 이용자들이 회사의 개인정보수집이용 동의 또는 이용약관의 내용에 대하여 「동의」버튼 또는 「취소」버튼을 클릭할 수 있는 절차를 마련하여, 「동의」버튼을 클릭하면 개인정보 수집에 대해 동의한 것으로 봅니다.</p>
+		</div>
+		<div class="license-wrap">
+			<p class="license-tit">2. 수집하는 개인정보의 항목 및 수집방법</p>
+			<p class="license-desc attached">가. 수집 항목</p>
+			<p class="license-desc attached">헬스밸런스㈜는 이용자들이 회원서비스를 이용하기 위해 회원으로 가입하실 때 서비스 제공을 위한 필수/선택적인 정보들을 온라인상에서 입력 받고 있습니다.</p> 
+			<p class="license-desc attached">1) 선택입력사항</p>
+			<ul>
+				<li class="license-desc attached">① 회원가입 시: 이름, 휴대폰번호, 생년월일, 성별, 가입경로</li>
+				<li class="license-desc attached">② 서비스 이용 시: 배송 수령지 주소, 연락처</li>
+			</ul>
+			<p class="license-desc attached">2) 선택입력사항</p>
+			<ul>
+				<li class="license-desc attached">① 회원가입 시: 이메일, 주소, 전화번호, 추천인아이디</li>
+			</ul>	
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

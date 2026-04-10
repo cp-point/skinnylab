@@ -1,0 +1,101 @@
+{%
+	set pageInfo = {
+		section: 'search',
+		title: '통합검색'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- content // -->
+<div id="content-main" class="common-container section-search search-review">
+	<h2 class="hide">통합검색</h2>
+	<div class="integrated-search">
+		<div class="search-box">
+			<div class="search js-text-clear">
+				<label for="search01" class="hide">검색</label>
+				<input type="text" id="search01" name="search" value="" placeholder="궁금하신 내용을 입력해주세요." class="input">
+				<button type="button" class="btn-clear">입력값 지우기</button>
+				<button type="button" class="btn-submit">검색하기</button>
+			</div>
+		</div>	
+		<p class="result"><span class="str">'시서스'</span>에 대한 검색결과</p>
+	</div>
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">
+						상품
+						<span>(17)</span>
+					</a>
+				</li>
+				<li class="selected">
+					<a href="#">
+						리뷰
+						<span>(185)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						기획전
+						<span>(21)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						이벤트
+						<span>(15)</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container-wrap">
+		<!-- 리뷰 목록 // -->
+		<ul class="review-list">
+			{% for i in range(1, 9) -%}
+			<li class="wrap">
+				<a href="#">
+					<figure class="review-item">
+						<div class="img">
+							<img src="{{base}}/img/pc/@dummy/review-thumb-img0{{i}}.jpg" alt="">
+							<span class="photo-num">5</span>
+						</div>
+						<figcaption class="content">
+							<div class="point">
+								<em>4.9</em>
+								<span class="star-bg">
+									<span class= "star" style="width: 100%;"></span>
+								</span>
+							</div>
+							<p class="title">행복한 시서스 다이어트 14정 x 2박스 4주분+워터밤 콜라겐···</p>
+							<p class="dec">작년에 다**트로 10키로를 빼고 요즘 나태해져서 요요가 오고있어서, 보*제를 검색하다 먹기에 편한 알약 상...</p>
+							<p class="name">sk******b@abc.com</p>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			{% endfor %}
+			<!-- 검색 결과 없을때 // -->
+			<!-- <li class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</li> -->
+			<!-- // 검색 결과 없을때 -->
+		</ul>
+		<!-- // 리뷰 목록 -->
+
+		<div class="common-pagination">
+			<a href="#" class="paging-btn prev">Prev</a>
+			<span class="paging-num">
+				<a href="#" class="on">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+			</span>
+			<a href="#" class="paging-btn next">Next</a>
+		</div>
+	</div>
+</div>
+{%- endblock %}

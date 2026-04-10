@@ -1,0 +1,56 @@
+.table-wrap.board-list {
+	border-color: $line-color1;
+	border-bottom: 1px solid #eaeaeb;
+
+	.table-layout {
+		table-layout: fixed;
+		font-size: 16px;
+		color: $text-color1;
+
+		& > thead > tr,
+		& > tbody > tr {
+			& > th {
+				background-color: #fff;
+				border-right: none;
+				padding: 25px 12px 19px;
+				font-weight: $medium;
+			}
+
+			& > td {
+				border-top: 1px solid #eaeaeb;
+				border-right: none;
+				padding: 25px 12px 19px;
+				font-weight: $medium;
+			}
+		}
+
+		& > tbody > tr {
+			& > td {
+				.type { font-weight: $extra-bold; }
+
+				a {
+					width: 100%;
+					display: inline-block;
+					text-align: left;
+					@include ellipsis;
+
+					&:hover { text-decoration: underline; }
+				}
+
+				.date {
+					font-size: 14px;
+					color: #97979b;
+				}
+			}
+		}
+	}
+
+	&.hidden-title {
+		.table-layout {
+			thead {
+				position: absolute;
+				top: -99999px;
+			}
+		}
+	}
+}

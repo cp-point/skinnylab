@@ -1,0 +1,139 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-advertising-write" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-advertising-write">
+		<div class="header">
+			<h1 class="title">광고 제휴 문의</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title">
+							<label for="userName">작성자 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="userName" name="userName" value="홍길동" placeholder="작성자명 입력" class="text block" disabled>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPW">문의 비밀번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="password" id="userPW" name="userPW" placeholder="비밀번호 입력" class="text block" minlength="8">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="subject">제목 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="subject" name="subject" placeholder="제목 입력" class="text block">
+							</span>
+						</dd>
+						<dd class="content">
+							<!-- 에디터 영역 -->
+							<div class="editor">
+								<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="문의 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+								<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+							</div>
+							<!-- // 에디터 영역 -->
+
+							<div class="image-upload">
+								<p class="hide">이미지업로드</p>
+								<ul class="list">
+									<li class="item">
+										<div class="file">
+											<div class="input">
+												<input type="file" id="imageFile1" name="imageFile1" class="input-file">
+												<label for="imageFile1" class="btn-upload">파일 선택</label>
+											</div>
+											<div class="result">
+												<div class="content">
+													<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+												</div>
+												<button class="btn-del">파일 삭제</button>
+											</div>
+										</div>
+									</li>
+									{% for i in range(2, 6) %}
+									<li class="item">
+										<div class="file">
+											<div class="input">
+												<input type="file" id="imageFile{{i}}" name="imageFile{{i}}" class="input-file">
+												<label for="imageFile1" class="btn-upload">파일 선택</label>
+											</div>
+											<div class="result" style="display: none;">
+												<div class="content">
+													<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+												</div>
+												<button class="btn-del">파일 삭제</button>
+											</div>
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+								<ul class="com-txt5 dot-list">
+									<li>최대 5개 / 100MB 이하의 파일만 등록 가능합니다.</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="">알림선택 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-radio-text">
+								<input type="radio" id="noti1" name="noti" class="radio" checked="">
+								<label for="noti1">휴대폰 번호</label>
+								<input type="text" id="userPhone" name="userPhone" value="" placeholder="010-1234-5678" class="text" disabled>
+							</span>
+						</dd>
+						<dd class="content">
+							<span class="input-radio-text">
+								<input type="radio" id="noti2" name="noti" class="radio">
+								<label for="noti2">이메일</label>
+								<input type="text" id="userEmail" name="userEmail" value="" placeholder="sknylab@abc.com" class="text" disabled>
+							</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-group row center">
+					<button type="button" class="btn large outline primary">취소</button>
+					<button type="button" class="btn large primary">등록</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+<script>
+	$(function() {
+
+		// 알림선택 인풋박스 활성화/비활성화
+		var radioList = $('.form-layout input[type=radio]').not(':disabled');
+		var radioInput = $('.input-radio-text input[type=text]');
+		
+		radioList.each(function() {
+			$(this).on('click', function() {
+				if($(this).prop("checked")) {
+					radioInput.attr('disabled', true);
+					$(this).next().next().attr('disabled', false);
+				} 
+			});
+		});
+		
+	});
+</script>
+{%- endblock %}

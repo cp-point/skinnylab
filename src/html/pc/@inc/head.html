@@ -1,0 +1,24 @@
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1280">
+	{% if pageInfo.title -%}
+	<title>{{pageInfo.title}} | 스키니랩</title>
+	{% else -%}
+	<title>스키니랩</title>
+	{% endif %}
+
+	<link rel="stylesheet" href="{{base}}/js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="{{base}}/js/lib/swiper.min.css">
+	<link rel="stylesheet" href="{{base}}/css/pc/common.css">
+	<script src="{{base}}/js/lib/jquery-3.4.1.min.js"></script>
+	<script src="{{base}}/js/lib/jquery-ui.min.js"></script>
+	<script src="{{base}}/js/lib/swiper.min.js"></script>
+	<script src="{{base}}/js/ui-common-pc.js"></script>
+	{% if pageInfo.section == 'main' -%}
+	<link rel="stylesheet" href="{{base}}/js/lib/aos.css">
+	<script src="{{base}}/js/lib/gsap.min.js"></script>
+	<script src="{{base}}/js/lib/scrolltrigger.min.js"></script>
+	<script src="{{base}}/js/lib/aos.js"></script>
+	<script src="{{base}}/js/main-pc.js"></script>
+	{% endif %}
+</head>

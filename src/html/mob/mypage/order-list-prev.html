@@ -1,0 +1,117 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '이전주문내역 조회',
+		order: [1,4]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-order-list">
+	<div class="search-wrap">
+		<div class="content">
+			<div class="btn-group"> <!-- 버튼 선택 시 : .is-selected -->
+				<button type="button" class="btn outline2 thin primary">1주일</button>
+				<button type="button" class="btn outline2 thin primary">1개월</button>
+				<button type="button" class="btn outline2 thin primary is-selected">3개월</button>
+				<button type="button" class="btn outline2 thin primary">6개월</button>
+				<button type="button" class="btn outline2 thin primary set">기간설정</button>
+			</div>
+			<div class="calender-box">
+				<div class="calender">
+					<input type="text" id="calender01" name="calender01" title="조회 시작날짜 선택" class="text date-picker" readonly>
+					<span>~</span>
+					<input type="text" id="calender02" name="calender02" title="조회 종료날짜 선택" class="text date-picker" readonly>
+					<button type="button" href="#" class="btn thin primary search">조회</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-wrap">
+		{% for i in range(1, 3) %}
+		<div class="order-list-wrap">
+			<div class="top-util-cont">
+				<div>
+					<span class="date">2021.04.17</span>
+				</div>
+				<a href="./order-detail-prev.html" class="small-btn-util">주문상세</a>
+			</div>
+			<ul class="prod-detail-list prev-list">
+				{% for i in range(1, 3) %}
+				<li>
+					<a href="#">
+						<figure class="prod-row-item">
+							<figcaption class="content">
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									<dl class="option">
+										<dt>수량</dt>
+										<dd><strong>1</strong>개</dd>
+									</dl>
+									<div class="price">
+										<strong>19,800</strong>원
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endfor %}
+
+		<div class="order-list-wrap empty"> <!-- 내역 없을 때 .empty -->
+			<ul class="prod-detail-list">
+				<li>
+					<div class="result-txt is-error">
+						<p class="com-txt">조회기간 동안의 내역이<br>없습니다.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="btn-group center page-bot-group type01">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>
+
+		<div class="page-bot-notice type01">
+			<p class="com-txt2">이전주문내역 조회 안내</p>
+			<ul class="com-txt5 dot-list">
+				<li>2021년 8월 31일 이전 주문내역은 구매한 내역의 조회만 <span>가능합니다.</span></li>
+				<li>배송조회/취소/교환/반품의 처리 및 마일리지 등 주문 관련 문의가 <span>있으시면 고객센터(1644-7267)로 문의 부탁 드립니다.</span></li>
+			</ul>
+		</div>
+	
+	</div>
+</div>
+<script>
+	$(function() {
+		$('.btn.set').on('click', function() {
+			$('.calender-box').toggleClass('is-open');
+		});
+	})
+</script>
+{%- endblock %}

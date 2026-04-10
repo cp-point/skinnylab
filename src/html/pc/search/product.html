@@ -1,0 +1,575 @@
+{%
+	set pageInfo = {
+		section: 'search',
+		title: '통합검색'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- content // -->
+<div id="content-main" class="common-container section-search search-product">
+	<h2 class="hide">통합검색</h2>
+	<div class="integrated-search">
+		<div class="search-box">
+			<div class="search js-text-clear">
+				<label for="search01" class="hide">검색</label>
+				<input type="text" id="search01" name="search" value="" placeholder="궁금하신 내용을 입력해주세요." class="input">
+				<button type="button" class="btn-clear">입력값 지우기</button>
+				<button type="button" class="btn-submit">검색하기</button>
+			</div>
+		</div>	
+		<p class="result"><span class="str">'시서스'</span>에 대한 검색결과</p>
+	</div>
+	<div class="tab-menu">
+		<div class="wrap">
+			<ul class="list">
+				<li class="selected">
+					<a href="#">
+						상품
+						<span>(17)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						리뷰
+						<span>(185)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						기획전
+						<span>(21)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						이벤트
+						<span>(15)</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container-wrap">
+		<!--product//-->
+		<ul class="goods-list">
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="info">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</p>
+								<p class="title">
+									<span class="sub">
+										스키니랩
+									</span>
+									<span class="main">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									</span>
+								</p>
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+						<!-- <div class="status">
+							<p class="tit">일시품절</p>
+							<div class="btn-area">
+								<button type="button" class="btn ghost thin">재입고 알림</button>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="title">
+									<span class="main">
+										행복한 시서스 다이어트 14정 x 8박스 16주분
+									</span>
+								</p>
+								<p class="price non">
+									<!-- <span class="tit">비회원가</span> -->
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<!-- <span class="tit">회원가</span> -->
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+						<!-- <div class="status">
+							<p class="tit">일시품절</p>
+							<div class="btn-area">
+								<button type="button" class="btn ghost thin">재입고 알림</button>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item disabled">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="info">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</p>
+								<p class="title">
+									<span class="sub">
+										스키니랩
+									</span>
+									<span class="main">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									</span>
+								</p>
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+						<div class="status">
+							<p class="tit">일시품절</p>
+							<div class="btn-area">
+								<button type="button" class="btn ghost thin">재입고 알림</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item disabled">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="info">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</p>
+								<p class="title">
+									<span class="sub">
+										스키니랩
+									</span>
+									<span class="main">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									</span>
+								</p>
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+						<div class="status">
+							<p class="tit">일시품절</p>
+							<div class="btn-area">
+								<button type="button" class="btn ghost thin">재입고 알림</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="info">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</p>
+								<p class="title">
+									<span class="sub">
+										스키니랩
+									</span>
+									<span class="main">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									</span>
+								</p>
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="info">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</p>
+								<p class="title">
+									<span class="sub">
+										스키니랩
+									</span>
+									<span class="main">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									</span>
+								</p>
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="info">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</p>
+								<p class="title">
+									<span class="sub">
+										스키니랩
+									</span>
+									<span class="main">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									</span>
+								</p>
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+							</div>
+							<figcaption class="content">
+								<p class="info">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</p>
+								<p class="title">
+									<span class="sub">
+										스키니랩
+									</span>
+									<span class="main">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+									</span>
+								</p>
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											37%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="util">
+						<div class="like">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						</div>
+						<div class="action">
+							<div class="wrap">
+								<button type="button" class="btn-util payment">바로결제하기</button>
+								<button type="button" class="btn-util cart">장바구니넣기</button>
+								<button type="button" class="btn-util gift">선물하기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- 상품이 없을때 // -->
+			<!-- <li class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</li> -->
+			<!-- // 상품이 없을때 -->
+		</ul>
+		<!--//product-->
+		<div class="common-pagination">
+			<a href="#" class="paging-btn prev">Prev</a>
+			<span class="paging-num">
+				<a href="#" class="on">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+			</span>
+			<a href="#" class="paging-btn next">Next</a>
+		</div>
+	</div>
+</div>
+<!-- // content -->
+{%- endblock %}

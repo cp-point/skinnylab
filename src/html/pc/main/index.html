@@ -1,0 +1,1443 @@
+{%
+	set pageInfo = {
+		section: 'main',
+		title: ''
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="main-index">
+	<!-- // Common Header  -->
+	<script>
+		MAIN.headerAction();
+	</script>
+	<!-- Common Header // -->
+
+	<!-- // Intro Visual -->
+	<div class="intro-visual">
+		<h2 class="hide">혼자하는 다이어트 힘들죠?</h2>
+		<div class="banner">
+			<div class="init-motion">
+				<div class="wrap">
+					<div class="img">
+						<img src="{{base}}/img/pc/main/intro-visual-img01.png" alt="모델 이미지">
+					</div>
+					<div class="content">
+						<p class="title">혼자하는<br>다이어트 힘들죠?</p>
+						<p class="desc">
+							<span class="motion">나를 아는 다이어트</span>
+							<span class="motion">스키니랩에서 함께 해요!</span>
+						</p>
+						<div class="btn-wrap">
+							<a href="#" class="btn large outline primary motion">
+								<span>자세히보기</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slider">
+				<div class="list swiper-container">
+					<ul class="inner swiper-wrapper">
+						<li class="swiper-slide">
+							<div class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/intro-visual-img01.png" alt="모델 이미지">
+								</div>
+								<div class="content">
+									<p class="title">
+										<span class="motion">혼자하는<br>다이어트 힘들죠?</span>
+									</p>
+									<p class="desc">
+										<span class="motion">나를 아는 다이어트</span>
+										<span class="motion">스키니랩에서 함께 해요!</span>
+									</p>
+									<div class="btn-wrap">
+										<a href="#" class="btn large outline primary motion">
+											<span>자세히보기</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/intro-visual-img02.png" alt="모델 이미지">
+								</div>
+								<div class="content">
+									<p class="title">
+										<span class="motion">자몽과 오렌지의<br>가장 이상적인 비율</span>
+									</p>
+									<p class="desc">
+										<span class="motion">자몽 오렌지로~</span>
+										<span class="motion">티타임 하세요!</span>
+									</p>
+									<div class="btn-wrap">
+										<a href="#" class="btn large outline primary motion">
+											<span>자세히보기</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/intro-visual-img03.png" alt="모델 이미지">
+								</div>
+								<div class="content">
+									<p class="title">
+										<span class="motion">자몽과 오렌지의<br>가장 이상적인 비율</span>
+									</p>
+									<p class="desc">
+										<span class="motion">자몽 오렌지로~</span>
+										<span class="motion">티타임 하세요!</span>
+									</p>
+									<div class="btn-wrap">
+										<a href="#" class="btn large outline primary motion">
+											<span>자세히보기</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="action">
+				<p class="pagination"></p>
+				<div class="play">
+					<button type="button" class="btn-prev swiper-button-prev"></button>
+					<button type="button" class="btn-autoplay swiper-button-autoplay"></button>
+					<button type="button" class="btn-next swiper-button-next"></button>
+				</div>
+			</div>
+		</div>
+		<div class="membership">
+			<div class="wrap">
+				<dl class="benefit">
+					<dt>신규 회원가입시</dt>
+					<dd>
+						<span class="text">신규가입</span><span class="num">20</span><span class="percent">%</span>
+					</dd>
+					<dd>
+						<span class="text">신제품</span><span class="num">10</span><span class="percent">%</span>
+					</dd>
+					<dd>
+						<span class="text">재구매시</span><span class="num">10</span><span class="percent">%</span>
+					</dd>
+					<dd class="slash">
+						<span class="num">5</span><span class="text">회 무료배송까지!</span>
+					</dd>
+				</dl>
+				<div class="btn-wrap">
+					<a href="#" class="btn outline primary">
+						<span>HB멤버십</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(window).on('load scroll resize', function() {
+			if($('.intro-visual').hasClass('in')) return false;
+
+			if($('.intro-visual').offset().top <= $(this).scrollTop() + $(window).height()) {
+				var introVisualSwiper = new Swiper('.intro-visual .swiper-container', {
+					autoplay: false,
+					speed: 1000,
+					loop: true,
+					loopedSlides: 3,
+					allowTouchMove: false,
+					pagination: {
+						el: '.intro-visual .pagination',
+						type: 'fraction',
+						formatFractionCurrent: function(number) {
+							return number < 10 ? '0' + number : number;
+						},
+						formatFractionTotal: function(number) {
+							return number < 10 ? '0' + number : number;
+						}
+					},
+					navigation: {
+						nextEl: '.intro-visual .swiper-button-next',
+						prevEl: '.intro-visual .swiper-button-prev',
+					}
+				});
+
+				$('body').addClass('intro-banner').stop().delay(1700).queue(function(){
+					introVisualSwiper.autoplay.start();
+				});
+
+				$('.intro-visual .btn-autoplay').on('click', function() {
+					var $this = $(this);
+
+					if($this.hasClass('is-stop')) {
+						introVisualSwiper.autoplay.start();
+					} else {
+						introVisualSwiper.autoplay.stop();
+					}
+
+					$this.toggleClass('is-stop');
+				});
+
+				MAIN.introVisualAction();
+			}
+		});
+	</script>
+	<!-- Intro Visual // -->
+
+	<!-- // best seller -->
+	<div class="section-content best-seller">
+		<h2 class="hide">best seller</h2>
+		<div class="content-inner">
+			<div class="sec-title">
+				<p class="main">
+					<span class="motion">best seller</span></p>
+				<p class="sub">
+					<span class="motion">다이어트의 새로운 방법,</span>
+					<span class="motion">베스트셀러 제품을 확인하세요.</span>
+				</p>
+			</div>
+			<ul class="best-product">
+				<li class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/main/bestseller-img01.jpg" alt="베스트셀러 제품 이미지">
+								<div class="is-active">
+									<dl>
+										<dt class="title">시서스<br>다이어트</dt>
+										<dd class="desc">체지방 감소에 도움</dd>
+										<dd class="add">시서스 600% 농축<br>100% 식물성 원료</dd>
+									</dl>
+								</div>
+							</div>
+							<figcaption class="content">
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											47%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/main/bestseller-img02.jpg" alt="베스트셀러 제품 이미지">
+								<div class="is-active">
+									<dl>
+										<dt class="title">시서스<br>다이어트</dt>
+										<dd class="desc">체지방 감소에 도움</dd>
+										<dd class="add">시서스 600% 농축<br>100% 식물성 원료</dd>
+									</dl>
+								</div>
+							</div>
+							<figcaption class="content">
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											47%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/main/bestseller-img03.jpg" alt="베스트셀러 제품 이미지">
+								<div class="is-active">
+									<dl>
+										<dt class="title">시서스<br>다이어트</dt>
+										<dd class="desc">체지방 감소에 도움</dd>
+										<dd class="add">시서스 600% 농축<br>100% 식물성 원료</dd>
+									</dl>
+								</div>
+							</div>
+							<figcaption class="content">
+								<p class="price non">
+									<span class="tit">비회원가</span>
+									<span class="con">
+										<span class="num">
+											321,000
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">회원가</span>
+									<span class="con">
+										<span class="rate">
+											<span class="hide">할인율</span>
+											47%
+										</span>
+										<span class="num">
+											128,600
+										</span>
+										<span class="won">원</span>
+									</span>
+								</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+			</ul>
+			<p data-ratio="100" class="explain">
+				<span class="motion">날씬하게 만들어주는 방법을 제시하는</span>
+				<span class="motion">유일한 브랜드로 자리매김하기위한 열정.</span>
+			</p>
+		</div>
+	</div>
+
+	<script>
+		$(window).on('load scroll resize', function() {
+			if($('.best-seller').hasClass('in')) return false;
+
+			if($('.best-seller').offset().top <= $(this).scrollTop() + $(window).height()) {
+				MAIN.bestSellerAction();
+			}
+		});
+	</script>
+	<!-- best seller // -->
+
+	<!-- // skinny lab's pick -->
+	<div class="section-content skinnylab-pick">
+		<h2 class="hide">skinny lab's pick</h2>
+		<div class="content-inner">
+			<div class="sec-title">
+				<p class="main">
+					<span class="motion">skinny lab's pick</span>
+				</p>
+				<div class="sub">
+					<span class="tit">
+						<span class="motion">다이어트를 연구하는</span>
+						<span class="motion">스키니랩이 추천하는 제품을 만나보세요.</span>
+					</span>
+					<dl class="dropdown">
+						<dt class="title">
+							<button type="button" class="btn-open">래피드 솔루션</button>
+						</dt>
+						<dd class="content">
+							<ul class="list">
+								<li>
+									<button type="button">
+										<span>THIN 소재</span>
+									</button>
+								</li>
+								<li>
+									<button type="button">
+										<span>스페셜 패키지</span>
+									</button>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<ul class="pick-product">
+				<!-- 리스트 추가 시, li 클래스명 item01 - item02 - item03 순차 반복 필요  -->
+				{% for i in range(0, 2) %}
+				<li class="item01">
+					<div class="item disabled"> <!-- 일시품절  disabled -->
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/skinnylabspick-img01.jpg" alt="제품 이미지">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="main">
+											스키니랩 래피드x시네트롤 스키 버닝패키지 스키니랩
+										</span>
+										<span class="sub">
+											#2021신제품 #다이어트 #활활태울
+											#용기가필요한 순간
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="item02">
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/skinnylabspick-img01.jpg" alt="제품 이미지">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="main">
+											스키니랩 래피드x시네트롤 스키 버닝패키지 스키니랩
+										</span>
+										<span class="sub">
+											#2021신제품 #다이어트 #활활태울
+											#용기가필요한 순간
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<!-- <div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</li>
+				<li class="item03">
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/skinnylabspick-img01.jpg" alt="제품 이미지">
+								</div>
+								<figcaption class="content">
+									<p class="info">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</p>
+									<p class="title">
+										<span class="main">
+											스키니랩 래피드x시네트롤 스키 버닝패키지 스키니랩
+										</span>
+										<span class="sub">
+											#2021신제품 #다이어트 #활활태울
+											#용기가필요한 순간
+										</span>
+									</p>
+									<p class="price non">
+										<span class="tit">비회원가</span>
+										<span class="con">
+											<span class="num">
+												321,000
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+									<p class="price">
+										<span class="tit">회원가</span>
+										<span class="con">
+											<span class="rate">
+												<span class="hide">할인율</span>
+												37%
+											</span>
+											<span class="num">
+												128,600
+											</span>
+											<span class="won">원</span>
+										</span>
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="util">
+							<div class="action">
+								<div class="wrap">
+									<button type="button" class="btn-util payment">바로결제하기</button>
+									<button type="button" class="btn-util cart">장바구니넣기</button>
+									<button type="button" class="btn-util gift">선물하기</button>
+								</div>
+							</div>
+							<!-- <div class="status">
+								<p class="tit">일시품절</p>
+								<div class="btn-area">
+									<button type="button" class="btn ghost thin">
+										<span>재입고 알림</span>
+									</button>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+			<button type="button" class="btn-more">더보기</button>
+		</div>
+	</div>
+
+	<script>
+		$(window).on('load scroll resize', function() {
+			if($('.skinnylab-pick').hasClass('in')) return false;
+
+			if($('.skinnylab-pick').offset().top <= $(this).scrollTop() + $(window).height()) {
+				MAIN.pickAction();
+			}
+		});
+	</script>
+	<!-- skinny lab's pick // -->
+
+	<!-- // event -->
+	<div class="section-content event wide">
+		<h2 class="hide">event</h2>
+		<div class="sec-title">
+			<div class="content-inner">
+				<p class="main">
+					<span class="motion">event</span>
+				</p>
+			</div>
+		</div>
+		<div class="event-carousel">
+			<div class="swiper-container">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<div class="bg-wrap">
+							<div class="bg" style="background-image: url('{{base}}/img/pc/@dummy/main-event-img01.jpg');"></div>
+						</div>
+						<div class="item">
+							<div class="slide-content">
+								<p class="title">
+									<span class="motion">스키니랩에서도<br>봄~선물 드려 봄.</span>
+								</p>
+								<p class="desc">
+									<span class="motion">스키니랩 전제품 구매시</span>
+									<span class="motion">금액대별 사은품 증정</span>
+								</p>
+								<div class="btn-wrap">
+									<a href="#" class="btn large outline motion">
+										<span>자세히보기</span>
+									</a>
+								</div>
+							</div>
+							<ul class="event-product">
+								<li>
+									<a href="#">
+										<figure class="wrap">
+											<div class="img">
+												<img src="{{base}}/img/pc/main/event-img01.jpg" alt="제품 이미지">
+											</div>
+											<figcaption class="content">
+												<p class="title">
+													스키니랩 시네트롤 자몽 오렌지 다이어트 56정 x 1박스 4주분
+												</p>
+												<p class="price non">
+													<span class="tit">비회원가</span>
+													<span class="con">
+														<span class="num">
+															321,000
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+												<p class="price">
+													<span class="tit">회원가</span>
+													<span class="con">
+														<span class="rate">
+															<span class="hide">할인율</span>
+															47%
+														</span>
+														<span class="num">
+															128,600
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+											</figcaption>
+										</figure>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<figure class="wrap">
+											<div class="img">
+												<img src="{{base}}/img/pc/main/event-img01.jpg" alt="제품 이미지">
+											</div>
+											<figcaption class="content">
+												<p class="title">
+													스키니랩 시네트롤 자몽 오렌지 다이어트 56정 x 1박스 4주분
+												</p>
+												<p class="price non">
+													<span class="tit">비회원가</span>
+													<span class="con">
+														<span class="num">
+															321,000
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+												<p class="price">
+													<span class="tit">회원가</span>
+													<span class="con">
+														<span class="rate">
+															<span class="hide">할인율</span>
+															47%
+														</span>
+														<span class="num">
+															128,600
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+											</figcaption>
+										</figure>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="bg-wrap">
+							<div class="bg" style="background-image: url('{{base}}/img/pc/@dummy/main-event-img02.jpg');"></div>
+						</div>
+						<div class="item">
+							<div class="slide-content">
+								<p class="title">
+									<span class="motion">스키니랩에서도<br>봄~선물 드려 봄.</span>
+								</p>
+								<p class="desc">
+									<span class="motion">스키니랩 전제품 구매시</span>
+								</p>
+								<div class="btn-wrap">
+									<a href="#" class="btn large outline motion">
+										<span>자세히보기</span>
+									</a>
+								</div>
+							</div>
+							<ul class="event-product">
+								<li>
+									<a href="#">
+										<figure class="wrap">
+											<div class="img">
+												<img src="{{base}}/img/pc/main/event-img01.jpg" alt="제품 이미지">
+											</div>
+											<figcaption class="content">
+												<p class="title">
+													스키니랩 시네트롤 자몽 오렌지 다이어트 56정 x 1박스 4주분
+												</p>
+												<p class="price non">
+													<span class="tit">비회원가</span>
+													<span class="con">
+														<span class="num">
+															321,000
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+												<p class="price">
+													<span class="tit">회원가</span>
+													<span class="con">
+														<span class="rate">
+															<span class="hide">할인율</span>
+															47%
+														</span>
+														<span class="num">
+															128,600
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+											</figcaption>
+										</figure>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="bg-wrap">
+							<div class="bg" style="background-image: url('{{base}}/img/pc/@dummy/main-event-img03.jpg');"></div>
+						</div>
+						<div class="item">
+							<div class="slide-content">
+								<p class="title">
+									<span class="motion">스키니랩에서도<br>봄~선물 드려 봄.</span>
+								</p>
+								<p class="desc">
+									<span class="motion">스키니랩 전제품 구매시</span>
+									<span class="motion">금액대별 사은품 증정333333333</span>
+								</p>
+								<div class="btn-wrap">
+									<a href="#" class="btn large outline motion">
+										<span>자세히보기</span>
+									</a>
+								</div>
+							</div>
+							<ul class="event-product">
+								<li>
+									<a href="#">
+										<figure class="wrap">
+											<div class="img">
+												<img src="{{base}}/img/pc/main/event-img01.jpg" alt="제품 이미지">
+											</div>
+											<figcaption class="content">
+												<p class="title">
+													스키니랩 시네트롤 자몽 오렌지 다이어트 56정 x 1박스 4주분
+												</p>
+												<p class="price non">
+													<span class="tit">비회원가</span>
+													<span class="con">
+														<span class="num">
+															321,000
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+												<p class="price">
+													<span class="tit">회원가</span>
+													<span class="con">
+														<span class="rate">
+															<span class="hide">할인율</span>
+															47%
+														</span>
+														<span class="num">
+															128,600
+														</span>
+														<span class="won">원</span>
+													</span>
+												</p>
+											</figcaption>
+										</figure>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="action">
+				<div class="pagination"></div>
+				<div class="play">
+					<button type="button" class="btn-prev swiper-button-prev"></button>
+					<button type="button" class="btn-autoplay swiper-button-autoplay"></button>
+					<button type="button" class="btn-next swiper-button-next"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(window).on('load scroll resize', function() {
+			if($('.event').hasClass('in')) return false;
+
+			if($('.event').offset().top <= $(this).scrollTop() + $(window).height()) {
+				var eventCarouselSwiper = new Swiper(".event .swiper-container", {
+					autoplay: {
+						delay: 4500,
+					},
+					speed: 1000,
+					loop: true,
+					loopedSlides: 3,
+					allowTouchMove: false,
+					pagination: {
+						el: ".event .pagination",
+						clickable: true,
+					},
+					navigation: {
+						nextEl: '.event .swiper-button-next',
+						prevEl: '.event .swiper-button-prev',
+					}
+				});
+
+				$('.event .btn-autoplay').on('click', function() {
+					var $this = $(this);
+
+					if($this.hasClass('is-stop')) {
+						eventCarouselSwiper.autoplay.start();
+					} else {
+						eventCarouselSwiper.autoplay.stop();
+					}
+
+					$this.toggleClass('is-stop');
+				});
+
+				MAIN.eventAction();
+			}
+		});
+	</script>
+	<!-- event // -->
+
+	<!-- // delivery service -->
+	<div class="section-content delivery-service wide">
+		<h2 class="hide">delivery service</h2>
+		<div class="sec-title">
+			<p class="main">
+				<span class="motion">delivery service</span>
+			</p>
+			<p class="sub">
+				<span class="motion">한번의 신청으로 주문은 편하게! 혜택은 크게!</span>
+			</p>
+			<div class="info">
+				<ul class="list-check">
+					<li>1회 주문대비 최대 20% OFF!</li>
+					<li>한번의 카드 등록으로 편리하게 주문!</li>
+					<li>지정일에 알아서 배송!</li>
+				</ul>
+				<button type="button" onclick="UI.showLayerPop('',{ url: '../common/popup-delivery-guide.html'}); return false;" class="guide">정기배송 가이드</button>
+			</div>
+		</div>
+		<div class="delivery-carousel">
+			<div class="swiper-container">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<div class="bg"></div>
+						<div class="content-inner">
+							<div class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/delivery-service-img01.png" alt="제품 이미지">
+								</div>
+								<div class="slide-content">
+									<p class="sub">#체지방감소 #다이어트에 #시서스 #필요한 #순간</p>
+									<p class="main">스키니랩 시서스 다이어트<br>14정 x 1box / 2주분</p>
+								</div>
+							</div>
+							<div class="detail">
+								<div class="range-slider-min-wrap benefit">
+									<p class="title"><strong class="minus-num">-24,800</strong> 원 혜택 (<span class="percent-num">10</span>%)</p>
+									<div class="bar">
+										<div id="rangeSliderMin" class="range-slider-min"></div>
+									</div>
+									<ul class="list">
+										<li>
+											<p class="time">1</p>
+											<span class="month">1개월</span>
+										</li>
+										<li>
+											<p class="time">2</p>
+											<span class="month">2개월</span>
+										</li>
+										<li>
+											<p class="time">3</p>
+											<span class="month">3개월</span>
+										</li>
+										<li>
+											<p class="time">4</p>
+											<span class="month">4개월</span>
+										</li>
+										<li>
+											<p class="time">5</p>
+											<span class="month">5개월</span>
+										</li>
+										<li>
+											<p class="time">6</p>
+											<span class="month">6개월</span>
+										</li>
+									</ul>
+								</div>
+								<div class="price-wrap">
+								<p class="price non">
+									<span class="tit">정가</span>
+									<span class="con">
+										<span class="num">248,000</span><span class="won">원</span> 
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">정기배송신청시</span>
+									<span class="con">
+										<span class="num">128,600</span><span class="won">원</span> 
+									</span>
+								</p>
+								</div>
+								<a href="#" class="apply">
+									<span>정기배송</span>
+									<span>신청하기</span>
+								</a>
+							</div>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="bg"></div>
+						<div class="content-inner">
+							<div class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/main/delivery-service-img01.png" alt="제품 이미지">
+								</div>
+								<div class="slide-content">
+									<p class="sub">#체지방감소 #다이어트에 #시서스 #필요한 #순간</p>
+									<p class="main">스키니랩 시서스 다이어트<br>14정 x 1box / 2주분</p>
+								</div>
+							</div>
+							<div class="detail">
+								<div class="range-slider-min-wrap benefit">
+									<p class="title"><strong class="minus-num">-12,400</strong> 원 혜택 (<span class="percent-num">5</span>%)</p>
+									<div class="bar">
+										<div id="rangeSliderMin2" class="range-slider-min"></div>
+									</div>
+									<ul class="list">
+										<li>
+											<p class="time">1</p>
+											<span class="month">1개월</span>
+										</li>
+										<li>
+											<p class="time">2</p>
+											<span class="month">2개월</span>
+										</li>
+										<li>
+											<p class="time">3</p>
+											<span class="month">3개월</span>
+										</li>
+										<li>
+											<p class="time">4</p>
+											<span class="month">4개월</span>
+										</li>
+										<li>
+											<p class="time">5</p>
+											<span class="month">5개월</span>
+										</li>
+										<li>
+											<p class="time">6</p>
+											<span class="month">6개월</span>
+										</li>
+									</ul>
+								</div>
+								<div class="price-wrap">
+								<p class="price non">
+									<span class="tit">정가</span>
+									<span class="con">
+										<span class="num">235,600</span><span class="won">원</span> 
+									</span>
+								</p>
+								<p class="price">
+									<span class="tit">정기배송신청시</span>
+									<span class="con">
+										<span class="num">128,600</span><span class="won">원</span> 
+									</span>
+								</p>
+								</div>
+								<a href="#" class="apply">
+									<span>정기배송</span>
+									<span>신청하기</span>
+								</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="action">
+				<p class="pagination"></p>
+				<!-- <button type="button" class="btn-autoplay swiper-button-autoplay"></button> -->
+				<button type="button" class="btn-prev swiper-button-prev"></button>
+				<button type="button" class="btn-next swiper-button-next"></button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(window).on('load scroll resize', function() {
+			if($('.delivery-service').hasClass('in')) return false;
+
+			if($('.delivery-service').offset().top <= $(this).scrollTop() + $(window).height()) {
+				//swiper
+				var deliveryCarouselSwiper = new Swiper(".delivery-service .swiper-container", {
+					autoplay: false,
+					loop: true,
+					effect: 'fade',
+					speed: 1000,
+					allowTouchMove: false,
+					navigation: {
+						nextEl: '.delivery-service .swiper-button-next',
+						prevEl: '.delivery-service .swiper-button-prev',
+					},
+					pagination: {
+						el: ".delivery-service .pagination",
+						type: 'fraction',
+						formatFractionCurrent: function(number) {
+							return number < 10 ? '0' + number : number;
+						},
+						formatFractionTotal: function(number) {
+							return number < 10 ? '0' + number : number;
+						}
+					},
+				});
+
+				// Range Slider 공통
+				$('.delivery-carousel .range-slider-min').each(function(index, element) {
+					$(element).slider({
+						range: "min",
+						value: 1,
+						min: 1,
+						max: 6,
+					});
+				});
+
+				$('#rangeSliderMin').on('slide', function(event,ui) {
+					$element = $(ui.handle);
+					$elementDetail = $element.parents('.detail');
+					fixedPrice = $($elementDetail.find('.price .num')[0]).text().replace(',','')*1; // 정가
+					discountRate = 0.1; // 할인율
+					turn = ui.value; // 회차
+					discount = fixedPrice * discountRate * turn; // 할인할 가격
+					result = fixedPrice - discount; // 할인된 가격
+
+					$elementDetail.find('.minus-num').text("-" + discount.toLocaleString());
+					$elementDetail.find('.percent-num').text(parseInt(discountRate*turn*100));
+					$($elementDetail.find('.price .num')[1]).text(parseInt(result).toLocaleString());
+				});
+
+				$('#rangeSliderMin2').on('slide', function(event,ui) {
+					$element = $(ui.handle);
+					$elementDetail = $element.parents('.detail');
+					fixedPrice = $($elementDetail.find('.price .num')[0]).text().replace(',','')*1; // 정가
+					discountRate = 0.05; // 할인율
+					turn = ui.value; // 회차
+					discount = fixedPrice * discountRate * turn; // 할인할 가격
+					result = fixedPrice - discount; // 할인된 가격
+
+					$elementDetail.find('.minus-num').text("-" + discount.toLocaleString());
+					$elementDetail.find('.percent-num').text(parseInt(discountRate*turn*100));
+					$($elementDetail.find('.price .num')[1]).text(parseInt(result).toLocaleString());
+				});
+
+				MAIN.deliveryServiceAction();
+			}
+		});
+	</script>
+	<!-- delivery service // -->
+
+	<!-- // customer review -->
+	<div class="section-content customer-review">
+		<h2 class="hide">customer review</h2>
+		<div class="content-inner">
+			<div class="sec-title">
+				<p class="main">
+					<span class="motion">customer<br>review</span>
+				</p>
+				<p class="sub">
+					<span class="motion">250만명의 솔직 리뷰를</span>
+					<span class="motion">확인해 보세요.</span>
+				</p>
+			</div>
+			<div class="review-wrap">
+				<ul class="list">
+					<!-- 리스트 추가 시, li 클래스명 item01 - item02 - item03 순차 반복 필요  -->
+					{% for i in range(0,2) %}
+					<li class="item01">
+						<a href="#">
+							<figure>
+								<div class="img">
+									<img src="{{base}}/img/pc/main/review-img01.jpg" alt="제품 이미지">
+								</div>
+								<figcaption class="content">
+									<div class="point">
+										<em>4.9</em>
+										<span class="star-bg">
+											<span class="star" style="width: 100%;"></span>
+										</span>
+										<p class="review">리뷰<span class="num">4478</span></p>
+									</div>
+									<p class="title">스키니랩 시네트롤 자몽 오렌지 다이어트 56정x 말줄임</p>
+									<ul class="detail">
+										<li>
+											<div class="img">
+												<img src="{{base}}/img/pc/main/review-detail-img01.jpg" alt="제품 이미지">
+											</div>
+											<span class="desc">
+												울딸 겨울에 미뤄왔던 다**트 스키니랩으로 기대 스키니랩으로 기대
+											</span>
+										</li>
+										<li>
+											<div class="img">
+												<img src="{{base}}/img/pc/main/review-detail-img01.jpg" alt="제품 이미지">
+											</div>
+											<span class="desc">
+												울딸 겨울에 미뤄왔던 다**트 스키니랩으로 기대 스키니랩으로 기대
+											</span>
+										</li>
+									</ul>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="item02">
+						<a href="#">
+							<figure>
+								<div class="img">
+									<img src="{{base}}/img/pc/main/review-img01.jpg" alt="제품 이미지">
+								</div>
+								<figcaption class="content">
+									<div class="point">
+										<em>4.9</em>
+										<span class="star-bg">
+											<span class="star" style="width: 100%;"></span>
+										</span>
+										<p class="review">리뷰<span class="num">4478</span></p>
+									</div>
+									<p class="title">스키니랩 시네트롤 자몽 오렌지 다이어트 56정x 말줄임</p>
+									<ul class="detail">
+										<li>
+											<div class="img">
+												<img src="{{base}}/img/pc/main/review-detail-img01.jpg" alt="제품 이미지">
+											</div>
+											<span class="desc">
+												울딸 겨울에 미뤄왔던 다**트 스키니랩으로 기대 스키니랩으로 기대
+											</span>
+										</li>
+										<li>
+											<div class="img">
+												<img src="{{base}}/img/pc/main/review-detail-img01.jpg" alt="제품 이미지">
+											</div>
+											<span class="desc">
+												울딸 겨울에 미뤄왔던 다**트 스키니랩으로 기대 스키니랩으로 기대
+											</span>
+										</li>
+									</ul>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li class="item03">
+						<a href="#">
+							<figure>
+								<div class="img">
+									<img src="{{base}}/img/pc/main/review-img01.jpg" alt="제품 이미지">
+								</div>
+								<figcaption class="content">
+									<div class="point">
+										<em>4.9</em>
+										<span class="star-bg">
+											<span class="star" style="width: 100%;"></span>
+										</span>
+										<p class="review">리뷰<span class="num">4478</span></p>
+									</div>
+									<p class="title">스키니랩 시네트롤 자몽 오렌지 다이어트 56정x 말줄임</p>
+									<ul class="detail">
+										<li>
+											<div class="img">
+												<img src="{{base}}/img/pc/main/review-detail-img01.jpg" alt="제품 이미지">
+											</div>
+											<span class="desc">
+												울딸 겨울에 미뤄왔던 다**트 스키니랩으로 기대 스키니랩으로 기대
+											</span>
+										</li>
+										<li>
+											<div class="img">
+												<img src="{{base}}/img/pc/main/review-detail-img01.jpg" alt="제품 이미지">
+											</div>
+											<span class="desc">
+												울딸 겨울에 미뤄왔던 다**트 스키니랩으로 기대 스키니랩으로 기대
+											</span>
+										</li>
+									</ul>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+				<a href="#" class="btn-more">더보기</a>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(window).on('load scroll resize', function() {
+			if($('.customer-review').hasClass('in')) return false;
+
+			if($('.customer-review').offset().top <= $(this).scrollTop() + $(window).height()) {
+				MAIN.customerReviewAction();
+			}
+		});
+	</script>
+	<!-- customer review // -->
+
+	<!-- // @skinny lab -->
+	<div class="foot-slider">
+		<h2 class="hide">@skinny lab</h2>
+		<p class="title">@skinny lab</p>
+		<div class="instagram swiper-container">
+			<ul id="scroller" class="swiper-wrapper">
+				<li class="swiper-slide">
+					<a href="#" target="_blank">
+						<img src="{{base}}/img/pc/main/instagram-img01.jpg" alt="인스타그램 이미지">
+					</a>
+				</li>
+				<li class="swiper-slide">
+					<a href="#" target="_blank">
+						<img src="{{base}}/img/pc/main/instagram-img02.jpg" alt="인스타그램 이미지">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		$(window).on('load scroll resize', function() {
+			if($('.foot-slider').hasClass('in')) return false;
+
+			if($('.foot-slider').offset().top <= $(this).scrollTop() + $(window).height()) {
+				var instagramList = $("#scroller").html();
+
+				for (var i = 0; i < 5; i++) {
+					$("#scroller").append(instagramList);
+				};
+
+				var instagramSwiper = new Swiper(".foot-slider .swiper-container", {
+					loop: true,
+					freeMode: true,
+					spaceBetween: 40,
+					grabCursor: true,
+					slidesPerView: 6,
+					loop: true,
+					autoplay: {
+						delay: 1,
+						disableOnInteraction: true
+					},
+					freeMode: true,
+					speed: 5000,
+					freeModeMomentum: false,
+					watchOverflow: true,
+				});
+
+				$(".foot-slider .swiper-container").on('mouseenter', function() {
+					instagramSwiper.autoplay.stop();
+
+					$(".foot-slider .swiper-wrapper").css('-webkit-transform', $(".foot-slider .swiper-wrapper").css('-webkit-transform'));
+				});
+
+				$(".foot-slider .swiper-container").on('mouseleave', function() {
+					instagramSwiper.update();
+					instagramSwiper.autoplay.start();
+				});
+
+				MAIN.footSliderAction();
+			}
+		});
+	</script>
+	<!-- @skinny lab // -->
+
+	<!-- 이벤트배너 팝업 // -->
+	<article id="popup-event-banner" class="common-popup hidden-title is-layer" style="display: none;">
+		<div class="common-popup-inner popup-event-banner">
+			<div class="header">
+				<h1 class="title">
+					이벤트배너
+				</h1>
+			</div>
+			<div class="container">
+				<div class="event-banner">
+					<div class="list swiper-container">
+						<ul class="inner swiper-wrapper">
+							<li class="swiper-slide">
+								<div class="img">
+									<a href="#" traget="_blank">
+										<img src="{{base}}/img/pc/@dummy/event-banner-img01.jpg" alt="이벤트배너1">
+									</a>
+								</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="img">
+									<a href="#" traget="_blank">
+										<img src="{{base}}/img/pc/@dummy/event-banner-img01.jpg" alt="이벤트배너1">
+									</a>
+								</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="img">
+									<a href="#" traget="_blank">
+										<img src="{{base}}/img/pc/@dummy/event-banner-img01.jpg" alt="이벤트배너1">
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="action">
+						<p class="pagination"></p>
+						<div class="play">
+							<button type="button" class="btn-prev swiper-button-prev"></button>
+							<button type="button" class="btn-next swiper-button-next"></button>
+						</div>
+					</div>
+					<div class="btn-area">
+						<button type="button" class="btn-cookie"><span>오늘 하루 보지 않기</span></button>
+						<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- // 이벤트배너 팝업 -->
+</div>
+<!-- // Content -->
+
+<script>
+	// 쿠키
+	function setCookie(name, value, expiredays){
+		var today = new Date();
+
+		today.setDate(today.getDate() + expiredays);
+		document.cookie = name + '=' + escape(value) + '; expires=' + today.toGMTString();
+	}
+
+	function getCookie(name) {
+		var cookie = document.cookie;
+
+		if (document.cookie != "") {
+			var cookie_array = cookie.split("; ");
+
+			for ( var index in cookie_array) {
+				var cookie_name = cookie_array[index].split("=");
+
+				if (cookie_name[0] == "skinnylabEventBanner") return cookie_name[1];
+			}
+		}
+
+		return;
+	}
+
+	$("#popup-event-banner .btn-cookie").click(function() {
+		UI.closeLayerPop('#popup-event-banner');
+		setCookie("skinnylabEventBanner", 'popupEnd', 1);
+	});
+
+	var checkCookie = getCookie("skinnylabEventBanner");
+
+	if(checkCookie == 'popupEnd') {
+		$("#popup-event-banner").removeClass('is-layer');
+		$('html').removeClass('scroll-fixed');
+	} else {
+		UI.showLayerPop('#popup-event-banner');
+	}
+
+	// 이벤트배너 팝업 스와이프
+	var recomCarouselSwiper = new Swiper('.popup-event-banner .swiper-container', {
+		autoplay: false,
+		// autoplay: {
+		// 	delay: 3000
+		// },
+		speed: 1000,
+		loop: true,
+		allowTouchMove: false,
+		pagination: {
+			el: '.popup-event-banner .pagination',
+			type: 'fraction',
+			formatFractionCurrent: function(number) {
+				return number < 10 ? '0' + number : number;
+			},
+			formatFractionTotal: function(number) {
+				return number < 10 ? '0' + number : number;
+			}
+		},
+		navigation: {
+			nextEl: '.popup-event-banner .swiper-button-next',
+			prevEl: '.popup-event-banner .swiper-button-prev',
+		}
+	});
+</script>
+{%- endblock %}

@@ -1,0 +1,73 @@
+.floating-menu {
+	width: 100%;
+	min-width: 1280px;
+	position: fixed;
+	top: 50%;
+	left: 0;
+	z-index: 10;
+
+	& > .wrap {
+		position: absolute;
+		top: 50%;
+		right: 30px;
+		transform: translateY(-50%);
+	}
+
+	.list {
+		li {
+			position: relative;
+
+			&:not(:first-child) { margin-top: 10px; }
+		}
+
+		.btn-icon {
+			display: block;
+			width: 60px;
+			height: 0;
+			max-height: 0;
+			padding-top: 60px;
+			border-radius: 50%;
+			overflow: hidden;
+			background-repeat: no-repeat;
+			background-position: center center;
+			box-shadow: 0 5px 10px 0 rgba(53,53,55,.2);
+			position: relative;
+			z-index: 2;
+
+			&.recent {
+				background-color: $primary-color;
+				background-image: url('@@img/pc/common/icon-watch.png');
+				background-size: 25px 25px;
+
+			}
+
+			&.kakaotalk {
+				background-color: #fae300;
+				background-image: url('@@img/pc/common/icon-kakaotalk.png');
+				background-size: 32px 12px;
+			}
+
+			&.gift {
+				background-color: #ff725c;
+				background-image: url('@@img/pc/common/icon-gift-white.png');
+				background-size: 24px 24px;
+			}
+
+			&.top {
+				background-color: #fff;
+				background-image: url('@@img/pc/common/icon-top.png');
+				background-size: 18px 20px;
+				position: absolute;
+				top: -70px;
+				opacity: 0;
+				z-index: 1;
+				transition: all .2s;
+
+				&.on {
+					top: 0;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

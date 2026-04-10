@@ -1,0 +1,49 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [5,2]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-payment-manage">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h3 class="title">{{pageInfo.title}}</h3>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h4 class="title">자동결제수단 관리</h4>
+				</div>
+				<div class="content-inner-wrap">
+					<div class="payment-wrap">
+						<dl class="row">
+							<dt class="title">카드정보</dt>
+							<dd class="content">
+								<div class="item-box reg">
+									<button type="button" class="reg-btn">카드등록</button>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="notice-wrap">
+						<p class="tit">자동결제수단 이용안내</p>
+						<ul class="dot-list">
+							<li>정기배송 상품 자동 결제를 위한 카드정보를 등록하기 위한 서비스 입니다.</li>
+							<li>정기배송 상품을 주문하신 경우, 등록한 카드 정보로 설정하신 결제 주기에 맞춰 자동 결제됩니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

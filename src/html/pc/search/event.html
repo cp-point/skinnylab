@@ -1,0 +1,275 @@
+{%
+	set pageInfo = {
+		section: 'search',
+		title: '통합검색'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- content // -->
+<div id="content-main" class="common-container section-search search-event">
+	<h2 class="hide">통합검색</h2>
+	<div class="integrated-search">
+		<div class="search-box">
+			<div class="search js-text-clear">
+				<label for="search01" class="hide">검색</label>
+				<input type="text" id="search01" name="search" value="" placeholder="궁금하신 내용을 입력해주세요." class="input">
+				<button type="button" class="btn-clear">입력값 지우기</button>
+				<button type="button" class="btn-submit">검색하기</button>
+			</div>
+		</div>
+		<p class="result"><span class="str">'시서스'</span>에 대한 검색결과</p>
+	</div>
+	<div class="tab-menu">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">
+						상품
+						<span>(17)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						리뷰
+						<span>(185)</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						기획전
+						<span>(21)</span>
+					</a>
+				</li>
+				<li class="selected">
+					<a href="#">
+						이벤트
+						<span>(15)</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container-wrap">
+		<ul class="event-list">
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img01.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<p class="title">
+										[특별구성] 자기관리의 시작, 시서스 시작자기관리의 시작, 시서스 시작
+									</p>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img02.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										★스키니랩시서스다이어트 최초특가 +시서스다이어트 최초특가 +시서스다이어트 최초특가 +
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img03.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										[당첨자발표] cf속 시서스를 찾아라!
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img04.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										[특별구성] 자기관리의 시작, 시서스 시작자기관리의 시작, 시서스 시작
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img05.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										★스키니랩시서스다이어트 최초특가 +시서스다이어트 최초특가 +시서스다이어트 최초특가 +
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img06.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										[당첨자발표] cf속 시서스를 찾아라!
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img07.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										[특별구성] 자기관리의 시작, 시서스 시작자기관리의 시작, 시서스 시작
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img08.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										★스키니랩시서스다이어트 최초특가 +시서스다이어트 최초특가 +시서스다이어트 최초특가 +
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a href="#">
+						<figure class="wrap">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/event-thumb-img09.jpg" alt="신제품 출시 기념 기획전">
+							</div>
+							<figcaption class="content">
+								<div class="wrap">
+									<div class="title">
+										[당첨자발표] cf속 시서스를 찾아라!
+									</div>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<button type="button" class="btn-share">바로가기</button>
+				</div>
+			</li>
+			<!-- 검색 결과 없을때 // -->
+			<!-- <li class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</li> -->
+			<!-- // 검색 결과 없을때 -->
+		</ul>
+		<!--//product-->
+		<div class="common-pagination">
+			<a href="#" class="paging-btn prev">Prev</a>
+			<span class="paging-num">
+				<a href="#" class="on">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+			</span>
+			<a href="#" class="paging-btn next">Next</a>
+		</div>
+	</div>
+</div>
+<!-- // content -->
+{%- endblock %}

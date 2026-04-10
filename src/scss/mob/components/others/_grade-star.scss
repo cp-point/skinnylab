@@ -1,0 +1,65 @@
+.grade-star {
+	display: block;
+	width: 152px;
+	height: 24px;
+	background: url('@@img/mob/common/grade-star-bg.png') no-repeat;
+	background-size: cover;
+	position: relative;
+	
+
+	.fill {
+		display: block;
+		width: 100%;
+		height: 0;
+		max-height: 0;
+		padding-top: 24px;
+		background: url('@@img/mob/common/grade-star.png') no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&.h24 {
+		width: 152px;
+		height: 24px;
+		background-image: url('@@img/mob/common/grade-star-bg-h24.png');
+		.fill {
+			padding-top: 24px;
+			background-image: url('@@img/mob/common/grade-star-h24.png');
+		}
+	}
+
+	&.h20 {
+		width: 127px;
+		height: 20px;
+		background-image: url('@@img/mob/common/grade-star-bg-h20.png');
+		.fill {
+			padding-top: 20px;
+			background-image: url('@@img/mob/common/grade-star-h20.png');
+		}
+	}
+
+	&.h16 {
+		width: 96px;
+		height: 16px;
+		background-image: url('@@img/mob/common/grade-star-bg-h16.png');
+
+		.fill {
+			padding-top: 16px;
+			background-image: url('@@img/mob/common/grade-star-h16.png');
+		}
+	}
+
+	&.h14 {
+		width: 89px;
+		height: 14px;
+		background-image: url('@@img/mob/common/grade-star-bg-h14.png');
+
+		.fill {
+			padding-top: 14px;
+			background-image: url('@@img/mob/common/grade-star-h14.png');
+		}
+	}
+}

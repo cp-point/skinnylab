@@ -1,0 +1,146 @@
+label.radio {
+	display: inline-block;
+	vertical-align: top;
+
+	input[type='radio'] {
+		@include hidden;
+
+		&:checked {
+			& + span {
+				color: $text-color1;
+	
+				&:before { background-image: url('@@img/pc/common/radio-on.png'); }
+			}
+
+			&:focus {
+				& + span {
+					&:before {
+						box-shadow: 0 0 8px 0 rgba(4,0,0,.5);
+					}
+				}
+			}
+		}
+		&[disabled] + span:before { background-image: url('@@img/pc/common/radio-disabled.png'); }
+		&[disabled]:checked + span {
+			color: $text-color2;
+
+			&:before { background-image: url('@@img/pc/common/radio-disabled-on.png'); }
+		}
+	}
+
+	span {
+		box-sizing: border-box;
+		display: inline-block;
+		min-width: 60px;
+		padding: 4px 5px 4px 30px;
+		color: $text-color2;
+		font-weight: 700;
+		font-size: 16px;
+		vertical-align: top;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			background: url('@@img/pc/common/radio.png') no-repeat;
+			background-size: 22px 22px;
+			background-position: center center;
+			border-radius: 50%;
+			position: absolute;
+			top: calc(.75em + 4px);
+			left: 0;
+			transform: translateY(-50%);
+			transition: all .2s;
+		}
+	}
+}
+
+input.radio {
+	@include hidden;
+
+	&:checked {
+		& + label {
+			color: $text-color1;
+	
+			&:before { background-image: url('@@img/pc/common/radio-on.png'); }
+		}
+
+		&:focus {
+			+ label {
+				&:before { box-shadow: 0 0 8px 0 rgba(4,0,0,.5); }
+			}
+		}
+	}
+	&[disabled] + label:before { background-image: url('@@img/pc/common/radio-disabled.png'); }
+	&[disabled]:checked + label {
+		color: $text-color2;
+
+		&:before { background-image: url('@@img/pc/common/radio-disabled-on.png'); }
+	}
+
+	+ label {
+		box-sizing: border-box;
+		display: inline-block;
+		min-width: 60px;
+		padding: 4px 5px 4px 30px;
+		color: $text-color2;
+		font-weight: 700;
+		font-size: 16px;
+		vertical-align: top;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			background: url('@@img/pc/common/radio.png') no-repeat;
+			background-size: 22px 22px;
+			background-position: center center;
+			border-radius: 50%;
+			position: absolute;
+			top: calc(.75em + 4px);
+			left: 0;
+			transform: translateY(-50%);
+			transition: all .2s;
+		}
+	}
+}
+
+.radio-only {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	vertical-align: top;
+	position: relative;
+
+	input {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+
+		&:focus + span { box-shadow: 0 0 8px 0 rgba(4,0,0,.5); }
+		&[disabled] + span { background-image: url('@@img/pc/common/radio-disabled.png'); }
+		&:checked + span { background-image: url('@@img/pc/common/radio-on.png'); }
+		&[disabled]:checked + span { background-image: url('@@img/pc/common/radio-disabled-on.png'); }
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: url('@@img/pc/common/radio.png') no-repeat;
+		background-size: cover;
+		border-radius: 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .2s;
+	}
+}

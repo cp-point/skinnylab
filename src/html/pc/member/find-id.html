@@ -1,0 +1,72 @@
+{%
+	set pageInfo = {
+		section: 'login',
+		title: '아이디 찾기 &lt; 로그인'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-member member-find-id">
+	<div class="member-layout">
+		<h2 class="hide">로그인</h2>
+
+		<div class="head">
+			<h3 class="title">아이디 찾기</h3>
+			<p class="desc">아이디가 기억나지 않으세요?<br>등록된 회원 정보로<br><strong>아이디를 찾으실 수</strong> 있습니다.</p>
+		</div>
+
+		<div class="body">
+			<div class="form-layout vertical">
+				<dl class="row">
+					<dt class="title">
+						<label for="userName">이름</label>
+					</dt>
+					<dd class="content">
+						<span class="input-text-del">
+							<!-- [ 공통 ] input class="is-invalid" 추가 시, 선 색상 변경 -->
+							<input type="text" id="userName" name="userName" placeholder="이름 입력" class="text block underline" maxlength="10">
+						</span>
+						<!-- 오류 메세지 -->
+						<!-- <p class="error-msg is-invalid">이름을 입력해주세요.</p> -->
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt class="title">
+						<label for="userPhone">휴대폰 번호</label>
+					</dt>
+					<dd class="content">
+						<span class="input-certification-send input-small">
+							<input type="tel" id="userPhone" name="userPhone" value="" placeholder="휴대폰 번호 입력" class="text block underline" maxlength="11">
+							<!-- 버튼 비활성화 : class="disabled" 추가 -->
+							<button type="button" class="btn outline thin primary">인증번호발송</button>
+						</span>
+						<!-- 오류 메세지 -->
+						<!-- <p class="error-msg is-invalid">휴대폰 번호를 입력해주세요.</p> -->
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt class="title">
+						<label for="userPhoneCertify">인증번호</label>
+					</dt>
+					<dd class="content">
+						<span class="input-certify">
+							<!-- input 비활성화 : disabled -->
+							<input type="text" id="userPhoneCertify" name="userPhoneCertify" value="" placeholder="인증번호 입력" class="text block underline" maxlength="20">
+							<span class="timer">5:00</span>
+						</span>
+						<!-- 오류 메세지 -->
+						<!-- <p class="error-msg is-invalid">인증번호를 입력해주세요.</p> -->
+					</dd>
+				</dl>
+				<!-- 버튼 비활성화 : class="disabled" 추가 -->
+				<a href="#" class="btn primary large long motion mgt30">
+					<span>아이디찾기</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

@@ -1,0 +1,116 @@
+.accordion-list {
+	border-top: 1px solid $line-color1;
+	border-bottom: 1px solid $line-color2;
+
+	& > .item {
+		&:first-child .title { border-top: 0; }
+
+		&.on {
+			&:first-child .title { border-top: 0; }
+
+			& > .title {
+				border-top: 1px solid $line-color1;
+
+				&:after { transform: rotate(180deg); }
+			}
+
+			& + .item {
+				&.on {
+					& > .title { border-top: 0; }
+				}
+				& > .title { border-top: 0; }
+			}
+		}
+		& > .title {
+			border-top: 1px solid $line-color2;
+			font-weight: 800;
+			color: $text-color1;
+			font-size: 24px;
+			letter-spacing: -.025em;
+			position: relative;
+			transition: all .2s;
+
+			&:after {
+				content: '';
+				display: block;
+				width: 20px;
+				height: 12px;
+				background: url('@@img/pc/common/arrow-accordion.png') no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 26px;
+				right: 16px;
+				transition: all .3s;
+			}
+
+			& > a {
+				display: block;
+				padding: 12px 40px 12px 4px;
+				word-wrap: break-word;
+
+				&:hover { text-decoration: underline; }
+			}
+		}
+
+		& > .content {
+			display: none;
+			padding: 30px 4px 20px 4px;
+			border-top: 1px solid $line-color2;
+			border-bottom: 1px solid $line-color1;
+			font-weight: 400;
+			color: #222;
+			font-size: 16px;
+			word-wrap: break-word;
+		}
+	}
+
+	&.qna-list {
+		& > .item {
+			& > .title {
+				font-size: 16px;
+
+				&::before {
+					@include before-after();
+					content: 'Q';
+					top: 19px;
+					left: 10px;
+					font-size: 22px;
+					color: $text-color1;
+				}
+
+				&::after {
+					top: 29px;
+					right: 10px;
+				}
+
+				a {
+					padding: 24px 59px 22px 42px;
+
+					.main { font-weight: $extra-bold; }
+					.sub { font-weight: $medium; }
+				}
+			}
+
+			& > .content {
+				padding: 0;
+
+				.txt {
+					position: relative;
+					padding: 32px 59px;
+					color: $text-color1;
+					font-weight: $medium;
+
+					&::before {
+						@include before-after();
+						content: 'A';
+						top: 29px;
+						left: 25px;
+						font-size: 22px;
+						font-weight: $extra-bold;
+						color: $secondary-color1;
+					}
+				}
+			}
+		}
+	}
+}

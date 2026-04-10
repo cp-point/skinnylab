@@ -1,0 +1,53 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '회원탈퇴가 완료되었습니다.',
+		BI: 'logo2'
+	}
+%}
+
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<tr>
+	<td>
+		<table class="email-common-container" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width: 60px;"></td>
+				<td class="container-wrap">
+					<table class="page-content" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="txt com-txt1">
+								{{pageInfo.title}}
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt2">
+								안녕하세요. <strong class="color01">브랜명</strong>입니다.<br> 
+								그동안 <strong class="color01">브랜명</strong>을 이용해주신 <strong class="color01">고객명</strong>님께 감사드립니다.<br>
+								요청하신 회원탈퇴가 완료되었음을 알려드립니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 30px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt4">
+								<strong class="color01">{고객명}</strong>님께 만족스런 쇼핑경험을 드리지 못한 점 송구스럽게 생각하며,<br> 
+								다음기회에 더 발전한 <strong class="color01">{브랜드명}</strong>의 모습을 보여드릴 수 있도록 노력하겠습니다.<br><br>
+								감사합니다.
+							</td>
+						</tr>
+						
+					</table>
+				</td>
+				<td style="width: 60px;"></td>
+			</tr>
+			{{ include('./notice.html') }}
+		</table>
+	</td>
+</tr>
+{%- endblock %}

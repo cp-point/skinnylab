@@ -1,0 +1,275 @@
+{%
+	set pageInfo = {
+		section: 'search',
+		title: '통합검색',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title hide">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-product">
+	
+	<form action="about:blank" method="get" class="search-box">
+		<div class="search js-text-clear">
+			<label for="search" class="hide">검색</label>
+			<input type="text" id="search" name="search" value="" placeholder="검색어를 입력하세요." class="input">
+			<button type="button" class="btn-clear">입력값 지우기</button>
+			<button type="button" class="btn-submit">검색하기</button>
+		</div>
+	</form>	
+
+	<!-- 스와이퍼 탭 메뉴// -->
+	<div class="tab-menu tab4 overline">
+		<div class="wrap">
+			<ul class="list">
+				<li class="is-active">
+					<a href="./product.html">
+						상품 (17)
+					</a>
+				</li>
+				<li>
+					<a href="./review.html">
+						리뷰 (185)
+					</a>
+				</li>
+				<li>
+					<a href="./exhibition.html">
+						기획전(21)
+					</a>
+				</li>
+				<li>
+					<a href="./event.html">
+						이벤트(15)
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //스와이퍼 탭 메뉴 -->
+	
+	<div class="main-wrap">
+		<!-- 통합검색 상품 목록 -->
+
+		<ul class="product-list">
+			{% for i in range(0, 2) %}
+			<li>
+				<a href="#">
+					<figure class="prod-col-item"> 
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						<span class="img">
+							<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지">
+						</span>
+						<!-- 상품 최대 정보 노출// -->
+						<figcaption class="content">
+							<div class="info">
+								<div class="tag-group">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</div>
+								<div class="store-name">스키니랩</div>
+								<div class="title">
+									가벼워지는 시서스다이어트
+									14포 X 4박스 + 석류 콜라겐
+									14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+								</div>
+							</div>
+							<div class="price">
+								<div class="nonmember">
+									<span class="tit">비회원가</span>
+									<span>321,000원</span>
+								</div>
+								<div class="member">
+									<p class="tit">회원가</p>
+									<div class="inner-box">
+										<span><strong class="discount">67%</strong></span>
+										<span class="num"><strong>128,600</strong>원</span>
+									</div>
+								</div>
+							</div>
+						</figcaption>
+						<!-- //상품 최대 정보 노출 -->
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<!-- 상품 최소 정보 노출// -->
+					<figure class="prod-col-item">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						<span class="img">
+							<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지">
+						</span>
+						<figcaption class="content">
+							<div class="info">
+								<div class="title">
+									가벼워지는 시서스다이어트
+									14포 X 4박스 + 석류 콜라겐
+									14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+									
+								</div>
+							</div>
+							<div class="price">
+								<div class="nonmember">
+									<span>321,000원</span>
+								</div>
+								<div class="member">
+									<div class="inner-box">
+										<span><strong class="discount">67%</strong></span>
+										<span class="num"><strong>128,600</strong>원</span>
+									</div>
+								</div>
+							</div>
+						</figcaption>
+					</figure>
+					<!-- //상품 최소 정보 노출 -->
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<figure class="prod-col-item soldout"><!-- 품절일 때 .soldout 추가-->
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						<span class="img">
+							<div class="soldout-box"><!-- 품절일 때 .soldout-box 노출-->
+								<div class="inner-box">
+									<p class="txt">일시품절</p>
+									<button type="button" onclick="UI.showLayerPop('', { url: './popup-restock-notification-register.html' }); return false;" class="btn small outline thin primary">재입고 알림</button>
+								</div>
+							</div>
+							<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지">
+						</span>
+						<figcaption class="content">
+							<div class="info">
+								<div class="tag-group">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</div>
+								<div class="store-name">스키니랩</div>
+								<div class="title">
+									가벼워지는 시서스다이어트
+									14포 X 4박스 + 석류 콜라겐
+									14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+								</div>
+							</div>
+							<div class="price">
+								<div class="nonmember">
+									<span class="tit">비회원가</span>
+									<span>321,000원</span>
+								</div>
+								<div class="member">
+									<p class="tit">회원가</p>
+									<div class="inner-box">
+										<span><strong class="discount">67%</strong></span>
+										<span class="num"><strong>128,600</strong>원</span>
+									</div>
+								</div>
+							</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<figure class="prod-col-item">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						<span class="img">
+							<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지">
+						</span>
+						<figcaption class="content">
+							<div class="info">
+								<div class="tag-group">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</div>
+								<div class="store-name">스키니랩</div>
+								<div class="title">
+									가벼워지는 시서스다이어트
+									14포 X 4박스 + 석류 콜라겐
+									14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+								</div>
+							</div>
+							<div class="price">
+								<div class="nonmember">
+									<span class="tit">비회원가</span>
+									<span>321,000원</span>
+								</div>
+								<div class="member">
+									<p class="tit">회원가</p>
+									<div class="inner-box">
+										<span><strong class="discount">67%</strong></span>
+										<span class="num"><strong>128,600</strong>원</span>
+									</div>
+								</div>
+							</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<figure class="prod-col-item">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						<span class="img">
+							<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지">
+						</span>
+						<figcaption class="content">
+							<div class="info">
+								<div class="tag-group">
+									<span class="tag primary">신제품</span>
+									<span class="tag secondary">베스트</span>
+									<span class="tag white">사은품</span>
+								</div>
+								<div class="store-name">스키니랩</div>
+								<div class="title">
+									가벼워지는 시서스다이어트
+									14포 X 4박스 + 석류 콜라겐
+									14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+								</div>
+							</div>
+							<div class="price">
+								<div class="nonmember">
+									<span class="tit">비회원가</span>
+									<span>321,000원</span>
+								</div>
+								<div class="member">
+									<p class="tit">회원가</p>
+									<div class="inner-box">
+										<span><strong class="discount">67%</strong></span>
+										<span class="num"><strong>128,600</strong>원</span>
+									</div>
+								</div>
+							</div>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			{% endfor %}
+			<!-- 검색 결과 없을때 // -->
+			<!-- <li class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</li> -->
+			<!-- // 검색 결과 없을때 -->
+		</ul>
+
+		<div class="btn-group center">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>
+
+		<!--// 통합검색 상품 목록 -->
+	</div>
+</div>
+{%- endblock %}

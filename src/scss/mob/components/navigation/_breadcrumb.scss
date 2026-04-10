@@ -1,0 +1,119 @@
+.breadcrumb {
+	margin-bottom: 25px;
+	position: relative;
+	z-index: 2;
+
+	& > .wrap {
+		box-sizing: border-box;
+		height: 28px;
+
+		& > .list {
+			display: flex;
+			margin-left: -10px;
+
+			& > li {
+				display: flex;
+
+				position: relative;
+
+				&:not(.home) { padding-left: 5px; }
+				&:not(:first-child) {
+					&:before {
+						content: '';
+						display: block;
+						width: 5px;
+						height: 8px;
+						background: url('@@img/mob/common/arrow-gt.png') no-repeat;
+						background-size: 5px 8px;
+						background-position: center center;
+						position: absolute;
+						top: 9px;
+						left: 0;
+					}
+				}
+
+				&.on {
+					.sub:before { transform: rotate(180deg); }
+				}
+
+				& > a {
+					box-sizing: border-box;
+					display: inline-block;
+					height: 28px;
+					line-height: 29px;
+					padding: 0 12px;
+					color: $text-color1;
+					font-weight: 500;
+					font-size: 14px;
+
+					&:hover { text-decoration: underline; }
+				}
+
+				&.home {
+					a {
+						display: block;
+						width: 36px;
+						height: 0;
+						max-height: 0;
+						padding: 28px 0 0 0;
+						overflow: hidden;
+						background: url('@@img/mob/common/icon-home.png') no-repeat;
+						background-size: 12px 11px;
+						background-position: center 8px;
+					}
+				}
+			}
+		}
+	}
+
+	.sub {
+		width: 16px;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 8px;
+			height: 5px;
+			background: url('@@img/mob/common/arrow-breadcrumb.png') no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: 12px;
+			right: 13px;
+			transition: all .2s;
+		}
+
+		& > .wrap {
+			width: 900px;
+			position: absolute;
+			top: 30px;
+			left: 12px;
+		}
+
+		.list {
+			display: none;
+			padding: 7px 0;
+			background-color: #fff;
+			border: 1px solid $line-color1;
+			box-shadow: 0 4px 6px 0 rgba(134,135,138,.48);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		li {
+			a {
+				box-sizing: border-box;
+				display: block;
+				min-width: 80px;
+				line-height: 30px;
+				padding: 0 14px;
+				background-color: #fff;
+				color: $text-color1;
+				font-weight: 700;
+				font-size: 14px;
+
+				&:hover { text-decoration: underline; }
+			}
+		}
+	}
+}

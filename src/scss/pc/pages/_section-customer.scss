@@ -1,0 +1,436 @@
+// 고객센터 공통
+.section-customer {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin: 0;
+
+	.tab-menu { margin-bottom: 60px; }
+
+	.board-list {
+		border-bottom: none;
+
+		tbody {
+			tr {
+				&:last-child { border-bottom: 1px solid #eaeaeb; }
+
+				&.empty {
+					border-bottom: none;
+
+					&::before { display: none; }
+
+					td {
+						text-align: center;
+						@include font(28px,$extra-bold);
+						color: $text-color1;
+						padding: 150px 0 40px;
+
+						&::before {
+							display: block;
+							content: '';
+							width: 100px;
+							height: 100px;
+							margin: 0 auto 25px;
+							background: url('@@img/pc/common/icon-error-2.png') no-repeat;
+							background-size: cover;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.empty {
+		text-align: center;
+		padding: 150px 0 40px;
+		border-top: 1px solid $primary-color;
+		@include font(28px,$extra-bold);
+		color: $text-color1;
+
+		&::before {
+			display: block;
+			content: '';
+			width: 100px;
+			height: 100px;
+			margin: 0 auto 25px;
+			background: url('@@img/pc/common/icon-error-2.png') no-repeat;
+			background-size: cover;
+		}
+	}
+
+	.common-pagination { margin-top: 40px; }
+}
+
+// 고객센터
+.customer-service-center {
+	.center-info {
+		margin-top: 80px;
+		
+		&:not(:nth-child(1)) { margin-top: 100px; }
+
+		&:last-child {
+			display: flex;
+			justify-content: space-between;
+			color: $text-color1;
+
+			.contact, .question {
+				border: 6px solid #f4f4f6;
+				box-sizing: border-box;
+				height: 210px;
+			}
+
+			.contact {
+				position: relative;
+				width: 710px;
+				padding: 40px 0 44px;
+
+				.title {
+					position: absolute;
+					left: 50px;
+					@include font(24px,$extra-bold);
+				}
+
+				dd {
+					padding-left: 330px;
+
+					&.phone { @include font(40px,$bold,1); }
+
+					&.email {
+						margin: 8px 0 14px;
+
+						a {
+							@include font(20px,$bold);
+							border-bottom: 1px solid $line-color1;
+						}
+					}
+
+					&.time { @include font(16px,$medium); }
+				}
+			}
+
+			.question {
+				display: flex;
+				width: 450px;
+				text-align: center;
+
+				a {
+					position: relative;
+					display: block;
+					width: 50%;
+					height: 100%;
+					@include font(24px,$bold);
+
+					&::before {
+						display: block;
+						content: '';
+						@include size(90px,90px);
+						margin: 34px auto 15px;
+						border-radius: 50%;
+					}
+
+					&:first-child {
+						&::before { background: url('@@img/pc/common/icon-question.png') center center no-repeat #f4f4f6; }
+						
+						&::after {
+							@include before-after();
+							@include size(1px,150px);
+							background-color: #eaeaeb;
+							top: 50%;
+							right: 0;
+							transform: translateY(-50%);
+						}
+					}
+
+					&:last-child {
+						&::before { background: url('@@img/pc/common/icon-review.png') center center no-repeat #f4f4f6; }
+					}
+
+					span { font-weight: $extra-bold; }
+				}
+			}
+		}
+	}
+}
+
+// FAQ
+.customer-faq {
+	.faq {
+		padding-top: 80px;
+
+		.search-box {
+			margin: 0 auto;
+
+			.search {
+				.input { font-weight: $bold; }
+			}
+		}
+
+		.result { margin-top: 40px; }
+
+		.tab-button { margin: 60px 0 40px; }
+	}
+}
+
+// 공지사항 - 목록
+.customer-notice-list {
+	.board-list {
+		tbody {
+			tr {
+				&.empty {
+					border-bottom: 1px solid #eaeaeb;
+
+					td { padding-bottom: 150px; }
+				}
+			}
+		}
+	}
+}
+
+// 공지사항 - 상세
+.customer-notice-detail {
+	.notice-detail {
+		padding-top: 60px;
+
+		.board-detail {
+			.prevnext {
+				.prev, .next {
+					dt { width: 120px; }
+
+					dd {
+						a { max-width: 900px; }
+					}
+				}
+			}
+		}
+
+		.btn-wrap {
+			text-align: center;
+			margin-top: 60px;
+		}
+	}
+}
+
+// 1:1문의
+.customer-qna-write {
+	.tab-menu { margin-bottom: 60px; }
+
+	.add-explain {
+		margin: 0 0 20px;
+
+		a {
+			display: inline-block;
+			padding: 0 13px 0 5px;
+			color: $text-color1;
+			font-weight: $extra-bold;
+			background: url('@@img/pc/common/arrow-landing.png') right 5px no-repeat;
+			background-size: 8px 10px;
+		}
+	}
+
+	.board-write {
+		& > .row {
+			dt {
+				width: 140px;
+				padding: 5px 10px;
+			}
+
+			dd {
+				input {
+					&.small { width: 270px; }
+				}
+
+				&.qna-type {
+					display: block;
+
+					.type-wrap {
+						display: flex;
+
+						.select-wrap { width: 270px; }
+
+						.btn-wrap {
+							display: block;
+							margin-top: 0;
+							margin-left: 10px;
+
+							a { margin-right: 0; }
+						}
+					}
+
+					.add-explain {
+						width: 100%;
+						margin: 5px 0 10px;
+					}
+
+					.view-wrap {
+						.view {
+							position: relative;
+							width: 630px;
+							margin-top: 10px;
+							padding: 15px 30px 20px 20px;
+							border: 1px solid #eaeaeb;
+							box-sizing: border-box;
+	
+							.btn-close {
+								position: absolute;
+								top: 12px;
+								right: 12px;
+								@include size(17px,17px);
+								background: url('@@img/pc/common/btn-option-close.png') no-repeat;
+								background-size: 17px 17px;
+								text-indent: -99999px;
+							}
+	
+							.order-wrap {
+								padding-bottom: 10px;
+								border-bottom: 1px solid #eaeaeb;
+								color: $text-color1;
+	
+								.order {
+									font-size: 14px;
+									margin-left: 25px;
+								}
+							}
+	
+							.product-list {
+								.product-item {
+									figure {
+										display: flex;
+										margin-top: 20px;
+			
+										.img {
+											@include size(140px,140px);
+											background-color: #f4f4f6;
+											flex-shrink: 0;
+											margin-right: 20px;
+			
+											img { width: 100%; }
+										}
+			
+										.content {
+											.title {
+												color: $text-color1;
+			
+												.sub {
+													display: block;
+													font-size: 14px;
+													margin-bottom: 5px;
+												}
+			
+												.main {
+													font-weight: $bold;
+													letter-spacing: -.4px;
+												}
+											}
+			
+											.option {
+												display: flex;
+												justify-content: flex-start;
+												font-size: 14px;
+												margin-top: 5px;
+			
+												.tit {
+													position: relative;
+													padding-right: 10px;
+													margin-right: 10px;
+			
+													&::after {
+														@include size (1px,12px);
+														@include before-after();
+														background-color: $line-color2;
+														top: 0;
+														right: 0;
+														margin-top: 6px;
+													}
+												}
+			
+												.desc {
+													width: 370px;
+													color: $text-color1;
+												}
+											}
+			
+											.num {
+												margin-top: 35px;
+												font-weight: $extra-bold;
+												color: $text-color1;
+			
+												.price { margin-left: 20px; }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&.content-wrap {
+					flex-wrap: wrap;
+					
+					// .editor {
+					// 	position: relative;
+					// 	width: 100%;
+	
+					// 	#qnaEditor {
+					// 		width: 100%;
+					// 		font-weight: $bold;
+					// 	}
+
+					// 	.character {
+					// 		position: absolute;
+					// 		bottom: 12px;
+					// 		right: 20px;
+					// 		@include font(14px,$regular);
+					// 		color: $text-color3;
+
+					// 		.num { color: $text-color1; }
+					// 	}
+					// }
+
+					.image-upload {
+						.add-explain { margin: 10px 0 15px; }
+					}
+				}
+
+				&.input-radio-wrap {
+					flex-direction: column;
+					align-items: flex-start;
+
+					.input-radio-text {
+						&:nth-child(1) { margin-bottom: 10px; }
+
+						input.text { width: 410px; }
+					}
+				}
+			}
+		}
+	}
+
+	.user-agreement {
+		.wrap { border-bottom: 1px solid #eaeaeb; }
+	}
+
+	// .form-layout {
+	// 	padding-bottom: 30px;
+	// 	border-top: 1px solid $line-color1;
+	// 	border-bottom: 1px solid #eaeaeb;
+
+	// 	.agree-desc {
+	// 		.desc {
+	// 			p {
+	// 				&:first-child { margin-bottom: 25px; }
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	.btn-wrap {
+		display: flex;
+		justify-content: center;
+		margin-top: 60px;
+
+		a {
+			&:nth-child(1) { margin-right: 20px; }
+		}
+	}
+}

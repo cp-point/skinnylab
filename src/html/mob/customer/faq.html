@@ -1,0 +1,105 @@
+{%
+	set pageInfo = {
+		section: 'customer',
+		title: 'FAQ'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header customer">
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/customer.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-faq">
+	<div class="main-wrap">
+		<div class="intergrated-search">
+			<form action="about:blank" method="get" class="search-box">
+				<div class="search js-text-clear">
+					<label for="search" class="hide">검색</label>
+					<input type="text" id="search" name="search" value="" placeholder="궁금하신 내용을 입력해주세요." class="input">
+					<button type="button" class="btn-clear">입력값 지우기</button>
+					<button type="button" class="btn-submit">검색하기</button>
+				</div>
+			</form>
+			<!-- 검색결과// -->
+			<p class="result">
+				<span class="str">‘회원가입’</span>
+				에 대한 검색결과 
+				<span class="str">
+					4
+				</span>
+				개 
+			</p>
+			<!-- //검색결과 -->
+		</div>
+	
+		<div class="tab-button">
+			<div class="wrap tab-swiper js-scroll-tab">
+				<ul class="list">
+					<li class="is-active">
+						<a href="#">
+							전체
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							회원/멤버십
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							주문/결제
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							배송
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							취소/교환/반품
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							기타
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	
+		<div class="accordion-list qna-list">
+			{% for i in range(0,20) %}
+			<dl class="item">
+				<dt class="title">
+					<a href="#">
+						<strong class="main">[회원/멤버십]</strong>
+						<span class="sub">비밀번호를 어떻게 찾을 수 있나요?</span>
+					</a>
+				</dt>
+				<dd class="content">
+					<p class="txt">우측 상단의 [로그인]을 클릭하신 후, [비밀번호 찾기]를 통해 쉽게 안내받으실 수 있습니다.<br>이메일 또는 가입하신 휴대폰 번호로 인증절차를 완료 후 신규 비밀번호로 변경하시고 로그인 하실 수 있습니다.</p>
+				</dd>
+			</dl>
+			{% endfor %}
+			<!-- 검색 결과 없을때 -->
+			<div class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</div>
+		</div>
+	
+		<div class="btn-group center">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>
+	</div>
+</div>
+{%- endblock %}

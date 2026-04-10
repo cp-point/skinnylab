@@ -1,0 +1,20 @@
+.prod-list {
+	display: flex;
+	flex-wrap: wrap;
+	li {
+		box-sizing: border-box;
+		margin: 0 20px 28px 0;
+		
+	}
+}
+
+.prod-detail-list {
+	overflow: hidden;
+	li {
+		&:not(:first-child) {
+			padding-top: 20px;
+			margin-top: 20px;
+			border-top: 1px solid #eaeaeb;
+		}
+	}
+}

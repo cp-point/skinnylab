@@ -1,0 +1,25 @@
+<table class="email-common-header" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="top" colspan="3"></td>
+	</tr>
+	{% if pageInfo.BI == 'logo2' -%}
+	<tr>
+		<td class="td01-2"></td>
+		<td class="td02-2">
+			<a href="#" class="logo2" target="_blank"><img src="{{base}}/img/email/logo2.png" alt="skinny lab"></a>
+		</td>
+		<td class="td03-2"></td>
+	</tr>
+	{% else -%}
+	<tr>
+		<td class="td01"></td>
+		<td class="td02">
+			<a href="#" class="logo" target="_blank"><img src="{{base}}/img/email/logo.png" alt="skinny lab"></a>
+		</td>
+		<td class="td03"></td>
+	</tr>
+	{% endif %}
+	<tr>
+		<td class="bot" colspan="3"></td>
+	</tr>
+</table>

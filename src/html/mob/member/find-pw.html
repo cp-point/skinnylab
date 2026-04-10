@@ -1,0 +1,126 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '비밀번호 찾기',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-find">
+	<div class="container-wrap">
+		<div class="page-top-desc">
+			<div class="com-txt">
+				회원가입 시 등록된 회원정보로<br>
+				<strong>비밀번호를 찾으실 수</strong> 있습니다.
+			</div>
+		</div>
+		<div class="tab-group-wrap">
+			<div class="tab-menu2 tab2">
+				<div class="wrap">
+					<ul class="list tab-menu-box">
+						<li class="tab is-active"> 
+							<button type="button">이메일</button>
+						</li>
+						<li class="tab">
+							<button type="button">휴대폰 번호</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-content">
+				<div class="form-layout large">
+					<dl class="row">
+						<dt class="title">
+							<label for="userNeme01">이름</label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del"> 
+								<input type="text" id="userNeme01" name="userNeme01" placeholder="이름 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">이름을 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userId">아이디(이메일)</label>
+						</dt>
+						<dd class="content">
+							<div class="input-certification-send">
+								<input type="text" id="userId" name="userId" placeholder="아이디(이메일) 입력" class="text large underline"> <!-- 입력오류일때: .is-invalid -->
+								<button class="btn outline thin primary btn-send"><span>인증번호 발송</span></button> <!-- 비활성화: .disabled -->
+							</div>
+							<p class="error-msg is-invalid" style="display: none;">아이디(이메일)를 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="certifyNum01">인증번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<div class="input-certify">
+								<input type="text" id="certifyNum01" name="certifyNum01" placeholder="인증번호 입력" class="text large block underline" maxlength="20"> <!-- 입력오류일때: .is-invalid -->
+								<span class="timer">5:00</span>
+							</div>
+							<p class="error-msg is-invalid" style="display: none;">인증번호를 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="tab-content">
+				<div class="form-layout large">
+					<dl class="row">
+						<dt class="title">
+							<label for="userNeme02">이름</label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del"> 
+								<input type="text" id="userNeme02" name="userNeme02" placeholder="이름 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">이름을 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPhone">휴대폰 번호</label>
+						</dt>
+						<dd class="content">
+							<div class="input-certification-send">
+								<input type="text" id="userPhone" name="userPhone" placeholder="휴대폰 번호 입력" class="text large underline"> <!-- 입력오류일때: .is-invalid -->
+								<button class="btn outline thin primary btn-send"><span>인증번호 발송</span></button> <!-- 비활성화: .disabled -->
+							</div>
+							<p class="error-msg is-invalid" style="display: none;">휴대폰 번호를 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="certifyNum02">인증번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<div class="input-certify">
+								<input type="text" id="certifyNum02" name="certifyNum02" placeholder="인증번호 입력" class="text large block underline" maxlength="20"> <!-- 입력오류일때: .is-invalid -->
+								<span class="timer">5:00</span>
+							</div>
+							<p class="error-msg is-invalid" style="display: none;">인증번호를 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<div class="btn-group center">
+			<button type="button" class="btn large primary block disabled" onclick="UI.showLayerPop('',{ url: './find-pw-change.html'}); return false;">비밀번호 찾기</button> <!-- 인증확인일때 .disabled 삭제-->
+		</div>
+
+	</div>
+</div>
+{%- endblock %}

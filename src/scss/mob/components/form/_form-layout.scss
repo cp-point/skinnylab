@@ -1,0 +1,76 @@
+.form-layout {
+	width: 100%;
+
+	.row {
+		font-size: 0;
+		&:not(:last-child) { padding-bottom: 20px; }
+	}
+
+	.title {
+		box-sizing: border-box;
+		display: block;
+		width: auto;
+		padding: 0;
+		margin-bottom: 6px;
+		color: $text-color1;
+		@include font(14px,$regular);
+		text-align: left;
+		
+		label {
+			display: inline-block;
+		}
+
+		.emphasis {
+			color: #ff7660;
+			font-weight: 800;
+		}
+	}
+
+	.content {
+		box-sizing: border-box;
+		display: block;
+		width: auto;
+		
+		color: $text-color2;
+		font-weight: 500;
+		font-size: 16px;
+		text-align: left;
+		
+
+		& + .content { margin-top: 10px; }
+	}
+
+	.error-msg {
+		display: none;
+		padding-left: 18px;
+		margin-top: 8px;
+		color: $strong-color;
+		font-weight: 500;
+		font-size: 12px;
+		text-align: left;
+		position: relative;
+
+		&:after {
+			content: '';
+			display: block;
+			width: 15px;
+			height: 15px;
+			background: url('@@img/mob/common/icon-error.png') no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: 1px;
+			left: 1px;
+		}
+
+
+		&.is-invalid { display: block; }
+	}
+
+	.add-msg {
+		display: block;
+		margin-top: 6px;
+		color: #828287;
+		font-weight: 500;
+		font-size: 12px;
+	}
+}

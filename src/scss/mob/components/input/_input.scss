@@ -1,0 +1,422 @@
+input.text {
+	box-sizing: border-box;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 12px;
+	background-size: 0;
+	background-position: calc(100% - 12px) bottom;
+	border: 1px solid $line-color2;
+	border-radius: 0;
+	box-shadow: none;
+	color: $text-color2;
+	font-family: 'Apple SD Gothic Neo', 'Poppins';
+	font-weight: 500;
+	font-size: 14px;
+	vertical-align: middle;
+	resize: none;
+	transition: all .2s;
+
+	&:hover { border-color: $line-color1; }
+
+	&:focus {
+		border-color: $line-color1;
+		outline: 0;
+		box-shadow: 0 4px 6px 0 rgba(134,135,138,.48);
+		color: $text-color1;
+	}
+
+	&::placeholder { color: #c1c1c3; }
+
+	&[readonly] {
+		background-color: #fff;
+		border-color: $line-color2;
+		color: $text-color2;
+
+		&:hover { border-color: $line-color1; }
+
+		&:focus {
+			background-color: #fff;
+			border-color: $line-color1;
+			box-shadow: none;
+			color: $text-color2;
+		}
+	}
+
+	&[disabled] {
+		background-color: $bg-color2;
+		border-color: $line-color2;
+		color: $text-color3;
+
+		&:focus {
+			background-color: $bg-color2;
+			border-color: $line-color2;
+		}
+	}
+
+	&.block { width: 100%; }
+
+	&.large {
+		height: 60px;
+		line-height: 60px;
+	}
+
+	&.is-valid {
+		padding-right: 40px;
+		background: url('@@img/mob/common/icon-input-valid.png') no-repeat;
+		background-size: 16px 16px;
+		background-position: calc(100% - 12px) center;
+		border-color: $line-color1;
+		color: $text-color1;
+		transition: all .2s;
+	}
+
+	&.is-invalid {
+		padding-right: 40px;
+		background: url('@@img/mob/common/icon-input-invalid.png') no-repeat;
+		background-size: 16px 16px;
+		background-position: calc(100% - 12px) center;
+		border-color: $warning-color;
+		color: $text-color1;
+		transition: all .2s;
+	}
+
+	&.date-picker {
+		padding-right: 40px;
+		background: url('@@img/mob/common/icon-calendar01.png') no-repeat;
+		background-size: 16px 16px;
+		background-position: calc(100% - 10px) center;
+		&:focus {
+			background: url('@@img/mob/common/icon-calendar01-on.png') no-repeat;
+			background-size: 16px 16px;
+			background-position: calc(100% - 10px) center;
+		}
+	}
+
+	&.underline {
+		// padding: 0 4px;
+		padding: 0;
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-width: 2px;
+
+		&[readonly] {
+			color: $text-color2;
+
+			&:focus { box-shadow: none; }
+		}
+
+		&[disabled] {
+			background-color: #fff;
+			border-color: #eaeaeb;
+		}
+
+		&:focus { box-shadow: 0 8px 6px -6px rgba(134,135,138,.48); }
+
+		&.is-valid { background-image: none; }
+		&.is-invalid { background-image: none; }
+	}
+}
+
+textarea.txt {
+	box-sizing: border-box;
+	line-height: 1.5;
+	padding: 10px 12px;
+	border: 1px solid $line-color2;
+	border-radius: 0;
+	outline: 0;
+	color: $text-color2;
+	font-family: 'Apple SD Gothic Neo', 'Poppins';
+	font-weight: 500;
+	font-size: 14px;
+	vertical-align: middle;
+	resize: none;
+	transition: all .2s;
+
+	&:hover { border-color: $line-color1; }
+
+	&:focus {
+		border-color: #333;
+		border-radius: 0;
+		color: #333;
+		outline: 0;
+	}
+
+	&::placeholder { color: #c1c1c3; }
+
+	&[readonly] {
+		background-color: #fff;
+		border-color: $line-color2;
+		color: $text-color2;
+
+		&:hover { border-color: $line-color1; }
+	}
+
+	&[disabled] {
+		background-color: $bg-color2;
+		border-color: $line-color2;
+		color: $text-color3;
+	}
+}
+
+.select-wrap {
+	display: inline-block;
+	font-size: 0;
+	position: relative;
+
+	.select {
+		width: 100%;
+		background: none;
+		position: relative;
+		z-index: 2;
+
+		&[disabled] {
+			background-image: none;
+
+			& + .arrow { z-index: 2; }
+		}
+		&:focus { background-image: none; }
+	}
+
+	.select2 {
+		width: 100%;
+		background: none;
+		position: relative;
+		z-index: 2;
+
+		&[disabled] {
+			background-image: none;
+
+			& + .arrow { z-index: 2; }
+		}
+		&:focus { background-image: none; }
+	}
+
+	.arrow { z-index: 1; }
+}
+
+select.select {
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 120px;
+	height: 40px;
+	padding-left: 10px;
+	background: url('@@img/mob/common/arrow-select.png') no-repeat;
+	background-size: 14px 9px;
+	background-position: calc(100% - 4px) center;
+	border: 1px solid $line-color2;
+	border-radius: 0;
+	outline: 0;
+	color: $text-color2;
+	@include font(14px,$bold);
+	vertical-align: middle;
+	transition: all .2s;
+
+	&[disabled] {
+		background-image: url('@@img/mob/common/arrow-select-disabled.png');
+		background-color: $bg-color2;
+		border-color: $line-color2;
+		color: $text-color3;
+		opacity: 1;
+
+		&:hover { border-color: $line-color2; }
+	}
+
+	&:hover { border-color: $line-color1; }
+
+	&:focus {
+		background-image: url('@@img/mob/common/arrow-select-reverse.png');
+		border-color: $line-color1;
+		border-radius: 0;
+		outline: 0;
+		box-shadow: 0 4px 6px 0 rgba(134,135,138,.48);
+		color: $text-color1;
+	}
+
+	& + .arrow {
+		width: 38px;
+		height: 38px;
+		background-color: #fff;
+		position: absolute;
+		top: 1px;
+		right: 1px;
+
+		&:after {
+			content: '';
+			width: 14px;
+			height: 9px;
+			background: url('@@img/mob/common/arrow-select.png') no-repeat;
+			background-size: 14px 9px;
+			position: absolute;
+			top: 15px;
+			right: 12px;
+			transition: all .2s;
+		}
+	}
+
+	&[disabled] {
+		& + .arrow {
+			background-color: $bg-color2;
+
+			&:after { background-image: url('@@img/mob/common/arrow-select-disabled.png'); }
+		}
+	}
+
+	&:focus + .arrow:after { transform: rotate(180deg); }
+
+	&.underline {
+		border-top: 1px solid transparent;
+		border-left: 1px solid transparent;
+		border-right: 1px solid transparent;
+		outline: 0;
+
+		&[disabled] {
+			background-color: #fff;
+			border-bottom: 1px solid #ebebec;
+			color: $text-color3;
+
+			& + .arrow { background-color: #fff; }
+
+			&:hover {
+				border-top: 1px solid transparent;
+				border-left: 1px solid transparent;
+				border-right: 1px solid transparent;
+			}
+		}
+
+		&:focus { box-shadow: 0 8px 6px -6px rgba(134,135,138,.48); }
+	}
+	&.small {
+		height: 30px;
+		min-width: 40px;
+		font-size: 12px;
+		& + .arrow {
+			@include size(30px,30px);
+			&:after {
+				content: '';
+				width: 12px;
+				height: 7px;
+				background: url('@@img/mob/common/arrow-select.png') 50% 50% no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 11px;
+				right: 7px;
+				transition: all .2s;
+			}
+		}
+		&[disabled] {
+			& + .arrow {
+				@include size(30px,28px);
+			}
+		}
+		// &:focus + .arrow:after { transform-origin: center center; }
+	}
+}
+
+select.select2 {
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 120px;
+	height: 40px;
+	padding-left: 10px;
+	background: url('@@img/mob/common/arrow-select.png') no-repeat;
+	background-size: 16px 16px;
+	background-position: calc(100% - 4px) center;
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid $line-color1;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-radius: 0;
+	outline: 0;
+	color: $text-color1;
+	@include font(14px,$bold);
+	vertical-align: middle;
+	transition: all .2s;
+
+	&[disabled] {
+		background-image: url('@@img/mob/common/arrow-select2-disabled.png');
+		background-color: #fff;
+		border-bottom: 2px solid #ebebec;
+		color: $text-color3;
+		opacity: 1;
+
+		&:hover { border-bottom: 2px solid #ebebec; }
+	}
+
+	&:hover { border-bottom: 2px solid $line-color1; }
+
+	&:focus {
+		background-image: url('@@img/mob/common/arrow-select2-reverse.png');
+		border-bottom: 2px solid $line-color1;
+		border-radius: 0;
+		outline: 0;
+		box-shadow: 0 8px 6px -6px rgba(134,135,138,.48);
+		color: $text-color1;
+	}
+
+	& + .arrow {
+		width: 38px;
+		height: 37px;
+		background-color: transparent;
+		position: absolute;
+		top: 1px;
+		right: 1px;
+
+		&:after {
+			content: '';
+			width: 17px;
+			height: 17px;
+			background: url('@@img/mob/common/arrow-select2.png') no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: 11px;
+			right: 12px;
+			transition: all .2s;
+		}
+	}
+
+	&[disabled] {
+		& + .arrow {
+			&:after { background-image: url('@@img/mob/common/arrow-select2-disabled.png'); }
+		}
+	}
+	&:focus + .arrow:after { transform: rotate(180deg); }
+}
+
+.editor {
+	position: relative;
+	width: 100%;
+	border: 1px solid #d5d5d7;
+	box-sizing: border-box;
+	.txt {
+		width: 100%;
+		// padding-bottom: 40px;
+		border: none;
+	}
+	.character {
+		// position: absolute;
+		// bottom: 12px;
+		// right: 12px;
+		@include font(14px,$regular);
+		color: $text-color3;
+		display: flex;
+		justify-content: flex-end;
+		padding: 5px;
+		.num { color: $text-color1; }
+	}
+}
+
+.text.date-picker {
+	cursor: pointer;
+}
+
+// number 화살표 제거
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}

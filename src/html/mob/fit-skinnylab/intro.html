@@ -1,0 +1,119 @@
+{%
+	set pageInfo = {
+		section: 'fit-skinnylab',
+		title: '나만의 스키니랩',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header customer">
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/customer.html') }}
+</header>
+<div id="content-main" class="common-container {{pageInfo.section}} {{pageInfo.section}}-intro">
+	<div class="survey-layout">
+		<div class="survey-intro">
+			<h2 class="title">
+				<span class="sub">스키니랩 Thin 연구소</span>
+				<span class="main">자기관리의 완성을 위한 <br><span class="str">맞춤형 상품</span> 찾기!</span>
+			</h2>
+			<ol class="guide">
+				<li>
+					<span class="title">
+						<span class="main">step 1.</span>
+					</span>
+					<span class="desc">기초 조사를 통한 <span class="br"></span>BMI 산출</span>
+				</li>
+				<li>
+					<span class="title">
+						<span class="main">step 2.</span>
+					</span>
+					<span class="desc">다이어트 목표 / <span class="br"></span>생활습관 분석</span>
+				</li>
+				<li>
+					<span class="title">
+						<span class="main">step 3.</span>
+					</span>
+					<span class="desc">자기 완성 타입 &amp; <span class="br"></span>추천 영양소</span>
+				</li>
+			</ol>
+			<div class="visual">
+				<div class="wrap">
+					<div class="human">
+						<div class="img"></div>
+						<div class="bg"></div>
+					</div>
+					<div class="stars">
+						<div class="star star1">
+							<div class="img"></div>
+						</div>
+						<div class="star star2">
+							<div class="img"></div>
+						</div>
+						<div class="star star3">
+							<div class="img"></div>
+						</div>
+						<div class="star star4">
+							<div class="img"></div>
+						</div>
+					</div>
+					<div class="bubbles">
+						<div class="bubble bubble1">
+							<div class="img"></div>
+						</div>
+						<div class="bubble bubble2">
+							<div class="img"></div>
+						</div>
+						<div class="bubble bubble3">
+							<div class="img"></div>
+						</div>
+						<div class="bubble bubble4">
+							<div class="img"></div>
+						</div>
+						<div class="bubble bubble5">
+							<div class="img"></div>
+						</div>
+						<div class="bubble bubble6">
+							<div class="img"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="survey-foot">
+			<p class="contents-progress">
+				<span class="msg">지금 바로 자기관리 솔루션 <span class="br"></span>시작해보세요!</span>
+				<a href="#" class="submit">시작하기</a>
+				<span class="bar secondary">
+					<span class="fill"></span>
+				</span>
+			</p>
+			<ul class="sns">
+				<li>
+					<button type="button" class="btn-share">
+						<span class="icon-facebook"></span>
+						<span class="hide">페이스북</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn-share">
+						<span class="icon-kakao"></span>
+						<span class="hide">카카오톡</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn-share">
+						<span class="icon-url"></span>
+						<span class="hide">URL복사</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{%- endblock %}

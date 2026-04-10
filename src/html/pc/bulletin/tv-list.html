@@ -1,0 +1,259 @@
+{%
+	set pageInfo = {
+		section: 'bulletin',
+		title: '스키니랩 TV',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-bulletin bulletin-tv-list">
+	<div class="page-head">
+		<h2 class="title">스키니랩 TV</h2>
+	</div>
+
+	<div class="tab-group-wrap">
+		<div class="tab-menu overline">
+			<div class="wrap">
+				<ul class="list tab-menu-box">
+					<li class="selected tab">
+						<a href="#">홈숏핑</a>
+					</li>
+					<li class="tab">
+						<a href="#">다희어트</a>
+					</li>
+					<li class="tab">
+						<a href="#">다이어트 툰</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<div class="board-head">
+				<div class="action">
+					<span class="board-search js-text-clear">
+						<label for="searchshoping" class="hide">검색</label>
+						<input type="text" id="searchshoping" name="searchshoping" value="" placeholder="검색어를 입력해주세요." class="input">
+						<button type="button" class="btn-clear">입력값 지우기</button>
+						<button type="button" class="btn-submit">검색하기</button>
+					</span>
+				</div>
+			</div>
+			<ul class="event-list">
+				{% for i in range(0, 20) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/skinylabtv-thumb-img01.png" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<p class="title">
+											[홈숏핑 시즌2] 스키니랩으로 똑똑하게![홈숏핑 시즌2] 스키니랩으로 똑똑하게!
+										</p>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/skinylabtv-thumb-img02.png" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<div class="title">
+											[홈숏핑 시즌2] 꿀꺽꿀꺽 마시면서 하...
+										</div>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">검색 결과가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<div class="board-head">
+				<div class="action">
+					<span class="board-search">
+						<label for="searchdiet" class="hide">검색</label>
+						<input type="text" id="searchdiet" name="searchdiet" value="" placeholder="검색어를 입력해주세요." class="input">
+						<button type="button" class="btn-submit">검색하기</button>
+					</span>
+				</div>
+			</div>
+			<ul class="event-list">
+				{% for i in range(0, 20) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/skinylabtv-thumb-img01.png" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<p class="title">
+											[스키니랩] 이다희 CF촬영 메이킹필름...
+										</p>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/skinylabtv-thumb-img02.png" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<div class="title">
+											너 또 다이어트 하니? 다이어트를 넘어, 자...
+										</div>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">검색 결과가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<div class="board-head">
+				<div class="action">
+					<span class="board-search">
+						<label for="searchcartoon" class="hide">검색</label>
+						<input type="text" id="searchcartoon" name="searchcartoon" value="" placeholder="검색어를 입력해주세요." class="input">
+						<button type="button" class="btn-submit">검색하기</button>
+					</span>
+				</div>
+			</div>
+			<ul class="event-list">
+				{% for i in range(0, 20) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/skinylabtv-thumb-img01.png" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<p class="title">
+											[다이어트 사연 공모] 뭔가를 지려버렸다...
+										</p>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/skinylabtv-thumb-img02.png" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<div class="title">
+											[다이어트 사연 공모] 썸남과의 극적인...
+										</div>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">검색 결과가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

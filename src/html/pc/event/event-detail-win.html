@@ -1,0 +1,83 @@
+{%
+	set pageInfo = {
+		section: 'event',
+		title: '이벤트',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-event event-detail">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">이벤트</h2>
+		</div>
+	</div>
+
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">진행중 이벤트</a>
+				</li>
+				<li class="selected">
+					<a href="#">당첨자 발표</a>
+				</li>
+				<li>
+					<a href="#">종료 이벤트</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<div class="board-detail hidden-title">
+			<dl class="row">
+				<dt>제목</dt>
+				<dd>
+					<div class="title">
+						<div class="wrap">
+							<h3 class="desc">
+								[당첨자 발표] 래피드솔루션 다이어트 기대평 이벤트
+							</h3>
+							<p class="date">
+								2021-04-01
+							</p>
+						</div>
+					</div>
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>내용</dt>
+				<dd>
+					<div class="detail-content">
+						<!-- HTML 영역 // -->
+						<div class="html-area">
+							HTML 내용
+						</div>
+						<!-- HTML 영역 // -->
+
+						<!-- 문구 영역 // -->
+						<div class="detail-noti">
+							<p class="title">유의사항</p>
+							<ul class="list">
+								<li>경품 이벤트 당첨 발표 : 21.03.22</li>
+								<li>경품 발송 : 발표일로부터 영업일 기준 10일 이내</li>
+								<li>경품 및 쿠폰 수령 후 본품 반품 및 환불은 불가합니다.</li>
+								<li>게시판 성격과 무관한 내용이나 욕설, 광고 문구 등의 경우, 사전 예고 없이 삭제될 수 있습니다.</li>
+								<li>해당 게시글에 문의는 답변이 달리지 않으며, 댓글 작성 확인 시 즉시 삭제됩니다.</li>
+								<li>문의는 1:1게시판 혹은 상품 문의를 이용하시거나 고객센터로 연락주세요.</li>
+								<li>스키니랩 고객센터 : 1644-7267</li>
+							</ul>
+						</div>
+						<!-- // 문구 영역 -->
+					</div>
+				</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

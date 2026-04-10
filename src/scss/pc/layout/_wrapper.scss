@@ -1,0 +1,10 @@
+.wrapper {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	min-width: 1280px;
+	min-height: 100%;
+	overflow: hidden;
+
+	&.floating-safe-area { padding-bottom: 120px; }
+}

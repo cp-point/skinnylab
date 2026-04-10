@@ -1,0 +1,109 @@
+{%
+	set pageInfo = {
+		section: 'customer',
+		title: '공지사항'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-customer customer-notice-list">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">고객센터</h2>
+
+		</div>
+	</div>
+
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">고객센터</a>
+				</li>
+				<li>
+					<a href="#">FAQ</a>
+				</li>
+				<li>
+					<a href="#">1:1문의</a>
+				</li>
+				<li class="selected">
+					<a href="#">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<div class="notice-list">
+			<h3 class="hide">공지사항</h3>
+			<div class="board-head">
+				<div class="filter">
+					<span class="select-wrap">
+						<select id="" name="" class="select">
+							<option value="">전체</option>
+							<option value="">일반</option>
+							<option value="">배송안내</option>
+							<option value="">시스템점검</option>
+						</select>
+						<span class="arrow"></span>
+					</span>
+				</div>
+				<div class="board-search">
+					<label for="search" class="hide">검색</label>
+					<input type="text" id="search" name="search" value="" placeholder="검색어를 입력해주세요." class="input">
+					<button type="button" class="btn-submit">검색하기</button>
+				</div>
+			</div>
+			<div class="table-wrap board-list">
+				<table class="table-layout center">
+					<caption>공지사항 테이블, 순번과 유형과 제목과 등록일 항목으로 구성</caption>
+					<colgroup>
+					<col style="width: 80px;">
+					<col style="width: 160px;">
+					<col style="width: auto;">
+					<col style="width: 140px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">NO</th>
+							<th scope="col">유형</th>
+							<th scope="col">제목</th>
+							<th scope="col">등록일</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for i in range(1,11) %}
+						<tr>
+							<td><span>{{i}}</span></td>
+							<td><span class="type">배송안내</span></td>
+							<td>
+								<a href="#">2021년 설 연휴 배송 공지</a>
+							</td>
+							<td><span class="date">2021-02-03</span></td>
+						</tr>
+						{% endfor %}
+						<!-- 검색 결과 없을때 -->
+						<!-- <tr class="empty">
+							<td colspan="4">검색 결과가 없습니다.</td>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

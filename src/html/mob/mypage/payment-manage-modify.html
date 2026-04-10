@@ -1,0 +1,41 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '자동결제수단 관리',
+		order: [5,2]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-payment-manage">
+	<div class="container-wrap payment-wrap">
+		<div class="item-box modify">
+			KB 국민카드
+			<p class="num">1234-56**-****-****</p>
+		</div>
+		<div class="btn-group">
+			<button type="button" class="btn outline thin primary"><span>변경</span></button>
+			<button type="button" class="btn outline thin primary"><span>삭제</span></button>
+		</div>
+	</div>
+	<div class="container-wrap">
+		<div class="page-bot-notice">
+			<p class="com-txt2">자동결제수단 이용안내</p>
+			<ul class="com-txt5 dot-list">
+				<li>정기배송 상품 자동 결제를 위한 카드정보를 등록하기 위한 <span>서비스 입니다.</span></li>
+				<li>정기배송 상품을 주문하신 경우, 등록한 카드 정보로 설정하신 <span>결제 주기에 맞춰 자동 결제됩니다.</span></li> 
+			</ul>
+		</div>
+	</div>
+</div>
+{%- endblock %}

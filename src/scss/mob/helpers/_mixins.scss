@@ -1,0 +1,58 @@
+// hidden
+@mixin hidden {
+	position: absolute;
+	left: -9999px;
+}
+
+// clearfix
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+// ellipsis
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// font
+@mixin font($font-size: null, $font-weight: null, $line-height: null) {
+	font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+// width, height
+@mixin size($width: null, $height: null) {
+	width: $width;
+	height: $height;
+}
+
+// ::before, ::after - absolute
+@mixin before-after() {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+// 인풋 + 버튼 조합에서 버튼 넓이에 따라서 인풋박스 넓이 계산
+@mixin text-with-btn($btn:0) {
+	@if $btn > 0 {
+		.text { width: calc(100% - #{$btn} - 6px); }
+		.text + .btn {
+			width: $btn;
+			min-width: $btn;
+			font-size: 14px;
+		}
+		.btn-group {
+			width: $btn;
+			& > .btn + .btn { margin-left: 5px; }
+		}
+	}
+}

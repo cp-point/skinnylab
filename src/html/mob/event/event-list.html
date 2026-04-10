@@ -1,0 +1,184 @@
+{%
+	set pageInfo = {
+		section: 'event',
+		title: '이벤트',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-list">
+	<div class="page-head">
+		<h2 class="hide">이벤트</h2>
+	</div>
+
+	<!-- 탭 리스트 // -->
+	<div class="tab-group-wrap">
+		<div class="tab-menu">
+			<div class="wrap">
+				<ul class="list tab-menu-box">
+					<li class="is-active tab">
+						<button type="button">진행중 이벤트</button>
+					</li>
+					<li class="tab">
+						<button type="button">당첨자 발표</button>
+					</li>
+					<li class="tab">
+						<button type="button">종료 이벤트</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<ul class="event-list-con">
+				{% for i in range(0, 24) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/mob/@dummy/event-thumb-img01.jpg" alt="진행중 이벤트">
+								</div>
+								<figcaption class="content">
+									<p class="title">
+										[1,000명 한정] 스키니랩 DNA 분석 프로 [1,000명 한정] 스키니랩 DNA 분석 프로
+									</p>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+									<button type="button" class="btn-share"></button>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 진행중인 이벤트가 없을때 // -->
+				<li class="empty">
+					<div class="result-txt is-error">
+						<p class="com-txt">진행중인 이벤트가 없습니다.</p>
+					</div>
+				</li>
+				<!-- // 진행중인 이벤트가 없을때 -->
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<ul class="event-list-con">
+				{% for i in range(0, 24) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/mob/@dummy/event-thumb-img02.jpg" alt="당첨자 발표">
+								</div>
+								<figcaption class="content">
+									<p class="title">
+										[당첨자 발표] 제목 최대 1줄 제목 최대 1줄 제목 최대 1줄 제목 최대 1줄 제목 최대 1줄
+									</p>
+									<p class="date">
+										2021-04-12
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 당첨자 발표 내역이 없을때 // -->
+				<li class="empty">
+					<div class="result-txt is-error">
+						<p class="com-txt">당첨자 발표 내역이 없습니다.</p>
+					</div>
+				</li>
+				<!-- // 당첨자 발표 내역이 없을때 -->
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+
+		<div class="tab-content">
+			<ul class="event-list-con">
+				{% for i in range(0, 24) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/mob/@dummy/event-thumb-img03.jpg" alt="종료 이벤트">
+								</div>
+								<figcaption class="content">
+									<p class="title">
+										[특별구성] 자기관리의 시작, 시서스 시작 자기관리의 시작, 시서스 시작
+									</p>
+									<p class="date">
+										2021-04-12 ~ 2021-04-30
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 종료된 이벤트가 없을때 // -->
+				<li class="empty">
+					<div class="result-txt is-error">
+						<p class="com-txt">종료된 이벤트가 없습니다.</p>
+					</div>
+				</li>
+				<!-- // 종료된 이벤트가 없을때 -->
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 탭 리스트 -->
+
+	{{ include('../promotion/@inc/popup-share.html') }}
+</div>
+
+<script>
+	$(function() {
+		$('.btn-share').on('click',function() {
+			var scrollTop = $(window).scrollTop();
+			$('.share-wrap').addClass('is-open');
+			$('html')
+				.data('scrollTop', scrollTop)
+				.css({ 'margin-top': -scrollTop, 'height': document.body.scrollHeight })
+				.addClass('scroll-fixed');
+		});
+		$('.btn-close').on('click',function() {
+			$('.share-wrap').removeClass('is-open');
+			$('html').removeClass('scroll-fixed').css({
+				'margin-top': '',
+				'height': ''
+			});
+		});
+	});
+</script>
+{%- endblock %}

@@ -1,0 +1,123 @@
+.search-box {
+	width: 100%;
+	max-width: 600px;
+
+	.search {
+		display: flex;
+		height: 60px;
+		position: relative;
+
+		.input {
+			flex-grow: 1;
+			box-sizing: border-box;
+			height: 60px;
+			line-height: 60px;
+			padding: 0 60px 0 6px;
+			background-size: 0;
+			background-position: calc(100% - 12px) bottom;
+			border: 0;
+			border-bottom: 4px solid $primary-color;
+			border-radius: 0;
+			outline: 0;
+			box-shadow: none;
+			color: #c1c1c3;
+			font-family: 'Apple SD Gothic Neo', 'Poppins';
+			font-weight: 700;
+			font-size: 24px;
+			vertical-align: middle;
+			resize: none;
+			transition: all .2s;
+
+			&:hover { border-color: $line-color1; }
+
+			&:focus {
+				border-color: $line-color1;
+				outline: 0;
+				box-shadow: 0 8px 6px -6px rgba(134,135,138,.48);
+				color: $text-color1;
+			}
+
+			&::placeholder { color: #c1c1c3; }
+
+			&[readonly] {
+				background-color: #fff;
+				border-color: $line-color2;
+				color: $text-color2;
+
+				&:hover { border-color: $line-color1; }
+
+				&:focus {
+					background-color: #fff;
+					border-color: $line-color1;
+					box-shadow: none;
+					color: $text-color2;
+				}
+			}
+
+			&[disabled] {
+				background-color: $bg-color2;
+				border-color: $line-color2;
+				color: $text-color3;
+
+				&:focus {
+					background-color: $bg-color2;
+					border-color: $line-color2;
+				}
+			}
+		}
+
+		.btn-clear {
+			width: 48px;
+			height: 0;
+			max-height: 0;
+			padding-top: 60px;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			right: 38px;
+
+			&:after {
+				content: '';
+				display: block;
+				width: 24px;
+				height: 24px;
+				background: url('@@img/mob/common/btn-search-clear.png') no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				opacity: 0;
+				transform: translate(-50%,-50%);
+				transition: all .2s;
+			}
+		}
+
+		.btn-submit {
+			width: 38px;
+			height: 0;
+			max-height: 0;
+			padding-top: 60px;
+			background: url('@@img/mob/common/btn-search.png') no-repeat;
+			background-size: 29px 29px;
+			background-position: center center;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		&.js-text-clear {
+			.btn-clear {
+				padding-top: 0;
+			}
+
+			&.is-active {
+				.btn-clear {
+					padding-top: 60px;
+
+					&:after { opacity: 1; }
+				}
+			}
+		}
+	}
+}

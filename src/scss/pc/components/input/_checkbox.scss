@@ -1,0 +1,205 @@
+label.check {
+	display: inline-block;
+	vertical-align: middle;
+
+	input[type='checkbox'] {
+		@include hidden;
+
+		&:focus + span:before {
+			background-image: url('@@img/pc/common/check-focus.png');
+			box-shadow: 0 0 8px 0 rgba(4,0,0,.5);
+		}
+		&:checked + span {
+			color: $text-color1;
+			&:before { background-image: url('@@img/pc/common/check-on.png'); }
+		}
+		&[disabled] + span:before { background-image: url('@@img/pc/common/check-disabled.png'); }
+		&[disabled]:checked + span {
+			color: $text-color2;
+			&:before { background-image: url('@@img/pc/common/check-disabled-on.png'); }
+		}
+	}
+
+	span {
+		box-sizing: border-box;
+		display: inline-block;
+		min-width: 60px;
+		padding: 4px 5px 4px 30px;
+		color: $text-color2;
+		font-weight: 700;
+		font-size: 16px;
+		vertical-align: middle;
+		word-wrap: break-word;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			background: url('@@img/pc/common/check.png') no-repeat;
+			background-size: 22px 22px;
+			background-position: center center;
+			position: absolute;
+			top: calc(.75em + 4px);
+			left: 0;
+			transform: translateY(-50%);
+			transition: all .2s;
+		}
+	}
+}
+
+input.check {
+	@include hidden;
+
+	&:focus + label:before {
+		background-image: url('@@img/pc/common/check-focus.png');
+		box-shadow: 0 0 8px 0 rgba(4,0,0,.5);
+	}
+	&:checked + label {
+		color: $text-color1;
+		&:before { background-image: url('@@img/pc/common/check-on.png'); }
+	}
+	&[disabled] + label:before { background-image: url('@@img/pc/common/check-disabled.png'); }
+	&[disabled]:checked + label {
+		color: $text-color2;
+		&:before { background-image: url('@@img/pc/common/check-disabled-on.png'); }
+	}
+
+	& + label {
+		box-sizing: border-box;
+		display: inline-block;
+		min-width: 60px;
+		padding: 4px 5px 4px 30px;
+		color: $text-color2;
+		font-weight: 700;
+		font-size: 16px;
+		vertical-align: middle;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			background: url('@@img/pc/common/check.png') no-repeat;
+			background-size: 22px 22px;
+			background-position: center center;
+			position: absolute;
+			top: calc(.75em + 4px);
+			left: 0;
+			transform: translateY(-50%);
+			transition: all .2s;
+		}
+	}
+}
+
+.check-only {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	position: relative;
+
+	input {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+
+		&:focus + span {
+			background-image: url('@@img/pc/common/check-focus.png');
+			box-shadow: 0 0 8px 0 rgba(4,0,0,.5);
+		}
+		&[disabled] + span { background-image: url('@@img/pc/common/check-disabled.png'); }
+		&:checked + span { background-image: url('@@img/pc/common/check-on.png'); }
+		&[disabled]:checked + span { background-image: url('@@img/pc/common/check-disabled-on.png'); }
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: url('@@img/pc/common/check.png') no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .2s;
+	}
+}
+
+.check-like {
+	display: inline-block;
+	width: 62px;
+	height: 62px;
+	vertical-align: middle;
+	position: relative;
+
+	input {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		cursor: pointer;
+
+		&:checked + span {
+			color: $text-color1;
+
+			background-image: url('@@img/pc/common/check-like-on.png');
+		}
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		height: 0;
+		max-height: 0;
+		padding-top: 100%;
+		background: url('@@img/pc/common/check-like.png') no-repeat;
+		background-size: 22px 21px;
+		background-position: center center;
+		color: $text-color2;
+		font-weight: 700;
+		font-size: 16px;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .2s;
+	}
+}
+
+.check-btn {
+	display: inline-block;
+	cursor: pointer;
+
+	input {
+		position: absolute;
+		left: -9999px;
+
+		&:checked + span {
+			line-height: 36px;
+			padding: 0 23px;
+			border: 2px solid $secondary-color1;
+		}
+	}
+
+	span {
+		display: inline-block;
+		line-height: 38px;
+		padding: 0 24px;
+		border: 1px solid #d5d5d7;
+		border-radius: 20px;
+		color: $text-color2;
+		font-weight: 800;
+		font-size: 16px;
+		transition: all .05s;
+	}
+}

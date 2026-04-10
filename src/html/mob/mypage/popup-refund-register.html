@@ -1,0 +1,105 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-order-cancel" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-order-cancel">
+		<div class="header">
+			<h1 class="title">환불 계좌 등록</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title">
+							<label for="accountHolder">예금주 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" class="text block" id="accountHolder" name="accountHolder" value="홍길동" placeholder="예금주 입력">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="bankName">은행명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<div class="select-wrap" style="width: 100%;">
+								<select id="bankName" name="bankName" class="select" style="width: 100%" title="은행 선택 목록">
+									<option value="0">은행 선택</option>
+									<option value="1">산업</option>
+									<option value="2">기업</option>
+									<option value="3">KB국민</option>
+									<option value="4">외환</option>
+									<option value="5">수협</option>
+									<option value="6">농협</option>
+									<option value="7">우리</option>
+									<option value="8">SC제일</option>
+									<option value="9">씨티</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">광주</option>
+									<option value="13">제주</option>
+									<option value="14">전북</option>
+									<option value="15">경남</option>
+									<option value="16">새마을금고</option>
+									<option value="17">신협</option>
+									<option value="18">우체국</option>
+									<option value="19">하나</option>
+									<option value="20">신한</option>
+									<option value="21">카카오뱅크</option>
+								</select>
+								<span class="arrow"></span>
+							</div>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="accountNum">계좌번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<input type="text" class="text block" id="accountNum" name="accountNum" placeholder="계좌번호 입력(‘-’제외)">
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="">이용동의</label>
+						</dt>
+						<dd class="content">
+							<div class="user-agreement">
+								<div class="wrap">
+									<div class="row">
+										<div class="content block">
+											<div class="info">
+												<ul class="list">
+													<li>- 개인정보 수집 목적 : 취소 반품 시 환불 처리</li>
+													<li>- 개인정보 수집 항목 : 예금주, 은행명, 계좌번호</li>
+													<li>- 보유 및 이용기간 : 고객 삭제 또는 회원 탈퇴 시까지</li>
+													<li class="right">(1년간 환불 기록 없는 경우 삭제)</li>
+												</ul>
+												<p class="caution">개인정보 제공에 대한 동의를 거부할 권리가 있으며, 단 거부할 경우<br>환불계좌 등록을 하실 수 없습니다.</p>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<input type="checkbox" name="agree" id="agree01" class="check">
+										<label for="agree01">(선택) 개인정보 수집 및 이용 동의</label>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-group center">
+					<button type="button" class="btn large outline primary js-pop-close">취소</button> <!-- 팝업 닫기 .js-pop-close -->
+					<button type="button" class="btn large primary">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

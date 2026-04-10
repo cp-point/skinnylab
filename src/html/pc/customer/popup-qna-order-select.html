@@ -1,0 +1,177 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popupQnaOrderSelect" class="common-popup">
+	<div class="common-popup-inner popup-qna-order-select">
+		<div class="header">
+			<h1 class="title">
+				주문 상품 선택
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="qna-order-select">
+				<!-- 주문 내역 없을때 -->
+				<!-- <p class="empty">
+					주문 내역이 없습니다.
+				</p> -->
+				<!-- //주문 내역 없을때 -->
+				<div class="select-list">
+					<div class="head">
+						<span class="title">3개월 이내 주문내역만 노출됩니다.</span>
+					</div>
+					<ul class="pop-view-wrap">
+						<li class="view">
+							<p class="order-wrap">
+								<span class="date">2021-04-09</span>
+								<span class="order">주문번호 :
+									<span class="num">2021040914352712345</span>
+								</span>
+							</p>
+							<ul class="product-list">
+								<li class="product-item">
+									<figure>
+										<span class="input-radio">
+											<input type="radio" id="orderDate01Num01" name="orderDate01" class="radio">
+											<label for="orderDate01Num01">주문 상품</label>
+										</span>
+										<div class="img">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												<span class="sub">
+													스키니랩
+												</span>
+												<span class="main">
+													마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출 최대 2줄 노출 이후 말줄임 처리
+												</span>
+												<span class="option">
+													<span class="tit">옵션</span>
+													<span class="desc">옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</span>
+												</span>
+											</p>
+											<p class="num">
+												<span class="product">1</span>개
+												<span class="price">79,600</span>원
+											</p>
+										</figcaption>
+									</figure>
+								</li>
+								<li class="product-item">
+									<figure>
+										<span class="input-radio">
+											<input type="radio" id="orderDate01Num02" name="orderDate01" class="radio">
+											<label for="orderDate01Num02">주문 상품</label>
+										</span>
+										<div class="img">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												<span class="sub">
+													스키니랩
+												</span>
+												<span class="main">
+													마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출 최대 2줄 노출 이후 말줄임 처리
+												</span>
+												<span class="option">
+													<span class="tit">옵션</span>
+													<span class="desc">옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</span>
+												</span>
+											</p>
+											<p class="num">
+												<span class="product">1</span>개
+												<span class="price">79,600</span>원
+											</p>
+										</figcaption>
+									</figure>
+								</li>
+							</ul>
+						</li>
+						<li class="view">
+							<p class="order-wrap">
+								<span class="date">2021-04-09</span>
+								<span class="order">주문번호 :
+									<span class="num">2021040914352712345</span>
+								</span>
+							</p>
+							<ul class="product-list">
+								<li class="product-item">
+									<figure>
+										<span class="input-radio">
+											<input type="radio" id="orderDate02Num01" name="orderDate02" class="radio">
+											<label for="orderDate02Num01">주문 상품</label>
+										</span>
+										<div class="img">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												<span class="sub">
+													스키니랩
+												</span>
+												<span class="main">
+													마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출 최대 2줄 노출 이후 말줄임 처리
+												</span>
+												<span class="option">
+													<span class="tit">옵션</span>
+													<span class="desc">옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</span>
+												</span>
+											</p>
+											<p class="num">
+												<span class="product">1</span>개
+												<span class="price">79,600</span>원
+											</p>
+										</figcaption>
+									</figure>
+								</li>
+								<li class="product-item">
+									<figure>
+										<span class="input-radio">
+											<input type="radio" id="orderDate02Num02" name="orderDate02" class="radio">
+											<label for="orderDate02Num02">주문 상품</label>
+										</span>
+										<div class="img">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												<span class="sub">
+													스키니랩
+												</span>
+												<span class="main">
+													마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출 최대 2줄 노출 이후 말줄임 처리
+												</span>
+												<span class="option">
+													<span class="tit">옵션</span>
+													<span class="desc">옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</span>
+												</span>
+											</p>
+											<p class="num">
+												<span class="product">1</span>개
+												<span class="price">79,600</span>원
+											</p>
+										</figcaption>
+									</figure>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<a href="#" class="btn large primary">
+						<span>취소</span>
+					</a>
+					<a href="#" class="btn large outline primary">
+						<span>등록</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

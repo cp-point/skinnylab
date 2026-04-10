@@ -1,0 +1,129 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-review-detail" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-review-detail">
+		<div class="header">
+			<h1 class="title"><span class="hide">상품 리뷰 팝업</span></h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="review-detail">
+				<div class="image">
+					<div class="list swiper-container">
+						<ul class="wrap swiper-wrapper">
+							{% for i in range(0, 5) %}
+							<li class="swiper-slide item">
+								<img src="{{base}}/img/pc/@dummy/review-thumb-img08.jpg" alt="리뷰 이미지">
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="action">
+						<p class="pagination"></p>
+						<div class="play">
+							<button type="button" class="btn-arrow prev swiper-button-prev"></button>
+							<button type="button" class="btn-arrow next swiper-button-next"></button>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="head">
+						<div class="util-box">
+							<p class="grade-star h16">
+								<span class="fill" style="width: 60%;">3점</span>
+							</p>
+							<span class="date">2021.04.16</span>
+						</div>
+						<p class="name">박******************리</p>
+					</div>
+					<div class="body">
+						<p class="txt">
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다. <br>지난달부터 행복한 시서스다**트에 관심을 보이다가 드디어 독하게 다**트할려구 구매했습니다. <br>병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다. <br>지난달부터 행복한 시서스다**트에 관심을 보이다가 드디어 독하게 다**트할려구 구매했습니다. <br>병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다. <br>지난달부터 행복한 시서스다**트에 관심을 보이다가 드디어 독하게 다**트할려구 구매했습니다. <br>병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다. <br>지난달부터 행복한 시서스다**트에 관심을 보이다가 드디어 독하게 다**트할려구 구매했습니다. <br>병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다. <br>지난달부터 행복한 시서스다**트에 관심을 보이다가 드디어 독하게 다**트할려구 구매했습니다. <br>병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다. <br>지난달부터 행복한 시서스다**트에 관심을 보이다가 드디어 독하게 다**트할려구 구매했습니다. <br>병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+						</p>
+					</div>
+				</div>
+			</div>
+				
+		</div>
+	</div>
+</article>
+<script>
+	$(function() {
+		// 리뷰 이미지 슬라이드
+		var reviewCarouselSwiper = new Swiper('.review-detail .swiper-container', {
+			slidesPerView: 'auto',
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 0,
+			loop: true,
+			loopAdditionalSlides : 1,
+			pagination: {
+				el: '.review-detail .pagination',
+				type: 'fraction',
+				formatFractionCurrent: function(number) {
+					return number < 10 ? '0' + number : number;
+				},
+				formatFractionTotal: function(number) {
+					return number < 10 ? '0' + number : number;
+				}
+			},
+			navigation: {
+				nextEl: '.review-detail .swiper-button-next',
+				prevEl: '.review-detail .swiper-button-prev',
+			},
+			breakpointsInverse: true,
+			breakpoints: {
+				768: {
+					spaceBetween: 30,
+					slidesOffsetBefore: 0
+				}	
+			},
+			watchOverflow: true,
+			on: {
+				init: function(swiper) {
+					var screenW = $(window).width();
+					var slideNum = this.slides.length;
+
+					if(slideNum <= 3) {
+						$('.review-detail .play').hide();
+						this.params.pagination = false;
+						this.allowTouchMove = false;
+						
+						if(screenW >= 768) {
+							$('.review-detail .image').css({width: '340px', 'max-width': '340px', margin: '0 auto'});
+						} else {
+							$('.review-detail .image').css({width: '335px', 'max-width': '335px', margin: '0 auto'});
+						}
+					}
+				},
+				resize: function(swiper) {
+					var screenW = $(window).width();
+					var slideNum = this.slides.length;
+				
+					if(slideNum <= 3) {
+						$('.review-detail .play').hide();
+						this.params.pagination = false;
+						this.allowTouchMove = false;
+
+						if(screenW >= 768) {
+							$('.review-detail .image').css({width: '340px', 'max-width': '340px', margin: '0 auto'});
+						} else {
+							$('.review-detail .image').css({width: '335px', 'max-width': '335px', margin: '0 auto'});
+						}
+					}
+					
+				}
+			}				
+		});
+
+		
+	});
+</script>
+{%- endblock %}

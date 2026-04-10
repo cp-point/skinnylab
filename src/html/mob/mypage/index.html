@@ -1,0 +1,241 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [0,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-index">
+	
+	<div class="container-wrap">
+		<div class="page-top-content">
+			<div class="member-info">
+				<div class="member">
+					<div class="grade">Family</div>
+					<p class="name">
+						<a href="#">일이삼사오일이삼사오일이삼사오일이삼사오 고객님!</a>
+					</p>
+					<div class="desc">
+						다이어트의 새로운 방법을 제시하는<br>
+						스키니랩입니다.
+					</div>
+				</div>
+				<ul class="status">
+					<li class="item01">
+						<dl>
+							<dt>보유쿠폰</dt>
+							<dd><a href="#"><strong>10</strong>장</a></dd>
+						</dl>
+					</li>
+					<li class="item02">
+						<dl>
+							<dt>마일리지</dt>
+							<dd><a href="#"><strong>100,000</strong>원</a></dd>
+						</dl>
+					</li>
+					<li class="item03">
+						<dl>
+							<dt>재입고알림</dt>
+							<dd><a href="#"><strong>3</strong>건</a></dd>
+						</dl>
+					</li>
+				</ul>
+				
+			</div>
+			<a href="#" class="btn outline thin primary">멤버십 혜택 안내</a>
+		</div>
+		<div class="shopping-diary">
+			<div class="swiper-container">
+				<ul class="diary-wrap swiper-wrapper">
+					<li class="swiper-slide item new"> <!-- 새로운 알림 .new -->
+						<p class="date">1.17(토)</p>
+						<div class="title">
+							입금대기 주문 건이 있어요!
+						</div>
+						<div class="desc">
+							<strong>
+								㈜헬스밸런스<br>
+								우리은행 1002-000-00000
+							</strong>
+						</div>
+						<div class="btn-group center">
+							<button type="button" class="btn primary block">주문조회</button>
+						</div>
+					</li>
+					<li class="swiper-slide item">
+						<p class="date">1.17(토)</p>
+						<div class="title">
+							정기배송 결제일이<br>D-7 남았습니다.
+						</div>
+						<div class="desc">
+							배송지와 결제수단을 확인해주세요
+						</div>
+						<div class="btn-group center">
+							<button type="button" class="btn outline thin primary">배송지 변경</button>
+							<button type="button" class="btn primary">결제수단 변경</button>
+						</div>
+					</li>
+					<li class="swiper-slide item">
+						<p class="date">1.17(토)</p>
+						<div class="title">
+							홍길동님을 위한 깜짝<br>
+							마일리지가 적립되었습니다.
+						</div>
+						<div class="desc">
+							마일리지 <strong>3,000</strong>원이 적립되었습니다.
+						</div>
+						<div class="btn-group center">
+							<button type="button" class="btn primary block">마일리지 조회 바로가기</button>
+						</div>
+					</li>
+					<li class="swiper-slide item">
+						<p class="date">1.17(토)</p>
+						<div class="title">
+							두근두근!<br>배송이 시작되었어요
+						</div>
+						<div class="desc">
+							<strong>
+								스키니랩 이지 스낵팝20g x 1봉
+								스키니랩 이지 스낵팝20g x 1봉
+								스키니랩 이지 스낵팝20g x 1봉
+								스키니랩 이지 스낵팝20g x 1봉
+							</strong>
+						</div>
+						<div class="btn-group center">
+							<button type="button" class="btn primary block">배송 조회 바로가기</button>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="action">
+				<p class="pagination"></p>
+			</div>
+			
+		</div>
+
+		<div class="event-banner">
+			<a href="#">
+				<img src="{{base}}/img/mob/@dummy/mypage-index-banner.jpg" alt="회원 한정 시크릿 특가 - 지금 가입하고 이유있는 초특가 상품 가져가세요~!">
+			</a>
+		</div>
+
+		<div class="content-order-wrap">
+			<div class="content">
+				<p class="com-txt">최근 주문 내역</p>
+				<ul class="order-status">
+					<li class="item">
+						<a href="#">
+							0
+							<span class="txt">입금대기</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							2
+							<span class="txt">결제완료</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							1
+							<span class="txt">배송중</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							1
+							<span class="txt">배송완료</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#">
+							0
+							<span class="txt">교환반품</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="content-menu-wrap">
+			<ul>
+				<li><a href="./order-list.html">주문/배송조회</a></li>
+				<li><a href="#">정기배송 조회</a></li>
+				<li><a href="#">선물함</a></li>
+				<li><a href="#">취소/교환/반품 조회</a></li>
+				<li><a href="#">이전주문내역 조회</a></li>
+				<li class="line"><a href="#">보유 쿠폰</a></li>
+				<li><a href="#">마일리지</a></li>
+				<li class="line"><a href="#">찜한 상품</a></li>
+				<li><a href="#">재입고알림</a></li>
+				<li><a href="#">상품 리뷰</a></li>
+				<li><a href="#">참여 이벤트</a></li>
+				<li><a href="#">1:1 문의 내역</a></li>
+				<li><a href="#">상품 문의 내역</a></li>
+				<li class="line"><a href="#">회원정보 관리</a></li>
+				<li><a href="#">배송지 관리</a></li>
+				<li><a href="#">결제수단 관리</a></li>
+				<li><a href="#">환불 계좌 관리</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+<script>
+	if($('.shopping-diary .swiper-container').length) {
+		var shoppingDiarySlide = new Swiper('.shopping-diary .swiper-container', {
+			// loop: true,
+			// loopAdditionalSlides : 1,
+			slidesPerView: 'auto',
+			initialSlide: 0,
+			spaceBetween: 20,
+			watchOverflow : true,
+			slidesOffsetBefore: 20,
+			slidesOffsetAfter: 20,
+			pagination: {
+				el: '.shopping-diary .pagination',
+				clickable: true,
+			},
+			on: {
+				init: function(swiper) {
+					var screenW = $(window).width();
+  				var slideNum = this.slides.length;
+					if(slideNum <= 1) {
+						$('.shopping-diary .action').hide();
+					} else {
+						$('.shopping-diary .action').show();
+					}
+					
+					if(slideNum == 0) {
+						$('.shopping-diary').hide();
+					}
+				},
+				resize: function(swiper) {
+					var screenW = $(window).width();
+  				var slideNum = this.slides.length;
+					
+					if(slideNum <= 1) {
+						$('.shopping-diary .action').hide();
+					} else {
+						$('.shopping-diary .action').show();
+					}
+
+				}
+			}
+		});
+	}
+</script>
+{%- endblock %}

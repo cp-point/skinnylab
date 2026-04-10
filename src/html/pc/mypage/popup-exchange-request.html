@@ -1,0 +1,299 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-order-cancel" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-order-cancel">
+		<div class="header">
+			<h1 class="title">교환 신청</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<h2 class="sub-title">교환 상품</h2>
+				<ul class="list-cont">
+					<li>
+						<div class="item">
+							<div class="check-wrap">
+								<div class="check-only"><input type="checkbox"><span></span></div>
+							</div>
+							<span class="img">
+								<img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지">
+							</span>
+							<div class="info">
+								<p class="store-name">스키니랩</p> <!-- 입점사 있을 경우 추가 없으면 삭제 -->
+								<p class="name">
+									가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 3줄 노출 이후 대 3줄 노출
+								</p>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</dd>
+								</dl>
+								<div class="utility">
+									<span class="select-wrap">
+										<select id="goodsCount01" name="goodsCount01" class="select" title="제품 개수 선택 목록">
+											<option value="0">선택</option>
+											<option value="1" selected>1개</option>
+											<option value="2">2개</option>
+											<option value="3">3개</option>
+										</select>
+										<span class="arrow"></span>
+									</span>
+									<span class="price"><strong>15,000</strong>원</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="item"> <!-- 입금대기 주문 취소 일 때 체크박스 및 셀렉트박스 비활성화 -->
+							<div class="check-wrap">
+								<div class="check-only"><input type="checkbox"><span></span></div>
+							</div>
+							<span class="img">
+								<img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지">
+							</span>
+							<div class="info">
+								<p class="name">
+									가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 3줄 노출 이후 대 3줄 노출
+								</p>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</dd>
+								</dl>
+								<div class="utility">
+									<span class="select-wrap">
+										<select id="goodsCount02" name="goodsCount02" class="select" title="제품 개수 선택 목록">
+											<option value="0">선택</option>
+											<option value="1" selected>1개</option>
+											<option value="2">2개</option>
+											<option value="3">3개</option>
+										</select>
+										<span class="arrow"></span>
+									</span>
+									<span class="price"><strong>15,000</strong>원</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+				<h2 class="sub-title">교환 사유</h2>
+				<div class="popup-form-layout vertical">
+					<div class="row">
+						<div class="select-wrap">
+							<select id="exchangeReason01" name="exchangeReason01" class="select" style="width: 100%" title="교환 사유 선택 목록">
+								<option value="0">교환 사유를 선택해 주세요.</option>
+								<option value="1">고객 단순 변심</option>
+								<option value="2">주문 정보 변경</option>
+								<option value="3">상품 불만족</option>
+								<option value="4">상품 불량</option>
+								<option value="5">상품 파손</option>
+								<option value="6">직접 입력</option>
+							</select>
+							<span class="arrow"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="editor">
+							<textarea id="cancelEditor" name="cancelEditor" cols="30" rows="10" placeholder="사유를 입력해 주세요." class="editor-cont txt" maxlength="1000" style="width: 100%; height: 200px;"></textarea>
+							<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+						</div>
+					</div>
+				</div>
+
+				<h2 class="sub-title">교환 회수지 정보</h2>
+				<div class="popup-form-layout exchange-info-form">
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangePlace01">배송지명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-btn">
+								<input type="text" class="text" id="exchangePlace01" name="exchangePlace01" placeholder="배송지명 입력">
+								<button type="button" class="btn outline thin primary" onclick="UI.showLayerPop('',{ url: './popup-address-manage.html'}); return false;">
+									<span>배송지 관리</span>
+								</button>
+							</span>
+						</dd>
+					</dl>	
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangeUser01">회수자명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="exchangeUser01" name="exchangeUser01" placeholder="회수자명 입력" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangePhone01">휴대폰 번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="exchangePhone01" name="exchangePhone01" placeholder="‘-’ 없이 숫자만 입력" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangeAddr01"> 주소 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<div class="input-address-wrap">
+								<span class="input-text-btn">
+									<label for="userZipcode" class="hide">우편번호 입력</label>
+									<input type="text" class="text" id="userZipcode" name="userZipcode" readonly>
+									<button type="button" class="btn outline thin primary">
+										<span>우편번호 찾기</span>
+									</button>
+								</span>
+								<span class="input-address">
+									<span class="txt-with-del">
+										<label for="exchangeAddr01">상세주소 입력</label>
+										<input type="text" name="exchangeAddr01" id="exchangeAddr01" placeholder="" class="text block">
+									</span>
+								</span>
+								<div class="select-wrap">
+									<select id="exchangeMsg01" name="exchangeMsg01" class="select" style="width: 100%" title="배송메시지 선택 목록">
+										<option value="0">배송메시지 선택</option>
+									</select>
+									<span class="arrow"></span>
+								</div>
+							</div>
+						</dd>
+					</dl>	
+				</div>
+				
+				<h2 class="sub-title">교환 배송지 정보</h2>
+				<div class="popup-form-layout exchange-info-form">
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangePlace02">배송지명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-btn">
+								<input type="text" class="text" id="exchangePlace02" name="exchangePlace02" placeholder="배송지명 입력">
+								<button type="button" class="btn outline thin primary" onclick="UI.showLayerPop('',{ url: './popup-address-manage.html'}); return false;">
+									<span>배송지 관리</span>
+								</button>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangeUser02">수령자명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="exchangeUser02" name="exchangeUser02" placeholder="수령자명 입력" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangePhone02">휴대폰 번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="exchangePhone02" name="exchangePhone02" placeholder="‘-’ 없이 숫자만 입력" class="text block">
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="exchangeAddr02"> 주소 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<div class="input-address-wrap">
+								<span class="input-text-btn">
+									<label for="userZipcode02" class="hide">우편번호 입력</label>
+									<input type="text" class="text" id="userZipcode02" name="userZipcode02" readonly>
+									<button type="button" class="btn outline thin primary">
+										<span>우편번호 찾기</span>
+									</button>
+								</span>
+								<span class="input-address">
+									<span class="txt-with-del">
+										<label for="exchangeAddr02">상세주소 입력</label>
+										<input type="text" name="exchangeAddr02" id="exchangeAddr02" placeholder="" class="text block">
+									</span>
+								</span>
+								<div class="select-wrap">
+									<select id="exchangeMsg02" name="exchangeMsg02" class="select" style="width: 100%" title="배송메시지 선택 목록">
+										<option value="0">배송메시지 선택</option>
+									</select>
+									<span class="arrow"></span>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div>
+
+				<h2 class="sub-title">교환 배송비</h2>
+				<p class="desc">상품을 교환하시면 아래와 같이 배송비가 발생합니다.</p>
+				<div class="refund-wrap">
+					<dl>
+						<dt>회수 배송비</dt>
+						<dd><strong>2,500</strong>원</dd>
+						<dt>재출고 배송비</dt>
+						<dd><strong>2,500</strong>원</dd>
+					</dl>
+					<dl class="total">
+						<dt>배송비</dt>
+						<dd>
+							<span><strong>5,000</strong>원</span>
+						</dd>
+					</dl>
+				</div>
+
+				<h2 class="sub-title">추가 배송비 결제</h2>
+				<div class="pay-btn-group">
+					<button type="button" class="pay-btn creditcard">
+						<span>신용카드</span>
+					</button>
+					<button type="button" class="pay-btn naverpay">
+						<span>네이버페이</span>
+					</button>
+					<button type="button" class="pay-btn kakaopay">
+						<span>카카오페이</span>
+					</button>
+					<button type="button" class="pay-btn mobilepay">
+						<span>휴대폰결제</span>
+					</button>
+					<button type="button" class="pay-btn bank">
+						<span>계좌이체</span>
+					</button>
+				</div>
+
+				<script>
+					$('.pay-btn-group .pay-btn').on('click', function() {
+						$('.pay-btn-group .pay-btn').removeClass('on');
+						$(this).addClass('on');
+					});
+				</script>
+
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<button class="btn large outline primary js-pop-close">취소</button>
+					<button class="btn large primary">교환 신청</button>
+				</div>
+
+				<h2 class="sub-title">취소/교환/반품 안내</h2>
+				<ul class="dot-list">
+					<li>주문 취소/반품으로 인한 환불은 주문했던 결제수단으로 환불되며,<br>
+					무통장입금으로 결제하신 경우에는 주문 당시 설정하셨던 환불계좌로 환불 처리 됩니다.</li>
+					<li>교환은 동일 상품으로만 교환할 수 있습니다. 다른 상품을 원하시면 반품 신청 후<br> 
+					재주문 해주시기 바랍니다.</li>
+					<li>교환/반품 사유 및 도서산간 지역에 따라 추가 배송비가 발생될 수 있습니다.</li>
+					<li>증정품의 교환/반품을 원하시면 고객센터를 통해 문의 주시기 바랍니다.</li>
+					<li>증정품이 있는 상품을 반품하시는 경우 증정품도 함께 반품해주셔야 합니다.</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

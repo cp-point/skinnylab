@@ -1,0 +1,589 @@
+{%
+	set pageInfo = {
+		section: 'event',
+		title: '이벤트',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-event event-detail">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">이벤트</h2>
+		</div>
+	</div>
+
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li class="selected">
+					<a href="#">진행중 이벤트</a>
+				</li>
+				<li>
+					<a href="#">당첨자 발표</a>
+				</li>
+				<li>
+					<a href="#">종료 이벤트</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<div class="board-detail hidden-title">
+			<dl class="row">
+				<dt>제목</dt>
+				<dd>
+					<div class="title">
+						<div class="wrap">
+							<h3 class="desc">
+								출첵하고 마일리지도 받고!
+							</h3>
+							<p class="date">
+								2021-04-01 ~ 2021-04-30
+							</p>
+						</div>
+						<div class="util">
+							<div class="share">
+								<button type="button" class="btn-open" onclick="$(this).parents('.share').find('.content').show(); return false;">공유하기 열기</button>
+								<div class="content">
+									<div class="box">
+										<ul class="list">
+											<li>
+												<a href="#">
+													<span class="icon facebook"></span>
+													<span class="tit">페이스북</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="icon kakao"></span>
+													<span class="tit">카카오톡</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="icon url"></span>
+													<span class="tit">URL복사</span>
+												</a>
+											</li>
+										</ul>
+										<button type="button" class="btn-close" onclick="$(this).parents('.share').find('.content').hide(); return false;">공유하기 닫기</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>내용</dt>
+				<dd>
+					<div class="detail-content">
+						<!-- HTML 영역 // -->
+						<div class="html-area">
+							HTML 내용
+						</div>
+						<!-- HTML 영역 // -->
+
+						<!-- 출석체크 영역 // -->
+						<div class="stamp-area">
+							<div class="stamp-info">
+								<div class="info-attend">
+									<dl class="current">
+										<dt>출석일</dt>
+										<dd>01</dd>
+									</dl>
+									<dl class="total">
+										<dt class="hide">전체일수</dt>
+										<dd>
+											07
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="stamp-list week">
+								<label class="check-stamp"><input type="checkbox" checked disabled>
+									<span class="item">
+										<span class="count">
+											<span class="num">
+												1
+											</span>
+											<span class="hide">번째</span>
+										</span>
+									</span>
+								</label>
+								<label class="check-stamp"><input type="checkbox">
+									<span class="item">
+										<span class="count">
+											<span class="num">
+												2
+											</span>
+											<span class="hide">번째</span>
+										</span>
+									</span>
+								</label>
+								{% for i in range(3, 7) %}
+								<label class="check-stamp"><input type="checkbox" disabled>
+									<span class="item">
+										<span class="count">
+											<span class="num">
+												{{i}}
+											</span>
+											<span class="hide">번째</span>
+										</span>
+									</span>
+								</label>
+								{% endfor %}
+								<label class="check-stamp complete"><input type="checkbox" disabled>
+									<span class="item">
+										<span class="count">
+											<span class="num">
+												7
+											</span>
+											<span class="hide">번째</span>
+										</span>
+									</span>
+								</label>
+							</div>
+						</div>
+						<!-- // 출석체크 영역 -->
+
+						<!-- 문구 영역 // -->
+						<div class="detail-noti">
+							<p class="title">유의사항</p>
+							<ul class="list">
+								<li>해당 이벤트는 스키니랩몰 고객 전용입니다.</li>
+								<li>ID당 1회 참여 가능합니다.</li>
+								<li>1회 출석 완료 후 다시 출석체크는 불가능합니다.</li>
+								<li>주관사의 사정으로 변경/중단 될 수 있습니다.</li>
+							</ul>
+						</div>
+						<!-- // 문구 영역 -->
+					</div>
+				</dd>
+			</dl>
+		</div>
+
+		<div class="reply-area">
+			<div class="reply-head">
+				<p class="count">
+					총
+					<span class="num">
+						10
+					</span>
+					개
+				</p>
+			</div>
+			<div class="reply-write">
+				<div class="write">
+					<div class="wrap">
+						<div class="input">
+							<div class="editor">
+								<label for="qnaEditor" class="hide">댓글 내용</label>
+								<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+								<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+							</div>
+						</div>
+						<div class="btn-area">
+							<button type="button" class="btn primary">
+								<span>댓글 등록</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="reply-list">
+				<ul class="list">
+					<li>
+						<div class="item">
+							<!-- 댓글 상세 // -->
+							<div class="detail">
+								<div class="head">
+									<span class="info">
+										<span class="name">김******************동</span>
+										<span class="date">2021.04.16</span>
+									</span>
+									<div class="action">
+										<!-- <button type="button" class="btn small outline thin primary">
+											<span>수정</span>
+										</button>
+										<button type="button" class="btn small outline thin primary">
+											<span>삭제</span>
+										</button> -->
+									</div>
+								</div>
+								<div class="body">
+									<span class="content">
+										출석 체크 했습니다!
+									</span>
+								</div>
+								<div class="foot">
+									<div class="btn-area">
+										<button type="button" class="btn small outline2">
+											<span>답글</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<!-- // 댓글 상세 -->
+							<!-- 댓글 수정 // -->
+							<div class="modify" style="display: none;">
+								<div class="wrap">
+									<div class="input">
+										<div class="editor">
+											<label for="qnaEditor2" class="hide">댓글 내용</label>
+											<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+											<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+										</div>
+									</div>
+									<div class="btn-area">
+										<button type="button" class="btn primary">
+											<span>댓글 등록</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<!-- // 댓글 수정 -->
+						</div>
+					</li>
+					<li>
+						<div class="item">
+							<!-- 댓글 상세 // -->
+							<div class="detail">
+								<div class="head">
+									<span class="info">
+										<span class="name">김******************동</span>
+										<span class="date">2021.04.16</span>
+									</span>
+									<div class="action">
+										<button type="button" class="btn small outline thin primary">
+											<span>수정</span>
+										</button>
+										<button type="button" class="btn small outline thin primary">
+											<span>삭제</span>
+										</button>
+									</div>
+								</div>
+								<div class="body">
+									<span class="content">
+										출석체크 완료! 사은품 꼭 보내주세요!
+									</span>
+								</div>
+								<div class="foot">
+									<div class="btn-area">
+										<button type="button" class="btn small outline2">
+											<span>취소</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<!-- // 댓글 상세 -->
+							<!-- 댓글 수정 // -->
+							<div class="modify" style="display: none;">
+								<div class="wrap">
+									<div class="input">
+										<div class="editor">
+											<label for="qnaEditor2" class="hide">댓글 내용</label>
+											<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+											<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+										</div>
+									</div>
+									<div class="btn-area">
+										<button type="button" class="btn primary">
+											<span>댓글 등록</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<!-- // 댓글 수정 -->
+						</div>
+						<ul class="sub">
+							<li>
+								<div class="item">
+									<!-- 답글 상세 // -->
+									<div class="detail">
+										<div class="head">
+											<span class="info">
+												<span class="name">김******************동</span>
+												<span class="date">2021.04.16</span>
+											</span>
+											<div class="action">
+												<button type="button" class="btn small outline thin primary">
+													<span>수정</span>
+												</button>
+												<button type="button" class="btn small outline thin primary">
+													<span>삭제</span>
+												</button>
+											</div>
+										</div>
+										<div class="body">
+											<span class="content">
+												저도 출석 체크 했어요!
+											</span>
+										</div>
+									</div>
+									<!-- // 답글 상세 -->
+									<!-- 답글 수정 // -->
+									<div class="modify" style="display: none;">
+										<div class="wrap">
+											<div class="input">
+												<div class="editor">
+													<label for="qnaEditor2" class="hide">댓글 내용</label>
+													<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+													<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+												</div>
+											</div>
+											<div class="btn-area">
+												<button type="button" class="btn primary">
+													<span>댓글 등록</span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- // 답글 수정 -->
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<!-- 답글 상세 // -->
+									<div class="detail" style="display: none;">
+										<div class="head">
+											<span class="info">
+												<span class="name">김******************동</span>
+												<span class="date">2021.04.16</span>
+											</span>
+											<div class="action">
+												<button type="button" class="btn small outline thin primary">
+													<span>수정</span>
+												</button>
+												<button type="button" class="btn small outline thin primary">
+													<span>삭제</span>
+												</button>
+											</div>
+										</div>
+										<div class="body">
+											<span class="content">
+												출석 체크 했습니다!
+											</span>
+										</div>
+									</div>
+									<!-- // 답글 상세 -->
+									<!-- 답글 수정 // -->
+									<div class="modify" style="display: none;">
+										<div class="wrap">
+											<div class="input">
+												<div class="editor">
+													<label for="qnaEditor2" class="hide">댓글 내용</label>
+													<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+													<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+												</div>
+											</div>
+											<div class="btn-area">
+												<button type="button" class="btn primary">
+													<span>댓글 등록</span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- // 답글 수정 -->
+									<!-- 답글 작성 // -->
+									<div class="write">
+										<div class="wrap">
+											<div class="input">
+												<div class="editor">
+													<label for="qnaEditor2" class="hide">댓글 내용</label>
+													<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+													<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+												</div>
+											</div>
+											<div class="btn-area">
+												<button type="button" class="btn primary">
+													<span>댓글 등록</span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- // 답글 작성 -->
+								</div>
+							</li>
+						</ul>
+					</li>
+					{% for i in range(0, 8) -%}
+					<li>
+						<div class="item">
+							<!-- 댓글 상세 // -->
+							<div class="detail">
+								<div class="head">
+									<span class="info">
+										<span class="name">김******************동</span>
+										<span class="date">2021.04.16</span>
+									</span>
+									<div class="action">
+										<!-- <button type="button" class="btn small outline thin primary">
+											<span>수정</span>
+										</button>
+										<button type="button" class="btn small outline thin primary">
+											<span>삭제</span>
+										</button> -->
+									</div>
+								</div>
+								<div class="body">
+									<span class="content">
+										출석 체크 했습니다!
+									</span>
+								</div>
+								<div class="foot">
+									<div class="btn-area">
+										<button type="button" class="btn small outline2">
+											<span>답글</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<!-- // 댓글 상세 -->
+							<!-- 댓글 수정 // -->
+							<div class="modify" style="display: none;">
+								<div class="wrap">
+									<div class="input">
+										<div class="editor">
+											<label for="qnaEditor2" class="hide">댓글 내용</label>
+											<textarea id="qnaEditor2" name="qnaEditor" cols="30" rows="10" placeholder="댓글 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+											<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+										</div>
+									</div>
+									<div class="btn-area">
+										<button type="button" class="btn primary">
+											<span>댓글 등록</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<!-- // 댓글 수정 -->
+						</div>
+					</li>
+					{% endfor %}
+					<!-- 댓글이 없을때 // -->
+					<!-- <li class="empty">
+						<p class="desc">등록된 댓글이 없습니다.</p>
+					</li> -->
+					<!-- // 댓글이 없을때 -->
+				</ul>
+			</div>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+
+		<div class="recommend-banner2">
+			<div class="head">
+				<p class="title">다른 이벤트도 둘러보세요!</p>
+			</div>
+			<div class="list swiper-container">
+				<ul class="wrap swiper-wrapper">
+					{% for i in range(0, 4) %}
+					<li class="swiper-slide">
+						<a href="#">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/recommend-board-img01.jpg" alt="배너1">
+							</div>
+						</a>
+					</li>
+					<li class="swiper-slide">
+						<a href="#">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/recommend-board-img02.jpg" alt="배너2">
+							</div>
+						</a>
+					</li>
+					<li class="swiper-slide">
+						<a href="#">
+							<div class="img">
+								<img src="{{base}}/img/pc/@dummy/recommend-board-img03.jpg" alt="배너2">
+							</div>
+						</a>
+					</li>
+					{% endfor %}
+					<!-- // 다른 게시물이 없을때 -->
+					<!-- <li class="swiper-slide">
+						<p class="empty">
+							다른 게시물이 없습니다.
+						</p>
+					</li> -->
+					<!-- 다른 게시물이 없을때 // -->
+				</ul>
+			</div>
+			<div class="action">
+				<p class="pagination"></p>
+				<div class="play">
+					<button type="button" class="btn-prev swiper-button-prev"></button>
+					<button type="button" class="btn-autoplay swiper-button-autoplay"></button>
+					<button type="button" class="btn-next swiper-button-next"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// 관련기획전 캐러셀
+	var recommendBannerSwiper = new Swiper('.recommend-banner2 .list', {
+		autoplay: {
+			delay: 3000
+		},
+		speed: 1000,
+		loop: true,
+		slidesPerView: 3,
+		slidesPerGroup: 3 ,
+		initialSlide: 0,
+		spaceBetween: 45,
+		allowTouchMove: false,
+		pagination: {
+			el: '.recommend-banner2 .pagination',
+			type: 'fraction',
+			formatFractionCurrent: function(number) {
+				return number < 10 ? '0' + number : number;
+			},
+			formatFractionTotal: function(number) {
+				return number < 10 ? '0' + number : number;
+			}
+		},
+		navigation: {
+			nextEl: '.recommend-banner2 .swiper-button-next',
+			prevEl: '.recommend-banner2 .swiper-button-prev',
+		}
+	});
+
+	$('.recommend-banner2 .btn-autoplay').on('click', function() {
+		var $this = $(this);
+		
+		if($this.hasClass('is-stop')) {
+			recommendBannerSwiper.autoplay.start();
+		} else {
+			recommendBannerSwiper.autoplay.stop();
+		}
+
+		$this.toggleClass('is-stop');
+	});
+</script>
+<!-- // Content -->
+
+<script>
+	$('.check-stamp').on('click', 'input[type=checkbox]', function(e) {
+			$checkStamp = $(e.target);
+
+		if(!$checkStamp.is(':checked')) return false;
+		});
+</script>
+{%- endblock %}

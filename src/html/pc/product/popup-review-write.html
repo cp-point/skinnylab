@@ -1,0 +1,188 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 상품리뷰 작성 // -->
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popupRestockNotificationRegister" class="common-popup full-scroll">
+	<div class="common-popup-inner popup-review-write">
+		<div class="header">
+			<h1 class="title">
+				상품리뷰 작성
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<div class="order-box">
+					<figure class="item">
+						<div class="img">
+							<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="제품이미지">
+						</div>
+						<figcaption class="content">
+							<h2 class="title">
+								마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출 마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출
+							</h2>
+							<dl class="option">
+								<dt class="tit">옵션</dt>
+								<dd class="con">
+									옵션명 최대 1줄 노출 이후 말줄임옵션명 최대 1줄 노출 이후 말줄임
+								</dd>
+							</dl>
+							<!-- <dl class="amount">
+								<dt class="hide">수량</dt>
+								<dd class="con">
+									1개
+								</dd>
+							</dl> -->
+						</figcaption>
+					</figure>
+				</div>
+				<ul class="add-list">
+					<li>상품 리뷰는 건강기능식품 특성 상 관리자의 승인 후 게시 가능합니다.</li>
+					<li>상품 리뷰 등록 이후 수정 또는 삭제는 불가능합니다.</li>
+				</ul>
+				<dl class="select-grade">
+					<dt class="tit">별점을 선택해주세요.</dt>
+					<dd class="con">
+						<div class="range-slider-star-wrap">
+							<div class="bar">
+								<div id="rangeSliderStar" class="range-slider-star"></div>
+							</div>
+							<p class="result">
+								<span class="num">
+									0
+								</span>
+								점
+							</p>
+						</div>
+					</dd>
+				</dl>
+				<div class="popup-form-layout vertical">
+					<dl class="row">
+						<dt class="hide">
+							<label for="reviewWrite">후기작성</label>
+						</dt>
+						<dd class="content">
+							<!-- 에디터 영역 // -->
+							<div class="editor">
+								<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="후기 내용 입력" class="txt" maxlength="2000"></textarea>
+								<p class="character">( <span class="num">87</span> / 1,000자 )</p>
+							</div>
+							<!-- // 에디터 영역 -->
+						</dd>
+					</dl>
+				</div>
+				<div class="image-upload">
+					<p class="hide">이미지업로드</p>
+					<ul class="list">
+						<li>
+							<div class="file">
+								<div class="input">
+									<input type="file" id="imageFile1" name="imageFile1" class="input-file">
+									<label for="imageFile1" class="btn-upload">파일 선택</label>
+								</div>
+								<div class="result">
+									<div class="content">
+										<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+									</div>
+									<button class="btn-del">파일 삭제</button>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="file">
+								<div class="input">
+									<input type="file" id="imageFile2" name="imageFile2" class="input-file">
+									<label for="imageFile2" class="btn-upload">파일 선택</label>
+								</div>
+								<div class="result" style="display: none;">
+									<div class="content">
+										<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+									</div>
+									<button class="btn-del">파일 삭제</button>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="file">
+								<div class="input">
+									<input type="file" id="imageFile3" name="imageFile3" class="input-file">
+									<label for="imageFile3" class="btn-upload">파일 선택</label>
+								</div>
+								<div class="result" style="display: none;">
+									<div class="content">
+										<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+									</div>
+									<button class="btn-del">파일 삭제</button>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="file">
+								<div class="input">
+									<input type="file" id="imageFile4" name="imageFile4" class="input-file">
+									<label for="imageFile4" class="btn-upload">파일 선택</label>
+								</div>
+								<div class="result" style="display: none;">
+									<div class="content">
+										<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+									</div>
+									<button class="btn-del">파일 삭제</button>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="file">
+								<div class="input">
+									<input type="file" id="imageFile5" name="imageFile5" class="input-file">
+									<label for="imageFile5" class="btn-upload">파일 선택</label>
+								</div>
+								<div class="result" style="display: none;">
+									<div class="content">
+										<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+									</div>
+									<button class="btn-del">파일 삭제</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="add-explain">
+						<li>최대 5개 / 100MB 이하의 파일만 등록 가능합니다.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<a href="#" class="btn large outline primary cancel motion">
+						<span>취소</span>
+					</a>
+					<a href="#" class="btn large primary submit motion">
+						<span>등록</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+<!-- // 상품리뷰 작성 -->
+
+<script>
+	$(function() {
+		var value = 0;
+
+		$( "#rangeSliderStar" ).slider({
+			range: "min",
+			value: 0,
+			min: 0,
+			max: 10,
+			slide: function( event, ui ) {
+				value = ui.value / 2;
+
+				$(".range-slider-star-wrap .result .num").text(value.toLocaleString());
+			}
+		});
+
+		// $(".range-slider-star-wrap .result .num").text(value.toLocaleString());
+	});
+</script>
+{%- endblock %}

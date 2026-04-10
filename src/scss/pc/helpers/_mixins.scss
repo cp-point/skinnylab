@@ -1,0 +1,42 @@
+// hidden
+@mixin hidden {
+	position: absolute;
+	left: -9999px;
+}
+
+// clearfix
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+// ellipsis
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// font
+@mixin font($font-size: null, $font-weight: null, $line-height: null) {
+	font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+// width, height
+@mixin size($width: null, $height: null) {
+	width: $width;
+	height: $height;
+}
+
+// ::before, ::after - absolute
+@mixin before-after() {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+}

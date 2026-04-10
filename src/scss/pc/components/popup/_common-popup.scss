@@ -1,0 +1,193 @@
+/* 스크롤 고정 */
+.scroll-fixed {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	overflow: hidden;
+}
+
+.common-popup {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	background-color: rgba(0,0,0,.7);
+	font-size: 0;
+	text-align: center;
+	overflow: auto;
+	position: relative;
+	z-index: 1000;
+
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	&.full {
+		padding: 0;
+
+		&.hidden-title {
+			& > .common-popup-inner {
+				& > .container {
+					height: 100vh;
+					max-height: none;
+				}
+			}
+		}
+
+		& > .common-popup-inner {
+			width: 100%;
+			max-width: none;
+			height: 100%;
+
+			& > .container {
+				height: calc(100vh - 50px);
+				max-height: none;
+			}
+		}
+	}
+
+	&.hidden-title {
+		& > .common-popup-inner {
+			& > .header {
+				&:after { content: none; }
+	
+				& > .title { @include hidden; }
+			}
+
+			& > .container {
+				max-height: calc(100vh - 52px);
+				padding-top: 34px;
+			}
+		}
+	}
+
+	&.full-scroll {
+		& > .common-popup-inner {
+			& > .container {
+				height: auto;
+				max-height: none;
+			}
+		}
+	}
+
+	&.is-right {
+		padding: 0;
+		text-align: right;
+		overflow: hidden;
+	}
+
+	& > .common-popup-inner {
+		display: inline-block;
+		min-width: 300px;
+		max-width: 500px;
+		vertical-align: middle;
+
+		& > .header {
+			box-sizing: border-box;
+			padding: 0 15px;
+			background-color: #fff;
+			position: relative;
+
+			&:after {
+				content: '';
+				display: block;
+				width: calc(100% - 40px);
+				height: 1px;
+				background-color: #eaeaeb;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			& > .title {
+				height: 60px;
+				line-height: 60px;
+				color: $text-color1;
+				font-weight: 800;
+				font-size: 24px;
+				white-space: nowrap;
+				text-align: left;
+				letter-spacing: -.05em;
+			}
+
+			& > .btn-close {
+				display: block;
+				width: 60px;
+				height: 0;
+				max-height: 0;
+				padding-top: 60px;
+				background: url('@@img/pc/common/btn-popup-close.png') no-repeat;
+				background-size: 24px 24px;
+				background-position: center center;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+
+		& > .container {
+			box-sizing: border-box;
+			height: auto;
+			max-height: calc(100vh - 80px);
+			overflow-y: auto;
+			padding: 30px 20px 40px 20px;
+			background-color: #fff;
+			font-size: 14px;
+			text-align: left;
+
+			& > .foot {
+				padding-top: 30px;
+				margin-top: 30px;
+				border-top: 1px solid #ececec;
+
+				.btn-area {
+					display: flex;
+					justify-content: center;
+
+					.btn { margin: 0 10px; }
+				}
+			}
+		}
+	}
+
+	// 레이어팝업일때
+	&.is-layer {
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+	// 모션 속성 있을때
+	&[data-motion-in].is-layer {
+		background: transparent;
+		transition: all .2s;
+
+		.common-popup-inner {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: all .2s;
+		}
+
+		&.init {
+			background: rgba(0,0,0,.7);
+			transition: all .4s;
+
+			.common-popup-inner {
+				opacity: 1;
+				transform: translateY(0);
+				transition: all .4s;
+			}
+		}
+	}
+
+	// 모션 속성 없을때
+	&:not([data-motion-in]).is-layer {
+		background: rgba(0,0,0,.7);
+	}
+}

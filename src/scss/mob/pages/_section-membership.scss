@@ -1,0 +1,428 @@
+// 멤버십 공통
+.section-membership {
+	.page-sub-head {
+		margin-top: 40px;
+		&:first-child { margin-top: 0; }
+
+		.title { @include font(20px,$extra-bold,1.2); }
+	}
+	.page-sub-noti {
+		position: relative;
+		width: 100%;
+		margin-top: 36px;
+
+		.title {
+			@include font(18px,$bold);
+		}
+		.list {
+			margin-top: 10px;
+			li {
+				padding-left: 10px;
+				position: relative;
+				@include font(12px,$regular);
+				color: $text-color2;
+				&:not(:first-child) { margin-top: 1px; }
+				&::before {
+					@include before-after();
+					top: 8px;
+					left: 0;
+					@include size(3px,3px);
+					border-radius: 100px;
+					background: $line-color1;
+				}
+			}
+		}
+	}
+
+	.tab-button {
+		margin: 20px 0;
+		.list {
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+		li {
+			display: inline-block;
+			margin: 0 8px 0 0;
+			width: 29.9%;
+			margin-top: 10px;
+			&:nth-child(3n) { margin-right: 0; }
+			a {
+				width: 100%;
+				padding: 8px 10px;
+				box-sizing: border-box;
+				text-align: center;
+				@include font(14px,$bold,1.5);
+				
+			}
+		}
+	}
+	.tab-content {
+		border-top: 1px solid $line-color1;
+		@include font(14px,$extra-bold);
+		li {
+			padding: 20px 10px;
+			border-bottom: 1px solid $line-color2;
+			.add-explain {
+				color: $text-color2;
+				font-weight: $medium;
+			}
+		}
+	}
+
+	.grade-benefit {
+		margin-top: 28px;
+		.table-wrap { border-bottom: 1px solid $bg-color2; }
+		.table-layout {
+			& > tbody {
+				& > tr {
+					&:first-child {
+						height: 120px;
+					}
+					& > th {
+						background-color: #fff;
+						@include font(16px, $regular);
+					}
+					& > td {
+						padding: 16px;
+						@include font(16px, $bold);
+						.str { 
+							@include font(24px, $bold);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.membership-intro {
+	.intro-box {
+		width: 100%;
+		min-height: 100px;
+		padding: 30px;
+		box-sizing: border-box;
+		background-color: $bg-color1;
+		.desc {
+			@include font(16px, $bold);
+			letter-spacing: -.03em;
+			.str { color: $secondary-color1; }
+		}
+		.btn-group {
+			margin-top: 18px;
+			.btn {
+				background-color: #fff;
+				&:hover { color: $text-color1; }
+			}
+		}
+		
+	}
+	.new-benefit-wrap { margin: 43px 0 0 18px; }
+	.new-benefit {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 20px;
+		.info {
+			box-sizing: border-box;
+			width: 260px;
+			min-height: 300px;
+			border: solid 1px #f4f4f6;
+			letter-spacing: -.03em;
+	
+			& > .inner {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				box-sizing: border-box;
+				height: 300px;
+				padding: 60px 18px 40px;
+			}
+			.title {
+				display: block;
+				margin-bottom: 9px;
+				@include font(20px, $extra-bold);
+				color: $text-color1;
+				letter-spacing: -.025em;
+				text-align: center;
+				word-wrap: break-word;
+			}
+			.desc {
+				@include font(14px,$medium);
+				text-align: center;
+				letter-spacing: -.025em;
+				color: $text-color1;
+
+				.str { font-weight: 800; }
+			}
+			.add {
+				margin-top: 4px;
+				color: #828287;
+				font-weight: 500;
+				font-size: 14px;
+				text-align: center;
+				letter-spacing: -.025em;
+			}
+			.tag {
+				box-sizing: border-box;
+				display: inline-block;
+				position: absolute;
+				min-width: 70px;
+				height: 40px;
+				padding: 0 20px;
+				top: 0;
+				left: 0;
+				background-color: #353537;
+				@include font(14px, $bold);
+				text-align: center;
+				line-height: 37px;
+				letter-spacing: -.05em;
+				color: #fff;
+			}
+			.box {
+				box-sizing: border-box;
+				display: inline-flex;
+				flex-direction: column;
+				justify-content: center;
+				min-width: 160px;
+				height: 80px;
+				padding: 15px 25px;
+				margin: auto auto 0;
+				border: 1px solid $primary-color;
+				position: relative;
+
+				&.mileage {
+					display: block;
+					padding: 20px 30px;
+					border: 1px solid $primary-color;
+					box-sizing: border-box;
+					text-align: center;
+					.txt {
+						@include font(33px, $bold,1);
+						color: $text-color1;
+						text-align: center;
+						word-wrap: break-word;
+					}
+				}
+				&.coupon {
+					min-width: 170px;
+					&:before {
+						content: '';
+						display: block;
+						@include size(11px, 31px);
+						background: #fff url('@@img/mob/membership/coupon-bg-left.png') no-repeat;
+						background-size: cover;
+						position: absolute;
+						top: 50%;
+						left: -1px;
+						transform: translateY(-50%);
+					}
+					&:after {
+						content: '';
+						display: block;
+						@include size(11px, 31px);
+						background: #fff url('@@img/mob/membership/coupon-bg-right.png') no-repeat;
+						background-size: cover;
+						position: absolute;
+						top: 50%;
+						right: -1px;
+						transform: translateY(-50%);
+					}
+				}
+				.data {
+					display: flex;
+					justify-content: center;
+					width: 100%;
+					color: $secondary-color1;
+					@include font(26px,$extra-bold,1);
+					letter-spacing: -.04em;
+					text-align: center;
+					word-wrap: break-word;
+				}
+				.txt {
+					color: $text-color1;
+					@include font(16px,$bold);
+					text-align: center;
+					word-wrap: break-word;
+				}
+			}
+			.tit {
+				margin-top: 14px;
+				@include font(16px, $bold);
+				color: $text-color1;
+				word-wrap: break-word;
+			}
+			.con {
+				@include font(16px, $regular);
+				color: $text-color1;
+				font-size: 14px;
+				word-wrap: break-word;
+			}
+			.noti {
+				@include font(14px, $regular);
+				margin-top: 10px;
+				color: #828287;
+			}
+			dd {
+				text-align: center;
+			}
+		}
+	}
+
+}
+
+.membership-benefit {
+	.grade-intro {
+		.title {
+			margin: 0 auto 30px;
+			color: $text-color1;
+			@include font(24px,$bold);
+			letter-spacing: -.03em;
+
+			.grade { color: $secondary-color1; }
+		}
+
+		.content {
+			background-color: #f4f4f6;
+
+			& > .wrap {
+				box-sizing: border-box;
+				width: 90%;
+				padding: 40px 0;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+
+			.list {
+				display: flex;
+				position: relative;
+				justify-content: space-between;
+				width: 100%;
+				min-height: 70px;
+				
+				&:before {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 2px;
+					background-color: #d5d5d7;
+					border-radius: 2px;
+					position: absolute;
+					top: 34px;
+					left: 0;
+					z-index: 1;
+				}
+
+				dd {
+					width: 100%;
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-between;
+
+					&.active {
+						&:after {
+							content: '';
+							display: block;
+							width: 1024px;
+							height: 2px;
+							background-color: $primary-color;
+							border-radius: 2px;
+							position: absolute;
+							top: 34px;
+							right: 50%;
+							z-index: 2;
+						}
+
+						&:last-child {
+							&:after { right: 0; }
+						}
+
+						.txt {
+							height: 22px;
+							font-size: 18px;
+							line-height: 1;
+							word-break: keep-all;
+							letter-spacing: -.06em;
+						}
+
+						& ~ dd {
+							.img {
+								&:before { background-color: #d5d5d7; }
+							}
+						}
+					}
+				}
+
+				.img {
+					display: block;
+					@include size(27px,24px);
+					padding-bottom: 6px;
+					background-repeat: no-repeat;
+					background-size: 27px 24px;
+					background-position: center top;
+					position: relative;
+					z-index: 3;
+
+					&.family { background-image: url('@@img/mob/membership/icon-family.png'); }
+					&.bronze { background-image: url('@@img/mob/membership/icon-bronze.png'); }
+					&.silver { background-image: url('@@img/mob/membership/icon-silver.png'); }
+					&.gold { background-image: url('@@img/pc/membership/icon-gold.png'); }
+					&.vip { background-image: url('@@img/pc/membership/icon-vip.png'); }
+					&.vvip { background-image: url('@@img/mob/membership/icon-vvip.png'); }
+
+					&:before {
+						content: '';
+						display: block;
+						width: 10px;
+						height: 10px;
+						background-color: $primary-color;
+						border-radius: 50%;
+						position: absolute;
+						bottom: -10px;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+
+				.txt {
+					box-sizing: border-box;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-wrap: wrap;
+					width: 100%;
+					color: $text-color1;
+					@include font(11px,$extra-bold);
+					text-align: center;
+					word-break: break-all;
+				}
+			}
+
+			.status {
+				box-sizing: border-box;
+				display: inline-block;
+				position: relative;
+				width: 100%;
+				min-height: auto;
+				padding: 14px 30px;
+				margin-top: 20px;
+				color: $text-color1;
+				@include font(14px,$extra-bold);
+				background-color: #fff;
+				letter-spacing: -.025em;
+				box-shadow: 0 0 14px 2px rgba(0,0,0,.07);
+				border-radius: 10px;
+
+				.num {
+					display: inline-block;
+					margin-right: -4px;
+				}
+
+				.grade { color: $secondary-color1; }
+			}
+		}
+	}
+}
