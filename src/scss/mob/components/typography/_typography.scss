@@ -1,0 +1,175 @@
+@mixin dot-list($margin: 0) {
+	> li {
+		position: relative;
+		padding-left: 11px;
+		color: $text-color2;
+		&::before {
+			@include before-after();
+			top: .65em;
+			left: 0;
+			@include size(3px,3px);
+			border-radius: 50%;
+			background: $primary-color;
+		}
+		@if $margin > 0 {
+			& ~ li { margin-top: $margin; }
+		}
+	}
+}
+
+@mixin hyphen-list($margin: 0) {
+	> li {
+		position: relative;
+		padding-left: 11px;
+		color: $text-color2;
+		&::before {
+			@include before-after();
+			content: '-';
+			top: 0;
+			left: 0;
+		}
+		@if $margin > 0 {
+			& ~ li { margin-top: $margin; }
+		}
+	}
+}
+
+.com-txt {
+	@include font(20px,$bold);
+	&.dot-list { @include dot-list(5px); }
+	&.hyphen-list { @include hyphen-list(5px); }
+}
+
+.com-txt2 {
+	@include font(18px,$bold);
+	&.dot-list { @include dot-list(5px); }
+	&.hyphen-list { @include hyphen-list(5px); }
+}
+
+.com-txt3 {
+	@include font(16px,$bold);
+	&.dot-list { @include dot-list(5px); }
+	&.hyphen-list { @include hyphen-list(5px); }
+}
+
+.com-txt4 {
+	@include font(14px,$regular);
+	&.dot-list { @include dot-list(5px); }
+	&.hyphen-list { @include hyphen-list(5px); }
+}
+
+.com-txt5 {
+	margin: 14px 0 0;
+	@include font(12px,$regular);
+	&.dot-list { @include dot-list(5px); }
+	&.hyphen-list { @include hyphen-list(5px); }
+}
+
+.result-txt {
+	position: relative;
+	margin: 0 auto;
+	padding: 95px 0 0;
+	text-align: center;
+	&::before {
+		@include before-after();
+		@include size(70px,70px);
+		top: 0;
+		left: 50%;
+		transform: translate(-50%,0);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	&.is-sucess::before { background-image: url("@@img/mob/common/icon-complete.png"); }
+	&.is-error::before { background-image: url("@@img/mob/common/icon-error-2.png"); }
+	&.is-gift {
+		margin-top: 20px;
+		&::before { background-image: url("@@img/mob/common/icon-result-gift.png"); }
+	}
+	.com-txt { font-size: 20px; }
+	.noti-msg {
+		margin-top: 10px;
+		color: $text-color1;
+		font-weight: 500;
+		font-size: 20px;
+		.underline {
+			display: inline-block;
+			font-weight: 800;
+			background-image: linear-gradient(rgba(255,212,212,.9),rgba(255,212,212,.9));
+			background-repeat: repeat-x;
+			background-position: 0 calc(100% - 5px);
+			background-size: 200% 10px;
+			position: relative;
+		}
+	}
+	.paper-confetti {
+		.confetti {
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			left: 50%;
+			&:nth-child(1) {
+				width: 7px;
+				height: 9px;
+				margin-left: -55px;
+				background-image: url('@@img/mob/common/paper-confetti1.png');
+				top: -9px;
+			}
+			&:nth-child(2) {
+				width: 8px;
+				height: 8px;
+				background-image: url('@@img/mob/common/paper-confetti2.png');
+				top: -20px;
+			}
+			&:nth-child(3) {
+				width: 9px;
+				height: 5px;
+				margin-left: 35px;
+				background-image: url('@@img/mob/common/paper-confetti3.png');
+				top: 0;
+			}
+			&:nth-child(4) {
+				width: 11px;
+				height: 9px;
+				margin-left: -40px;
+				background-image: url('@@img/mob/common/paper-confetti4.png');
+				top: 16px;
+			}
+			&:nth-child(5) {
+				width: 8px;
+				height: 6px;
+				margin-left: 64px;
+				background-image: url('@@img/mob/common/paper-confetti5.png');
+				top: 16px;
+			}
+			&:nth-child(6) {
+				width: 8px;
+				height: 9px;
+				margin-left: 40px;
+				background-image: url('@@img/mob/common/paper-confetti6.png');
+				top: 32px;
+			}
+			&:nth-child(7) {
+				width: 7px;
+				height: 8px;
+				margin-left: -60px;
+				background-image: url('@@img/mob/common/paper-confetti7.png');
+				top: 55px;
+			}
+			&:nth-child(8) {
+				width: 11px;
+				height: 9px;
+				margin-left: 35px;
+				background-image: url('@@img/mob/common/paper-confetti8.png');
+				top: 65px;
+			}
+			&:nth-child(9) {
+				width: 11px;
+				height: 13px;
+				margin-left: -30px;
+				background-image: url('@@img/mob/common/paper-confetti9.png');
+				top: 70px;
+			}
+		}
+	}
+}

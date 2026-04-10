@@ -1,0 +1,218 @@
+.range-slider-wrap {
+	padding-top: 8px;
+	width: 100%;
+	.bar {
+		box-sizing: border-box;
+		display: flex;
+		width: 100%;
+		padding: 0 17px;
+		position: relative;
+		.range-slider {
+			box-sizing: border-box;
+			width: 100%;
+			height: 10px;
+			background-color: #eaeaeb;
+			border: 0;
+			position: relative;
+			&:before {
+				content: '';
+				display: block;
+				width: 20px;
+				height: 10px;
+				background-color: #eaeaeb;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 0;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 0;
+				position: absolute;
+				top: 0;
+				left: -10px;
+			}
+			&:after {
+				content: '';
+				display: block;
+				width: 20px;
+				height: 10px;
+				background-color: #eaeaeb;
+				border-top-left-radius: 0;
+				border-top-right-radius: 5px;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 5px;
+				position: absolute;
+				top: 0;
+				right: -10px;
+			}
+			.ui-slider-range {
+				background-image: linear-gradient(to top,#ff836a,#ff5050);
+			}
+			.ui-slider-handle {
+				width: 35px;
+				height: 35px;
+				background: url('@@img/mob/common/btn-range-slider.png') no-repeat;
+				background-size: cover;
+				border: 0;
+				top: -12px;
+				margin-left: -17px;
+				cursor: pointer;
+
+				& + .ui-slider-handle { z-index: 3; }
+			}
+		}
+	}
+}
+.range-slider-min-wrap {
+	padding-top: 8px;
+	width: 100%;
+	.bar {
+		box-sizing: border-box;
+		display: flex;
+		width: 100%;
+		padding: 0 17px;
+		position: relative;
+		.range-slider-min {
+			box-sizing: border-box;
+			width: 100%;
+			height: 10px;
+			background-color: #eaeaeb;
+			border: 0;
+			position: relative;
+			&:after {
+				content: '';
+				display: block;
+				width: 20px;
+				height: 10px;
+				background-color: #eaeaeb;
+				border-top-left-radius: 0;
+				border-top-right-radius: 5px;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 5px;
+				position: absolute;
+				top: 0;
+				right: -10px;
+			}
+			.ui-slider-range {
+				background-image: linear-gradient(to top,#ff836a,#ff5050);
+				position: relative;
+				&:after {
+					content: '';
+					display: block;
+					width: 20px;
+					height: 10px;
+					background-image: linear-gradient(to top,#ff836a,#ff5050);
+					border-top-left-radius: 5px;
+					border-top-right-radius: 0;
+					border-bottom-left-radius: 5px;
+					border-bottom-right-radius: 0;
+					position: absolute;
+					top: 0;
+					left: -10px;
+				}
+			}
+			.ui-slider-handle {
+				width: 35px;
+				height: 35px;
+				background: url('@@img/mob/common/btn-range-slider.png') no-repeat;
+				background-size: cover;
+				border: 0;
+				top: -12px;
+				margin-left: -17px;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.range-slider-star-wrap {
+	.bar {
+		box-sizing: border-box;
+		display: flex;
+		position: relative;
+		.range-slider-star {
+			box-sizing: border-box;
+			width: 127px;
+			height: 20px;
+			background: url('@@img/mob/common/grade-star-bg-h40.png') no-repeat;
+			background-size: 127px 20px;
+			border: 0;
+			position: relative;
+			cursor: pointer;
+			.ui-slider-range {
+				width: 127px;
+				height: 20px;
+				background: url('@@img/mob/common/grade-star-h40.png') no-repeat;
+				background-size: 127px 20px;
+				position: relative;
+			}
+			.ui-slider-handle {
+				width: 16px;
+				height: 20px;
+				margin-left: -16px;
+				border: 0;
+				border-radius: 0;
+				top: 1px;
+				background-color: transparent;
+				outline: 0;
+			}
+		}
+	}
+	.result {
+		position: absolute;
+		left: -9999px;
+	}
+}
+.range-slider-vetical-wrap {
+	display: inline-block;
+	width: 12px;
+	height: 100%;
+	.bar {
+		box-sizing: border-box;
+		display: inline-block;
+		width: 12px;
+		height: 100%;
+		padding-bottom: 18px;
+		position: relative;
+		&:before {
+			content: '';
+			display: block;
+			width: 12px;
+			height: 9px;
+			background-color: #eaeaeb;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		.ui-widget-content {
+			display: inline-block;
+			width: 12px;
+			height: 100%;
+			border: 0;
+			background: #eaeaeb;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			border-bottom-left-radius: 6px;
+			border-bottom-right-radius: 6px;
+		}
+		.ui-slider-range {
+			display: inline-block;
+			background-image: linear-gradient(to top,#ff836a,#ff5050);
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			border-bottom-left-radius: 6px;
+			border-bottom-right-radius: 6px;
+			transition: all .3s;
+		}
+		.ui-slider-handle {
+			display: inline-block;
+			width: 44px;
+			height: 44px;
+			background: url('@@img/pc/fit-skinnylab/btn-range-slider-vetical.png') no-repeat;
+			background-size: cover;
+			border: 0;
+			margin-left: 0;
+			margin-bottom: -22px;
+			left: -16px;
+			cursor: pointer;
+			transition: all .3s;
+		}
+	}
+}

@@ -1,0 +1,169 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [1,1]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-order-list">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h3 class="title">{{pageInfo.title}}</h3>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h4 class="title">정기배송 신청내역</h4>
+				</div>
+				<div class="content-inner-wrap">
+					
+					<div class="order-list-wrap first"> <!-- 페이지 첫번째 목록일 때 .first -->
+						<div class="top-util-cont">
+							<a href="./order-detail-regular.html" class="small-btn-util">신청내역 상세</a>
+						</div>
+						<ul class="list-cont regular"><!-- 정기배송 목록 .regular -->
+							<li>
+								<div class="item">
+									<span class="img">
+										<a href="./order-detail-regular.html"><img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지"></a>
+									</span>
+									<div class="info">
+										<p class="name">
+											<a href="./order-detail-regular.html">가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 3줄 노출 이후 대 3줄 노출</a>
+										</p>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+									</div>	
+									<div class="count">
+										<strong>10</strong>개
+									</div>
+									<div class="price">
+										<strong>1,286,000</strong>원
+									</div>
+									<div class="status-box">
+										<span class="txt">1달에 한번씩 배송</span>
+									</div>
+								</div>
+								<div class="date-item">
+									<dl class="date-info">
+										<dt>결제 예정일</dt>
+										<dd>04월 07일(수)</dd>
+										<dt>출고 예정일</dt>
+										<dd>04월 14일 출고 예정</dd>
+										<dt>다음 출고 예정일</dt>
+										<dd>05월 14일 출고 예정</dd>
+									</dl>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<span class="img">
+										<a href="./order-detail-regular.html"><img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지"></a>
+									</span>
+									<div class="info">
+										<p class="name">
+											<a href="./order-detail-regular.html">가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스</a>
+										</p>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+									</div>	
+									<div class="count">
+										<strong>1</strong>개
+									</div>
+									<div class="price">
+										<strong>128,600</strong>원
+									</div>
+									<div class="status-box">
+										<span class="txt">1달에 한번씩 배송</span>
+									</div>
+								</div>
+								<div class="date-item">
+									<dl class="date-info">
+										<dt>결제 예정일</dt>
+										<dd>04월 07일(수)</dd>
+										<dt>출고 예정일</dt>
+										<dd>04월 14일 출고 예정</dd>
+										<dt>다음 출고 예정일</dt>
+										<dd>05월 14일 출고 예정</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="order-list-wrap">
+						<div class="top-util-cont">
+							<a href="./order-detail-regular.html" class="small-btn-util">신청내역 상세</a>
+						</div>
+						<ul class="list-cont regular"><!-- 정기배송 목록 .regular -->
+							<li>
+								<div class="item">
+									<span class="img">
+										<a href="./order-detail-regular.html"><img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지"></a>
+									</span>
+									<div class="info">
+										<p class="name">
+											<a href="./order-detail-regular.html">가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스</a>
+										</p>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+									</div>	
+									<div class="count">
+										<strong>1</strong>개
+									</div>
+									<div class="price">
+										<strong>128,600</strong>원
+									</div>
+									<div class="status-box">
+										<span class="txt">1달에 한번씩 배송</span>
+									</div>
+								</div>
+								<div class="date-item">
+									<dl class="date-info">
+										<dt>결제 예정일</dt>
+										<dd>04월 07일(수)</dd>
+										<dt>출고 예정일</dt>
+										<dd>04월 14일 출고 예정</dd>
+										<dt>다음 출고 예정일</dt>
+										<dd>05월 14일 출고 예정</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="empty"> <!-- 데이터 없을 때 -->
+								<p class="desc">정기배송 신청 내역이 없습니다.</p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="common-pagination">
+						<a href="#" class="paging-btn prev">Prev</a>
+						<span class="paging-num">
+							<a href="#" class="on">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="paging-btn next">Next</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

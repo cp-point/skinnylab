@@ -1,0 +1,36 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '환불계좌 관리',
+		order: [5,3]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-payment-manage">
+	<div class="container-wrap payment-wrap">
+		<div class="item-box reg">
+			<button type="button" class="reg-btn">계좌 등록</button>
+		</div>
+	</div>
+	<div class="container-wrap">
+		<div class="page-bot-notice">
+			<p class="com-txt2">환불계좌 이용안내</p>
+			<ul class="com-txt5 dot-list">
+				<li>환불 계좌는 본인 명의 계좌만 등록 가능합니다.</li>
+				<li>등록하신 계좌정보는 금융정보보호정책에 따라 1년 동안 <span>환불 기록이 없는 경우 삭제 됩니다.</span></li> 
+			</ul>
+		</div>
+	</div>
+</div>
+{%- endblock %}

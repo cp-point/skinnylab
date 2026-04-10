@@ -1,0 +1,250 @@
+// 공통
+// .section-common {
+// }
+
+// 이용약관
+.common-terms {
+	.page-head {
+		.title { margin-bottom: 0; }
+		padding-bottom: 24px;
+		border-bottom: 1px solid $primary-color;
+	}
+	.content { margin-top: 54px; }
+	.license-wrap {
+		margin-top: 32px;
+	
+		&:first-child {
+			margin-bottom: 48px;
+		}
+	}
+	.wrap {
+		& > .license-wrap {
+			margin-top: 28px;
+			
+			&:first-child { margin-bottom: 28px; }
+		}
+	}
+}
+
+// 개인정보처리방침
+.common-privacy {
+	.page-head {
+		.title { margin-bottom: 0; }
+		padding-bottom: 24px;
+		border-bottom: 1px solid $primary-color;
+	}
+	.content { margin-top: 54px; }
+}
+
+// 이용안내
+.common-guide {
+	.page-head {
+		.title { margin-bottom: 0; }
+		padding-bottom: 24px;
+		border-bottom: 1px solid $primary-color;
+	}
+	.content { margin-top: 54px; }
+	.guide-box-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 60px;
+
+		.guide-box {
+			width: 570px;
+			min-height: 290px;
+			height: auto;
+			box-sizing: border-box;
+			padding: 38px 48px;
+			border: 1px solid $line-color2;
+			@include font(16px, $regular, 1.5);
+			color: $text-color2;
+			letter-spacing: -.02em;
+			word-break: keep-all;
+
+			&:nth-child(2n) { margin-left: 60px; }
+			&:nth-child(n+3) { margin-top: 60px; }
+
+			.title {
+				margin-bottom: 15px;
+				@include font(32px, $extra-bold);
+				color: $text-color1;
+
+				& + .desc { margin-top: 0; }
+			}
+
+			.desc { margin-top: 10px; }
+
+			.order-step {
+				.str {
+					font-weight: $bold;
+					color: $text-color1;
+				}
+			}
+
+			.customer-guide {
+				&:last-child {
+					.block { margin-bottom: 0; }
+				}
+			}
+
+			.add, .block { @include font(14px, $regular); }
+			.add {
+				padding-left: 2px;
+				margin-top: 14px;
+			}
+			& > .block { margin: 12px 0; }
+		}
+
+		.delivery-guide {
+			display: flex;
+			flex-wrap: wrap;
+
+			dt {
+				flex-shrink: 0;
+				margin-right: 6px;
+				font-weight: $bold;
+				color: $text-color1;
+			}
+
+			dd {
+				flex-grow: 1;
+				max-width: 390px;
+				word-break: break-all;
+
+				&.block {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+
+		.customer-guide {
+			display: flex;
+			flex-wrap: wrap;
+
+			dt {
+				flex-shrink: 0;
+				margin-right: 6px;
+				font-weight: $bold;
+				color: $text-color1;
+			}
+
+			dd {
+				flex-grow: 1;
+				max-width: 400px;
+				word-break: break-all;
+
+				&.block {
+					width: 100%;
+					max-width: 100%;
+					margin: 4px 0 10px;
+				}
+			}
+		}
+	}
+}
+
+// 광고 제휴 문의 목록
+.common-advertising-list {
+	.inquire-list {
+		& + .common-pagination { margin-top: 40px; }
+	}
+}
+
+// 광고 제휴 문의 작성
+.common-advertising-write {
+	.page-head {
+		.title { margin-bottom: 23px; }
+	}
+	.board-write {
+		& > .row {
+			dt {
+				width: 140px;
+				padding: 5px 10px;
+			}
+
+			dd {
+				input {
+					&.small { width: 340px; }
+				}
+
+				&.content-wrap {
+					flex-wrap: wrap;
+
+					.image-upload {
+						.add-explain { margin: 10px 0 15px; }
+					}
+				}
+
+				&.input-radio-wrap {
+					flex-direction: column;
+					align-items: flex-start;
+
+					.input-radio-text {
+						&:first-child { margin-bottom: 10px; }
+
+						input.text { width: 410px; }
+					}
+				}
+			}
+		}
+	}
+
+	.user-agreement {
+		.wrap { 
+			border-top: none;
+			border-bottom: 1px solid #eaeaeb;
+		}
+	}
+
+	.btn-wrap {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+
+		a {
+			&:nth-child(1) { margin-right: 20px; }
+		}
+	}
+}
+
+// 브라우저 안내 팝업
+.popup-browser-info {
+	max-width: 600px !important;
+	max-height: auto;
+	@include size(600px,auto);
+	.container {
+		padding: 50px !important;
+	}
+	.browser-info-wrap {
+		.main {
+			@include font(24px,$extra-bold);
+		}
+		.btn-group {
+			margin: 30px 0 0;
+			padding: 19px 0 0;
+			box-sizing: border-box;
+			border-top: 1px solid #eaeaeb;
+			.item {
+				position: relative;
+				box-sizing: border-box;
+				padding-top: 89px;
+				&::before {
+					@include before-after();
+					@include size(70px,70px);
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					border-radius: 70px;
+					background-position: 0 0;
+					background-repeat: no-repeat;
+				}
+				&.chrome::before { background-image: url("@@img/pc/common/btn-chrome.png"); }
+				&.firefox::before { background-image: url("@@img/pc/common/btn-firefox.png"); }
+				&.edge::before { background-image: url("@@img/pc/common/btn-edge.png"); }
+				& + .item { margin-left: 60px; }
+			}
+			
+		}
+	}
+}

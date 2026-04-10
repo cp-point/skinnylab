@@ -1,0 +1,178 @@
+label.check {
+	display: inline-block;
+	vertical-align: middle;
+
+	input[type='checkbox'] {
+		@include hidden;
+
+		&:checked + span:before { background-image: url('@@img/mob/common/check-on.png'); }
+		&[disabled] + span:before { background-image: url('@@img/mob/common/check-disabled.png'); }
+		&[disabled]:checked + span:before { background-image: url('@@img/mob/common/check-disabled-on.png'); }
+	}
+
+	span {
+		box-sizing: border-box;
+		display: inline-block;
+		min-width: 60px;
+		padding: 3px 5px 4px 25px;
+		color: #666;
+		font-weight: 500;
+		font-size: 14px;
+		letter-spacing: -.03em;
+		vertical-align: top;
+		word-wrap: break-word;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: url('@@img/mob/common/check.png') no-repeat;
+			background-size: 20px 20px;
+			background-position: center center;
+			position: absolute;
+			top: calc(.75em + 2px);
+			left: 0;
+			transform: translateY(-50%);
+			transition: all .2s;
+		}
+	}
+}
+
+input.check {
+	@include hidden;
+
+	&:checked + label:before { background-image: url('@@img/mob/common/check-on.png'); }
+	&[disabled] + label:before { background-image: url('@@img/mob/common/check-disabled.png'); }
+	&[disabled]:checked + label:before { background-image: url('@@img/mob/common/check-disabled-on.png'); }
+
+	& + label {
+		box-sizing: border-box;
+		display: inline-block;
+		min-width: 60px;
+		padding: 3px 5px 4px 25px;
+		color: #666;
+		font-weight: 500;
+		font-size: 14px;
+		letter-spacing: -.03em;
+		vertical-align: middle;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: url('@@img/mob/common/check.png') no-repeat;
+			background-size: 20px 20px;
+			background-position: center center;
+			position: absolute;
+			top: calc(.75em + 2px);
+			left: 0;
+			transform: translateY(-50%);
+			transition: all .2s;
+		}
+	}
+}
+
+.check-only {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	position: relative;
+
+	input {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+
+		&[disabled] + span { background-image: url('@@img/mob/common/check-disabled.png'); }
+		&:checked + span { background-image: url('@@img/mob/common/check-on.png'); }
+		&[disabled]:checked + span { background-image: url('@@img/mob/common/check-disabled-on.png'); }
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: url('@@img/mob/common/check.png') no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .2s;
+	}
+}
+
+.check-like {
+	display: inline-block;
+	width: 31px;
+	height: 31px;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+
+	input {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		cursor: pointer;
+
+		&:checked + span { background-image: url('@@img/mob/common/check-like-on.png'); }
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		height: 0;
+		max-height: 0;
+		padding-top: 100%;
+		background: url('@@img/mob/common/check-like.png') no-repeat;
+		background-size: 20px 21px;
+		background-position: center center;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .2s;
+	}
+}
+
+.check-btn {
+	display: inline-block;
+	cursor: pointer;
+
+	input {
+		position: absolute;
+		left: -9999px;
+
+		&:checked + span {
+			line-height: 36px;
+			padding: 0 23px;
+			border: 2px solid $secondary-color1;
+		}
+	}
+
+	span {
+		display: inline-block;
+		line-height: 38px;
+		padding: 0 24px;
+		border: 1px solid #d5d5d7;
+		border-radius: 20px;
+		color: $text-color1;
+		font-weight: 800;
+		font-size: 14px;
+		letter-spacing: -.03em;
+		transition: all .2s;
+	}
+}

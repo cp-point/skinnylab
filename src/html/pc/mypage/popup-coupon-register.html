@@ -1,0 +1,56 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 쿠폰 번호 등록 // -->
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popupCouponRegister" class="common-popup">
+	<div class="common-popup-inner popup-coupon-register">
+		<div class="header">
+			<h1 class="title">
+				쿠폰번호 등록
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="coupon-register">
+				<div class="form">
+					<dl class="row">
+						<dt class="hide">
+							<label for="couponnum">쿠폰번호</label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="couponnum" name="couponnum" placeholder="쿠폰 번호 입력" class="text is-invalid">
+							</span>
+							<!-- 오류 메세지// -->
+							<p class="error-msg is-invalid">잘못된 쿠폰번호 입니다. 쿠폰번호를 확인해주세요.</p>
+							<!-- <p class="error-msg is-invalid">쿠폰번호를 입력해 주세요.</p>
+							<p class="error-msg is-invalid">쿠폰 사용기간이 종료되어 등록할 수 없습니다.</p> -->
+							<!-- //오류 메세지 -->
+						</dd>
+					</dl>
+				</div>
+		</div>
+		<div class="foot">
+			<div class="btn-area">
+				<a href="#" class="btn large outline primary cancel motion">
+					<span>취소</span>
+				</a>
+				<a href="#" class="btn large primary submit motion">
+					<span>확인</span>
+				</a>
+			</div>
+			<div class="add-area">
+				<p class="title">쿠폰 등록 안내</p>
+				<ul class="add-list">
+					<li>쿠폰 유효기간이 지난 경우 등록이 불가합니다.</li>
+					<li>쿠폰번호의 대소문자, 띄어쓰기를 구분하여 정확하게 입력해 주세요.</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+</article>
+
+<!-- // 쿠폰 번호 등록 -->
+{%- endblock %}

@@ -1,0 +1,134 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '재입고 알림 신청하신 상품이 입고되지 않았습니다.'
+	}
+%}
+
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<tr>
+	<td>
+		<table class="email-common-container" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width: 60px;"></td>
+				<td class="container-wrap">
+					<table class="page-content" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="txt com-txt1">
+								재입고 알림 신청하신 상품이<br>
+								입고되지 않았습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt2" style="font-size: 25px;">
+								안녕하세요. <strong class="color01">브랜드명</strong>입니다.<br> 
+								<strong class="color01">회원명님</strong>이 재입고 알림 신청하신 상품의 재고 확보를 위해<br>
+								노력하였으나, 아쉽게도 상품이 입고되지 않았습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>입고알림 신청 상품</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<td style="padding: 0;">
+											<table cellspacing="0" cellpadding="0" class="content-table product">
+												<tr>
+													<td style="height: 30px; border: 0;" colspan="5"></td>
+												</tr>
+												<tr>
+													<td style="width: 140px;">
+														<img src="{{base}}/img/email/goods-thumb-img140x140.jpg" alt="주문 상품 이미지">
+													</td>
+													<td style="width: 20px;"></td>
+													<td style="width: 360px;">
+														<table cellspacing="0" cellpadding="0" class="info-table">
+															<tr>
+																<td class="brand">브랜드명</td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="name">
+																	<div class="box">상품명 최대 1줄 노출 상품명 최대 1줄 노출</div>
+																</td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="quantity">수량 <span class="line"></span> <strong class="color01">1,000개</strong></td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="name01">
+																	<div class="box">1+1 상품명 최대 1줄 노출1+1 상품명 최대 1줄 노</div>
+																</td>
+															</tr>
+															<tr>
+																<td style="height: 5px;"></td>
+															</tr>
+															<tr>
+																<td class="quantity">수량 <span class="line"></span> <strong class="color01">1,000개</strong></td>
+															</tr>
+														</table>
+													</td>
+													<td class="price" style="width: 140px;">
+														<strong>999,999,000</strong>원
+													</td>
+													<td style="width: 20px;"></td>
+												</tr>
+												<tr>
+													<td style="height: 30px; border: 0;" colspan="5"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 60px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="info-table">
+									<tr>
+										<td style="width: 230px;height: 60px;"></td>
+										<td style="width: 220px;height: 60px;">
+											<a href="#" target="_blank">
+												<img src="{{base}}/img/email/btn-skinnylab.png" alt="스키니랩 바로가기" style="width: 220px; height:60px;">
+											</a>
+										</td>
+										<td style="width: 230px;height: 60px;"></td>
+									</tr>	
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td style="width: 60px;"></td>
+			</tr>
+			{{ include('./notice.html') }}
+		</table>
+	</td>
+</tr>
+{%- endblock %}

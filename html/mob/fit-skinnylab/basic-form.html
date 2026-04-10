@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>나만의 스키니랩 | 스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+	
+	<div class="wrapper">
+		
+		<!-- Content // -->
+		<header class="page-header customer">
+			<div class="wrap">
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="utility-box left">
+					<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+					<button type="button" class="icon-btn home btn-gnb-menu"></button>
+				</div>
+				<div class="utility-box right">
+					<button type="button" class="icon-btn search"><span class="hide">검색하기</span></button>
+					<button type="button" class="icon-btn cart">
+						<span class="hide">장바구니</span>
+						<span class="num">99</span>
+					</button>
+				</div>
+				
+				<span class="page-title">나만의 스키니랩</span>
+			</div>
+			
+		</header>
+		<div id="content-main" class="common-container fit-skinnylab fit-skinnylab-basic-form">
+			<div class="survey-layout">
+				<div class="survey-head">
+					<div class="page-progress step1">
+						<div class="fill"></div>
+					</div>
+					<h2 class="title">
+						<span class="str">step 1.</span>
+						기초 조사를 통한 BMI 산출
+					</h2>
+					<p class="desc">고객님의 기초 정보를 <br>알려주세요.</p>
+				</div>
+				<form action="about:blank" method="post" class="basic-form">
+					<div class="box">
+						<dl class="item name">
+							<dt class="title">
+								<label for="userName">이름 (닉네임)</label>
+							</dt>
+							<dd class="content">
+								<span class="input-area">
+									<input type="text" name="userName" id="userName" placeholder="이름(닉네임) 입력란" value="" class="input-text">
+								</span>
+							</dd>
+						</dl>
+						<dl class="item gender">
+							<dt class="title hide">
+								<label for="userGender">성별</label>
+							</dt>
+							<dd class="content">
+								<span class="input-area">
+									<input type="radio" name="userGender" id="female" class="input-radio">
+									<label for="female">여</label>
+									<input type="radio" name="userGender" id="male" class="input-radio">
+									<label for="male">남</label>
+								</span>
+							</dd>
+						</dl>
+					</div>
+					<dl class="item age">
+						<dt class="title">
+							<label for="userAge">연령선택</label>
+							<button type="button" class="btn-open" onclick="$(this).parents('.item').addClass('input'); return false;">열기</button>
+						</dt>
+						<dd class="content">
+							<span class="hide">
+								<input type="text" name="userAge" id="userAge" placeholder="" value="0" class="input-text" readonly>
+							</span>
+							<span class="result">
+								<span class="num">0</span>
+								<span class="txt">살</span>
+							</span>
+							<span class="range-slider-vetical-wrap">
+								<span class="bar">
+									<span id="sliderAge" class="range-slider-min"></span>
+								</span>
+							</span>
+							<span class="btn-area">
+								<button type="button" class="btn-check">check</button>
+								<button type="button" class="btn-reset" onclick="$(this).parents('.item').removeClass('completed'); return false;">재설정</button>
+							</span>
+						</dd>
+					</dl>
+					<dl class="item height">
+						<dt class="title">
+							<label for="userHeight">키선택</label>
+							<button type="button" class="btn-open" onclick="$(this).parents('.item').addClass('input'); return false;">열기</button>
+						</dt>
+						<dd class="content">
+							<span class="hide">
+								<input type="text" name="userHeight" id="userHeight" placeholder="" value="0" class="input-text" readonly>
+							</span>
+							<span class="result">
+								<span class="num">0</span>
+								<span class="txt">cm</span>
+							</span>
+							<span class="range-slider-vetical-wrap">
+								<span class="bar">
+									<span id="sliderHeight" class="range-slider-min"></span>
+								</span>
+							</span>
+							<span class="btn-area">
+								<button type="button" class="btn-check">check</button>
+								<button type="button" class="btn-reset" onclick="$(this).parents('.item').removeClass('completed'); return false;">재설정</button>
+							</span>
+						</dd>
+					</dl>
+					<dl class="item weight">
+						<dt class="title">
+							<label for="userWeight">체중선택</label>
+							<button type="button" class="btn-open" onclick="$(this).parents('.item').addClass('input'); return false;">열기</button>
+						</dt>
+						<dd class="content">
+							<span class="hide">
+								<input type="text" name="userWeight" id="userWeight" placeholder="" value="0" class="input-text">
+							</span>
+							<span class="result">
+								<span class="num">0</span>
+								<span class="txt">kg</span>
+							</span>
+							<span class="range-slider-vetical-wrap">
+								<span class="bar">
+									<span id="sliderWeight" class="range-slider-min"></span>
+								</span>
+							</span>
+							<span class="btn-area">
+								<button type="button" class="btn-check">check</button>
+								<button type="button" class="btn-reset" onclick="$(this).parents('.item').removeClass('completed'); return false;">재설정</button>
+							</span>
+						</dd>
+					</dl>
+				</form>
+				<div class="survey-foot">
+					<p class="contents-progress is-fixed">
+						<a href="#" class="submit">다음</a>
+						<span class="bar">
+							<span class="fill"></span>
+						</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$window = $(window);
+			
+			// 진행상태기능을 위한 초기 옵션클래스
+			$('.survey-foot .contents-progress').addClass('ongoing');
+			
+			// 연령선택 slider
+			$("#sliderAge").slider({
+				orientation: "vertical",
+				range: "min",
+				value: 0,
+				min: 0,
+				max: 200,
+				slide: function(event,ui) {
+					$(event.target).parents('.item').find('.input-text').val(ui.value.toLocaleString());
+					$(event.target).parents('.item').find('.result .num').text(ui.value.toLocaleString());
+				}
+			});
+			
+			// 키선택 slider
+			$("#sliderHeight").slider({
+				orientation: "vertical",
+				range: "min",
+				value: 0,
+				min: 0,
+				max: 200,
+				slide: function(event,ui) {
+					$(event.target).parents('.item').find('.input-text').val(ui.value.toLocaleString());
+					$(event.target).parents('.item').find('.result .num').text(ui.value.toLocaleString());
+				}
+			});
+			
+			// 체중선택 slider
+			$("#sliderWeight").slider({
+				orientation: "vertical",
+				range: "min",
+				value: 0,
+				min: 0,
+				max: 200,
+				slide: function(event,ui) {
+					$(event.target).parents('.item').find('.input-text').val(ui.value.toLocaleString());
+					$(event.target).parents('.item').find('.result .num').text(ui.value.toLocaleString());
+				}
+			});
+			
+			$(function() {
+				// 진행상태 업데이트
+				function updateProgress() {
+					var total = $('.basic-form .item').length;
+					var count;
+					
+					count = $('.basic-form .item').filter(function(index, element) {
+						return $(element).hasClass('completed');
+					}).length;
+					
+					$('.contents-progress .fill').css('width', ((count / total) * 100).toFixed(2) + '%');
+					
+					if(total === count) {
+						$('.survey-foot .contents-progress').addClass('completed')
+					} else {
+						$('.survey-foot .contents-progress').removeClass('completed')
+					}
+				}
+				updateProgress();
+				
+				function guide() {
+					var $tgItem;
+					var itemArr = $('.basic-form .item');
+					var waitSliderItemArr = itemArr.filter(function(index, element) {
+						return !$(element).hasClass('completed') && !$(element).hasClass('name') && !$(element).hasClass('gender');
+					});
+					
+					if($('.basic-form .item.name').hasClass('completed') && $('.basic-form .item.gender').hasClass('completed')) {
+						$(waitSliderItemArr[0]).addClass('input');
+					} if(!$('.basic-form .item.name').hasClass('completed') && !$('.basic-form .item.gender').hasClass('completed')) {
+						$(waitSliderItemArr[0]).addClass('input');
+					}
+					
+					var status = itemArr.filter(function(index, element) {
+						return $(element).hasClass('completed')
+					});
+					
+					if($(waitSliderItemArr[0]).hasClass('input')) {
+						setTimeout(function() {
+							if($(waitSliderItemArr[0]).hasClass('input')) {
+								$('html, body').animate({
+									scrollTop: $(waitSliderItemArr[0]).offset().top - (($(window).height() - $(waitSliderItemArr[0]).height()) / 2)
+								}, 500);
+							}
+						}, 300);
+					}
+					
+					if(status.length === itemArr.length) {
+						setTimeout(function() {
+							$('html, body').animate({
+								scrollTop: $('.contents-progress').offset().top - (($(window).height() - $('.contents-progress').height()) / 2)
+							}, 500);
+						}, 300);
+					}
+				}
+				
+				// 초기셋팅
+				function init() {
+					if($('.basic-form .item.name').find('.input-text').val().length >= 2) $('.basic-form .item.name').addClass('completed');
+					if($('.basic-form .item.gender').find('.input-radio').is(':checked')) $('.basic-form .item.gender').addClass('completed');
+					
+					$('.basic-form .item.age, .item.height, .item.weight').each(function(index, element) {
+						var $item = $(element);
+						var $inputText = $item.find('.input-text');
+						
+						if($inputText.val() > 0) {
+							$item.addClass('input completed');
+							$item.find('.result .num').text($inputText.val());
+						}
+					});
+					
+					updateProgress();
+				}
+				init();
+				
+				// 이름입력
+				$('.basic-form .item.name').find('.input-text').on('keyup', function(e) {
+					$tgText = $(e.target);
+					$tgItem = $tgText.parents('.item');
+					
+					if($tgText.val().length >= 2) {
+						$tgItem.addClass('completed');
+						updateProgress();
+						guide();
+					} else {
+						$tgItem.removeClass('completed');
+						updateProgress();
+					}
+				});
+				
+				// 성별선택
+				$('.basic-form .item.gender').on('change', '.input-radio', function(e) {
+					if($(e.target).is(':checked')) $('.basic-form .item.gender').addClass('completed');
+					
+					updateProgress();
+					guide();
+				});
+				
+				// 성별선택, 키선택, 체중선택 slider상태값에 따른 check버튼 활성화
+				$('.range-slider-min').each(function(index, element) {
+					// 슬라이더 값 변경될 때 이벤트
+					$(element).on('slidechange', function(event, ui) {
+						if($(element).slider('value') > 0) {
+							$(element).parents('.item').find('.btn-check').addClass('on');
+						} else {
+							$(element).parents('.item').find('.btn-check').removeClass('on');
+						}
+					});
+					
+					// 슬라이더 값 입력완료 후 이벤트
+					$(element).on('slidestop', function(event, ui) {
+						if($(element).slider('value') <= 0) return false;
+						
+						setTimeout(function() {
+							$(event.target).parents('.item').addClass('completed');
+							
+							updateProgress();
+							guide();
+						}, 700);
+					});
+				});
+				
+				// 성별선택, 키선택, 체중선택 check버튼
+				$('.basic-form .item.age, .item.height, .item.weight').on('click', '.btn-check', function(e) {
+					if($(e.target).parents('.item').find('.input-text').val() <= 0) return false;
+					$(e.target).parents('.item').addClass('completed');
+					
+					updateProgress();
+					guide();
+				});
+				
+				// 성별선택, 키선택, 체중선택 reset버튼
+				$('.basic-form .item.age, .item.height, .item.weight').on('click', '.btn-reset', function(e) {
+					$(e.target).parents('.item').removeClass('completed');
+					
+					updateProgress();
+					guide();
+				});
+				
+				$window.on('load scroll', function() {
+					var scrollTop = $window.scrollTop();
+					
+					if(scrollTop < $('.survey-foot').offset().top - $window.height() + $('.survey-foot .contents-progress').height()) {
+						$('.survey-foot .contents-progress').addClass('is-fixed');
+					} else {
+						$('.survey-foot .contents-progress').removeClass('is-fixed');
+					}
+				});
+			});
+		</script>
+		<!-- // Content -->
+		
+		
+		
+		<!-- Footer // -->
+		<footer class="common-footer">
+			<div class="wrap">
+				<h2 class="hide">푸터</h2>
+				<ul class="footer-menu">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">이용안내</a></li>
+					<li><a href="#">광고 제휴 문의 </a></li>
+				</ul>
+				<div class="utility">
+					<div class="contact">
+						<a href="tel:1644-7267" class="tel">1644-7267</a>
+						<dl class="time">
+							<dt>평일(주말제외)</dt>
+							<dd>09:30 ~ 18:00</dd>
+							<dt>점심시간</dt>
+							<dd>12:30 ~ 13:30</dd>
+						</dl>
+						<p class="notice">※ 토/일/공휴일 휴무</p>
+					</div>
+					
+					<dl class="dropdown ghost">
+						<dt class="title">
+							<button type="button" class="btn-open">FAMILY SITE</button>
+						</dt>
+						<dd class="content">
+							<ul class="list">
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>천지양</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>피트니스 스토어</span>
+									</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<p class="logo"></p>
+				<div class="info">
+					<dl>
+						<dt>상호명 :</dt>
+						<dd>헬스밸런스(주)</dd>
+					</dl>
+					<address>서울특별시 강남구 영동대로 511 (트레이드타워) 2104호</address>
+					<dl>
+						<dt>대표자 : </dt>
+						<dd>박성준, 김남경</dd>
+						<dt>개인정보관리책임자 : </dt>
+						<dd>염선호</dd>
+					</dl>
+					<dl>
+						<dt>사업자등록번호 : </dt>
+						<dd>314-81-84285 <a href="#" class="btn-info">사업자정보확인</a></dd>
+					</dl>
+					<dl>
+						<dt>통신판매업 : </dt>
+						<dd>2016-서울강남-02455</dd>
+					</dl>
+					<dl>
+						<dt>대표전화 : </dt>
+						<dd>1644-7267</dd>
+						<dt>FAX : </dt>
+						<dd>02-2071-3699</dd>
+					</dl>
+					<dl>
+						<dt>E-mail : </dt>
+						<dd>
+							<a href="mailto:hbalance@hbalance.co.kr">hbalance@hbalance.co.kr</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="service">
+					KG이니시스가 제공하는 결제시스템을 사용하고 있는 쇼핑몰임을 확인하여<br>
+					소비자들은 안심하고 결제할 수 있습니다.
+				</div>
+				<div class="btn-group">
+					<a href="#" target="_blank">이니페이 에스크로 가입사실 확인 &gt;</a>
+					<a href="#" target="_blank">이니시스 결제 인증마크 확인 &gt;</a>
+				</div>
+			</div>
+		</footer>
+		<!-- // Footer -->
+		
+		<!-- floating menu // -->
+		<div class="floating-menu">
+			<div class="wrap">
+				<ul>
+					<li>
+						<a href="#" class="btn-icon kakao"></a>
+					</li>
+					<li>
+						<a href="#" class="btn-icon gift"></a>
+					</li>
+					<li>
+						<button type="button" class="btn-icon top"></button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- // floating menu -->
+	</div>
+</body>
+</html>

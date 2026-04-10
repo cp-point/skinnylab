@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>필수 회원정보 입력 및 약관동의 | 스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+	
+	<div class="wrapper">
+		
+		<!-- Content // -->
+		<header class="page-header">
+			<!-- Notice Bar // -->
+			<div class="noti-bar">
+				<div class="wrap">
+					<div class="img">
+						<a href="#" title="새 창 열기" target="_blank">
+							<img src="../../../img/mob/@dummy/noti-bar.jpg" alt="잠깐! 20% 할인 쿠폰 받아가세요!">
+						</a>
+					</div>
+				</div>
+				<div class="btn-area">
+					<button type="button" class="btn-close" onclick="$('.common-header').removeClass('is-noti'); $(this).parents('.noti-bar').hide(); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+			<!-- // Notice Bar -->
+			<div class="wrap">
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<span class="page-title">필수 회원정보 입력 및 약관동의</span>
+			</div>
+			<div class="common-search-wrap">
+				<div class="content">
+					<div class="search-box">
+						<div class="search js-text-clear">
+							<label for="search" class="hide">검색</label>
+							<input type="text" id="search" name="search" value="" placeholder="검색어를 입력하세요." class="input">
+							<button type="button" class="btn-clear">입력값 지우기</button>
+							<button type="button" class="btn-submit">검색하기</button>
+						</div>
+					</div>
+					<dl class="keyword">
+						<dt class="title">인기 검색어</dt>
+						<dd class="content">
+							<a href="#">시서스</a>
+						</dd>
+						<dd class="content">
+							<a href="#">레몬밤</a>
+						</dd>
+						<dd class="content">
+							<a href="#">풋사과</a>
+						</dd>
+						<dd class="content">
+							<a href="#">ETIQA</a>
+						</dd>
+						<dd class="content">
+							<a href="#">콜라겐</a>
+						</dd>
+					</dl>
+				</div>
+				<button type="button" class="btn-close"></button>
+			</div>
+		</header>
+		<div id="content-main" class="common-container section-member member-join">
+			
+			<div class="container-wrap">
+				<h2 class="content-com-tit">회원정보 입력</h2>
+				<div class="form-layout large">
+					<dl class="row">
+						<dt class="title">
+							<label for="userID">아이디(이메일) <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-with-btn id-check">
+								<input type="text" id="userID" name="userID" placeholder="아이디(이메일) 입력" class="text block large underline"> <!-- 입력오류일때: .is-invalid -->
+								
+								<!-- .btn-id-confirm 중복확인 완료시 .is-valid 선택자추가 요청드립니다. -->
+								<button type="button" class="btn outline thin primary btn-id-confirm"></button>
+								
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">아이디(이메일)를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPw">비밀번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="password" id="userPw" name="userPw" placeholder="비밀번호 입력" class="text block large underline"> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<div class="input-check pw-check">
+								<input type="checkbox" name="pwCheck" id="pwCheck01" class="check" checked> <!-- checked: 입력 시 해당 조건에 맞춰 체크박스 활성화 처리  -->
+								<label for="pwCheck01">영문</label>
+								<input type="checkbox" name="pwCheck" id="pwCheck02" class="check">
+								<label for="pwCheck02">숫자</label>
+								<input type="checkbox" name="pwCheck" id="pwCheck03" class="check">
+								<label for="pwCheck03">특수문자</label>
+								<input type="checkbox" name="pwCheck" id="pwCheck04" class="check">
+								<label for="pwCheck04">최소 8자</label>
+							</div>
+							<p class="error-msg is-invalid" style="display: none;">비밀번호를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPwConfirm">비밀번호 확인<span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="password" id="userPwConfirm" name="userPwConfirm" placeholder="비밀번호 확인" class="text block large underline"> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">비밀번호를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userName">이름 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="userName" name="userName" placeholder="이름 입력" value="홍길동" class="text block large underline" readonly> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">이름을 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPhone">휴대폰번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="userPhone" name="userPhone" placeholder="휴대폰번호 입력" value="010-1234-5678" class="text block large underline" readonly> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">휴대폰번호를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userBirth">생년월일/성별</label>
+						</dt>
+						<dd class="content">
+							<span class="input-with-btn birthday-check">
+								<input type="text" id="userBirth" name="userBirth" placeholder="생년월일/성별 입력" value="19971012" class="text block large underline" readonly>
+								<span class="btn-group between input-radio gender">
+									<input type="radio" id="man" name="gender" class="radio" checked>
+									<label for="man" class="btn outline thin primary">남</label>
+									<input type="radio" id="woman" name="gender" class="radio"> <!-- checked: 인증  된 정보에 따라 노출  -->
+									<label for="woman" class="btn outline thin primary">여</label>
+								</span>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userAddress01">주소</label>
+						</dt>
+						<dd class="content">
+							<span class="input-with-btn addr-input">
+								<input type="text" id="userAddress01" name="userAddress01"class="text block large underline" readonly>
+								<button class="btn outline thin primary"><span>우편번호 찾기</span></button>
+							</span>
+							<span class="input-text-del">
+								<input type="text" id="userAddress02" name="userAddress02" placeholder="상세주소 입력" class="text block large underline is-invalid"> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid">상세주소를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+						</dd>
+					</dl>
+				</div>
+				
+				<div class="user-agreement">
+					<h2 class="title">약관동의</h2>
+					<div class="all-check">
+						<input type="checkbox" name="agreeAll" id="agreeAll" class="check">
+						<label for="agreeAll">모든 약관을 확인하고 전체 동의합니다.</label>
+					</div>
+					<div class="wrap">
+						<dl class="row">
+							<dt class="title">
+								<input type="checkbox" name="agree" id="agree01" class="check">
+								<label for="agree01">[필수] 이용약관 동의</label>
+							</dt>
+							<dd class="content">
+								<button type="button" onclick="" class="btn outline2 small"><span>내용보기</span></button>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<input type="checkbox" name="agree" id="agree02" class="check">
+								<label for="agree02">[필수] 개인정보 수집 및 이용 동의</label>
+							</dt>
+							<dd class="content">
+								<button type="button" onclick="" class="btn outline2 small"><span>내용보기</span></button>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<input type="checkbox" name="agree" id="agree03" class="check">
+								<label for="agree03">[선택] 개인정보 자사 마케팅 수집 및 이용 동의</label>
+							</dt>
+							<dd class="content block">
+								<div class="info">
+									<ul class="list">
+										<li>- 수집/이용 목적 : 자사 마케팅을 위한 개인정보 이용</li>
+										<li>- 수집항목 : 구매자 정보,상품 구매/취소/반품/교환/환불 정보,수령인 정보</li>
+										<li>- 보유/이용기간 : 회원 탈퇴 후 5일까지</li>
+									</ul>
+									<p class="caution">개인정보 제공에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 마케팅 정보를 받을 수 없습니다.</p>
+								</div>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<input type="checkbox" name="agree" id="agree04" class="check">
+								<label for="agree04">[선택] 마케팅 정보 수신 동의 </label>
+							</dt>
+							<dd class="content block">
+								<div class="info">
+									<div class="markting-check">
+										<div class="item">
+											<input type="checkbox" name="agree" id="agree0401" class="check">
+											<label for="agree0401">이메일</label>
+										</div>
+										<div class="item">
+											<input type="checkbox" name="agree" id="agree0402" class="check">
+											<label for="agree0402">SMS</label>
+										</div>
+										<div class="item">
+											<input type="checkbox" name="agree" id="agree0403" class="check">
+											<label for="agree0403">전화 (상담)</label>
+										</div>
+									</div>
+									<p class="caution">마케팅 정보 수신동의를 하시면 스키니랩에서 제공하는 쇼핑/혜택 및 이벤트 소식을 받을 수 있습니다.</p>
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				
+				<div class="btn-group join">
+					<button type="button" class="btn primary large block motion">
+						<span>가입하기</span>
+					</button>
+				</div>
+				
+			</div>
+		</div>
+		<script>
+			$(function() {
+				// 제품목록 체크박스 컨트롤
+				var agreeAll = $('.user-agreement input:checkbox[id="agreeAll"]');
+				var agreeList = $('.user-agreement .row input[type=checkbox]').not(':disabled');
+				var agreeMarketingAll = $('.user-agreement input:checkbox[id="agree04"]');
+				var agreeMarketingList = $('.user-agreement .markting-check input[type=checkbox]').not(':disabled');
+				
+				// 전체 선택 / 해제
+				agreeAll.click(function(){
+					if(agreeAll.prop("checked")) {
+						agreeList.prop('checked', true);
+						agreeMarketingList.prop('checked', true);
+					} else {
+						agreeList.prop('checked', false);
+						agreeMarketingList.prop('checked', false);
+					}
+				});
+				
+				agreeMarketingAll.click(function(){
+					if(agreeMarketingAll.prop("checked")) {
+						agreeMarketingList.prop('checked', true);
+					} else {
+						agreeMarketingList.prop('checked', false);
+					}
+				});
+				
+				// 개별 선택 / 해제
+				agreeList.each(function() {
+					$(this).click(function() {
+						
+						if($(this).prop("checked")) {
+							checkBoxLen = agreeList.length;
+							checkLen = $('.user-agreement .row input[type=checkbox]:checked').length;
+							
+							if(checkBoxLen == checkLen) { // 체크박스 전부 체크 됐을 경우
+								agreeAll.prop('checked', true);
+							} else {
+								agreeAll.prop('checked', false);
+							}
+						} else {
+							agreeAll.prop('checked', false);
+						}
+						
+					});
+				});
+				
+				agreeMarketingList.each(function() {
+					$(this).click(function() {
+						agreeMarketingAll.prop('checked', true);
+					});
+				});
+			});
+		</script>
+		<!-- // Content -->
+		
+		<!-- bottom navigation, bottom banner // -->
+		<div class="bottom-nav-wrap">
+			<div class="inner-cont-wrap">
+				<button class="btn-promo is-hide">
+					<span class="logo"></span>
+					<span class="icon"></span>
+				</button>
+				<div class="menu">
+					<ul class="item-group">
+						<li>
+							<a href="#">
+								<span class="icon home"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon delivery"></span>
+							</a>
+						</li>
+					</ul>
+					<ul class="item-group">
+						<li>
+							<a href="#">
+								<span class="icon mypage">
+									<em class="new"></em> <!-- 쇼핑 다이어리 신규 알림 내역이 있을 때 노출  -->
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon profile">
+									<!-- 최근 본 상품이 있으면 상품 이미지 노출 -->
+									<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지" style="display: none;">
+									<!--// 최근 본 상품이 있으면 상품 이미지 노출 -->
+								</span>
+								<span class="txt hide">profile</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bot-banner-wrap">
+			<div class="banner-box">
+				<img src="../../../img/mob/common/bot-banner.jpg" alt="회원 한정 시크릿 특가 - 지금 가입하고 이유있는 초특가 상품 가져가세요~!">
+			</div>
+		</div>
+		<!-- // bottom navigation, bottom banner -->
+		
+		
+		<!-- Footer // -->
+		<footer class="common-footer">
+			<div class="wrap">
+				<h2 class="hide">푸터</h2>
+				<ul class="footer-menu">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">이용안내</a></li>
+					<li><a href="#">광고 제휴 문의 </a></li>
+				</ul>
+				<div class="utility">
+					<div class="contact">
+						<a href="tel:1644-7267" class="tel">1644-7267</a>
+						<dl class="time">
+							<dt>평일(주말제외)</dt>
+							<dd>09:30 ~ 18:00</dd>
+							<dt>점심시간</dt>
+							<dd>12:30 ~ 13:30</dd>
+						</dl>
+						<p class="notice">※ 토/일/공휴일 휴무</p>
+					</div>
+					
+					<dl class="dropdown ghost">
+						<dt class="title">
+							<button type="button" class="btn-open">FAMILY SITE</button>
+						</dt>
+						<dd class="content">
+							<ul class="list">
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>천지양</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>피트니스 스토어</span>
+									</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<p class="logo"></p>
+				<div class="info">
+					<dl>
+						<dt>상호명 :</dt>
+						<dd>헬스밸런스(주)</dd>
+					</dl>
+					<address>서울특별시 강남구 영동대로 511 (트레이드타워) 2104호</address>
+					<dl>
+						<dt>대표자 : </dt>
+						<dd>박성준, 김남경</dd>
+						<dt>개인정보관리책임자 : </dt>
+						<dd>염선호</dd>
+					</dl>
+					<dl>
+						<dt>사업자등록번호 : </dt>
+						<dd>314-81-84285 <a href="#" class="btn-info">사업자정보확인</a></dd>
+					</dl>
+					<dl>
+						<dt>통신판매업 : </dt>
+						<dd>2016-서울강남-02455</dd>
+					</dl>
+					<dl>
+						<dt>대표전화 : </dt>
+						<dd>1644-7267</dd>
+						<dt>FAX : </dt>
+						<dd>02-2071-3699</dd>
+					</dl>
+					<dl>
+						<dt>E-mail : </dt>
+						<dd>
+							<a href="mailto:hbalance@hbalance.co.kr">hbalance@hbalance.co.kr</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="service">
+					KG이니시스가 제공하는 결제시스템을 사용하고 있는 쇼핑몰임을 확인하여<br>
+					소비자들은 안심하고 결제할 수 있습니다.
+				</div>
+				<div class="btn-group">
+					<a href="#" target="_blank">이니페이 에스크로 가입사실 확인 &gt;</a>
+					<a href="#" target="_blank">이니시스 결제 인증마크 확인 &gt;</a>
+				</div>
+			</div>
+		</footer>
+		<!-- // Footer -->
+		
+		<!-- floating menu // -->
+		<div class="floating-menu">
+			<div class="wrap">
+				<ul>
+					<li>
+						<a href="#" class="btn-icon kakao"></a>
+					</li>
+					<li>
+						<a href="#" class="btn-icon gift"></a>
+					</li>
+					<li>
+						<button type="button" class="btn-icon top"></button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- // floating menu -->
+	</div>
+</body>
+</html>

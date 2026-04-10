@@ -1,0 +1,115 @@
+{%
+	set pageInfo = {
+		section: 'terms',
+		title: 'Depth2 &lt; Depth1',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<section role="main" id="content-main" class="common-container section-common common-terms">
+	<!-- Breadcrumb // -->
+	<div class="breadcrumb">
+		<div class="wrap">
+			<ul class="list">
+				<li class="home">
+					<a href="#">홈으로</a>
+				</li>
+				<li class="depth-1">
+					<a href="#">SHOP</a>
+				</li>
+				<li class="depth-2">
+					<a href="#">THIN소재</a>
+					<div class="sub">
+						<div class="wrap">
+							<ul class="list">
+								<li>
+									<a href="#">메뉴1</a>
+								</li>
+								<li>
+									<a href="#">메뉴2</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="depth-3">
+					<a href="#">시서스</a>
+					<div class="sub">
+						<div class="wrap">
+							<ul class="list">
+								<li>
+									<a href="#">메뉴1-1</a>
+								</li>
+								<li>
+									<a href="#">메뉴1-2</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- // Breadcrumb -->
+
+	<div class="page-head">
+		<h3 class="title">페이지 제목</h3>
+	</div>
+
+	<div class="container-wrap">
+		<!-- Breadcrumb // -->
+		<div class="breadcrumb">
+			<div class="wrap">
+				<ul class="list">
+					<li class="home">
+						<a href="#">홈으로</a>
+					</li>
+					<li class="depth-1">
+						<a href="#">SHOP</a>
+					</li>
+					<li class="depth-2">
+						<a href="#">THIN소재</a>
+						<div class="sub">
+							<div class="wrap">
+								<ul class="list">
+									<li>
+										<a href="#">메뉴1</a>
+									</li>
+									<li>
+										<a href="#">메뉴2</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="depth-3">
+						<a href="#">시서스</a>
+						<div class="sub">
+							<div class="wrap">
+								<ul class="list">
+									<li>
+										<a href="#">메뉴1-1</a>
+									</li>
+									<li>
+										<a href="#">메뉴1-2</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- // Breadcrumb -->
+
+		<div class="page-head">
+			<h3 class="title">페이지 제목</h3>
+		</div>
+	</div>
+
+</section>
+<!-- // Content -->
+{%- endblock %}

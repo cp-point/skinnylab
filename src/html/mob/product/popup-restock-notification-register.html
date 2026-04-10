@@ -1,0 +1,147 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-restock-notification-register" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-restock-notification-register">
+		<div class="header">
+			<h1 class="title">재입고 알림 신청</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="inner-wrap">
+				<div class="notification-register">
+					<h2 class="title">
+						<span class="sub">상품명</span>
+						<span class="main">
+							[브랜드명] 애플페논 풋사과 다이어트 젤리 
+						</span>
+					</h2>
+					<div class="content">
+						<p class="tit">알림선택</p>
+						<ul class="input-tab">
+							<li>
+								<input type="radio" id="noti1" name="noti" class="radio" checked>
+								<label for="noti1">휴대폰 번호</label>
+								<div class="con">
+									<input type="text" id="userPhone" name="userPhone" value="010-1234-5678" placeholder="'-' 없이 숫자만 입력해주세요." class="text">
+								</div>
+							</li>
+							<li>
+								<input type="radio" id="noti2" name="noti" class="radio">
+								<label for="noti2">이메일</label>
+								<div class="con">
+									<input type="text" id="userEmail" name="userEmail" value="sknylab@abc.com" placeholder="이메일을 입력해주세요." class="text" maxlength="100">
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul class="add-list">
+						<li>재입고 알림 신청일로부터 최대 1개월 이내 재 입고가 될 경우 알림이 발송됩니다.</li>
+						<li>재입고 알림은 먼저 신청한 순서대로 발송되며, 재 입고 알림을 받았더라도 구매 시점에 따라 품절이 발생할 수 있습니다.</li>
+						<li>재입고 알림 신청은 마이페이지 &gt; 나의 활동 내역 &gt; 재입고 알림 신청내역 메뉴에서 확인하실 수 있습니다.</li>
+					</ul>
+					<div class="btn-group row">
+						<a href="#" class="btn outline primary">취소</a>
+						<a href="#" class="btn primary">신청</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 추천 상품 영역 -->
+			<div class="recommend-product">
+				<div class="head">
+					<h3 class="title">품절 상품과 관련 있는<br>상품은 어떠세요?</h3>
+				</div>
+				<div class="swiper-container">
+					<ul class="goods-list2 swiper-wrapper">
+						{% for i in range(0, 3) %}
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="{{base}}/img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">브랜드명</div>
+												<div class="title">
+													가벼워지는 시서스
+													다이어트 + 석류 콜라겐
+													14포 x 4박스 + 14포
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="{{base}}/img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="title">
+													스키니랩 시네트롤
+													자몽 오렌지 다이어트
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<!--// 추천 상품 영역 -->
+		</div>
+	</div>
+</article>
+
+<script>
+	$(function() {
+		// 추천상품 슬라이드
+		var recomCarouselSwiper = new Swiper('.recommend-product .swiper-container', {
+			allowTouchMove: true,
+			slidesPerView: 1.8,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 30,
+			breakpoints: {
+				768: {
+					slidesPerView: 3.5,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 5,
+				}
+			}
+		});
+	});
+</script>
+{%- endblock %}

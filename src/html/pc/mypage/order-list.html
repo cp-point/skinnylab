@@ -1,0 +1,216 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [1,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-order-list">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h3 class="title">{{pageInfo.title}}</h3>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h4 class="title">주문/배송 조회</h4>
+				</div>
+				<div class="content-inner-wrap">
+					
+					<div class="search-wrap">
+						<div class="btn-group"> <!-- 버튼 선택 시 : .is-selected -->
+							<button type="button" class="btn outline2 thin primary">1주일</button>
+							<button type="button" class="btn outline2 thin primary">1개월</button>
+							<button type="button" class="btn outline2 thin primary is-selected">3개월</button>
+							<button type="button" class="btn outline2 thin primary">6개월</button>
+						</div>
+						<div class="calender">
+							<input type="text" id="calender01" name="calender01" title="조회 시작날짜 선택" class="text date-picker" style="width: 190px;">
+							<span>~</span>
+							<input type="text" id="calender02" name="calender02" title="조회 종료날짜 선택" class="text date-picker" style="width: 190px;">
+							<a href="#" class="btn thin primary">조회</a>
+						</div>
+					</div>
+
+					<div class="list-sort-wrap">
+						<span class="select-wrap">
+							<select id="orderStatus" name="orderStatus" class="select" style="width: 110px;" title="주문 상태 선택">
+								<option value="0" selected>전체</option>
+								<option value="1">입금대기</option>
+								<option value="2">결제완료</option>
+								<option value="3">상품준비</option>
+								<option value="4">배송중</option>
+								<option value="5">배송완료</option>
+								<option value="6">구매확정</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+
+					<div class="order-list-wrap first"> <!-- 페이지 첫번째 목록일 때 .first -->
+						<div class="top-util-cont">
+							<div>
+								<span class="date">2021.04.17</span>
+							</div>
+							<a href="./order-detail.html" class="small-btn-util">주문상세</a>
+						</div>
+						<ul class="list-cont">
+							<li>
+								<div class="item">
+									<span class="img">
+										<a href="./order-detail.html"><img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지"></a>
+									</span>
+									<div class="info">
+										<p class="name">
+											<a href="./order-detail.html">가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 3줄 노출 이후 대 3줄 노출</a>
+										</p>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+									</div>	
+									<div class="count">
+										<strong>10</strong>개
+									</div>
+									<div class="price">
+										<strong>1,286,000</strong>원
+									</div>
+									<div class="status-box">
+										<span class="txt">배송완료</span>
+										<div class="btn-group center">
+											<button type="button" class="btn outline2 thin small primary">배송조회</button>
+											<button type="button" class="btn outline2 thin small primary">구매확정</button>
+											<button type="button" class="btn outline2 thin small primary" onclick="UI.showLayerPop('',{ url: './popup-exchange-request.html'}); return false;">교환신청</button>
+											<button type="button" class="btn outline2 thin small primary" onclick="UI.showLayerPop('',{ url: './popup-return-request.html'}); return false;">반품신청</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<span class="img">
+										<a href="./order-detail.html"><img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지"></a>
+									</span>
+									<div class="info">
+										<p class="name">
+											<a href="./order-detail.html">가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스</a>
+										</p>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+									</div>	
+									<div class="count">
+										<strong>1</strong>개
+									</div>
+									<div class="price">
+										<strong>128,600</strong>원
+									</div>
+									<div class="status-box">
+										<span class="txt">배송지</span>
+										<div class="btn-group center">
+											<button type="button" class="btn outline2 thin small primary">SMS 알림발송</button>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="order-list-wrap">
+						<div class="top-util-cont">
+							<div>
+								<span class="date">2021.04.17</span>
+							</div>
+							<a href="./order-detail.html" class="small-btn-util">주문상세</a>
+						</div>
+						<ul class="list-cont">
+							<li>
+								<div class="item">
+									<span class="img">
+										<a href="./order-detail.html"><img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지"></a>
+									</span>
+									<div class="info">
+										<p class="name">
+											<a href="./order-detail.html">가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 3줄 노출 이후 대 3줄 노출</a>
+										</p>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+									</div>	
+									<div class="count">
+										<strong>10</strong>개
+									</div>
+									<div class="price">
+										<strong>1,286,000</strong>원
+									</div>
+									<div class="status-box">
+										<span class="txt">입금대기</span>
+										<div class="btn-group center">
+											<button type="button" class="btn outline2 thin small primary" onclick="UI.showLayerPop('',{ url: './popup-order-cancel.html'}); return false;">주문 취소</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<span class="img">
+										<a href="./order-detail.html"><img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지"></a>
+									</span>
+									<div class="info">
+										<p class="name">
+											<a href="./order-detail.html">가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스</a>
+										</p>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+									</div>	
+									<div class="count">
+										<strong>1</strong>개
+									</div>
+									<div class="price">
+										<strong>128,600</strong>원
+									</div>
+									<div class="status-box">
+										<span class="txt">배송지</span>
+										<div class="btn-group center">
+											<button type="button" class="btn outline2 thin small primary">SMS 알림발송</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="empty"> <!-- 데이터 없을 때 -->
+								<p class="desc">조회기간 동안의 내역이 없습니다.</p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="common-pagination">
+						<a href="#" class="paging-btn prev">Prev</a>
+						<span class="paging-num">
+							<a href="#" class="on">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="paging-btn next">Next</a>
+					</div>
+						
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

@@ -1,0 +1,93 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-order-gift" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-order-gift">
+		<div class="header">
+			<h1 class="title">선물함</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<h2 class="com-txt2 sub-title hide">선물 상품</h2>
+				<ul class="prod-detail-list">
+					<li>
+						<div class="top-util-cont">
+							<p class="order-num">주문번호 : 2021040914352712345 </p>
+						</div>
+						<figure class="prod-row-item"> 
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									1개
+								</div>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+				
+				<div class="page-cont-head">
+					<p class="com-txt2">배송 정보</p>
+					<button type="button" class="small-btn-util">배송지 변경</button>
+				</div>
+				<div class="info-cont-wrap">
+					<dl class="cont-box">
+						<dt>수령자명</dt>
+						<dd>홍길동</dd>
+						<dt>휴대폰번호</dt>
+						<dd>010-1234-1234</dd>
+						<dt>배송지</dt>
+						<dd>서울 강남구 영동대로 511(트레이드타워) 2104호</dd>
+						<dt>배송메시지</dt>
+						<dd>부재 시, 연락 바랍니다.</dd>
+					</dl>
+				</div>
+
+				<div class="page-cont-head">
+					<p class="com-txt2">보낸 사람</p>
+				</div>
+				<div class="info-cont-wrap">
+					<dl class="cont-box">
+						<dt>보내신 분</dt>
+						<dd>김헬스</dd>
+					</dl>
+					<div class="gift-item" style="background-image:url('{{base}}/img/pc/@dummy/bg-gift01.png');">
+						<span class="img">
+							<img src="../../../img/pc/@dummy/goods-img01.png" alt="상품 이미지">
+						</span>
+						<div class="msg">
+							다이어트도 너랑나랑 같이 하자!! 이번 다이어트는 성공적으로~~<br>
+							다이어트도 너랑나랑 같이 하자!! 이번 다이어트는 성공적으로~~
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="foot">
+				<div class="btn-group center">
+					<button type="button" class="btn large primary js-pop-close">확인</button> <!-- 팝업 닫기 .js-pop-close -->
+				</div>
+				<div class="pop-bot-notice">
+					<p class="com-txt2">안내사항</p>
+					<ul class="com-txt5 dot-list">
+						<li>선물 상품의 취소/교환/반품은 선물 보내신 분이 진행할 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

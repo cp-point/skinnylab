@@ -1,0 +1,296 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '상품 리뷰',
+		order: [6,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+
+
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-review-list">
+	<div class="container-wrap">
+		<h3 class="hide">상품리뷰</h3>
+		<div class="content-inner-wrap">
+			<div class="tab-group-wrap">
+
+				<div class="btn-group top-btn-group tab-menu-box row">
+					<button type="button" class="btn outline thin round tab is-active">리뷰 쓰기 (<span class="review-num">2</span>)</button>
+					<button type="button" class="btn outline thin round tab">내가 쓴 리뷰 (<span class="review-num">3</span>)</button>
+				</div>
+
+				<div class="tab-content">
+					<h4 class="hide">리뷰 쓰기</h4>
+					<div class="order-list-wrap">
+						<div class="head">
+							<p class="main">리뷰 작성 시,<br>리뷰 유형에 따라 마일리지 적립 혜택을 드립니다.</p>
+							<ul class="sub">
+								<li><span>- 일반 리뷰 :</span> 텍스트 리뷰 <strong>1,000원</strong>, 포토 리뷰 <strong>2,000원</strong></li>
+								<li><span>- 한달 사용 리뷰 :</span> 텍스트 리뷰 <strong>500원</strong>, 포토 리뷰 <strong>700원 추가 적립</strong></li>
+							</ul>
+						</div>
+						<ul class="list-cont">
+							{% for i in range(0,2) %}
+							<li>
+								<div class="item-util">
+									<span class="date">
+										2021.04.17
+									</span>
+									<span class="order">
+										주문번호
+										<span class="num">
+											2103121032000027
+										</span>
+									</span>
+								</div>
+								<div class="item">
+									<a href="#">
+										<div class="img">
+											<img src="{{base}}/img/mob/@dummy/goods-thumb-img360x360.jpg" alt="상품 이미지">
+										</div>
+										<div class="info">
+											<p class="name">
+												[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이
+											</p>
+											<dl class="option">
+												<dt>옵션</dt>
+												<dd>선택된 옵션명 정보 모두 노출</dd>
+											</dl>
+										</div>
+									</a>
+									<div class="review-wrap">
+										<dl class="period">
+											<dt class="title">작성기한</dt>
+											<dd class="date"><span class="num">2021.05.04</span>까지</dd>
+										</dl>
+									</div>
+									<div class="btn-group row">
+										<button type="button" class="btn outline2" onclick="UI.showLayerPop('',{ url: '../product/popup-review-write.html'}); return false;">리뷰쓰기</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-util">
+									<span class="date">
+										2021.04.17
+									</span>
+									<span class="order">
+										주문번호
+										<span class="num">
+											2103121032000027
+										</span>
+									</span>
+								</div>
+								<div class="item">
+									<a href="#">
+										<div class="img">
+											<img src="{{base}}/img/mob/@dummy/goods-thumb-img360x360.jpg" alt="상품 이미지">
+										</div>
+										<div class="info">
+											<p class="name">
+												[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이
+											</p>
+											<dl class="option">
+												<dt>옵션</dt>
+												<dd>선택된 옵션명 정보 모두 노출</dd>
+											</dl>
+										</div>
+									</a>
+									<div class="review-wrap">
+										<dl class="period">
+											<dt class="title">작성기한</dt>
+											<dd class="date"><span class="num">2021.05.04</span>까지</dd>
+										</dl>
+									</div>
+									<div class="btn-group row">
+										<button type="button" class="btn outline2" onclick="UI.showLayerPop('',{ url: '../product/popup-review-write.html'}); return false;">한달사용 리뷰쓰기</button>
+									</div>
+								</div>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<!-- 데이터 없을 때 -->
+					<div class="empty">
+						<p class="desc">작성 가능한 리뷰가 없습니다.</p>
+					</div>
+
+					<div class="btn-group center">
+						<button type="button" class="btn-list-more">
+							더보기
+							<span class="icon-plus"></span>
+						</button>
+					</div>					
+
+					<div class="page-sub-noti">
+						<p class="title">상품 리뷰 작성 안내</p>
+						<ul class="list">
+							<li>리뷰는 구매확정일로부터 15일 동안 작성 가능하며, 한달사용 리뷰는 구매확정일로부터 30일째 되는 날부터 15일간 작성하실 수 있습니다.</li>
+							<li>건강기능식품 특성상 작성한 리뷰는 관리자 확인 후 게시되며, 특정 병명 혹은 의료적 효능이 있다고 작성된 부분은 임의로 블라인드<br>처리될 수 있습니다.</li>
+							<li>상품 리뷰 등록 완료 이후 내용 수정 및 삭제는 불가능합니다.</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="tab-content">
+					<h4 class="hide">내가 쓴 리뷰</h4>
+					<div class="order-list-wrap">
+						<ul class="list-cont">
+							{% for i in range(0,2) %}
+							<li>
+								<div class="item">
+									<a href="#">
+										<div class="img">
+											<img src="{{base}}/img/mob/@dummy/goods-thumb-img360x360.jpg" alt="상품 이미지">
+										</div>
+										<div class="info">
+											<p class="name">
+												[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이
+											</p>
+											<dl class="option">
+												<dt>옵션</dt>
+												<dd>선택된 옵션명 정보 모두 노출</dd>
+											</dl>
+										</div>
+									</a>
+									<div class="review-wrap month">
+										<dl class="period">
+											<dt class="title">작성일자</dt>
+											<dd class="date">2021.05.04</dd>
+										</dl>
+										<div class="grade-wrap">
+											<span class="tag review">한달 리뷰</span>
+											<p class="grade-star h14">
+												<span class="fill" style="width: 100%;">4점</span>
+											</p>
+										</div>
+									</div>
+									<div class="btn-group row">
+										<button type="button" class="btn outline2" onclick="UI.showLayerPop('',{ url: '../product/popup-review-write.html'}); return false;">리뷰보기</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<a href="#">
+										<div class="img">
+											<img src="{{base}}/img/mob/@dummy/goods-thumb-img360x360.jpg" alt="상품 이미지">
+										</div>
+										<div class="info">
+											<p class="name">
+												[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이
+											</p>
+											<dl class="option">
+												<dt>옵션</dt>
+												<dd>선택된 옵션명 정보 모두 노출</dd>
+											</dl>
+										</div>
+									</a>
+									<div class="review-wrap">
+										<dl class="period">
+											<dt class="title">작성일자</dt>
+											<dd class="date">2021.05.04</dd>
+										</dl>
+										<div class="grade-wrap">
+											<p class="grade-star h14">
+												<span class="fill" style="width: 100%;">4점</span>
+											</p>
+										</div>
+									</div>
+									<div class="btn-group row">
+										<button type="button" class="btn outline2" onclick="UI.showLayerPop('',{ url: '../product/popup-review-write.html'}); return false;">리뷰보기</button>
+									</div>
+								</div>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<!-- 데이터 없을 때 -->
+					<div class="empty">
+						<p class="desc">작성한 리뷰가 없습니다.</p>
+					</div>
+
+					<div class="btn-group center">
+						<button type="button" class="btn-list-more">
+							더보기
+							<span class="icon-plus"></span>
+						</button>
+					</div>					
+
+					<div class="page-sub-noti">
+						<p class="title">상품 리뷰 작성 안내</p>
+						<ul class="list">
+							<li>리뷰는 구매확정일로부터 15일 동안 작성 가능하며, 한달사용 리뷰는 구매확정일로부터 30일째 되는 날부터 15일간 작성하실 수 있습니다.</li>
+							<li>건강기능식품 특성상 작성한 리뷰는 관리자 확인 후 게시되며, 특정 병명 혹은 의료적 효능이 있다고 작성된 부분은 임의로 블라인드<br>처리될 수 있습니다.</li>
+							<li>상품 리뷰 등록 완료 이후 내용 수정 및 삭제는 불가능합니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+	$(function(){
+		// 제품목록 체크박스 컨트롤
+		var allCheck = $('input:checkbox[id="allCheck"]');
+		var itemCheck = $('.product-select .check-only input[type=checkbox]');
+
+		// 전체 선택 / 해제
+		allCheck.click(function(){
+			if(allCheck.prop("checked")) {
+				itemCheck.prop('checked', true);
+			} else {
+				itemCheck.prop('checked', false);
+			}
+		});
+
+		// 개별 선택 / 해제
+		itemCheck.each(function() {
+			$(this).click(function() {
+
+				if($(this).prop("checked")) {
+					checkBoxLen = itemCheck.length;
+					checkLen = $('.product-select .select input[type=checkbox]:checked').length;
+					
+					if(checkBoxLen == checkLen) { // 체크박스 전부 체크 됐을 경우
+						allCheck.prop('checked', true);
+					} else {
+						allCheck.prop('checked', false);
+					}
+				} else {
+					allCheck.prop('checked', false);
+				}
+				
+			});
+		});
+	})
+</script>
+{%- endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

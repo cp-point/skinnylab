@@ -1,0 +1,602 @@
+{%
+	set pageInfo = {
+		section: 'order',
+		title: '주문/결제',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-order order-form">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">주문/결제</h2>
+		</div>
+
+		<div class="payment-layout">
+			<div class="payment-info-wrap">
+				<div class="order-form-layout">
+					<div class="head">
+						<h3 class="title">배송정보</h3>
+					</div>
+					<div class="content-wrap">
+						<h4 class="title">주문자 정보</h4>
+						<div class="form-layout user-form">
+							<dl class="row">
+								<dt class="title">
+									<label for="userName">이름</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="userName" name="userName" placeholder="주문자명 입력" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">주문자 명을 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="userPhone">휴대폰 번호</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="userPhone" name="userPhone" placeholder="'-' 없이 숫자만 입력" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">휴대폰 번호를 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="userEmail">이메일</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="userEmail" name="userEmail" placeholder="이메일 주소 입력" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">이메일 주소를 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="orderpw">주문 비밀번호</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="password" id="orderpw" name="orderpw" placeholder="주문 비밀번호 입력" class="text block">
+									</span>
+									<span class="input-check pw-check">
+										<input type="checkbox" name="pwCheck" id="pwCheck01" class="check">
+										<label for="pwCheck01">영문</label>
+										<input type="checkbox" name="pwCheck" id="pwCheck02" class="check">
+										<label for="pwCheck02">숫자</label>
+										<input type="checkbox" name="pwCheck" id="pwCheck03" class="check">
+										<label for="pwCheck03">특수문자</label>
+										<input type="checkbox" name="pwCheck" id="pwCheck04" class="check">
+										<label for="pwCheck04">최소 8자</label>
+									</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="orderpwconfirm">주문 비밀번호 확인</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="password" id="orderpwconfirm" name="orderpwconfirm" placeholder="주문 비밀번호 확인 입력" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">주문 비밀번호가 일치하지 않습니다.</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="content-wrap">
+						<h4 class="title">배송지 정보</h4>
+						<div class="form-layout delivery-form">
+							<dl class="row">
+								<dt class="title">
+									<label for="deliveryAddress">배송지명</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<span class="input-text-btn">
+											<input type="text" class="text is-invalid" id="deliveryAddress" name="deliveryAddress" placeholder="배송지명 입력">
+											<button type="button" class="btn outline thin primary" onclick="UI.showLayerPop('',{ url: '../order/popup-address-manage.html'}); return false;">
+												<span>배송지 관리</span>
+											</button>
+										</span>
+									</span>
+									<span class="error-msg is-invalid">배송지명을 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="deliveryUser">수령자명</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<span class="input-text-check">
+											<input type="text" class="text is-invalid" id="deliveryUser" name="deliveryUser" placeholder="수령자명 입력">
+											<label class="check"><input type="checkbox"> <span>주문자 정보와 동일</span></label>
+										</span>
+									</span>
+									<span class="error-msg is-invalid">수령자명을 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="deliveryPhone">휴대폰 번호</label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="deliveryPhone" name="deliveryPhone" placeholder="'-' 없이 숫자만 입력" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">휴대폰 번호를 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<span>주소</span>
+								</dt>
+								<dd class="content">
+									<span class="input-address-wrap">
+										<span class="input-address">
+											<label for="userZipcode" class="hide">우편번호 입력</label>
+											<input type="text" id="userZipcode" name="userZipcode" placeholder="" class="text block is-invalid" disabled>
+											<button type="button" class="btn outline thin primary">
+												<span>우편번호 찾기</span>
+											</button>
+										</span>
+										<span class="input-address">
+											<span class="txt-with-del">
+												<label for="userAddress2">상세주소 입력</label>
+												<input type="text" name="userAddress2" id="userAddress2" placeholder="상세주소 입력" class="text block is-invalid">
+											</span>
+										</span>
+										<span class="input-address">
+											<label for="deliveryMsg">배송메시지 선택</label>
+											<span class="select-wrap">
+												<select id="deliveryMsg" name="deliveryMsg" class="select">
+													<option value="">배송메시지 선택</option>
+													<option value="">직접 받겠습니다.</option>
+													<option value="">문 앞에 놓아주세요.</option>
+													<option value="">경비실에 맡겨주세요.</option>
+													<option value="">택배함에 넣어주세요.</option>
+													<option value="">배송 전 연락해주세요.</option>
+													<option value="">직접 입력</option>
+												</select>
+												<span class="arrow"></span>
+											</span>
+											<input type="text" name="deliveryMsg" id="deliveryMsg2" placeholder="배송메세지 직접 입력" class="text block">
+										</span>
+										<span class="error-msg is-invalid">우편번호를 검색해주세요.</span>
+										<span class="error-msg is-invalid">상세주소를 입력해주세요.</span>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="order-form-layout">
+					<div class="head">
+						<h3 class="title">주문상품</h3>
+					</div>
+					<div class="goods-order">
+						<ul class="list">
+							<li>
+								<div class="item">
+									<div class="thumb">
+										<div class="img">
+											<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="">
+											<!-- // 등록된 사진이 없을때 -->
+											<!-- <img src="{{base}}/img/pc/common/noimg.jpg" alt=""> -->
+											<!-- 등록된 사진이 없을때 // -->
+										</div>
+									</div>
+									<div class="content">
+										<div class="wrap">
+											<div class="head">
+												<p class="status">
+													<span class="tag primary">신제품</span>
+													<span class="tag secondary">베스트</span>
+													<span class="tag white">사은품</span>
+												</p>
+												<p class="title">
+													<span class="sub">
+														스키니랩
+													</span>
+													<span class="main">
+														가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스
+													</span>
+												</p>
+												<dl class="info">
+													<dt class="tit">옵션</dt>
+													<dd class="con">
+														선택된 옵션명 정보 모두 노출
+													</dd>
+												</dl>
+											</div>
+											<dl class="amount">
+												<dt class="hide">수량</dt>
+												<dd class="con">
+													<span class="num">
+														1
+													</span>
+													개
+												</dd>
+											</dl>
+											<dl class="price">
+												<dt class="hide">비회원가</dt>
+												<dd class="con sub">
+													<span class="num">
+														100
+													</span>
+													<span class="won">
+														원
+													</span>
+												</dd>
+												<dt class="hide">회원가</dt>
+												<dd class="con main">
+													<span class="num">
+														100
+													</span>
+													<span class="won">
+														원
+													</span>
+												</dd>
+											</dl>
+										</div>
+										<div class="add">
+											<div class="prod">
+												<div class="img">
+													<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="">
+													<!-- // 등록된 사진이 없을때 -->
+													<!-- <img src="{{base}}/img/pc/common/noimg.jpg" alt=""> -->
+													<!-- 등록된 사진이 없을때 // -->
+												</div>
+												<div class="content">
+													<p class="title">
+														[1+1] 가르시니아 선택된 상품명 모두 노출 선택된 상품명 모두 노출 14포 x 2박스 4주분 
+														[1+1] 가르시니아 선택된 상품명 모두 노출 선택된 상품명 모두 노출 14포 x 2박스 4주분 
+														[1+1] 가르시니아 선택된 상품명 모두 노출 선택된 상품명 모두 노출 14포 x 2박스 4주분 
+													</p>
+												</div>
+												<dl class="amount">
+													<dt class="hide">수량</dt>
+													<dd class="con">
+														<span class="num">
+															999
+														</span>
+														개
+													</dd>
+												</dl>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="thumb">
+										<div class="img">
+											<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="">
+											<!-- // 등록된 사진이 없을때 -->
+											<!-- <img src="{{base}}/img/pc/common/noimg.jpg" alt=""> -->
+											<!-- 등록된 사진이 없을때 // -->
+										</div>
+									</div>
+									<div class="content">
+										<div class="wrap">
+											<div class="head">
+												<p class="status">
+													<span class="tag primary">신제품</span>
+													<span class="tag secondary">베스트</span>
+													<span class="tag white">사은품</span>
+												</p>
+												<p class="title">
+													<span class="sub">
+														스키니랩
+													</span>
+													<span class="main">
+														가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스
+													</span>
+												</p>
+												<dl class="info">
+													<dt class="tit">옵션</dt>
+													<dd class="con">
+														선택된 옵션명 정보 모두 노출
+													</dd>
+												</dl>
+											</div>
+											<dl class="amount">
+												<dt class="hide">수량</dt>
+												<dd class="con">
+													<span class="num">
+														999
+													</span>
+													개
+												</dd>
+											</dl>
+											<dl class="price">
+												<dt class="hide">비회원가</dt>
+												<dd class="con sub">
+													<span class="num">
+														128,600
+													</span>
+													<span class="won">
+														원
+													</span>
+												</dd>
+												<dt class="hide">회원가</dt>
+												<dd class="con main">
+													<span class="num">
+														128,600
+													</span>
+													<span class="won">
+														원
+													</span>
+												</dd>
+											</dl>
+										</div>
+										<div class="add">
+											<div class="prod">
+												<div class="img">
+													<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="">
+													<!-- // 등록된 사진이 없을때 -->
+													<!-- <img src="{{base}}/img/pc/common/noimg.jpg" alt=""> -->
+													<!-- 등록된 사진이 없을때 // -->
+												</div>
+												<div class="content">
+													<p class="title">
+														[1+1] 가르시니아 선택된 상품명 모두 노출 선택된 상품명 모두 노출 14포 x 2박스 4주분 
+													</p>
+												</div>
+												<dl class="amount">
+													<dt class="hide">수량</dt>
+													<dd class="con">
+														<span class="num">
+															999
+														</span>
+														개
+													</dd>
+												</dl>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="order-form-layout">
+					<div class="head">
+						<h3 class="title">주문혜택</h3>
+					</div>
+					<div class="content-wrap">
+						<div class="form-layout order-benefit">
+							<dl class="row">
+								<dt class="title">
+									<label for="discount">할인</label>
+									<div class="discount-info">
+										<button type="button" class="btn-open" onclick="$('.discount-info .box').show(); return false;">할인정보 열기</button>
+										<div class="box" style="display: none;">
+											<p class="tit">할인</p>
+											<ul class="list">
+												<li>상품 할인 : 500원</li>
+												<li>결제 할인 : 1,000원</li>
+											</ul>
+											<button type="button" class="btn-close" onclick="$('.discount-info .box').hide(); return false;">할인정보 닫기</button>
+										</div>
+									</div>
+								</dt>
+								<dd class="content">
+									<div class="input-discount">
+										<input type="text" id="discount" name="discount" placeholder="" value="-2,000" class="text block js-input-discount" disabled>
+									</div>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="order-form-layout">
+					<div class="head">
+						<h3 class="title">결제수단</h3>
+					</div>
+					<div class="content-wrap">
+						<div class="select-payment">
+							<p class="hide">결제수단 선택</p>
+
+							<input type="radio" id="payment1" name="payment" class="radio-payment creditcard">
+							<label for="payment1">신용카드</label>
+
+							<input type="radio" id="payment2" name="payment" class="radio-payment naverpay">
+							<label for="payment2">네이버페이</label>
+
+							<input type="radio" id="payment3" name="payment" class="radio-payment kakaopay">
+							<label for="payment3">카카오페이</label>
+
+							<input type="radio" id="payment4" name="payment" class="radio-payment mobilepay">
+							<label for="payment4">휴대폰결제</label>
+
+							<input type="radio" id="payment5" name="payment" class="radio-payment bank">
+							<label for="payment5">계좌이체</label>
+
+							<input type="radio" id="payment6" name="payment" class="radio-payment virtual">
+							<label for="payment6">가상계좌</label>
+						</div>
+					</div>
+				</div>
+				<div class="order-noti naverpay" style="display: none;">
+					<p class="title">네이버 페이 결제 안내</p>
+					<ul class="list">
+						<li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌정보를 등록하여 네이버페이지 비밀번호로 결제할 수 있는 간편결제 서비스 입니다.</li>
+						<li>결제가능카드 : 신한, 삼성, 현대, BC, 국민, 하나, 롯데, 씨티, NH농협</li>
+						<li>결제가능은행 : NH농협, 국민, 신한, 우리, 기업 SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우, 광주, 대구, 전북, 새마을금고, 제주은행</li>
+						<li>단, 네이버페이로 결제할 경우 네이버페이에서 제공하는 카드사별 무이자, 청구할인 혜택만 제공됩니다.</li>
+						<li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+					</ul>
+				</div>
+				<div class="order-noti mobilepay" style="display: none;">
+					<p class="title">휴대폰 결제 안내</p>
+					<ul class="list">
+						<li>휴대폰 결제 한도는 최대 50만원입니다. 단, 개인별 한도는 통신사별 정책에 따라 적용됩니다.</li>
+						<li>1년 이내 휴대폰 결제 내역이 없는 경우 결제가 불가능합니다.</li>
+						<li>결제하신 금액은 익월의 휴대폰 요금에 함께 청구됩니다.</li>
+					</ul>
+				</div>
+				<div class="order-noti bank" style="display: none;">
+					<p class="title">구매안전 서비스 제공 안내</p>
+					<ul class="list">
+						<li>저희 쇼핑몰은 고객님의 안전거래를 위해 계좌이체 또는 가상계좌 주문에 대해 이니시스 에스크로 구매안전서비스를 자동 적용하고 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 결제 정보 영역 -->
+			<div class="payment-cont-wrap">
+				<div class="payment-content">
+					<div class="login-wrap">
+						<p class="title payment">결제 정보</p>
+					</div>
+					<div class="payment-wrap">
+						<dl class="number-dl">
+							<dt>전체상품</dt>
+							<dd>
+								<span class="num">3</span>
+								<span class="won">개</span>
+							</dd>
+							<dt>상품금액</dt>
+							<dd>
+								<span class="num">290,000</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>할인금액</dt>
+							<dd class="discount">
+								<span class="num">-200,200</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>주문혜택 할인</dt>
+							<dd class="discount">
+								<span class="num">-3,000</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>배송비</dt>
+							<dd>
+								<span class="num">0</span>
+								<span class="won">원</span>
+							</dd>
+						</dl>
+						<dl class="number-dl bot">
+							<dt><span class="total-tit">결제 예정 금액</span></dt>
+							<dd class="total">
+								<span class="num">280,000</span>
+								<span class="won">원</span>
+							</dd>
+						</dl>
+						<dl class="agreement">
+							<dt class="tit">
+								약관동의<span class="mark">*</span>
+							</dt>
+							<dd class="con">
+								<input type="checkbox" name="agreement" id="agreement1" class="check">
+								<label for="agreement1">
+									주문할 상품정보에 동의하십니까?<br>
+									(전자상거래법 제 8조 2항)
+								</label>
+							</dd>
+							<dd class="con">
+								<input type="checkbox" name="agreement" id="agreement2" class="check">
+								<label for="agreement2">
+									비회원 개인정보 수집〮이용 동의
+								</label>
+								<button type="button" class="btn small outline2" onclick="UI.showLayerPop('',{ url: './popup-nonmember-privacy.html'}); return false;">
+									<span>내용보기</span>
+								</button>
+							</dd>
+						</dl>
+						<div class="btn-group">
+							<a href="#" class="btn large secondary motion">
+								<span>
+									<span class="num">
+										280,000
+									</span>
+									원 결제하기
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// 결제 정보 영역 -->
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+	$(function() {
+		var $selectPayment = $('.select-payment');
+		var $paymentLayout = $selectPayment.parents('.payment-layout');
+		var $tg;
+
+		var showNoti = function(target) {
+			if(target.hasClass('naverpay')) {
+				$paymentLayout.find('.order-noti.naverpay').show();
+			} else if(target.hasClass('mobilepay')) {
+				$paymentLayout.find('.order-noti.mobilepay').show();
+			} else if(target.hasClass('bank') || target.hasClass('virtual')) {
+				$paymentLayout.find('.order-noti.bank').show();
+			}
+		}
+
+		$tg = $selectPayment.find('input:radio').filter(function(index, element) {
+			return $(element).is(':checked');
+		});
+
+		showNoti($tg);
+
+		$selectPayment.on('change', 'input:radio', function(e) {
+			$tg = $(e.target);
+
+			$paymentLayout.find('.order-noti').hide();
+
+			showNoti($tg);
+		});
+	});
+
+	// 결제정보 액션
+	$(function() {
+		var $window = $(window);
+		var $headerWrap = $('.common-header .wrap');
+		var $paymentLayout = $('.payment-layout');
+		var $paymentWrap = $paymentLayout.find('.payment-cont-wrap');
+		var $paymentCont = $paymentWrap.find('.payment-content');
+		var gap = 50;
+		var scrollTop = $window.scrollTop();
+
+		var posAction = function() {
+			scrollTop = $window.scrollTop();
+
+			var isStart = scrollTop < $paymentLayout.offset().top - $headerWrap.height() - gap;
+			var isMiddle = scrollTop >= $paymentLayout.offset().top - $headerWrap.height() - gap && scrollTop < ($paymentLayout.offset().top + $paymentLayout.height()) - ($paymentCont.height() + gap + $headerWrap.height());
+			var isEnd = scrollTop >= scrollTop < ($paymentLayout.offset().top + $paymentLayout.height()) - ($paymentCont.height() + gap + $headerWrap.height());
+
+			if(isStart) {
+				$paymentWrap.removeClass('is-fixed');
+			} else if(isMiddle) {
+				$paymentWrap.addClass('is-fixed');
+				$paymentWrap.removeClass('is-end');
+
+				$paymentCont.css('top', scrollTop - $paymentLayout.offset().top + $headerWrap.height() + gap);
+			} else if(isEnd) {
+				$paymentWrap.addClass('is-fixed');
+				$paymentWrap.addClass('is-end');
+
+				$paymentCont.css('top', $paymentLayout.height() - $paymentCont.height());
+			}
+		}
+		posAction();
+
+		$window.on('scroll resize', posAction);
+	});
+</script>
+{%- endblock %}

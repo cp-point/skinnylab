@@ -1,0 +1,26 @@
+@mixin btn-group($align: left) {
+	@if $align == left {
+		justify-content: flex-start;
+	}
+	@if $align == right {
+		justify-content: flex-end;
+	}
+	@if $align == center {
+		justify-content: center;
+	}
+	@if $align == between {
+		justify-content: space-between;
+	}
+	
+}
+
+.btn-group {
+	display: flex;
+	@include btn-group(left);
+	&.right { @include btn-group(right); }
+	&.center { @include btn-group(center); }
+	&.between { @include btn-group(between); }
+	.btn + .btn {
+		margin-left: 20px;
+	}
+}

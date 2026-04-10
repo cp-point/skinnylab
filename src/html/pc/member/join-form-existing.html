@@ -1,0 +1,262 @@
+{%
+	set pageInfo = {
+		section: 'join',
+		title: '회원가입'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-member member-join-form">
+	<div class="member-layout">
+		<h2 class="hide">회원가입</h2>
+
+		<div class="head">
+			<h3 class="title">필수 회원정보 입력<br>및 약관동의</h3>
+		</div>
+		
+		<div class="body">
+			<div class="form-layout vertical">
+				<!-- 회원정보 입력 -->
+				<div class="info">
+					<h4>회원정보 입력</h4>
+					<dl class="row">
+						<dt class="title">
+							<label for="userId">아이디 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del input-medium">
+								<input type="text" id="userId" name="userId" value="Sknylab@gmail.com" placeholder="아이디 (이메일) 입력" class="text block underline" maxlength="30">
+
+								<!-- .btn-id-confirm 중복확인 완료시 .is-valid 선택자추가 요청드립니다. -->
+								<button type="button" class="btn outline thin primary btn-id-confirm"></button>
+
+							</span>
+							<!-- 오류 메세지 -->
+							<!-- <p class="error-msg is-invalid">아이디를 입력 후 중복 확인을 눌러주세요.</p> -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPw01">비밀번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="password" id="userPw01" name="userPw01" value="" placeholder="비밀번호 입력" class="text block underline" maxlength="16">
+							</span>
+							<!-- 오류 메세지 -->
+							<!-- <p class="error-msg is-invalid">비밀번호를 입력해주세요.</p> -->
+							<span class="input-check pw-check">
+								<input type="checkbox" name="pwCheck" id="pwCheck01" class="check">
+								<label for="pwCheck01">영문</label>
+								<input type="checkbox" name="pwCheck" id="pwCheck02" class="check">
+								<label for="pwCheck02">숫자</label>
+								<input type="checkbox" name="pwCheck" id="pwCheck03" class="check">
+								<label for="pwCheck03">특수문자</label>
+								<input type="checkbox" name="pwCheck" id="pwCheck04" class="check">
+								<label for="pwCheck04">최소 8자</label>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPw02">비밀번호 확인<span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="password" id="userPw02" name="userPw02" value="" placeholder="비밀번호 확인" class="text block underline" maxlength="16">
+							</span>
+							<!-- 오류 메세지 -->
+							<!-- <p class="error-msg is-invalid">비밀번호 확인을 입력해주세요.</p> -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userName">이름 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="userName" name="userName" value="홍길동" placeholder="이름 입력" class="text block underline" readonly>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPhone">휴대폰 번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-tel">
+								<input type="tel" id="userPhone" name="userPhone" value="010-1234-5678" placeholder="휴대폰 번호 입력" class="text block underline" readonly>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userBirth">생년월일/성별</label>
+						</dt>
+						<dd class="content input-flex">
+							<span class="input-text-del input-small">
+								<input type="text" id="userBirth" name="userBirth" value="19971012" placeholder="생년월일/성별 입력" class="text block underline" readonly>
+							</span>
+							<span class="input-radio gender">
+								<input type="radio" id="man" name="gender" class="radio" checked>
+								<label for="man" class="btn outline thin primary">남</label>
+								<input type="radio" id="woman" name="gender" class="radio">
+								<label for="woman" class="btn outline thin primary">여</label>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">주소</dt>
+						<dd class="content">
+							<span class="input-address-wrap">
+								<span class="input-address input-small">
+									<label for="userAddress01">주소 입력</label>
+									<input type="text" id="userAddress01" name="userAddress01" placeholder="주소 입력" class="text block underline" readonly>
+									<button type="button" class="btn outline thin primary btn-find-address">우편번호찾기</button>
+								</span>
+								<span class="input-address">
+									<span class="txt-with-del">
+										<label for="userAddress02">상세주소 입력</label>
+										<input type="text" name="userAddress02" id="userAddress02" placeholder="상세주소 입력" class="text block underline is-invalid" maxlength="100">
+									</span>
+									<!-- 오류 메세지 -->
+									<p class="error-msg is-invalid">상세주소를 입력해주세요.</p>
+								</span>
+							</span>
+						</dd>
+					</dl>
+				</div>
+				<!-- //회원정보 입력 -->
+
+				<!-- 약관동의 -->
+				<div class="agree">
+					<h4>약관동의</h4>
+					<span class="input-allagree">
+						<input type="checkbox" name="agreeAll" id="agreeAll" class="check">
+						<label for="agreeAll">모든 약관을 확인하고 전체 동의합니다.</label>
+					</span>
+					<div class="input-agree-wrap">
+						<span class="input-agree">
+							<input type="checkbox" name="agree" id="agree01" class="check">
+							<label for="agree01">[필수] 이용약관 동의</label>
+							<button type="button" onclick="UI.showLayerPop('',{ url: './popup-terms.html'}); return false;" class="btn outline2"><span>내용보기</span></button>
+						</span>
+						<span class="input-agree">
+							<input type="checkbox" name="agree" id="agree02" class="check">
+							<label for="agree02">[필수] 개인정보 수집 및 이용 동의</label>
+							<button type="button" onclick="UI.showLayerPop('',{ url: './popup-privacy.html'}); return false;" class="btn outline2"><span>내용보기</span></button>
+						</span>
+						<div class="agree-desc">
+							<span class="input-agree">
+								<input type="checkbox" name="agree" id="agree03" class="check">
+								<label for="agree03">[선택] 개인정보 자사 마케팅 수집 및 이용 동의</label>
+							</span>
+							<div class="desc">
+								<p>- 수집/이용 목적 : 자사 마케팅을 위한 개인정보 이용<br>- 수집항목 : 구매자 정보,상품 구매/취소/반품/교환/환불 정보,수령인 정보<br>- 보유/이용기간 : 회원 탈퇴 후 5일까지</p>
+								<p class="caution type02">개인정보 제공에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우<br>마케팅 정보를 받을 수 없습니다.</p>
+							</div>
+							<span class="input-agree">
+								<input type="checkbox" name="agree" id="agree04" class="check">
+								<label for="agree04">[선택] 마케팅 정보 수신 동의</label>
+							</span>
+							<div class="desc">
+								<span class="input-marketing">
+									<input type="checkbox" name="marketing" id="marketing01" class="check">
+									<label for="marketing01">이메일</label>
+									<input type="checkbox" name="marketing" id="marketing02" class="check">
+									<label for="marketing02">SMS</label>
+									<input type="checkbox" name="marketing" id="marketing03" class="check">
+									<label for="marketing03">전화 (상담)</label>
+								</span>
+								<p class="caution type02">마케팅 정보 수신동의를 하시면 스키니랩에서 제공하는 쇼핑/혜택 및<br>이벤트 소식을 받을 수 있습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //약관동의 -->
+				
+				<!-- 정보 이관 안내 -->
+				<div class="transfer">
+					<h4>정보 이관 안내</h4>
+					<dl>
+						<dt>- 회원등급 :&nbsp;</dt>
+						<dd><span class="membership">일반회원</span> > <span class="level">Family</span></dd>
+					</dl>
+					<dl>
+						<dt>- 보유 마일리지 :&nbsp;</dt>
+						<dd><span class="mileage">10,000</span>원</dd>
+					</dl>
+					<dl class="column">
+						<dt>- 보유 쿠폰 :&nbsp;</dt>
+						<dd>
+							<p><span class="coupon">상품쿠폰</span> : <span class="coupon-num">1</span>개</p>
+							<p><span class="coupon">장바구니 쿠폰</span> : <span class="coupon-num">2</span>개</p>
+						</dd>
+					</dl>
+				</div>
+				<!-- //정보 이관 안내 -->
+				<a href="#" class="btn primary large long motion">
+					<span>가입하기</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+	$(function() {
+		// 제품목록 체크박스 컨트롤
+		var agreeAll = $('.agree input:checkbox[id="agreeAll"]');
+		var agreeList = $('.agree .input-agree input[type=checkbox]').not(':disabled');
+		var agreeMarketingAll = $('.agree input:checkbox[id="agree04"]');
+		var agreeMarketingList = $('.agree .input-marketing input[type=checkbox]').not(':disabled');
+
+		// 전체 선택 / 해제
+		agreeAll.click(function(){
+			if(agreeAll.prop("checked")) {
+				agreeList.prop('checked', true);
+				agreeMarketingList.prop('checked', true);
+			} else {
+				agreeList.prop('checked', false);
+				agreeMarketingList.prop('checked', false);
+			}
+		});
+
+		agreeMarketingAll.click(function(){
+			if(agreeMarketingAll.prop("checked")) {
+				agreeMarketingList.prop('checked', true);
+			} else {
+				agreeMarketingList.prop('checked', false);
+			}
+		});
+
+		// 개별 선택 / 해제
+		agreeList.each(function() {
+			$(this).click(function() {
+
+				if($(this).prop("checked")) {
+					checkBoxLen = agreeList.length;
+					checkLen = $('.agree .input-agree input[type=checkbox]:checked').length;
+					
+					if(checkBoxLen == checkLen) { // 체크박스 전부 체크 됐을 경우
+						agreeAll.prop('checked', true);
+					} else {
+						agreeAll.prop('checked', false);
+					}
+				} else {
+					agreeAll.prop('checked', false);
+				}
+				
+			});
+		});
+
+		agreeMarketingList.each(function() {
+			$(this).click(function() {
+				agreeMarketingAll.prop('checked', true);
+			});
+		});
+	});
+</script>
+{%- endblock %}

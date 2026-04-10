@@ -1,0 +1,1104 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '나만의 스키니랩 &lt; 마이페이지',
+		order: [4,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-fit-skinnylab">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">마이페이지</h2>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h3 class="title">나만의 스키니랩 상세</h3>
+				</div>
+
+				<div class="content-inner-wrap">
+					<div class="fit-skinnylab-layout">
+						<div class="fit-skinnylab-head">
+							<p class="desc">
+								<span class="name">
+									홍길동
+								</span>
+								님의 건강 설문 결과입니다.
+							</p>
+						</div>
+						<div class="fit-skinnylab-result">
+							<h4 class="hide">설문 결과</h4>
+							<div class="result-report">
+								<div class="data">
+									<dl class="item">
+										<dt class="title">
+											키
+											<span class="sub">height</span>
+										</dt>
+										<dd class="content">
+											<span class="img height"></span>
+											<span class="result">
+												<span class="num">
+													162
+												</span>
+												<span class="sub">cm</span>
+											</span>
+										</dd>
+									</dl>
+									<dl class="item">
+										<dt class="title">
+											몸무게
+											<span class="sub">weight</span>
+										</dt>
+										<dd class="content">
+											<span class="img weight"></span>
+											<span class="result">
+												<span class="num">
+													67
+												</span>
+												<span class="sub">kg</span>
+											</span>
+										</dd>
+									</dl>
+									<dl class="item">
+										<dt class="title">
+											체질량지수
+											<span class="sub">BMI</span>
+										</dt>
+										<dd class="content">
+											<span class="img bmi"></span>
+											<span class="result">
+												<span class="num">
+													20.91
+												</span>
+											</span>
+										</dd>
+									</dl>
+									<dl class="item">
+										<dt class="title">
+											비만도
+											<span class="sub">obesity</span>
+										</dt>
+										<dd class="content">
+											<span class="img obesity"></span>
+											<span class="result">
+												<span class="num">
+													표준
+												</span>
+											</span>
+										</dd>
+									</dl>
+								</div>
+								<div class="solution">
+									<div class="graph status2">
+										<div class="hand"></div>
+										<p class="user">
+											<span class="sub">
+												나의 BMI
+											</span>
+											<span class="num">
+												20.91
+											</span>
+										</p>
+										<ul class="list">
+											<li>
+												<span class="txt">저체중</span>
+												<span class="num">0</span>
+											</li>
+											<li>
+												<span class="txt">정상</span>
+												<span class="num">18.5</span>
+											</li>
+											<li>
+												<span class="txt">과체중</span>
+												<span class="num">23</span>
+											</li>
+											<li>
+												<span class="txt">경도비만</span>
+												<span class="num">25</span>
+											</li>
+											<li>
+												<span class="txt">중도비만</span>
+												<span class="num">30</span>
+											</li>
+										</ul>
+									</div>
+									<div class="explain">
+										<p class="title">
+											건강한 다이어트를 위한<br>
+											<span class="str">스키니랩 솔루션!</span>
+										</p>
+										<ul class="list">
+											<li>
+												<span class="num">1.</span>
+												<span class="txt">
+													내몸의 변화에 민감하자! 자기관리의 시작!<br>
+													<span class="str">하루에 한번 체중 Check!</span>
+												</span>
+											</li>
+											<li>
+												<span class="num">2.</span>
+												<span class="txt">
+													건강한 다이어트! 균형잡힌 식사와 함께<br>
+													<span class="str">규칙적인 운동으로 더욱 건강하게!</span>
+												</span>
+											</li>
+											<li>
+												<span class="num">3.</span>
+												<span class="txt">
+													내 몸안의 수분밸런스!<br>
+													<span class="str">1일 2L이상 충분한 물을 섭취!</span>
+												</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="recommend">
+									<div class="item">
+										<p class="title">
+											<span class="sub">DIET TYPE</span>
+											나에게 맞는 다이어트 방법!
+										</p>
+										<p class="desc">건강한 신체를 유지하기 위해 샌드위치, 햄버거,<br> 피자 등 패스트푸드, 케이크, 라면, 튀김류 등 <br><span class="str">지방 고함량 식품은 줄이시고, 활동량을 늘려서 <br>건강체중을 유지하시기를 권장</span> 드립니다.</p>
+										<ul class="diet-list">
+											<li>
+												<span class="img lf"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">LF</span>
+														<span class="sub">(Low Fat)</span>
+													</span>
+													<span class="desc">저지방식</span>
+												</span>
+											</li>
+											<li>
+												<span class="img ex"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">EX</span>
+														<span class="sub">(EXercise)</span>
+													</span>
+													<span class="desc">규칙적인 운동</span>
+												</span>
+											</li>
+											<li>
+												<span class="img lk"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">LK</span>
+														<span class="sub">(Low K-Calorie)</span>
+													</span>
+													<span class="desc">저칼로리식</span>
+												</span>
+											</li>
+											<!-- <li>
+												<span class="img lc"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">LC</span>
+														<span class="sub">(Low Carb)</span>
+													</span>
+													<span class="desc">저탄수화물식</span>
+												</span>
+											</li> -->
+										</ul>
+									</div>
+									<div class="item">
+										<p class="title">
+											<span class="sub">NUTRITION</span>
+											나를 위한 필수 영양소!
+										</p>
+										<p class="desc">
+											칼슘을 부족하게 섭취할 경우 뼈가 약해질 수 있기에 <br>매일 우유, 유제품을 드시고, 녹색채소(배추, 브로콜리), <br>멸치, 해조류, 콩류 등 같이 섭취하시면 <br><span class="str">지금보다 더 충분한 칼슘을 섭취하실 수 있습니다.</span>
+										</p>
+										<ul class="nutri-list">
+											<li>
+												<span class="img cc"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">칼슘</span>
+														<span class="sub">Calcium</span>
+													</span>
+												</span>
+											</li>
+											<li>
+												<span class="img mv"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">멀티 비타민</span>
+														<span class="sub">Multi vitamin</span>
+													</span>
+												</span>
+											</li>
+											<li>
+												<span class="img gla"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">감마리놀레산</span>
+														<span class="sub">Gamma-Linolenic Acid</span>
+													</span>
+												</span>
+											</li>
+											<!-- <li>
+												<span class="img bio"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">비오틴</span>
+														<span class="sub">Biotin</span>
+													</span>
+												</span>
+											</li>
+											<li>
+												<span class="img vc"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">비타민C</span>
+														<span class="sub">Vitamin C</span>
+													</span>
+												</span>
+											</li>
+											<li>
+												<span class="img vd"></span>
+												<span class="content">
+													<span class="tit">
+														<span class="main">비타민D</span>
+														<span class="sub">Vitamin D</span>
+													</span>
+												</span>
+											</li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="customized-product">
+								<h4 class="title">나에게 맞는 상품</h4>
+								<div class="head">
+									<h5 class="title">
+										Thin 소재 <span class="sub">(다이어트)</span>
+									</h5>
+								</div>
+								<ul class="goods-list">
+									<li>
+										<div class="item">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart1" id="checkCart1" class="check-cart">
+													<label for="checkCart1"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<!-- <div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;" class="btn ghost thin">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div> -->
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item disabled">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart2" id="checkCart2" class="check-cart">
+													<label for="checkCart2"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;" class="btn ghost thin">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- 상품이 없을때 // -->
+									<!-- <li class="empty">
+										<p class="desc">
+											등록된 상품이 없습니다.<br>
+											더 좋은 상품으로 찾아뵙겠습니다.
+										</p>
+									</li> -->
+									<!-- // 상품이 없을때 -->
+								</ul>
+								<div class="head">
+									<h5 class="title">
+										이너뷰티 &amp; 프로틴 <span class="sub">(단백질)</span>
+									</h5>
+								</div>
+								<ul class="goods-list">
+									<li>
+										<div class="item">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart3" id="checkCart3" class="check-cart">
+													<label for="checkCart3"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<!-- <div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" class="btn ghost thin" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div> -->
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item disabled">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart4" id="checkCart4" class="check-cart">
+													<label for="checkCart4"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;" class="btn ghost thin">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- 상품이 없을때 // -->
+									<!-- <li class="empty">
+										<p class="desc">
+											등록된 상품이 없습니다.<br>
+											더 좋은 상품으로 찾아뵙겠습니다.
+										</p>
+									</li> -->
+									<!-- // 상품이 없을때 -->
+								</ul>
+								<div class="head">
+									<h5 class="title">
+										뉴트리션 <span class="sub">(영양소)</span>
+									</h5>
+								</div>
+								<ul class="goods-list">
+									<li>
+										<div class="item">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart5" id="checkCart5" class="check-cart">
+													<label for="checkCart5"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<!-- <div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;" class="btn ghost thin">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div> -->
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart6" id="checkCart6" class="check-cart">
+													<label for="checkCart6"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<!-- <div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;" class="btn ghost thin">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div> -->
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart7" id="checkCart7" class="check-cart">
+													<label for="checkCart7"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<!-- <div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;" class="btn ghost thin">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div> -->
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item disabled">
+											<a href="#" target="_blank">
+												<figure class="wrap">
+													<div class="img">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+													</div>
+													<figcaption class="content">
+														<p class="info">
+															<span class="tag primary">신제품</span>
+															<span class="tag secondary">베스트</span>
+															<span class="tag white">사은품</span>
+														</p>
+														<p class="title">
+															<span class="sub">
+																스키니랩
+															</span>
+															<span class="main">
+																가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+															</span>
+														</p>
+														<p class="price non">
+															<span class="tit">비회원가</span>
+															<span class="con">
+																<span class="num">
+																	321,000
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+														<p class="price">
+															<span class="tit">회원가</span>
+															<span class="con">
+																<span class="rate">
+																	<span class="hide">할인율</span>
+																	37%
+																</span>
+																<span class="num">
+																	128,600
+																</span>
+																<span class="won">원</span>
+															</span>
+														</p>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="util">
+												<div class="like">
+													<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+												</div>
+												<div class="add-cart">
+													<input type="checkbox" name="checkCart8" id="checkCart8" class="check-cart">
+													<label for="checkCart8"><span class="hide">장바구니 넣기</span></label>
+												</div>
+												<!-- <div class="action">
+													<div class="wrap">
+														<button type="button" class="btn-util payment">바로결제하기</button>
+														<button type="button" class="btn-util cart">장바구니넣기</button>
+														<button type="button" class="btn-util gift">선물하기</button>
+													</div>
+												</div> -->
+												<div class="status">
+													<p class="tit">일시품절</p>
+													<div class="btn-area">
+														<button type="button" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;" class="btn ghost thin">
+															<span>재입고 알림</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- 상품이 없을때 // -->
+									<!-- <li class="empty">
+										<p class="desc">
+											등록된 상품이 없습니다.<br>
+											더 좋은 상품으로 찾아뵙겠습니다.
+										</p>
+									</li> -->
+									<!-- // 상품이 없을때 -->
+								</ul>
+								<div class="foot">
+									<div class="btn-area">
+										<a href="#" class="btn large outline primary motion">
+											<span>장바구니</span>
+										</a>
+										<a href="#" class="btn large primary motion">
+											<span>바로구매</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="fit-skinnylab-share">
+							<div class="head">
+								<div class="wrap">
+									<h4 class="title">결과 공유하기</h4>
+								</div>
+							</div>
+							<div class="body">
+								<ul class="sns">
+									<li>
+										<button type="button" class="btn-share">
+											<span class="icon-email"></span>
+											이메일 전송
+										</button>
+										<div class="more-content">
+											<div class="share-agreement">
+												<div class="agree">
+													<dl class="item">
+														<dt class="title">
+															<input type="checkbox" name="agreementPrivacy1" id="agreementPrivacy1" class="check">
+															<label for="agreementPrivacy1">개인정보 수집 및 이용을 동의합니다.</label>
+														</dt>
+														<dd class="content">
+															<span class="tit">개인정보 수집 항목</span>
+															<span class="con">이름(닉네임), 성별, 연령, 키, 체중, 문진 답변 내용</span>
+														</dd>
+														<dd class="content">
+															<span class="tit">수집 이용 목적</span>
+															<span class="con">나만의 스키니랩 결과 공유</span>
+														</dd>
+													</dl>
+												</div>
+												<div class="input">
+													<span class="input-share-email">
+														<label for="shareEmail" class="hide">이메일주소</label>
+														<input type="text" class="text" id="shareEmail" name="shareEmail" placeholder="이메일 주소 입력">
+														<button type="button" class="btn outline thin primary">
+															<span>공유하기</span>
+														</button>
+													</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<button type="button" class="btn-share">
+											<span class="icon-facebook"></span>
+											페이스북
+										</button>
+										<div class="more-content">
+											<div class="share-agreement">
+												<div class="agree">
+													<dl class="item">
+														<dt class="title">
+															<input type="checkbox" name="agreementPrivacy2" id="agreementPrivacy2" class="check">
+															<label for="agreementPrivacy2">개인정보 수집 및 이용을 동의합니다.</label>
+														</dt>
+														<dd class="content">
+															<span class="tit">개인정보 수집 항목</span>
+															<span class="con">이름(닉네임), 성별, 연령, 키, 체중, 문진 답변 내용</span>
+														</dd>
+														<dd class="content">
+															<span class="tit">수집 이용 목적</span>
+															<span class="con">나만의 스키니랩 결과 공유</span>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<button type="button" class="btn-share">
+											<span class="icon-kakao"></span>
+											카카오톡
+										</button>
+										<div class="more-content">
+											<div class="share-agreement">
+												<div class="agree">
+													<dl class="item">
+														<dt class="title">
+															<input type="checkbox" name="agreementPrivacy3" id="agreementPrivacy3" class="check">
+															<label for="agreementPrivacy3">개인정보 수집 및 이용을 동의합니다.</label>
+														</dt>
+														<dd class="content">
+															<span class="tit">개인정보 수집 항목</span>
+															<span class="con">이름(닉네임), 성별, 연령, 키, 체중, 문진 답변 내용</span>
+														</dd>
+														<dd class="content">
+															<span class="tit">수집 이용 목적</span>
+															<span class="con">나만의 스키니랩 결과 공유</span>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<button type="button" class="btn-share">
+											<span class="icon-url"></span>
+											URL복사
+										</button>
+										<div class="more-content">
+											<div class="share-agreement">
+												<div class="agree">
+													<dl class="item">
+														<dt class="title">
+															<input type="checkbox" name="agreementPrivacy4" id="agreementPrivacy4" class="check">
+															<label for="agreementPrivacy4">개인정보 수집 및 이용을 동의합니다.</label>
+														</dt>
+														<dd class="content">
+															<span class="tit">개인정보 수집 항목</span>
+															<span class="con">이름(닉네임), 성별, 연령, 키, 체중, 문진 답변 내용</span>
+														</dd>
+														<dd class="content">
+															<span class="tit">수집 이용 목적</span>
+															<span class="con">나만의 스키니랩 결과 공유</span>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fit-skinnylab-foot">
+							<div class="info">
+								<p class="customer">
+									자세한 상담을 받고 싶으신 분들께서는 <br>
+									스키니랩 <span class="secondary">전문상담센터</span> 000-000-000으로 문의주시기 바랍니다. <span class="date">(상담시간: 10:00 ~ 17:00)</span>
+								</p>
+								<p class="certi">
+									국가인증 스키니랩 다이어트 연구소 SKINNY LAB DIET LABORATORY (과학기술정보통신부 인정서 보유)
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="page-foot">
+					<div class="btn-area">
+						<a href="#" class="btn large primary motion">
+							<span>목록</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$('.fit-skinnylab-share .sns').on('click', '.btn-share', function() {
+		var $tgBtn = $(this);
+		var $tgLi = $tgBtn.parents('li');
+		var $tgMore = $tgLi.find('.more-content');
+		var $sns = $tgLi.parents('.sns');
+		var $moreContent = $sns.find('.more-content');
+
+		$moreContent.removeClass('on');
+		$tgMore.addClass('on');
+		$sns.css('height', $tgMore.height() + 80);
+	});
+
+	function bmiGraph() {
+		var $graph = $('.result-report .graph');
+		var value = $graph.find('.user .num').text().trim();
+
+		$graph.removeClass('status1 status2 status3 status4 status5');
+
+		if(value < 18.5) {
+			$graph.addClass('status1');
+		} else if(value >= 18.5 && value < 23) {
+			$graph.addClass('status2');
+		} else if(value >= 23 && value < 25) {
+			$graph.addClass('status3');
+		} else if(value >= 25 && value < 30) {
+			$graph.addClass('status4');
+		} else if(value >= 30) {
+			$graph.addClass('status5');
+		}
+	}
+	bmiGraph();
+</script>
+<!-- // Content -->
+{%- endblock %}

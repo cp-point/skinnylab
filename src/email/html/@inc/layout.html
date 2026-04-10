@@ -1,0 +1,33 @@
+{% macro include(fileName) -%}
+	{% include fileName ignore missing -%}
+{% endmacro -%}
+<!DOCTYPE html>
+<html lang="ko">
+{{ include('./head.html') }}
+<body>
+	
+	
+	<table class="newsletter-wrap" cellspacing="0" cellpadding="0">
+		<tbody>
+		<!-- Header // -->
+		<tr>
+			<td>
+				{{ include('./header.html') }}
+			</td>
+		</tr>		
+		<!-- // Header -->
+		<!-- Content // -->
+		{% block content -%}{%- endblock %}
+		<!-- // Content -->
+
+		<!-- Footer // -->
+		<tr>
+			<td>
+				{{ include('./footer.html') }}
+			</td>
+		</tr>
+		<!-- // Footer -->
+		</tbody>
+	</table>
+</body>
+</html>

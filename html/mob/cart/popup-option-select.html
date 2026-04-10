@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- 옵션클래스: full, full-scroll, hidden-title -->
+	<article id="popup-option-select" class="common-popup">
+		<div class="common-popup-inner popup-option-select">
+			<div class="header">
+				<h1 class="title">옵션 선택</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+			</div>
+			<div class="container">
+				<div class="option-select">
+					<div class="img">
+						<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품명">
+					</div>
+					<div class="content">
+						<div class="wrap">
+							<div class="main-option">
+								<div class="option-dropdown ellipsis">
+									<div class="wrap">
+										<p class="title">
+											<button type="button">
+												옵션값11111111111111111111111111111111111111111111111111
+											</button>
+										</p>
+										<div class="list">
+											<ul class="inner">
+												<li>
+													<input type="radio" id="option1" name="option" checked>
+													<label for="option1">
+														옵션값11111111111111111111111111111111111111111111111111
+													</label>
+												</li>
+												<li>
+													<input type="radio" id="option2" name="option" disabled>
+													<label for="option2">
+														옵션값2222222222222222222222222222222222222222222222222
+													</label>
+												</li>
+												<li>
+													<input type="radio" id="option3" name="option">
+													<label for="option3">
+														옵션값3333333333333333333333333333333333333333333333333
+													</label>
+												</li>
+												<li>
+													<input type="radio" id="option4" name="option">
+													<label for="option4">
+														옵션값4444444444444444444444444444444444444444444444444
+													</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="result">
+									<div class="counting">
+										<span class="input-amount-counting">
+											<label for="counting" class="hide">수량 선택</label>
+											<button type="button" class="btn-counting-minus">수량 한개 삭제</button>
+											<input type="number" id="counting" name="counting" value="5" class="count">
+											<button type="button" class="btn-counting-plus">수량 한개 추가</button>
+										</span>
+									</div>
+									<p class="price">
+										<span class="num">128,600</span>
+										<span class="won">원</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="foot">
+					<div class="btn-area">
+						<a href="#" class="btn large outline primary js-pop-close">
+							<span>취소</span>
+						</a>
+						<a href="#" class="btn large primary">
+							<span>변경</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	
+	<script>
+		$(function() {
+			var $optionDropdown = $('.option-dropdown');
+			
+			$('body').on('click', function(e) {
+				var $tgDropdown = $(e.target).parents('.title').parents('.option-dropdown');
+				
+				if($tgDropdown.length) {
+					if($tgDropdown.hasClass('on')) {
+						$tgDropdown.removeClass('on').find('.list').slideUp(200);
+					} else {
+						$tgDropdown.addClass('on').find('.list').slideDown(200);
+					}
+				} else {
+					$('.option-dropdown .list').slideUp(200);
+					$optionDropdown.removeClass('on');
+				}
+			});
+			
+			$optionDropdown.on('change', '[type=radio]', function(e) {
+				var $tg = $(e.target);
+				
+				$tg.parents('.option-dropdown').find('.title button').text($tg.parents('li').find('label').text());
+			});
+		});
+	</script>
+	<!-- // content -->
+</body>
+</html>

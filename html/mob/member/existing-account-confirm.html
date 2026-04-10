@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- 옵션클래스: full, full-scroll, hidden-title -->
+	<article id="popup-member-find" class="common-popup" data-motion-in="400" data-motion-out="200">
+		<div class="common-popup-inner popup-member-find existing">
+			<div class="header">
+				<h1 class="title">기존 계정 확인</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+			</div>
+			<div class="container">
+				<div class="head">
+					<div class="page-top-desc">
+						<div class="com-txt">
+							고객님은 이미 <strong>헬스밸런스</strong>
+							<span><strong>통합회원</strong>으로 가입되어 있습니다.</span>
+						</div>
+						<div class="com-txt result">
+							<strong class="brand">헬스밸런스 아이디</strong><br>
+							<strong class="find-id">sk******************************************************************************************b@abc.com</strong>
+						</div>
+						<div class="com-txt3">
+							회원 아이디로 로그인을 하시거나,
+							<span>비밀번호가 기억나지 않으시면 비밀번호 찾기를</span>
+							<span>진행해 주세요.</span>
+							
+						</div>
+					</div>
+				</div>
+				<div class="body">
+					<div class="form-layout large">
+						<dl class="row">
+							<dt class="title">
+								<label for="userId">아이디(이메일)</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="userId" name="userId" placeholder="아이디(이메일) 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+								</span>
+								<p class="error-msg is-invalid" style="display: none;">아이디(이메일)를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="userPW">비밀번호</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="password" id="userPW" name="userPW" placeholder="비밀번호 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+								</span>
+								<p class="error-msg is-invalid" style="display: none;">비밀번호를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="foot">
+					<div class="btn-group col">
+						<button type="button" class="btn large primary block">로그인</button>
+						<a href="./find-pw.html" class="btn large outline primary block">비밀번호 찾기</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- // content -->
+</body>
+</html>

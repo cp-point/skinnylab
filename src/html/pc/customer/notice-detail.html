@@ -1,0 +1,91 @@
+{%
+	set pageInfo = {
+		section: 'customer',
+		title: '공지사항'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-customer customer-notice-detail">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">고객센터</h2>
+
+		</div>
+	</div>
+
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">고객센터</a>
+				</li>
+				<li>
+					<a href="#">FAQ</a>
+				</li>
+				<li>
+					<a href="#">1:1문의</a>
+				</li>
+				<li class="selected">
+					<a href="#">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<div class="notice-detail">
+			<h3 class="hide">공지사항</h3>
+			<div class="board-detail hidden-title">
+				<dl class="row">
+					<dt>제목</dt>
+					<dd>
+						<p class="title">
+							<span class="desc">[배송안내] 8월 14일 택배 없는 날 배송공지</span>
+							<span class="date">2020-08-11</span>
+						</p>
+					</dd>
+				</dl>
+				<dl class="row">
+					<dt>내용</dt>
+					<dd>
+						<div class="txt">
+							8월 14일 택배 없는 날 배송공지
+						</div>
+					</dd>
+				</dl>
+				<div class="prevnext">
+					<dl class="prev">
+						<dt>
+							<span>이전</span>
+						</dt>
+						<dd>
+							<strong class="type">일반</strong>
+							다음 공지사항이 없습니다.
+						</dd>
+					</dl>
+					<dl class="next">
+						<dt>
+							<span>다음</span>
+						</dt>
+						<dd>
+							<strong class="type">일반</strong>
+							<a href="#">
+								개인정보처리방침 변경 안내 (시행일자 : 2021-02-03)
+							</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="btn-wrap">
+				<a href="./notice-list.html" class="btn large primary">
+					<span>목록</span>
+				</a>
+		</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

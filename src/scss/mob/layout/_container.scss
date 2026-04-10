@@ -1,0 +1,240 @@
+.common-container {
+	min-height: 500px;
+	// padding-top: 110px;
+	padding: 60px 0 80px;
+	// min-height: calc(var(--vh,1vh) * 100);
+	overflow: hidden;
+
+	.container-wrap {
+		padding: 20px 0 0;
+		width: calc(100% - 40px);
+		margin: 0 auto;
+
+		&.full {
+			width: 100%;
+		}
+	}
+
+	.page-header.is-noti ~ & { padding-top: calc(9.86% + 60px); }
+	.common-header.is-noti ~ & { padding-top: calc(9.86% + 110px); }
+}
+
+// 하단 네비 (메인, 마이페이지)
+.bottom-nav-wrap {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 3002;
+	@include size(100%,64px);
+	background: #fff;
+	box-shadow: 0 0 15px 0 rgba(53,53,55,.15);
+	transition: all .5s ease-out;
+	transform: translateY(0);
+	&.is-hidden {
+		transform: translateY(120px);
+	}
+	.inner-cont-wrap {
+		position: relative;
+	}
+	.menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 64px;
+		box-sizing: border-box;
+		padding: 0 10px;
+	}
+	.item-group {
+		display: flex;
+		align-items: center;
+		width: 39%;
+		li {
+			@include size(50%,40px);
+			text-align: center;
+			@include font(12px,$medium);
+			color: #828287;
+			a {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 40px;
+			}
+		}
+		.txt { height: 13px; }
+		.icon {
+			position: relative;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			box-sizing: border-box;
+			@include size(30px,30px);
+			background-size: cover;
+			&.home {
+				background-image: url("@@img/mob/common/icon-botnav01.png");
+				background-position: 70% 50%;
+			}
+			&.delivery {
+				background-image: url("@@img/mob/common/icon-botnav02.png");
+			}
+			&.mypage {
+				background-image: url("@@img/mob/common/icon-botnav03.png");
+				background-position: 50% 50%;
+			}
+			&.profile {
+				overflow: hidden;
+				@include size(40px,40px);
+				margin-top: 0;
+				border-radius: 8px;
+				// border: 1px solid #d5d5d7;
+				background: #fff url("@@img/mob/common/icon-botnav04.png") 50% 50% no-repeat;
+				background-size: 31px 30px;
+				& > img { width: 100%; }
+			}
+		}
+		.new {
+			display: inline-block;
+			position: absolute;
+			top: 1px;
+			right: 0;
+			@include size(6px,6px);
+			border-radius: 6px;
+			background: $secondary-color1;
+		}
+	}
+	.btn-promo {
+		overflow: hidden;
+		position: absolute;
+		top: -20px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		@include size(60px,60px);
+		border-radius: 60px;
+		background: linear-gradient(to top,#4a4a4d,#0b0b0b);
+		box-shadow: 0 4px 5.4px .6px rgba(0,0,0,.16);
+		outline: 0;
+		.logo {
+			opacity: 1;
+			@include size(42px,10px);
+			background: url("@@img/mob/common/btn-promo-logo.png") 50% 50% no-repeat;
+			background-size: cover;
+			transform: translateY(8px);
+			transition: all .3s ease-in-out;
+		}
+		.icon {
+			position: relative;
+			opacity: 0;
+			@include size(16px,16px);
+			transform: translateY(100px);
+			transition: all .3s ease-in-out;
+			
+			&::before,
+			&::after {
+				@include before-after();
+				@include size(2px,100%);
+				top: 50%;
+				left: 50%;
+				background: #fff;
+			}
+			&::before {
+				transform: translate(-50%,-50%) rotate(-45deg);
+			}
+			&::after {
+				transform: translate(-50%,-50%) rotate(45deg);
+			}
+		}
+		&.is-open {
+			.logo {
+				opacity: 0;
+				transform: translateY(-100px);
+			}
+			.icon {
+				opacity: 1;
+				transform: translateY(-5px);
+			}
+		}
+	}
+}
+
+.bot-banner-wrap {
+	position: fixed;
+	display: flex;
+	opacity: 0;
+	flex-direction: column;
+	justify-content: flex-end;
+	@include size(100%,100%);
+	top: 0;
+	left: 0;
+	z-index: 3001;
+	background: rgba(0,0,0,.7);
+	transform: translateY(100%);
+	transition: opacity .2s ease-in-out .2s, transform 0s ease-in-out .3s;
+	.banner-box {
+		overflow: hidden;
+		width: 100%;
+		max-width: 750px;
+		margin: 0 auto;
+		padding-bottom: 64px;
+		border-radius: 40px;
+		background: #fff;
+		font-size: 0;
+		transform: translateY(100%);
+		transition: transform .3s ease-in-out;
+		img { width: 100%; }
+	}
+	&.is-open {
+		opacity: 1;
+		transform: translateY(0);
+		transition: opacity .3s ease-in-out, transform 0s ease-in-out;
+		.banner-box {
+			transform: translateY(0);
+			transition: transform .3s ease-in-out;
+		}
+	}
+}
+
+// 우측 플로팅 메뉴
+.floating-menu {
+	position: fixed;
+	top: 65%;
+	right: 15px;
+	z-index: 50;
+	transform: translateY(0);
+	transition: all .3s ease-out;
+	.wrap {
+		position: relative;
+		width: 44px;
+	}
+	li {
+		&:not(:first-child) { margin-top: 7px; }
+	}
+	.btn-icon {
+		display: block;
+		@include size(44px,44px);
+		border-radius: 44px;
+		box-shadow: 0 5px 10px 0 rgba(53,53,55,.2);
+		&.recent {
+			background: $primary-color url("@@img/mob/common/icon-time01.png") 50% 50% no-repeat;
+			background-size: 20px 20px;
+		}
+		&.kakao {
+			background: #fae300 url("@@img/mob/common/icon-kakao02.png") 50% 50% no-repeat;
+			background-size: 24px 9px;
+		}
+		&.gift {
+			background: $secondary-color1 url("@@img/mob/common/icon-gift01.png") 50% 50% no-repeat;
+			background-size: 18px 17px;
+		}
+		&.top {
+			background: #fff url("@@img/mob/common/icon-top01.png") 50% 50% no-repeat;
+			background-size: 16px 16px;
+		}
+	}
+	&.is-up {
+		transform: translateY(-200%);
+	}
+}

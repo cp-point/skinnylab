@@ -1,0 +1,58 @@
+{
+  "name": "healthbalance-skinnylab",
+  "version": "1.0.0",
+  "engines": {
+    "node": "20.x"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp default",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "w3c": "gulp w3c",
+    "inlineBuild": "cross-env NODE_ENV=production gulp inlineBuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "cross-env": "^7.0.2",
+    "css-mqpacker": "^7.0.0",
+    "del": "^5.0.0",
+    "del-gulpsass-blank-lines": "^0.1.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-data": "^1.3.1",
+    "gulp-htmlhint": "^2.2.1",
+    "gulp-if": "^3.0.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pxtorem": "^3.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-w3cjs": "^1.3.2",
+    "gulp.spritesmith-multi": "^3.1.0",
+    "indent.js": "^0.3.4",
+    "list-filepaths": "^1.6.5",
+    "merge-stream": "^2.0.0",
+    "postcss-reporter": "^6.0.1",
+    "postcss-scss": "^2.0.0",
+    "gulp-inline-css": "^4.0.0",
+    "stylelint": "^10.1.0",
+    "through2": "^3.0.1"
+  },
+  "dependencies": {
+    "sort-css-media-queries": "^1.5.0"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

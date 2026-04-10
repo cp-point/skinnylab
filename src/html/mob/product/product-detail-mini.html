@@ -1,0 +1,1847 @@
+{%
+	set pageInfo = {
+		section: 'product',
+		title: 'THIN소재',
+		order: '1'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title {%if (pageInfo.order[0] == '1') %}hide{% endif %}">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-detail">
+	<!-- // 제품 -->
+	<div class="detail-wrap">
+		<div class="image swiper-container">
+			<ul class="list swiper-wrapper">
+				<li class="swiper-slide">
+					<div class="video-wrap">
+						<div class="youtube">
+							<div id="player"></div>
+							<a class="play-btn" onclick="playVideo();">play</a>			
+						</div>
+						<!-- <video id="video" controls preload playsinline poster="{{base}}/img/mob/@dummy/video-thumb.jpg">
+							<source src="{{base}}/img/mob/@dummy/video.mp4" type="video/mp4">
+						</video> -->
+					</div>
+				</li>
+				{% for i in range(0, 4) %}
+				<li class="swiper-slide">
+					<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="제품 이미지">
+				</li>
+				<!-- // 등록된 사진이 없을때 -->
+				<!-- <li class="swiper-slide">
+					<div class="img">
+						<img src="{{base}}/img/mob/common/noimg.jpg" alt="등록된 사진이 없습니다.">
+					</div>
+				</li> -->
+				<!-- 등록된 사진이 없을때 // -->
+				{% endfor %}
+			</ul>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div class="noti">오후 4시 이전 결제 완료 시 당일 출고!</div>
+		<div class="content">
+			<div class="head">
+				<div class="util-wrap">
+					<div class="util">
+						<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+						<div class="share">
+							<button type="button" class="btn-open" onclick="$(this).parents('.share').find('.content').show(); return false;">공유하기 열기</button>
+							<div class="content">
+								<div class="box">
+									<ul class="list">
+										<li>
+											<a href="#">
+												<span class="icon facebook"></span>
+												<span class="tit">페이스북</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon kakao"></span>
+												<span class="tit">카카오톡</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon url"></span>
+												<span class="tit">URL복사</span>
+											</a>
+										</li>
+									</ul>
+									<button type="button" class="btn-close" onclick="$(this).parents('.share').find('.content').hide(); return false;">공유하기 닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h2 class="title">
+					<span class="main">
+						가벼워지는 시서스다이어트 14포 x 4박스 + 석류 콜라겐 14포
+					</span>
+				</h2>
+			</div>
+			<div class="body">
+				<dl class="price non">
+					<dd class="con">
+						<span class="num">
+							321,000
+						</span>
+						<span class="won">원</span>
+					</dd>
+				</dl>
+				<dl class="price">
+					<dd class="con">
+						<span class="num">
+							128,600
+						</span>
+						<span class="won">원</span>
+					</dd>
+				</dl>
+				<dl class="info">
+					<dt class="tit">적립혜택</dt>
+					<dd class="con">
+						<span class="str">
+							2,380원 적립!
+						</span>
+					</dd>
+				</dl>
+				<dl class="info">
+					<dt class="tit">배송비</dt>
+					<dd class="con">
+						무료
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<!-- 제품 // -->
+
+	<!-- // 탭 컨텐츠 -->
+	<div class="tab-group-wrap">
+		<div class="tab-menu">
+			<div class="wrap">
+				<ul class="list tab-menu-box">
+					<li class="is-active tab">
+						<button type="button">상품상세</button>
+					</li>
+					<li class="tab">
+						<button type="button">구매정보</button>
+					</li>
+					<li class="review tab">
+						<button type="button">
+							상품리뷰
+							<span class="sup">
+								99
+							</span>
+						</button>
+					</li>
+					<li class="tab">
+						<button type="button">
+							상품문의
+							<span class="sup">
+								99
+							</span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- // 상품 상세 -->
+		<div class="tab-content detail-info">
+			<h3 class="hide">상품상세</h3>
+			<div class="event-banner">
+				<div class="img">
+					<img src="{{base}}/img/mob/@dummy/product-event-banner.jpg" alt="상품 이벤트배너 이미지">
+				</div>
+			</div>
+			<div class="info-img">
+				<img src="{{base}}/img/mob/@dummy/review-thumb-img08.jpg" alt="상품상세이미지">
+				<!-- // 등록된 사진이 없을때 -->
+				<!-- <img src="{{base}}/img/mob/common/noimg.jpg" alt="등록된 사진이 없습니다."> -->
+				<!-- 등록된 사진이 없을때 // -->
+			</div>
+			<div class="info-product accordion-list">
+				<dl class="item on">
+					<dt class="title">
+						<a href="#">상품필수 정보</a>
+					</dt>
+					<dd class="content">
+						<dl>
+							<dt>식품의 유형</dt>
+							<dd>
+								<p>
+									개별인정형 건강식품
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>생산자</dt>
+							<dd>
+								<p>
+									코스맥스바이오㈜
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>소재지</dt>
+							<dd>
+								<p>
+									코스맥스바이오(주)충청북도 제천시 바이오밸리 3로 30(왕암동)
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>제조연월일</dt>
+							<dd>
+								<p>
+									매번 입고시 수정이 어려운 부분으로, 1644-7267으로  연락주시면 자세히 안내드리겠습니다.
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>유통기한 또는 품질유지기한</dt>
+							<dd>
+								<p>
+									매번 입고시 수정이 어려운 부분으로, 1644-7267으로  연락주시면 자세히 안내드리겠습니다.
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>포장단위별 용량 (중량)</dt>
+							<dd>
+								<p>
+									2g x 14포(28g)
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>포장단위별 수량</dt>
+							<dd>
+								<p>
+									2g x 14포(28g) x 4박스
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>원재료명 및 함량</dt>
+							<dd>
+								<p>
+									시서스추출물(Quercetion 1.22%, Isorhamnetin 0.037%, 인도산), D-알파-토코페릴초산염혼합제제 (비타민E 46%이상, D-a-토코페릴아세테이트, 아라비아검, 이산화규소), 비타민A혼합제제(비타민A 9.8%함유, 말토덱스트린, 아라비아검, 옥수수전분, 레티닐아세트산염, 비타민E), 판토텐산칼슘(판토텐산91%), 비오틴, 치커리뿌리추출물(네덜란드산), 시클로덱스트린, 합성향료(오곡향), 이산화규소, 옥수수수염추출분말(국산), 우엉농축분말, 곡류혼합효소분말(찹쌀, 찰현미, 현미, 기장, 흑미, 수수, 찰흑미, 찰보리, 늘보리, 차조, 보리쌀, 황국균, 백태, 흑태, 적두, 율무)대두함유
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>영양정보</dt>
+							<dd>
+								<p>
+									1일 섭취량 당 함량 : 열량 15Kcal, 탄수화물 4g(1%), 단백질 0mg(0%), 지방 0g(0%), 나트륨 0mg(0%), Quercetin 3.66mg, Isorhamnetin 0.111mg, 비타민A 700ug RE(100%), 비타민E 11mg a-TE(100%), 판토텐산 5mg(100%), 비오틴 200ug(667%)
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>기능정보</dt>
+							<dd>
+								<p>
+									[시서스추출물] 체지방 감소에 도움을 줄 수 있음. [비타민A] 어두운 곳에서 시각 적응을 위해 필요, 피부와 점막을 형성하고 기능을 유지하는데 필요, 상피세포의 성장과 발달에 필요. [비타민E] 유해산소로부터 세포를 보호하는데 필요. [판토텐산] 지방, 탄수화물, 단백질 대사와 에너지 생성에 필요. [비오틴] 지방, 탄수화물, 단백질 대사와 에너지 생성에 필요.
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>섭취량, 섭취방법 및 섭취 시 주의사항</dt>
+							<dd>
+								<p>
+									[섭취량 및 섭취방법] 1일 2회, 1회 1포를 섭취하십시오. [섭취 시 주의사항] 섭취 시 목에 걸리거나 불편할 수 있으므로 반드시 물과 함께 섭취하십시오. 섭취 시 위장장애, 소화불량의 증상이 있을 경우 섭취를 중단하십시오. <br>개인의 신체 상태에 따라 이상 증상이 생길 경우 섭취를 중단하십시오. 섭취 전 제품에 이상이 있는 경우 섭취를 금하십시오. 특정원료 성분에 알레르기 체질은 원료 성분을 확인 후 섭취하십시오. 영유아, 어린이, 임산부 및 수유부는 섭취에 주의하십시오. 의약품(혈당강하제) 복용 시 섭취에 주의하십시오.
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>질병의 예방 및 치료를 위한 의약품이 <br>아니라는 내용의 표현</dt>
+							<dd>
+								<p>
+									본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다.
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>유전자재조합식품에 해당하는 경우의 표시</dt>
+							<dd>
+								<p>
+									해당없음
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>표시광고 사전심의필</dt>
+							<dd>
+								<p>
+									190210230
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>수입식품에 해당하는 경우 건강기능식품에 <br>관한 법률에 따른 수입신고 필함의 문구</dt>
+							<dd>
+								<p>
+									해당없음
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>소비자상담 관련 전화번호</dt>
+							<dd>
+								<p>
+									1644-7267
+								</p>
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 상품 상세 // -->
+
+		<!-- // 구매 정보 -->
+		<div class="tab-content detail-order">
+			<h3 class="hide">구매정보</h3>
+			<div class="order-guide accordion-list">
+				<dl class="item on">
+					<dt class="title">
+						<a href="#">배송안내</a>
+					</dt>
+					<dd class="content">
+						<ul class="bullet-list">
+							<li>- 배송비 : 기본배송료는 2,500원 입니다.<br>(도서,산간,오지 일부지역은 배송비가 추가될 수 있습니다)<br>10,000원 이상 구매시 무료배송입니다.</li>
+							<li>- 본 상품의 배송 가능일은 2~5일 입니다. 배송 가능일이란 본 상품을 주문 하신 고객님들께 상품 배송이 가능한 기간을 의미합니다. (단, 연휴 및 공휴일은 기간 계산시 제외하며 현금 주문일 경우 입금일 기준 입니다.)</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="item on">
+					<dt class="title">
+						<a href="#">교환 및 반품안내</a>
+					</dt>
+					<dd class="content">
+						<ul class="bullet-list">
+							<li>- 상품 개봉으로 상품 가치 훼손 시에는 상품수령후 7일 이내라도 교환 및 반품이 불가능합니다.</li>
+							<li>- 저단가 상품, 일부 특가 상품은 고객 변심에 의한 교환, 반품은 고객께서 배송비를 부담하셔야 합니다. (제품의 하자, 배송오류는 제외)</li>
+							<li>- 일부 특가 상품의 경우, 인수 후에는 제품 하자나 오배송의 경우를 제외한 고객님의 단순변심에 의한 교환, 반품이 불가능 할 수 있사오니, 각 상품의 상품상세정보를 꼭 참조하십시오.</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="item on">
+					<dt class="title">
+						<a href="#">환불안내</a>
+					</dt>
+					<dd class="content">
+						<ul class="bullet-list">
+							<li>- 상품 청약철회 가능기간은 상품 수령일로 부터 7일 이내입니다.</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="item on">
+					<dt class="title">
+						<a href="#">AS안내</a>
+					</dt>
+					<dd class="content">
+						<ul class="bullet-list">
+							<li>- 소비자분쟁해결 기준(공정거래위원회 고시)에 따라 피해를 보상받을 수 있습니다.</li>
+							<li>- A/S는 판매자에게 문의하시기 바랍니다.</li>
+						</ul>
+					</dd>
+				</dl>
+				<!-- // 구매정보가 없을때 -->
+				<dl>
+					<dt class="empty">구매정보가 없습니다.</dt>
+				</dl>
+				<!-- 구매정보가 없을때 // -->
+			</div>
+		</div>
+		<!-- 구매 정보 // -->
+
+		<!-- // 상품 리뷰 -->
+		<div class="tab-content detail-review">
+			<h3 class="hide">상품리뷰</h3>
+			<div class="grade-box">
+				<dl>
+					<dt>고객 만족도</dt>
+					<dd>
+						<span class="num">
+							4.0
+						</span>
+						<span class="hide">점</span>
+						<span class="grade-star">
+							<span class="fill" style="width: 80%;"></span>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="review-carousel">
+				<p class="title">BEST 상품리뷰</p>
+				<div class="list">
+					<div class="wrap swiper-container">
+						<ul class="inner swiper-wrapper">
+							{% for i in range(0, 2) %}
+							<li class="swiper-slide">
+								<div class="item">
+									<button type="button" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+										<div class="content">
+											<div class="info-wrap">
+												<div class="info">
+													<p class="grade-star h14">
+														<span class="fill" style="width: 80%;">4점</span>
+													</p>
+													<p class="name">
+														김*
+													</p>
+													<p class="date">
+														2021.04.16
+													</p>
+												</div>
+												<div class="thumb">
+													<div class="img">
+														<img src="{{base}}/img/mob/@dummy/review-thumb-img08.jpg" alt="리뷰 사진">
+													</div>
+													<span class="count">
+														999
+													</span>
+												</div>
+											</div>
+											<p class="desc">
+												8주 먹고 엄마 효* 보셨다기에 함께 나눠먹으려고
+												16주 주문했어용
+												행복하게 다**트 해서 여름 맞이 하겠습니다‼!!!
+											</p>
+										</div>
+									</button>
+								</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="item">
+									<button type="button" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+										<div class="content">
+											<div class="info-wrap">
+												<div class="info">
+													<p class="grade-star h14">
+														<span class="fill" style="width: 80%;">4점</span>
+													</p>
+													<p class="name">
+														김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*김*
+													</p>
+													<p class="date">
+														2021.04.16
+													</p>
+												</div>
+												<div class="thumb">
+													<div class="img">
+														<img src="{{base}}/img/mob/@dummy/review-thumb-img08.jpg" alt="리뷰 사진">
+													</div>
+													<span class="count">
+														999
+													</span>
+												</div>
+											</div>
+											<p class="desc">
+												8주 먹고 엄마 효* 보셨다기에 함께 나눠먹으려고
+												16주 주문했어용
+												행복하게 다**트 해서 여름 맞이 하겠습니다‼!!!
+												8주 먹고 엄마 효* 보셨다기에 함께 나눠먹으려고
+												16주 주문했어용
+												행복하게 다**트 해서 여름 맞이 하겠습니다‼!!!
+											</p>
+										</div>
+									</button>
+								</div>
+							</li>
+							{% endfor %}
+							<!-- // 등록된 리뷰가 없을때 -->
+							<!-- <li class="swiper-slide">
+								<p class="empty">
+									등록된 리뷰가 없습니다.
+								</p>
+							</li> -->
+							<!-- 등록된 리뷰가 없을때 // -->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="board-head">
+				<div class="wrap">
+					<div class="filter">
+						<button type="button" class="active">
+							전체
+							<span class="count">
+							153
+							</span>
+						</button>
+					</div>
+					<div class="action">
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">전체</option>
+								<option value="">일반리뷰</option>
+								<option value="">포토리뷰</option>
+								<option value="">한달리뷰</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+						<span class="select-wrap">
+							<select id="" name="" class="select">
+								<option value="">최신순</option>
+								<option value="">별점 높은 순</option>
+								<option value="">별점 낮은 순</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+				</div>
+				<div class="write-btn">
+					<button type="button" class="btn primary outline" onclick="UI.showLayerPop('',{ url: './popup-review-write.html'}); return false;">
+						<span>상품리뷰쓰기</span>
+					</button>
+				</div>
+			</div>
+			<div class="review-accordion">
+				{% for i in range(0, 2) %}
+				<dl class="item">
+					<dt class="head">
+						<div class="info">
+							<p class="grade-star h14">
+								<span class="fill" style="width: 80%;">
+								4점
+								</span>
+							</p>
+							<p class="con">
+								<span class="date">
+								2021.04.16
+								</span>
+								<span class="name">
+								박******************리
+								</span>
+							</p>
+						</div>
+						<!-- <div class="thumb-wrap">
+							<div class="swiper-container">
+								<ul class="swiper-wrapper">
+									{% for i in range(0, 7) %}
+										<li class="swiper-slide">
+											<button type="button" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+												<div class="img">
+													<img src="{{base}}/img/pc/@dummy/review-thumb-img08.jpg" alt="리뷰 사진">
+												</div>
+											</button>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div> -->
+						<p class="desc">
+							<span class="tag secondary">한달 리뷰</span>
+							분말형태로 4주분 섭취하고 주문 했어요.
+						</p>
+						<button type="button" class="btn-more">더보기</button>
+					</dt>
+					<dd class="body">
+						<!-- <div class="wrap">
+							<p class="title">
+								<span class="name">관리자</span>
+								<span class="date">2021.04.16
+								</span>
+							</p>
+							<p class="desc">
+								안녕하세요,스키니랩입니다. ^^ <br>고객님께서 남겨주신 소중한 후기 감사합니다. <br>스키니랩 듀얼액션 화이버 프리는 물없이 한입에 쭉! 짜서 드셔 주시면 됩니다 :) <br>스키니랩은 항상 고객님의 슬림한~ 매일을 응원하겠습니다! <br>저희 제품을 이용해 주셔서 감사합니다. 오늘도 즐거운 하루 되시길 바랍니다♡
+							</p>
+						</div> -->
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="head">
+						<div class="info">
+							<p class="grade-star h14">
+								<span class="fill" style="width: 80%;">
+									4점
+								</span>
+							</p>
+							<p class="con">
+								<span class="date">
+									2021.04.16
+								</span>
+								<span class="name">
+									박******************리
+								</span>
+							</p>
+						</div>
+						<div class="thumb-wrap">
+							<div class="swiper-container">
+								<ul class="swiper-wrapper">
+									{% for i in range(0, 7) %}
+									<li class="swiper-slide">
+										<button type="button" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+											<div class="img">
+												<img src="{{base}}/img/pc/@dummy/review-thumb-img08.jpg" alt="리뷰 사진">
+											</div>
+										</button>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<p class="desc">
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다.지난달부터 행복한 시서스다**트에 관심을 보이다가
+							드디어 독하게 다**트할려구 구매했습니다. 병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나
+							항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+							일단 다*8트 제품으로 믿음이 가게끔 임상결과지가 들어있어서 넘 좋았고 하루
+							한알도 거르지 않고 먹을수 있다는 장점!
+							일단 다*8트 제품으로 믿음이 가게끔 임상결과지가 들어있어서 넘 좋았고 하루
+							한알도 거르지 않고 먹을수 있다는 장점!
+						</p>
+						<button type="button" class="btn-more">더보기</button>
+					</dt>
+					<dd class="body">
+						<!-- <div class="wrap">
+							<p class="title">
+								<span class="name">관리자</span>
+								<span class="date">2021.04.16
+								</span>
+							</p>
+							<p class="desc">
+								안녕하세요,스키니랩입니다. ^^ <br>고객님께서 남겨주신 소중한 후기 감사합니다. <br>스키니랩 듀얼액션 화이버 프리는 물없이 한입에 쭉! 짜서 드셔 주시면 됩니다 :) <br>스키니랩은 항상 고객님의 슬림한~ 매일을 응원하겠습니다! <br>저희 제품을 이용해 주셔서 감사합니다. 오늘도 즐거운 하루 되시길 바랍니다♡
+							</p>
+						</div> -->
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="head">
+						<div class="info">
+							<p class="grade-star h14">
+								<span class="fill" style="width: 80%;">
+									4점
+								</span>
+							</p>
+							<p class="con">
+								<span class="date">
+									2021.04.16
+								</span>
+								<span class="name">
+									박******************리
+								</span>
+							</p>
+						</div>
+						<!-- <div class="thumb-wrap">
+							<div class="swiper-container">
+								<ul class="swiper-wrapper">
+									{% for i in range(0, 7) %}
+									<li class="swiper-slide">
+										<button type="button" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+											<div class="img">
+												<img src="{{base}}/img/pc/@dummy/review-thumb-img08.jpg" alt="리뷰 사진">
+											</div>
+										</button>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div> -->
+						<p class="desc">
+							병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 
+							항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+						</p>
+						<button type="button" class="btn-more">더보기</button>
+					</dt>
+					<dd class="body">
+						<div class="wrap">
+							<p class="title">
+								<span class="name">관리자</span>
+								<span class="date">2021.04.16
+								</span>
+							</p>
+							<p class="desc">
+								안녕하세요,스키니랩입니다. ^^ <br>고객님께서 남겨주신 소중한 후기 감사합니다. <br>스키니랩 듀얼액션 화이버 프리는 물없이 한입에 쭉! 짜서 드셔 주시면 됩니다 :) <br>스키니랩은 항상 고객님의 슬림한~ 매일을 응원하겠습니다! <br>저희 제품을 이용해 주셔서 감사합니다. 오늘도 즐거운 하루 되시길 바랍니다♡
+							</p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="head">
+						<div class="info">
+							<p class="grade-star h14">
+								<span class="fill" style="width: 80%;">
+									4점
+								</span>
+							</p>
+							<p class="con">
+								<span class="date">
+									2021.04.16
+								</span>
+								<span class="name">
+									박******************리
+								</span>
+							</p>
+						</div>
+						<div class="thumb-wrap">
+							<div class="swiper-container">
+								<ul class="swiper-wrapper">
+									{% for i in range(0, 7) %}
+									<li class="swiper-slide">
+										<button type="button" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+											<div class="img">
+												<img src="{{base}}/img/pc/@dummy/review-thumb-img08.jpg" alt="리뷰 사진">
+											</div>
+										</button>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<p class="desc">
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다.지난달부터 행복한 시서스다**트에 관심을 보이다가 
+							드디어 독하게 다**트할려구 구매했습니다. 병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 
+							항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+
+							일단 다*8트 제품으로 믿음이 가게끔 임상결과지가 들어있어서 넘 좋았고 하루 
+							한알도 거르지 않고 먹을수 있다는 장점!
+						</p>
+						<button type="button" class="btn-more">더보기</button>
+					</dt>
+					<dd class="body">
+						<div class="wrap">
+							<p class="title">
+								<span class="name">관리자</span>
+								<span class="date">2021.04.16
+								</span>
+							</p>
+							<p class="desc">
+								안녕하세요,스키니랩입니다. ^^ <br>고객님께서 남겨주신 소중한 후기 감사합니다. <br>스키니랩 듀얼액션 화이버 프리는 물없이 한입에 쭉! 짜서 드셔 주시면 됩니다 :) <br>스키니랩은 항상 고객님의 슬림한~ 매일을 응원하겠습니다! <br>저희 제품을 이용해 주셔서 감사합니다. 오늘도 즐거운 하루 되시길 바랍니다♡
+							</p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="head">
+						<div class="info">
+							<p class="grade-star h14">
+								<span class="fill" style="width: 80%;">
+									4점
+								</span>
+							</p>
+							<p class="con">
+								<span class="date">
+									2021.04.16
+								</span>
+								<span class="name">
+									박******************리
+								</span>
+							</p>
+						</div>
+						<div class="thumb-wrap">
+							<div class="swiper-container">
+								<ul class="swiper-wrapper">
+									{% for i in range(0, 7) %}
+									<li class="swiper-slide">
+										<button type="button" onclick="UI.showLayerPop('',{ url: './popup-review-detail.html'}); return false;">
+											<div class="img">
+												<img src="{{base}}/img/pc/@dummy/review-thumb-img08.jpg" alt="리뷰 사진">
+											</div>
+										</button>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<p class="desc">
+							요즘 들어서 급격히 늘어난 살들로 고민이였습니다.지난달부터 행복한 시서스다**트에 관심을 보이다가 
+							드디어 독하게 다**트할려구 구매했습니다. 병원다**트, 소식, 간식끊기,타제품섭취등 여러가지 해보았으나 
+							항상 효*는 미비하고 행복한시서스다**트처럼 임상결과에 대한 안내도 없는 제품들이였어요.
+
+							일단 다*8트 제품으로 믿음이 가게끔 임상결과지가 들어있어서 넘 좋았고 하루 
+							한알도 거르지 않고 먹을수 있다는 장점!
+						</p>
+						<button type="button" class="btn-more">더보기</button>
+					</dt>
+					<dd class="body">
+						<div class="wrap">
+							<p class="title">
+								<span class="name">관리자</span>
+								<span class="date">2021.04.16
+								</span>
+							</p>
+							<p class="desc">
+								안녕하세요,스키니랩입니다. ^^ <br>고객님께서 남겨주신 소중한 후기 감사합니다. <br>스키니랩 듀얼액션 화이버 프리는 물없이 한입에 쭉! 짜서 드셔 주시면 됩니다 :) <br>스키니랩은 항상 고객님의 슬림한~ 매일을 응원하겠습니다! <br>저희 제품을 이용해 주셔서 감사합니다. 오늘도 즐거운 하루 되시길 바랍니다♡
+							</p>
+						</div>
+					</dd>
+				</dl>
+				{% endfor %}
+				<div class="btn-group center">
+					<button type="button" class="btn-list-more">
+						더보기
+						<span class="icon-plus"></span>
+					</button>
+				</div>
+			</div>
+			<!-- // 등록된 상품리뷰가 없을떄 -->
+			<div class="result-txt is-error">
+				<p class="com-txt">등록된 상품리뷰가 없습니다.</p>
+				<button type="button" class="btn large primary" onclick="UI.showLayerPop('',{ url: './popup-review-write.html'}); return false;">
+					<span>상품리뷰 쓰기</span>
+				</button>
+			</div>
+			<!-- 등록된 상품리뷰가 없을떄 // -->
+		</div>
+		<!-- 상품 리뷰 // -->
+
+		<!-- // 상품 문의 -->
+		<div class="tab-content detail-inquire">
+			<h3 class="hide">상품문의</h3>
+			<div class="board-head">
+				<div class="action">
+					<!-- // 비회원 상품문의쓰기 -->
+					<button type="button" class="btn primary outline" onclick="UI.showLayerPop('',{ url: './popup-inquire-write-nonmember.html'}); return false;">
+						<span>상품문의쓰기</span>
+					</button>
+					<!-- 비회원 상품문의쓰기 // -->
+
+					<!-- // 회원 상품문의쓰기 -->
+					<!-- <button type="button" class="btn primary outline" onclick="UI.showLayerPop('',{ url: './popup-inquire-write-member.html'}); return false;">
+						<span>상품문의쓰기</span>
+					</button> -->
+					<!-- 회원 상품문의쓰기 // -->
+				</div>
+			</div>
+			<div class="accordion-list inquire-list">
+				<dl class="item">
+					<dt class="title">
+						<p class="info">
+							<span class="date">
+								2021.04.16
+							</span>
+							<span class="name">
+								김*
+							</span>
+							<span class="status primary">
+								답변완료
+							</span>
+						</p>
+						<!-- <p class="btn-area">
+							<button type="button" class="btn small outline2">
+								<span>수정</span>
+							</button>
+							<button type="button" class="btn small outline2">
+								<span>삭제</span>
+							</button>
+						</p> -->
+						<p class="txt">
+							<a href="#">
+								<span class="str">
+									[상품문의]
+								</span>
+								상품문의
+							</a>
+						</p>
+					</dt>
+					<dd class="content">
+						<!-- <div class="question">
+							<p class="title">
+								따듯한 물에 타먹어도 효능이 그대로 있나요?
+							</p>
+							<ul class="img-list">
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="answer">
+							<p class="date">
+								2021.04.16
+							</p>
+							<div class="body">
+								안녕하세요, 고객님.<br>
+								스키니랩입니다.<br>
+								<br>
+								문의 주신 두 제품 일일섭취량당 원재료 및 함량 동일하며,<br>
+								부원료 등 컨셉재료에서 차이가 있을 뿐 동일합니다. <br>
+								<br>
+								감사합니다.<br>
+								<br>
+								즐거운 하루 보내세요.
+							</div>
+						</div> -->
+						<dl class="lock">
+							<dt>
+								<label for="lock1">문의 비밀번호</label>
+							</dt>
+							<dd>
+								<input type="password" id="lock1" name="lock1" value="" placeholder="비밀번호 입력" class="text">
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+				{% for i in range(0, 2) %}
+				<dl class="item">
+					<dt class="title">
+						<p class="info">
+							<span class="date">
+								2021.04.16
+							</span>
+							<span class="name">
+								김*
+							</span>
+							<span class="status secondary">
+								답변대기
+							</span>
+						</p>
+						<p class="btn-area">
+							<button type="button" class="btn small outline2">
+								<span>수정</span>
+							</button>
+							<button type="button" class="btn small outline2">
+								<span>삭제</span>
+							</button>
+						</p>
+						<p class="txt">
+							<a href="#">
+								<span class="str">
+									[상품문의]
+								</span> 
+								따듯한 물에 타먹어도 효능이 그대로 있나요?
+							</a>
+						</p>
+					</dt>
+					<dd class="content">
+						<div class="question">
+							<p class="title">
+								따듯한 물에 타먹어도 효능이 그대로 있나요?
+							</p>
+							<ul class="img-list">
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- <div class="answer">
+							<p class="date">
+								2021.04.16
+							</p>
+							<div class="txt">
+								안녕하세요, 고객님.<br>
+								스키니랩입니다.<br>
+								<br>
+								문의 주신 두 제품 일일섭취량당 원재료 및 함량 동일하며,<br>
+								부원료 등 컨셉재료에서 차이가 있을 뿐 동일합니다. <br>
+								<br>
+								감사합니다.<br>
+								<br>
+								즐거운 하루 보내세요.
+							</div>
+						</div> -->
+						<!-- <dl class="lock">
+							<dt>
+								<label for="lock">문의 비밀번호</label>
+							</dt>
+							<dd>
+								<input type="password" id="lock" name="lock" value="" placeholder="비밀번호 입력" class="text">
+							</dd>
+						</dl> -->
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<p class="info">
+							<span class="date">
+								2021.04.16
+							</span>
+							<span class="name">
+								박******************리
+							</span>
+							<span class="status primary">
+								답변완료
+							</span>
+						</p>
+						<p class="btn-area">
+							<button type="button" class="btn small outline2">
+								<span>수정</span>
+							</button>
+							<button type="button" class="btn small outline2">
+								<span>삭제</span>
+							</button>
+						</p>
+						<p class="txt">
+							<a href="#">
+								<span class="str">
+									[상품문의]
+								</span>
+								상품문의
+							</a>
+						</p>
+					</dt>
+					<dd class="content">
+						<div class="question">
+							<p class="title">
+								따듯한 물에 타먹어도 효능이 그대로 있나요?
+							</p>
+							<ul class="img-list">
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="answer">
+							<p class="date">
+								2021.04.16
+							</p>
+							<div class="body">
+								안녕하세요, 고객님.<br>
+								스키니랩입니다.<br>
+								<br>
+								문의 주신 두 제품 일일섭취량당 원재료 및 함량 동일하며,<br>
+								부원료 등 컨셉재료에서 차이가 있을 뿐 동일합니다. <br>
+								<br>
+								감사합니다.<br>
+								<br>
+								즐거운 하루 보내세요.
+							</div>
+						</div>
+						<!-- <dl class="lock">
+							<dt>
+								<label for="lock1">문의 비밀번호</label>
+							</dt>
+							<dd>
+								<input type="password" id="lock1" name="lock1" value="" placeholder="비밀번호 입력" class="text">
+							</dd>
+						</dl> -->
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<p class="info">
+							<span class="date">
+								2021.04.16
+							</span>
+							<span class="name">
+								박******************리
+							</span>
+							<span class="status primary">
+								답변완료
+							</span>
+						</p>
+						<p class="btn-area">
+							<button type="button" class="btn small outline2">
+								<span>수정</span>
+							</button>
+							<button type="button" class="btn small outline2">
+								<span>삭제</span>
+							</button>
+						</p>
+						<p class="txt">
+							<a href="#">
+								<span class="str">
+									[상품문의]
+								</span>
+								상품문의
+							</a>
+						</p>
+					</dt>
+					<dd class="content">
+						<div class="question">
+							<p class="title">
+								따듯한 물에 타먹어도 효능이 그대로 있나요?
+							</p>
+							<ul class="img-list">
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="answer">
+							<p class="date">
+								2021.04.16
+							</p>
+							<div class="body">
+								안녕하세요, 고객님.<br>
+								스키니랩입니다.<br>
+								<br>
+								문의 주신 두 제품 일일섭취량당 원재료 및 함량 동일하며,<br>
+								부원료 등 컨셉재료에서 차이가 있을 뿐 동일합니다. <br>
+								<br>
+								감사합니다.<br>
+								<br>
+								즐거운 하루 보내세요.
+							</div>
+						</div>
+						<!-- <dl class="lock">
+							<dt>
+								<label for="lock3">문의 비밀번호</label>
+							</dt>
+							<dd>
+								<input type="password" id="lock3" name="lock3" value="" placeholder="비밀번호 입력" class="text">
+							</dd>
+						</dl> -->
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<p class="info">
+							<span class="date">
+								2021.04.16
+							</span>
+							<span class="name">
+								김*
+							</span>
+							<span class="status primary">
+								답변완료
+							</span>
+						</p>
+						<p class="btn-area">
+							<button type="button" class="btn small outline2">
+								<span>수정</span>
+							</button>
+							<button type="button" class="btn small outline2">
+								<span>삭제</span>
+							</button>
+						</p>
+						<p class="txt">
+							<a href="#">
+								<span class="str">
+									[상품문의]
+								</span>
+								상품문의
+							</a>
+						</p>
+					</dt>
+					<dd class="content">
+						<div class="question">
+							<p class="title">
+								따듯한 물에 타먹어도 효능이 그대로 있나요?
+							</p>
+							<ul class="img-list">
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="answer">
+							<p class="date">
+								2021.04.16
+							</p>
+							<div class="body">
+								안녕하세요, 고객님.<br>
+								스키니랩입니다.<br>
+								<br>
+								문의 주신 두 제품 일일섭취량당 원재료 및 함량 동일하며,<br>
+								부원료 등 컨셉재료에서 차이가 있을 뿐 동일합니다. <br>
+								<br>
+								감사합니다.<br>
+								<br>
+								즐거운 하루 보내세요.
+							</div>
+						</div>
+						<!-- <dl class="lock">
+							<dt>
+								<label for="lock4">문의 비밀번호</label>
+							</dt>
+							<dd>
+								<input type="password" id="lock4" name="lock4" value="" placeholder="비밀번호 입력" class="text">
+							</dd>
+						</dl> -->
+					</dd>
+				</dl>
+				{% endfor %}
+				<dl class="item">
+					<dt class="title">
+						<p class="info">
+							<span class="date">
+								2021.04.16
+							</span>
+							<span class="name">
+								김*
+							</span>
+							<span class="status primary">
+								답변완료
+							</span>
+						</p>
+						<!-- <p class="btn-area">
+							<button type="button" class="btn small outline2">
+								<span>수정</span>
+							</button>
+							<button type="button" class="btn small outline2">
+								<span>삭제</span>
+							</button>
+						</p> -->
+						<p class="txt">
+							<a href="#">
+								<span class="str">
+									[상품문의]
+								</span>
+								상품문의
+							</a>
+						</p>
+					</dt>
+					<dd class="content">
+						<!-- <div class="question">
+							<p class="title">
+								따듯한 물에 타먹어도 효능이 그대로 있나요?
+							</p>
+							<ul class="img-list">
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+								<li>
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/product-detail-img01.jpg" alt="문의 이미지1">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="answer">
+							<p class="date">
+								2021.04.16
+							</p>
+							<div class="body">
+								안녕하세요, 고객님.<br>
+								스키니랩입니다.<br>
+								<br>
+								문의 주신 두 제품 일일섭취량당 원재료 및 함량 동일하며,<br>
+								부원료 등 컨셉재료에서 차이가 있을 뿐 동일합니다. <br>
+								<br>
+								감사합니다.<br>
+								<br>
+								즐거운 하루 보내세요.
+							</div>
+						</div> -->
+						<dl class="lock">
+							<dt>
+								<label for="lock2">문의 비밀번호</label>
+							</dt>
+							<dd>
+								<input type="password" id="lock2" name="lock2" value="" placeholder="비밀번호 입력" class="text">
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+				<div class="btn-group center">
+					<button type="button" class="btn-list-more">
+						더보기
+						<span class="icon-plus"></span>
+					</button>
+				</div>				
+			</div>
+			<!-- // 등록된 상품문의가 없을떄 -->
+			<div class="result-txt is-error">
+				<p class="com-txt">등록된 상품문의가 없습니다.</p>
+				<!-- // 비회원 상품문의쓰기 -->
+				<button type="button" class="btn large primary" onclick="UI.showLayerPop('',{ url: './popup-inquire-write-nonmember.html'}); return false;">
+					<span>상품문의쓰기</span>
+				</button>
+				<!-- 비회원 상품문의쓰기 // -->
+
+				<!-- // 회원 상품문의쓰기 -->
+				<!-- <button type="button" class="btn large primary" onclick="UI.showLayerPop('',{ url: './popup-inquire-write-member.html'}); return false;">
+					<span>상품문의쓰기</span>
+				</button> -->
+				<!-- 회원 상품문의쓰기 // -->
+			</div>
+			<!-- 등록된 상품문의가 없을떄 // -->
+		</div>
+		<!-- 상품 문의 // -->
+	</div>
+	<!-- 탭 컨텐츠 // -->
+
+	<!-- 비주얼 영역 // -->
+	<div class="detail-visual scroll-check">
+		<div class="bg">
+			<div class="inner"></div>
+		</div>
+		<p class="wrap">
+			<span class="desc">
+				<span class="line">
+					<span class="inner">다이어트를<br>넘어,</span>
+				</span>
+				<span class="line">
+					<span class="inner">자기관리의<br>시작.</span>
+				</span>
+			</span>
+			<span class="model">
+				<span class="inner"></span>
+			</span>
+			<span class="title">
+				<span class="inner">skinnylab</span>
+			</span>
+			<span class="txt">
+				<span class="line">
+					<span class="inner">&lt;다이어트는 다 똑같다?&gt;가 아닌 개인마다 다른 다이어트,</span>
+				</span>
+				<span class="line">
+					<span class="inner">맞춤 다이어트를 제공하는 다이어트 전문 브랜드입니다.</span>
+				</span>
+			</span>
+		</p>
+	</div>
+	<!-- // 비주얼 영역 -->
+
+	<!-- 관련제품 영역 -->
+	<div class="recommend-product">
+		<div class="head">
+			<h3 class="title">관련제품</h3>
+		</div>
+		<div class="swiper-container">
+			<ul class="goods-list2 swiper-wrapper">
+				{% for i in range(0, 3) %}
+				<li class="swiper-slide">
+					<div class="item">
+						<a href="../product/product-detail.html">
+							<figure class="prod-col-item recom">
+								<div class="img">
+									<img src="{{base}}/img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<div class="info">
+										<div class="btn-area">
+											<a href="#" class="btn-cart">장바구니넣기</a>
+											<a href="#" class="btn-gift">선물보내기</a>
+										</div>
+										<div class="title">
+											스키니랩 시네트롤 자몽 오렌지 다이어트
+											스키니랩 시네트롤 자몽 오렌지 다이어트
+										</div>
+										<p class="hashtag">
+											<span>#2021신제품</span>
+											<span>#다이어트</span>
+											<span>#활활태울</span>
+											<span>#용기가필요한 순간</span>
+										</p>
+									</div>
+									<div class="price">
+										<div class="nonmember">
+											<span class="tit">비회원가</span>
+											<span>321,000원</span>
+										</div>
+										<div class="member">
+											<p class="tit">회원가</p>
+											<div class="inner-box">
+												<span><strong class="discount">67%</strong></span>
+												<span class="num"><strong>128,600</strong>원</span>
+											</div>
+										</div>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				<li class="swiper-slide">
+					<div class="item">
+						<a href="../product/product-detail.html">
+							<figure class="prod-col-item recom">
+								<div class="img">
+									<img src="{{base}}/img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+								</div>
+								<figcaption class="content">
+									<div class="info">
+										<div class="btn-area">
+											<a href="#" class="btn-cart">장바구니넣기</a>
+											<a href="#" class="btn-gift">선물보내기</a>
+										</div>
+										<div class="title">
+											스키니랩 시네트롤
+											자몽 오렌지 다이어트
+										</div>
+										<p class="hashtag">
+											<span>#2021신제품</span>
+											<span>#다이어트</span>
+											<span>#활활태울</span>
+											<span>#용기가필요한 순간</span>
+										</p>
+									</div>
+									<div class="price">
+										<div class="nonmember">
+											<span class="tit">비회원가</span>
+											<span>321,000원</span>
+										</div>
+										<div class="member">
+											<p class="tit">회원가</p>
+											<div class="inner-box">
+												<span><strong class="discount">67%</strong></span>
+												<span class="num"><strong>128,600</strong>원</span>
+											</div>
+										</div>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- // 등록된 상품이 없을때 -->
+				<!-- <li class="swiper-slide">
+					<p class="empty">
+						등록된 상품이<br>없습니다.
+					</p>
+				</li> -->
+				<!-- 등록된 상품이 없을때 // -->
+			</ul>
+		</div>
+	</div>
+	<!--// 관련제품 영역 -->
+
+	<!-- 관련 배너 영역 // -->
+	<div class="recommend-banner">
+		<div class="head">
+			<h3 class="title">관련기획전</h3>
+		</div>
+		<div class="list swiper-container">
+			<ul class="wrap swiper-wrapper">
+				{% for i in range(0, 4) %}
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/mob/@dummy/recommend-banner-img01.jpg" alt="배너1">
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+				<!-- // 예정된 기획전이 없을때 -->
+				<!-- <li class="swiper-slide">
+					<p class="empty">
+						예정된 기획전이 없습니다.
+					</p>
+				</li> -->
+				<!-- 예정된 기획전이 없을때 // -->
+			</ul>
+		</div>
+	</div>
+	<!-- // 관련 배너 영역 -->
+
+	<!-- 스와이프 영역// -->
+	<div class="sticky-bottom">
+		<div class="content-area">
+			<button type="button" class="btn-open" onclick="$(this).parents('.sticky-bottom').find('.content-area, .con-detail, .btn-open').toggleClass('on'); return false;">결제 예정 정보 버튼</button>
+			<div class="order-info">
+				<div class="con-detail bill">
+					<div class="con-wrap">
+						<span class="delivery">
+							<span>
+								<input type="radio" id="orderdelivery1" name="orderDelivery" class="radio" checked>
+								<label for="orderdelivery1">일반배송</label>
+							</span>
+							<span>
+								<input type="radio" id="orderdelivery2" name="orderDelivery" class="radio">
+								<label for="orderdelivery2">정기배송</label>
+							</span>
+						</span>
+						<div class="sub-option">
+							<div class="result">
+								<div class="item">
+									<p class="tit">상품명 노출 상품명 모두 노출</p>
+									<div class="counting">
+										<span class="input-amount-counting">
+											<label for="counting2" class="hide">수량 선택</label>
+											<button type="button" class="btn-counting-minus">수량 한개 삭제</button>
+											<input type="number" id="counting2" name="counting" value="5" class="count">
+											<button type="button" class="btn-counting-plus">수량 한개 추가</button>
+										</span>
+									</div>
+									<p class="price">
+										<span class="num">128,600</span>
+										<span class="won">원</span>
+									</p>
+									<!-- <button type="button" class="btn-close">추가옵션 삭제</button> -->
+								</div>
+								<!-- <div class="item">
+									<p class="tit">상품명 노출 상품명 모두 노출</p>
+									<div class="counting">
+										<span class="input-amount-counting">
+											<label for="counting3" class="hide">수량 선택</label>
+											<button type="button" class="btn-counting-minus">수량 한개 삭제</button>
+											<input type="number" id="counting3" name="counting" value="5" class="count">
+											<button type="button" class="btn-counting-plus">수량 한개 추가</button>
+										</span>
+									</div>
+									<p class="price">
+										<span class="num">128,600</span>
+										<span class="won">원</span>
+									</p>
+									<button type="button" class="btn-close">추가옵션 삭제</button>
+								</div> -->
+							</div>
+						</div>
+					</div>
+					<div class="total">
+						<span class="text">총</span>
+						<p class="price">
+							<span class="num">128,600</span>
+							<span class="won">원</span>
+						</p>
+					</div>
+					<p class="noti">※ 네이버 N페이 서비스를 이용 시 <span class="secondary">스키니랩 회원혜택은 미적용</span> 됩니다.</p>
+					<div class="naverpay-box">
+
+						<!-- 네이버 페이 api 영역 // -->
+						<script type="text/javascript" src="https://test-pay.naver.com/customer/js/mobile/naverPayButton.js" charset="UTF-8"></script>
+						<script type="text/javascript" >
+						//<![CDATA[
+							naver.NaverPayButton.apply({
+								TYPE: "C", // 버튼 모음 종류 설정
+								COLOR: 1, // 버튼 모음의 색 설정
+								COUNT: 2, // 버튼 개수 설정. 구매하기 버튼만 있으면(장바구니 페이지) 1, 관심상품 버튼도 있으면(상품 상세 페이지) 2를 입력.
+								ENABLE: "Y", // 품절 등의 이유로 버튼 모음을 비활성화할 때에는 "N" 입력
+								"":""
+							});
+						//]]>
+						</script>
+						<!-- // 네이버 페이 api 영역 -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="btn-area">
+			<a href="#" class="btn-cart">장바구니넣기</a>
+			<a href="#" class="btn-gift">선물보내기</a>
+			<a href="#" class="btn large primary motion buy">
+				<span>바로구매</span>
+			</a>
+		</div>
+	</div>
+	<!-- //스와이프 영역 -->
+</div>
+
+<script>
+	$(function() {
+		// 제품 상세 슬라이드
+		var detailWrapSwiper = new Swiper('.detail-wrap .swiper-container', {
+			speed: 1000,
+			loop: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+		});
+
+		// 탭 컨텐츠
+		$('.tab-group-wrap .tab-menu li').click(function(){
+			$('html, body').animate({
+				scrollTop : $('.tab-group-wrap').offset().top - $('.page-header').height()
+			}, 400);
+		})
+
+		// 탭 컨텐츠 고정
+		$(window).scroll(function() {
+			var nowScroll = $(window).scrollTop()
+			var $tabGroup = $('.tab-group-wrap')
+			var $header = $('.page-header')
+			var tabGroupTop = $tabGroup.offset().top
+			var isFixed = tabGroupTop - $header.height()
+
+			if( nowScroll >= isFixed ){
+				$tabGroup.find('.tab-menu .wrap').addClass('is-fixed')
+			}else {
+				$tabGroup.find('.tab-menu .wrap').removeClass('is-fixed')
+			}
+		});
+
+		// 스크롤 시점 모션
+		var $window = $(window);
+		var $target = $('.scroll-check');
+
+		function scrollHandle() {
+			var winHeight = $window.height();
+			var scrollTop = $window.scrollTop();
+
+			$target.each(function() {
+				var $this = $(this);
+				var ratio = 1 - (Number($this.data('ratio')) || 50) / 100;
+				var isViewportIn = scrollTop > ($this.offset().top - winHeight) + (winHeight * ratio);
+
+				$this.toggleClass('in', isViewportIn);
+			});
+		}
+
+		$target.addClass('ready');
+		$window.on('resize scroll', scrollHandle);
+		scrollHandle();
+
+		// 관련제품 슬라이드
+		var recomCarouselSwiper = new Swiper('.recommend-product .swiper-container', {
+			allowTouchMove: true,
+			slidesPerView: 1.8,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 20,
+			breakpoints: {
+				768: {
+					slidesPerView: 3.5,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 5,
+				}
+			}
+		});
+
+		// 관련기획전 캐러셀
+		var recommendBannerSwiper = new Swiper('.recommend-banner .swiper-container', {
+			allowTouchMove: true,
+			slidesPerView: 1.1,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 10,
+			breakpoints: {
+				768: {
+					slidesPerView: 2.3,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 3,
+				}
+			}
+		});
+
+		// 상품리뷰 캐러셀
+		var reviewCarousel = new Swiper(".review-carousel .list .wrap", {
+			allowTouchMove: true,
+			slidesPerView: 1.15,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 10,
+			observer: true,
+			observeParents: true,
+			breakpoints: {
+				768: {
+					slidesPerView: 2.3,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 3,
+				}
+			}
+		});
+
+		// 상품리뷰 아코디언
+		var reviewAccordionThumb = new Swiper(".review-accordion .thumb-wrap .swiper-container", {
+			allowTouchMove: true,
+			slidesPerView: 3.8,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 10,
+			observer: true,
+			observeParents: true,
+			breakpoints: {
+				768: {
+					slidesPerView: 5,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 8,
+				}
+			}
+		});
+
+		$('.tab-menu .review').click(function(){
+			var $reviewAccordion = $('.review-accordion');
+
+			// 더보기버튼 비노출
+			$reviewAccordion.find('.item').map(function(index, el) {
+				var $el = $(el);
+				var lessHeight = $el.find('.head .desc').height();
+				var moreHeight;
+				
+				$el.addClass('on');
+
+				moreHeight = $el.find('.head .desc').height();
+
+				$el.removeClass('on');
+
+				if(lessHeight === moreHeight) $el.find('.btn-more').remove();
+				if(lessHeight === moreHeight) $el.find('.head').css("padding-bottom", "15px");
+			});
+
+			// 리뷰 내용 펼치기
+			$reviewAccordion.off('click').on('click', '.btn-more, .head .desc', function() {
+				var $tg = $(this);
+				var $tgHead = $tg.parents('.head');
+				var $tgBody = $tgHead.next();
+				var $tgItem = $tg.parents('.item');
+				var $tgMoreBtn = $tgHead.find('.btn-more')
+				var isActive = $tgBody.is(':visible');
+
+				if(isActive) {
+					$tgBody.slideUp(200);
+					$tgItem.removeClass('on');
+					$tgMoreBtn.removeClass('active');
+					$tgMoreBtn.text('더보기');
+				} else {
+					$tgBody.slideDown(200);
+					$tgItem.addClass('on');
+					$tgMoreBtn.addClass('active');
+					$tgMoreBtn.text('닫기');
+				}
+
+				if($tgMoreBtn.length == false) {
+					$tgItem.removeClass('on');
+					$tgBody.hide();
+				}
+			});
+		});
+
+		// 옵션 드롭다운
+		$('.option-dropdown').off('click').on('click', '.title button', function() {
+			var $tg = $(this);
+			var $tgTitle = $tg.parents('.title');
+			var $tgContent = $tgTitle.next('.list');
+			var isActive = $tgContent.is(':visible');
+
+			if(isActive) {
+				$tgContent.slideUp(200);
+				$tg.parents('.option-dropdown').removeClass('on');
+			} else {
+				$tgContent.slideDown(200);
+				$tg.parents('.option-dropdown').addClass('on');
+			}
+		});
+	});
+
+	var tag = document.createElement('script');
+
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	var player;
+	function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+			height: '360',
+			width: '640',
+			videoId: '9HSzGGgN0Z8',
+			events: {
+				'onReady': onPlayerReady,
+				'onStateChange': onPlayerStateChange
+			},
+			rel: '1'
+		});
+	}
+
+	function onPlayerReady(event) {
+		event.target.playVideo();
+	}
+
+	var done = false;
+	function onPlayerStateChange(event) {
+		if (event.data == YT.PlayerState.ENDED) {
+			done = true;
+			player.stopVideo();
+			player.seekTo(0, true);
+			return;
+		}
+	}
+
+	function playVideo() {
+		player.playVideo();
+	}
+
+	function stopVideo() {
+		player.stopVideo();
+	}
+</script>
+{%- endblock %}

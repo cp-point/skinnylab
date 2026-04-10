@@ -1,0 +1,160 @@
+{%
+	set pageInfo = {
+		section: 'intro',
+		title: '브랜드소개',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header intro">
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/customer.html') }}
+</header>
+<div id="content-main" class="common-container intro-muscle">
+	<div class="intro-brand">
+		<h2 class="page-title">브랜드 소개</h2>
+		<div class="brand-film">
+			<p class="title">
+				MUSCLETECH&#8482;
+			</p>
+			<p class="desc">
+				<span class="sub">World No.1 Protein</span>
+				북미 프로틴 전문 브랜드<span class="icon-flag"></span><strong>머슬텍, 국내 상륙!</strong>
+			</p>
+			<div class="video">
+				<p class="title">
+					<span class="str">BRAND FILM</span>
+					머슬텍 글로벌 앰베서더,<strong> 헨리 카빌(Henry Cavil)</strong>
+				</p>
+				<div class="embed-container">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/AEUyR2Rv1IQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+
+		<div class="info">
+			<div class="text-wrap">
+				<p class="title">
+					ABOUT<br>MUSCLETECH&#8482;
+				</p>
+				<p class="desc">
+					27년간 세계 최정상의 프로틴 브랜드로,
+				</p>
+				<p class="desc">
+					지속적인 퀄리티 혁신을 통해<br>
+					머슬텍만의 스페셜리티 포뮬라를 구축.
+				</p>
+				<p class="desc">
+					현재 140개국 이상 유통되며<br>
+					<strong>전세계적으로 인정 받고 있는 글로벌 브랜드</strong>
+				</p>
+			</div>
+			<div class="img">
+				<img src="{{base}}/img/mob/intro/m_muscle01.png" alt="MUSCLETECH">
+			</div>
+		</div>
+
+		<div class="review">
+			<p class="text">
+				수년간 전 세계 퍼포머들에게<br>
+				사랑받은 머슬텍,<br>
+				<span>경험해 본 이들이 증명합니다.</span>
+			</p>
+			<ul class="list">
+				<li>
+					<p class="title">
+						맛이 훌륭합니다. 나이트로텍 너무 좋아요!<br>
+						<span>TASTE GREAT LOVE NITRO TECH</span>
+					</p>
+					<div class="cont">
+						<p class="ko">
+							아마 가장 맛있는 프로틴일 거예요.<br>
+							부드럽고 풀림도 좋구요.<br>
+							1주일 섭취하면서 헬스를 통한 근력 회복이<br>
+							어느 정도 차이가 있는지 체감할 수 있었어요.<br>
+							머슬텍은 10년 동안 업계를 선도해왔습니다&#183;&#183;&#183;
+						</p>
+						<p class="en">
+							Best tasting protein yet.<br>
+							Smooth and mixes well.<br>
+							I could tell a difference in my recovery<br>
+							in the gym after the 1st week.<br>
+							Muscle Tech has been leading the way for decade …
+						</p>
+						<span class="end">
+							ZachT<br>
+							Spartanburg, SC
+						</span>
+					</div>
+				</li>
+				<li>
+					<p class="title">
+						맘에 쏙 들어요<br>
+						<span>BLOWED MY MIND</span>
+					</p>
+					<div class="cont">
+						<p class="ko">
+							머슬텍은 신제품을 통해 스스로의 역량을<br>
+							뛰어넘었습니다.<br>
+							제품의 맛이 뛰어나서 새로운 것을<br>
+							시도해 보고 싶은 사람에게 적극 추천합니다.
+						</p>
+						<p class="en">
+							Well Muscletech has outdone themselves this time.<br>
+							This product by far lives up to its taste I highly<br>
+							recommend this product to anyone wanting to try<br>
+							something new.
+						</p>
+						<span class="end">
+							MountainMan<br>
+							Pearisburg, VA
+						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="product">
+			<p class="title">PROTEIN<br>LINE-UP</p>
+			<ul class="list">
+				<li>
+					<div class="wrap">
+						<img src="{{base}}/img/mob/intro/m_muscle02-1.png" alt="8-아워 프로틴">
+					</div>
+					<div class="text-wrap">
+						<span class="title">8-HOUR PROTEIN<span>8-아워 프로틴</span></span>
+						<img src="{{base}}/img/mob/intro/m_muscle02-4.png" alt="하드코어한 바디 빌딩을 위한 단백질 지속 공급">
+					</div>
+				</li>
+				<li>
+					<div class="wrap">
+						<img src="{{base}}/img/mob/intro/m_muscle02-2.png" alt="8-아워 프로틴">
+					</div>
+					<div class="text-wrap">
+						<span class="title">NITROTECH WHEY GOLD<span>나이트로텍 웨이 골드</span></span>
+						<img src="{{base}}/img/mob/intro/m_muscle02-5.png" alt="헬시 플레저를 위한 최적의 단백질">
+					</div>
+				</li>
+				<li>
+					<div class="wrap">
+						<img src="{{base}}/img/mob/intro/m_muscle02-3.png" alt="8-아워 프로틴">
+					</div>
+					<div class="text-wrap">
+						<span class="title">CLEAR WHEY PROTEIN<span>클리어 웨이 프로틴</span></span>
+						<img src="{{base}}/img/mob/intro/m_muscle02-6.png" alt="초심자도 부담없이 상큼하게 마시는 데일리 프로틴">
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="logo-video">
+			<img src="{{base}}/img/pc/intro/muscle04.gif" alt="">
+		</div>
+	</div>
+</div>
+{%- endblock %}

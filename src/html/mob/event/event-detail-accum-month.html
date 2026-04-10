@@ -1,0 +1,205 @@
+{%
+	set pageInfo = {
+		section: 'event',
+		title: '이벤트',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-detail">
+	<div class="page-head">
+		<h2 class="hide">이벤트</h2>
+	</div>
+
+	<div class="container-wrap">
+		<div class="board-detail hidden-title">
+			<dl class="row">
+				<dt>제목</dt>
+				<dd>
+					<div class="title">
+						<h3 class="desc">
+							출첵하고 마일리지도 받고!
+						</h3>
+						<p class="date">
+							2021-01-01 ~ 2021-12-31
+						</p>
+						<button type="button" class="btn-share"></button>
+					</div>
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>내용</dt>
+				<dd>
+					<div class="detail-content">
+						<!-- HTML 영역 // -->
+						<div class="html-area">
+							HTML 내용
+						</div>
+						<!-- // HTML 영역 -->
+
+						<!-- 출석체크 영역 // -->
+						<div class="stamp-area">
+							<div class="stamp-info">
+								<div class="info-attend">
+									<dl class="current">
+										<dt>출석일</dt>
+										<dd>01</dd>
+									</dl>
+									<dl class="total">
+										<dt class="hide">전체일수</dt>
+										<dd>
+											30
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="stamp-list month">
+								<div class="wrap">
+									<label class="check-stamp big"><input type="checkbox" checked disabled>
+										<span class="item">
+											<span class="count">
+												<span class="num">
+													1
+												</span>
+												<span class="hide">번째</span>
+											</span>
+										</span>
+									</label>
+									<label class="check-stamp big"><input type="checkbox">
+										<span class="item">
+											<span class="count">
+												<span class="num">
+													2
+												</span>
+												<span class="hide">번째</span>
+											</span>
+										</span>
+									</label>
+									{% for i in range(3, 30) %}
+									<label class="check-stamp big"><input type="checkbox" disabled>
+										<span class="item">
+											<span class="count">
+												<span class="num">
+													{{i}}
+												</span>
+												<span class="hide">번째</span>
+											</span>
+										</span>
+									</label>
+									{% endfor %}
+									<label class="check-stamp big complete"><input type="checkbox" disabled>
+										<span class="item">
+											<span class="count">
+												<span class="num">
+													30
+												</span>
+												<span class="hide">번째</span>
+											</span>
+										</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<!-- // 출석체크 영역 -->
+
+						<!-- 문구 영역 // -->
+						<div class="detail-noti">
+							<p class="title">유의사항</p>
+							<ul class="com-txt5 dot-list">
+								<li>해당 이벤트는 스키니랩몰 고객 전용입니다.</li>
+								<li>ID당 1회 참여 가능합니다.</li>
+								<li>1회 출석 완료 후 다시 출석체크는 불가능합니다.</li>
+								<li>주관사의 사정으로 변경/중단 될 수 있습니다.</li>
+							</ul>
+						</div>
+						<!-- // 문구 영역 -->
+					</div>
+				</dd>
+			</dl>
+		</div>
+
+		{{ include('../promotion/@inc/reply-list.html') }}
+	</div>
+
+	<div class="recommend-banner2">
+		<div class="head">
+			<p class="title">다른 이벤트도 둘러보세요!</p>
+		</div>
+		<div class="list swiper-container">
+			<ul class="wrap swiper-wrapper">
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/mob/@dummy/event-thumb-img01.jpg" alt="배너1">
+						</div>
+					</a>
+				</li>
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/mob/@dummy/event-thumb-img02.jpg" alt="배너2">
+						</div>
+					</a>
+				</li>
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/mob/@dummy/event-thumb-img03.jpg" alt="배너2">
+						</div>
+					</a>
+				</li>
+				<!-- // 다른 게시물이 없을때 -->
+				<!-- <li class="swiper-slide">
+					<p class="empty">
+						다른 게시물이 없습니다.
+					</p>
+				</li> -->
+				<!-- 다른 게시물이 없을때 // -->
+			</ul>
+		</div>
+	</div>
+
+	{{ include('../promotion/@inc/popup-share.html') }}
+</div>
+
+<script>
+	$(function() {
+		var recommendBannerSwiper = new Swiper('.recommend-banner2 .swiper-container', {
+			allowTouchMove: true,
+			spaceBetween: 10,
+		});
+
+		$('.btn-share').on('click',function() {
+			var scrollTop = $(window).scrollTop();
+			$('.share-wrap').addClass('is-open');
+			$('html')
+				.data('scrollTop', scrollTop)
+				.css({ 'margin-top': -scrollTop, 'height': document.body.scrollHeight })
+				.addClass('scroll-fixed');
+		});
+		$('.btn-close').on('click',function() {
+			$('.share-wrap').removeClass('is-open');
+			$('html').removeClass('scroll-fixed').css({
+				'margin-top': '',
+				'height': ''
+			});
+		});
+
+		$('.check-stamp').on('click', 'input[type=checkbox]', function(e) {
+			$checkStamp = $(e.target);
+
+			if(!$checkStamp.is(':checked')) return false;
+		});
+	});
+</script>
+{%- endblock %}

@@ -1,0 +1,94 @@
+.user-agreement {
+	> .title {
+		@include font(24px,$bold);
+	}
+	& > .wrap {
+		padding-bottom: 20px;
+		border-top: 1px solid $primary-color;
+		border-bottom: 1px solid $primary-color;
+	}
+
+	.all-check {
+		box-sizing: border-box;
+		min-height: 50px;
+		padding: 10px 0 0;
+		input.check + label {
+			color: $primary-color;
+			font-weight: $bold;
+		}
+	}
+
+	.row {
+		box-sizing: border-box;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		min-height: 50px;
+		padding: 8px 0;
+
+		&:not(:first-child) { border-top: 1px solid #eaeaeb; }
+
+		.title {
+			label { margin: 4px 0; }
+		}
+
+		input.check + label {
+			@include font(14px,$regular);
+			color: $primary-color;
+			padding-top: 2px;
+		}
+
+		.content {
+			margin-left: auto;
+
+			&.block { width: 100%; }
+			
+		}
+
+		.info {
+			padding: 20px;
+			background-color: #f4f4f6;
+			position: relative;
+			bottom: -10px;
+		}
+
+		.list {
+			padding-left: 10px;
+
+			li {
+				color: $text-color2;
+				@include font(14px,$regular);
+				text-indent: -13px;
+				letter-spacing: -.03rem;
+				&:not(:first-child) { margin-top: 2px; }
+			}
+		}
+
+		.desc {
+			margin-top: 30px;
+			color: $text-color2;
+			@include font(14px,$regular);
+
+			&:first-child { margin-top: 0; }
+		}
+
+		.caution {
+			padding-left: 18px;
+			margin-top: 10px;
+			color: $text-color2;
+			@include font(14px,$regular);
+			position: relative;
+
+			&:after {
+				content: '※';
+				display: block;
+				color: $text-color2;
+				font-weight: 500;
+				font-size: 14px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+}

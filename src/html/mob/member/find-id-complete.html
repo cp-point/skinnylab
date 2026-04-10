@@ -1,0 +1,55 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-member-find" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-member-find">
+		<div class="header">
+			<h1 class="title">아이디 찾기 완료</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="head">
+				<div class="page-top-desc">
+					<div class="com-txt">
+						<strong>스**랩</strong> 님의 아이디는<br>
+						<strong class="find-id">sk******************************************************************************************b@abc.com</strong>
+					</div>
+				</div>
+			</div>
+			<div class="body">
+				<div class="form-layout large">
+					<dl class="row">
+						<dt class="title">
+							<label for="userId1">아이디(이메일)</label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del"> 
+								<input type="text" id="userId1" name="userId1" placeholder="아이디 (이메일) 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">아이디(이메일)를 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userPw1">비밀번호</label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del"> 
+								<input type="password" id="userPw1" name="userPw1" placeholder="비밀번호 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">비밀번호를 입력해 주세요.</p> <!-- 오류 문구 노출 -->
+						</dd>
+					</dl>
+				</div>		
+			</div>
+			<div class="foot">
+				<div class="btn-group col">
+					<button type="button" class="btn large primary block">로그인</button>
+					<a href="./find-pw.html" class="btn large outline primary block">비밀번호 찾기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

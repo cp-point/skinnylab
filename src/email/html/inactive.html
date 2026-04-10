@@ -1,0 +1,87 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '1년 이상 미접속으로 인한 휴면회원 전환 사전 안내 드립니다.',
+		BI: 'logo2'
+	}
+%}
+
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<tr>
+	<td>
+		<table class="email-common-container" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width: 60px;"></td>
+				<td class="container-wrap">
+					<table class="page-content" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="txt com-txt1">
+								1년 이상 미접속으로 인한<br>
+								휴면회원 전환 사전 안내 드립니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt2">
+								안녕하세요. <strong class="color01">브랜명</strong>입니다.<br>
+								항상 <strong class="color01">브랜명</strong>을 사용해 주시는 회원님께 감사드립니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 30px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt4">
+								정보통신망법 이용촉진 및 정보보호 등에 관한 법률에 의거하여,<br> 
+								1년 이상 쇼핑몰에 접속하지 않으신 회원님들의<br>
+								개인정보를 보호하고자 휴면회원 전환 및 개인정보를 안전하게 분리 보관할 예정입니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 58px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>처리 예정 내역</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 200px;">처리 예정일</th>
+										<td style="width: 480px;">
+											<strong>{처리예정일}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 200px;">대상 아이디</th>
+										<td style="width: 480px;">
+											<strong>{대상아이디}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 200px;">분리 저장/관리 항목</th>
+										<td style="width: 480px;">
+											<strong>회원가입 또는 개인정보 수정, 주문 시 입력한 개인 정보</strong>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td style="width: 60px;"></td>
+			</tr>
+			{{ include('./notice.html') }}
+		</table>
+	</td>
+</tr>
+{%- endblock %}

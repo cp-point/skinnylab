@@ -1,0 +1,165 @@
+{%
+	set pageInfo = {
+		section: 'order',
+		title: '주문/결제',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-form">
+	<div class="result-txt is-gift">
+		<p class="noti-msg">
+			<span class="underline">
+				홍길동님
+			</span>
+			이 선물을 보내주셨어요!
+		</p>
+		<p class="com-txt4">
+			<span>
+				4월 15일
+			</span>
+			까지 선물 받을 배송정보 미 입력 시<br>
+			선물이 자동 취소됩니다.
+		</p>
+		<div class="paper-confetti">
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+			<div class="confetti"></div>
+		</div>
+	</div>
+	<div class="gift-card-receive">
+		<figure>
+			<div class="bg" style="background-image: url('{{base}}/img/mob/@dummy/bg-gift01.jpg');"></div>
+			<div class="img">
+				<img src="{{base}}/img/mob/@dummy/goods-thumb-img360x360.jpg" alt="상품이미지">
+			</div>
+			<figcaption class="content">
+				<div class="txt">
+					다이어트도 너랑나랑 같이 하자!!<br>
+					이번 다이어트는 성공적으로~~
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+	<div class="accordion-list order-accordion">
+		<dl class="item is-open">
+			<dt class="title">
+				<span class="tit">주문 상품</span>
+			</dt>
+			<dd class="content">
+				<ul class="prod-detail-list">
+					<li>
+						<figure class="prod-row-item">
+							<span class="img">
+								<a href="#"><img src="{{base}}/img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지"></a>
+							</span>
+							<figcaption class="content">
+								<div class="title">
+									가르시니아 14포 x 2박스 4주분  + 석류 콜라겐  14포 x 2박스
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>
+										선택된 옵션명 정보 모두 노출
+									</dd>
+								</dl>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+		<dl class="item is-open">
+			<dt class="title">
+				<span class="tit">선물 받을 주소</span>
+				<span class="btn-group">
+					<a href="#" class="btn small outline2">
+						<span>로그인</span>
+					</a>
+				</span>
+			</dt>
+			<dd class="content">
+				<div class="form-layout gift-form">
+					<dl class="row horizontal">
+						<dt class="title">
+							<span>받는 분</span>
+						</dt>
+						<dd class="content">
+							<span class="input-gift-receive-info">
+								<span>
+									홍길동
+								</span>
+								<span>
+									010-1234-5678
+								</span>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<span>배송 주소<span class="emphasis">*</span></span>
+						</dt>
+						<dd class="content">
+							<span class="input-address-wrap">
+								<span class="input-address">
+									<label for="userZipcode" class="hide">우편번호 입력</label>
+									<input type="text" id="userZipcode" name="userZipcode" placeholder="" class="text block is-invalid" disabled>
+									<button type="button" class="btn outline thin primary">
+										<span>우편번호 찾기</span>
+									</button>
+								</span>
+								<span class="input-address">
+									<span class="txt-with-del">
+										<label for="userAddress2">상세주소 입력</label>
+										<input type="text" name="userAddress2" id="userAddress2" placeholder="상세주소 입력" class="text block is-invalid">
+									</span>
+								</span>
+								<span class="input-address">
+									<label for="deliveryMsg">배송메시지 선택</label>
+									<span class="select-wrap">
+										<select id="deliveryMsg" name="deliveryMsg" class="select">
+											<option value="">배송메시지 선택</option>
+											<option value="">직접 받겠습니다.</option>
+											<option value="">문 앞에 놓아주세요.</option>
+											<option value="">경비실에 맡겨주세요.</option>
+											<option value="">택배함에 넣어주세요.</option>
+											<option value="">배송 전 연락해주세요.</option>
+											<option value="">직접 입력</option>
+										</select>
+										<span class="arrow"></span>
+									</span>
+									<input type="text" name="deliveryMsg" id="deliveryMsg2" placeholder="배송메세지 직접 입력" class="text block">
+								</span>
+								<span class="error-msg is-invalid">우편번호를 검색해주세요.</span>
+								<span class="error-msg is-invalid">상세주소를 입력해주세요.</span>
+							</span>
+						</dd>
+					</dl>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	<div class="agreement-area">
+		<dl class="item">
+			<dt class="title">
+				약관동의<span class="emphasis">*</span>
+			</dt>
+			<dd class="content">
+				<label class="check"><input type="checkbox"> <span>주문할 상품정보에 동의하십니까?<br>(전자상거래법 제 8조 2항)</span></label>
+			</dd>
+			<dd class="content">
+				<label class="check"><input type="checkbox"> <span>비회원 개인정보 수집·이용 동의</span></label>
+				<button type="button" class="btn small outline2">내용보기</button>
+			</dd>
+		</dl>
+	</div>
+</div>
+{%- endblock %}

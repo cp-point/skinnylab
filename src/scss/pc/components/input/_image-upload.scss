@@ -1,0 +1,86 @@
+
+.image-upload {
+	margin-top: 20px;
+
+	.list {
+		display: flex;
+
+		li {
+			margin-right: 10px;
+
+			&:last-child { margin-right: 0; }
+
+			.file {
+				position: relative;
+
+				.input {
+					@include size(100px,100px);
+					background: url('@@img/pc/common/btn-add-image.png') no-repeat center center #f4f4f6;
+
+					.input-file {
+						@include size(100%,100%);
+						text-indent: -99999px;
+						cursor: pointer;
+					}
+
+					.btn-upload {
+						position: absolute;
+						top: -99999px;
+					}
+				}
+
+				.result {
+					position: absolute;
+					top: 0;
+					left: 0;
+					@include size(100px,100px);
+					background-color: #f4f4f6;
+
+					.content {
+						@include size(100%,100%);
+						position: relative;
+
+						img {
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+
+					.btn-del {
+						position: absolute;
+						top: 6px;
+						right: 6px;
+						@include size(24px,24px);
+						background: url('@@img/pc/common/btn-clear01.png') no-repeat;
+						background-size: 24px 24px;
+						text-indent: -99999px;
+					}
+				}
+			}
+		}
+	}
+
+	.add-explain {
+		margin: 10px 0 15px;
+	
+		li {
+			position: relative;
+			padding-left: 10px;
+			@include font(14px,$medium);
+			color: #828287;
+
+			&::before {
+				@include before-after();
+				@include size(3px,3px);
+				border-radius: 50%;
+				background-color: $primary-color;
+				left: 0;
+				top: 49%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

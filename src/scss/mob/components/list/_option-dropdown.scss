@@ -1,0 +1,119 @@
+.option-dropdown {
+	width: 100%;
+	position: relative;
+	z-index: 5;
+
+	&.on {
+		.title {
+			button {
+				&:after {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+
+	&.ellipsis {
+		.title {
+			button {
+				min-height: auto;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				word-wrap: break-word;
+			}
+		}
+	}
+
+	& > .wrap {  }
+
+	.title {
+		button {
+			box-sizing: border-box;
+			display: block;
+			width: 100%;
+			padding: 7px 34px 6px 12px;
+			border: 1px solid $line-color2;
+			color: $text-color1;
+			font-weight: 700;
+			font-size: 14px;
+			text-align: left;
+			word-wrap: break-word;
+			position: relative;
+
+			&:after {
+				content: '';
+				display: block;
+				width: 16px;
+				height: 12px;
+				margin-top: -8px;
+				background: url('@@img/pc/common/arrow-select.png') no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 50%;
+				right: 12px;
+				transform: rotate(0);
+				transition: all .2s;
+			}
+		}
+	}
+
+	.list {
+		box-sizing: border-box;
+		display: none;
+		width: 100%;
+		background-color: #fff;
+		border: 1px solid #d5d5d7;
+		border-top: 0;
+		position: absolute;
+		top: calc(100% - 1px);
+		left: 0;
+
+		& > .inner {
+			height: 225px;
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+
+		input {
+			position: absolute;
+			left: -9999px;
+
+			&:checked {
+				& + label { background-color: #f4f4f6; }
+			}
+
+			&:disabled {
+				& + label {
+					padding-right: 45px;
+					color: $text-color3;
+					position: relative;
+
+					&:after {
+						content: '품절';
+						display: block;
+						color: $secondary-color1;
+						font-weight: 700;
+						font-size: 14px;
+						position: absolute;
+						top: 32px;
+						right: 9px;
+					}
+				}
+			}
+		}
+
+		label {
+			display: block;
+			padding: 12px 12px;
+			color: $text-color1;
+			font-weight: 500;
+			font-size: 14px;
+			letter-spacing: -.05em;
+			word-wrap: break-word;
+			cursor: pointer;
+
+			&:hover { text-decoration: underline; }
+		}
+	}
+}

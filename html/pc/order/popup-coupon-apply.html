@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1280">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/pc/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/ui-common-pc.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- 옵션클래스: full, full-scroll, hidden-title -->
+	<article id="popup-refund-register" class="common-popup">
+		<div class="common-popup-inner popup-coupon-apply">
+			<div class="header">
+				<h1 class="title">쿠폰 조회/변경</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+			</div>
+			<div class="container">
+				<div class="body">
+					<ul class="coupon-select">
+						<li>
+							<!-- 적용안함쿠폰 .item에 .none클랙스명 추가 요청 -->
+							<div class="item none">
+								<input type="radio" id="couponnone" name="coupon" checked>
+								<label for="couponnone">
+									<span class="box">
+										<span class="title">
+											쿠폰 적용 안함
+										</span>
+									</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<input type="radio" id="coupon1" name="coupon">
+								<label for="coupon1">
+									<span class="box">
+										<span class="title">
+											시서스 상품 전 품목 <br>
+											1천원 할인 쿠폰
+										</span>
+										<span class="date">
+											<span class="due">
+												2021.04.11 까지
+											</span>
+											<span class="dday">
+												D-2일 남음
+											</span>
+										</span>
+									</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<input type="radio" id="coupon2" name="coupon">
+								<label for="coupon2">
+									<span class="box">
+										<span class="title">
+											스페셜 장바구니 쿠폰
+										</span>
+										<span class="desc">
+											5만원 이상 구매 시
+										</span>
+										<span class="date">
+											<span class="due">
+												2021.04.11 까지
+											</span>
+											<span class="dday">
+												D-21일 남음
+											</span>
+										</span>
+									</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<input type="radio" id="coupon3" name="coupon" disabled>
+								<label for="coupon3">
+									<span class="box">
+										<span class="title">
+											스페셜 장바구니 쿠폰
+										</span>
+										<span class="desc">
+											5만원 이상 구매 시
+										</span>
+										<span class="date">
+											<span class="due">
+												2021.04.11 까지
+											</span>
+											<span class="dday">
+												D-21일 남음
+											</span>
+										</span>
+									</span>
+								</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="foot">
+					<div class="btn-area">
+						<button class="btn large outline primary js-pop-close">취소</button>
+						<button class="btn large primary">적용하기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- // content -->
+</body>
+</html>

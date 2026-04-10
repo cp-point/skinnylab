@@ -1,0 +1,50 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '페이지 타이틀',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-list">
+	
+	<div class="container-wrap">
+		<button type="button" onclick="UI.showLayerPop('',{ url: './popup.html'}); return false;" class="btn primary">외부팝업 열기</button>
+		<button type="button" onclick="UI.showLayerPop('#popupTest'); return false;" class="btn primary">내부팝업 열기</button>
+	</div>
+
+	<article id="popupTest" class="common-popup" data-motion-in="400" data-motion-out="200" style="display: none;">
+		<div class="common-popup-inner popup-test">
+			<div class="header">
+				<h1 class="title">페이지 내부 팝업</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button><!-- .js-pop-close 팝업 닫기 기능 -->
+			</div>
+			<div class="container">
+				<div class="head">
+				</div>
+				<div class="body">
+					페이지 내부 팝업
+				</div>
+				<div class="foot">
+					<div class="btn-area">
+						<button type="button" class="btn outline thin primary js-pop-close">취소</button> <!-- .js-pop-close 팝업 닫기 기능 -->
+						<button type="button" class="btn primary">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+
+</div>
+<!-- // Content -->
+{%- endblock %}

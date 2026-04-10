@@ -1,0 +1,442 @@
+// 게시판 공통
+.section-bulletin {
+	.common-pagination {
+		margin: 60px 0 20px;
+		padding-top: 50px;
+		border-top: 1px solid $bg-color2;
+	}
+	.empty {
+		width: 1200px;
+		margin: 0 auto;
+		padding: 300px 0;
+		&::before {
+			display: block;
+			content: '';
+			width: 100px;
+			height: 100px;
+			margin: 0 auto 25px;
+			background: url('@@img/pc/common/icon-error-2.png') no-repeat;
+			background-size: cover;
+		}
+		p {
+			@include font(28px,$extra-bold,1);
+			color: $text-color1;
+			text-align: center;
+		}
+	}
+}
+
+// 상품후기 목록
+.bulletin-review-list {
+	width: 100%;
+	padding: 80px 0 150px;
+
+	.html-area {
+		padding: 60px 170px;
+
+		& > * {
+			width: 100%;
+			vertical-align: top;
+		}
+
+		a {
+			display: block;
+		}
+
+		img {
+			width: 860px !important;
+			height: auto !important;
+		}
+	}
+
+	.tab-content {
+		box-sizing: border-box;
+		width: 1280px;
+		padding: 0 40px;
+		margin: 0 auto;
+	}
+
+	.page-head { border-bottom: 1px solid $line-color1; }
+
+	.board-head {
+		margin: 80px 0 40px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $primary-color;
+	}
+
+	.best-review {
+		margin-top: 145px;
+		padding: 90px 0 60px;
+		background-color: #fff4f2;
+
+		& > .wrap {
+			position: relative;
+			width: 1280px;
+			padding: 0 40px;
+			margin: 0 auto;
+			box-sizing: border-box;
+			& > .title {
+				display: inline-block;
+				position: absolute;
+				width: 540px;
+				top: -185px;
+				@include font(54px, $extra-bold, 1.2);
+				letter-spacing: -.025em;
+			}
+		}
+		.action {
+			display: flex;
+			position: absolute;
+			top: -100px;
+			right: 0;
+			transform: translateY(-100%);
+		}
+
+		.pagination {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 90px;
+			font-size: 0;
+			position: relative;
+			top: auto;
+			bottom: auto;
+			left: auto;
+			right: auto;
+
+			.swiper-pagination-current {
+				color: $text-color1;
+				font-weight: 800;
+				font-size: 20px;
+			}
+
+			.swiper-pagination-total {
+				color: #d5d5d7;
+				font-weight: 800;
+				font-size: 20px;
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				width: 9px;
+				height: 0;
+				max-height: 0;
+				padding-top: 14px;
+				background: url('@@img/pc/common/icon-slash.png') no-repeat;
+				background-size: cover;
+				overflow: hidden;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+
+		.play {
+			display: flex;
+			align-items: center;
+			margin-left: 35px;
+
+			.btn-autoplay {
+				width: 25px;
+				height: 0;
+				max-height: 0;
+				padding-top: 25px;
+				margin-left: 14px;
+				overflow: hidden;
+				position: relative;
+
+				&:hover {
+					&:after { background-image: url('@@img/pc/common/btn-carousel-pause-active.png'); }
+				}
+
+				&:after {
+					content: '';
+					width: 100%;
+					height: 100%;
+					background: url('@@img/pc/common/btn-carousel-pause.png') no-repeat;
+					background-size: 9px 14px;
+					background-position: center center;
+					position: absolute;
+					top: 0;
+					left: 0;
+					transition: all .2s;
+				}
+
+				&.is-stop {
+					&:hover:after { background-image: url('@@img/pc/common/btn-carousel-play-active.png'); }
+
+					&:after { background-image: url('@@img/pc/common/btn-carousel-play.png'); }
+				}
+			}
+
+			.btn-prev {
+				width: 25px;
+				height: 0;
+				max-height: 0;
+				padding-top: 25px;
+				margin: 0;
+				overflow: hidden;
+				position: relative;
+				top: auto;
+				bottom: auto;
+				left: auto;
+				right: auto;
+
+				&:hover {
+					&:after { background-image: url('@@img/pc/common/btn-carousel-prev-active.png'); }
+				}
+
+				&:after {
+					content: '';
+					width: 100%;
+					height: 100%;
+					background: url('@@img/pc/common/btn-carousel-prev.png') no-repeat;
+					background-size: 9px 14px;
+					background-position: center center;
+					position: absolute;
+					top: 0;
+					left: 0;
+					transition: all .2s;
+				}
+			}
+
+			.btn-next {
+				width: 25px;
+				height: 0;
+				max-height: 0;
+				padding-top: 25px;
+				margin: 0 0 0 14px;
+				overflow: hidden;
+				position: relative;
+				top: auto;
+				bottom: auto;
+				left: auto;
+				right: auto;
+
+				&:hover {
+					&:after { background-image: url('@@img/pc/common/btn-carousel-next-active.png'); }
+				}
+
+				&:after {
+					content: '';
+					width: 100%;
+					height: 100%;
+					background: url('@@img/pc/common/btn-carousel-next.png') no-repeat;
+					background-size: 9px 14px;
+					background-position: center center;
+					position: absolute;
+					top: 0;
+					left: 0;
+					transition: all .2s;
+				}
+			}
+		}
+		.review-list-swiper {
+			width: 100%;
+			height: 610px;
+
+			.review-list {
+				&.type2 {
+					flex-wrap: nowrap;
+
+					li.wrap {
+						&:nth-child(n+5) { margin-top: 0; }
+						&:nth-child(n+4) { margin-top: 0; }
+						&:not(:nth-child(4n-3)) { margin-left: 0; }
+						&:not(:nth-child(3n-2)) { margin-left: 0; }
+					}
+
+					.review-item {
+						.content {
+							.point {
+								.star-bg {
+									width: 133px;
+									height: 20px;
+									background-image: url('@@img/pc/common/range-slider-star-bg.png');
+
+									.star {
+										background-image: url('@@img/pc/common/range-slider-star.png');
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.review-list {
+			&.type2 {
+				width: 1200px;
+				margin: 0 auto;
+				li.wrap {
+					&:nth-child(n+5) { margin-top: 0; }
+					&:nth-child(n+4) { margin-top: 60px; }
+					&:not(:nth-child(4n-3)) { margin-left: 0; }
+					&:not(:nth-child(3n-2)) { margin-left: 90px; }
+				}
+				.review-item {
+					width: 340px;
+					.img {
+						width: 340px;
+						height: 340px;
+						.photo-num {
+							top: 310px;
+							@include font(16px, $regular);
+						}
+						.flag {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							position: absolute;
+							width: 80px;
+							height: 95px;
+							padding: 16px 12px 16px;
+							box-sizing: border-box;
+							top: 0;
+							left: 0;
+							@include font(16px, $bold,1);
+							text-align: center;
+							background: url('@@img/pc/common/icon-flag.png') center center no-repeat;
+							color: white;
+							.num { 
+								display: block;
+								margin-top: 5px;
+								@include font(32px, $extra-bold);
+								
+							}
+						}
+					}
+					.content {
+						display: flex;
+						flex-direction: column;
+						min-height: 260px;
+						.point {
+							@include font(24px, $extra-bold);
+							em {
+								margin-right: 15px;
+							}
+							.star-bg {
+								width: 120px;
+								height: 20px;
+							}
+						}
+						.title {
+							width: 340px;
+							height: 66px;
+							@include font(24px,$bold,1.4);
+						}
+						.dec {
+							height: 71px;
+							white-space: normal !important;
+						}
+						.name {
+							height: 22px;
+							margin-top: auto;
+							@include font(14px,$light);
+							color: $text-color3;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+	.tab-menu { margin-top: 120px; }
+
+	.review-list {
+		.review-item {
+			.content {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				min-height: 250px;
+
+				.title { height: 56px; }
+
+				.desc {
+					height: 71px;
+					white-space: normal !important;
+				}
+
+				.name {
+					height: 20px;
+					margin-top: auto;
+				}
+			}
+		}
+	}
+}
+
+// 스키니랩TV 목록
+.bulletin-tv-list {
+	width: 100%;
+	padding: 80px 0 150px;
+	.page-head {
+		width: 1280px;
+		padding: 0 40px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+	.tab-group-wrap {
+		.tab-menu { margin-bottom: 80px; }
+		.tab-content {
+			width: 1280px;
+			padding: 0 40px;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
+
+	}
+	.board-head {
+		margin: 0 0 40px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $primary-color;
+	}
+	.event-list {
+		.item {
+			.content {
+				.title { width: 375px; }
+			}
+		}
+	}
+}
+
+// 스키니랩TV 상세
+.bulletin-tv-detail {
+	width: 100%;
+	padding: 80px 0 150px;
+
+	.board-head {
+		margin: 80px 0 30px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $primary-color;
+	}
+
+	.board-detail {
+		& > .row {
+			& > dd {
+				.title {
+					.desc {
+						width: 100%;
+						height: 36px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+				}
+
+				.board-head { width: 100%; }
+			}
+		}
+	}
+
+	.tab-menu {
+		& + .container-wrap { margin-top: 80px; }
+	}
+}

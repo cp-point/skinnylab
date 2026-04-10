@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* stylelint-disable */
+body { box-sizing: border-box; width: 1520px; margin: 0 auto; padding-left: 170px; padding-right: 20px; background: #fff; }
+.component-page-head { margin: 30px 0; font-family: 'Helvetica Neue','Helvetica',sans-serif; font-weight: bold; font-size: 30px; color: #1f2f3d; }
+.component-head { margin: 55px 0 20px; font-family: 'Helvetica Neue','Helvetica',sans-serif; font-weight: bold; font-size: 22px; color: #1f2f3d; }
+.component-sub-head { line-height: 34px; padding: 15px 10px 0; font-family: 'Helvetica Neue','Helvetica',sans-serif; font-weight: bold; font-size: 14px; color: #8697a5; }
+.component-head + .component-sub-head { padding-top: 0; }
+.component-sub-head:before { content: '· '; display: inline; }
+.component-sub-head span { font-weight: normal; }
+.component-desc { margin: 1em 0; line-height: 1.5; font-family: 'Helvetica Neue','Helvetica',sans-serif; font-size: 14px; color: #1f2f3d; }
+.demo-block	{ border: 1px solid #ebebeb; border-radius: 3px; transition: .2s; }
+.demo-block:hover { box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5); }
+.demo-block:last-child { margin-bottom: 100px; }
+.demo-contents { flex: 1; padding: 24px; }
+.demo-contents:after { content: ''; display: block; clear: both; }
+.demo-contents:not(:first-child) { border-top: 1px solid #eff2f6; }
+.demo-contents.gray { background: #f5f5f5; box-shadow: inset 0 0 0 4px #fff; }
+.demo-contents.dark { background: #666; box-shadow: inset 0 0 0 4px #fff; }
+.demo-contents .code-title { margin: -8px 0 24px; padding: 0 0 10px; font-family: 'Helvetica Neue','Helvetica',sans-serif; font-weight: bold; font-size: 12px; color: #8697a5; border-bottom: 1px solid #8697a5; }
+.demo-contents.dark .code-title { color: #fff; border-color: #fff; }
+.demo-block xmp { display: none; margin: 0; padding: 15px; font-size: 12px; background: #fcfcfc; overflow: auto; }
+.demo-block pre { display: none; margin: 0; padding: 0; line-height: 1.3; font-size: 12px; overflow: auto; }
+.demo-block pre code { padding: 0 15px 15px; }
+.demo-block code .code-indent { display: inline-block; width: 30px; font-size: 0; }
+.code-grid { display: -ms-flexbox; display: flex; }
+.code-grid:not(:first-child) { border-top: 1px solid #eff2f6; }
+.code-grid:after { content: ''; display: block; clear: both; }
+.code-grid-col { box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex: 1; flex: 1; -ms-flex-direction: column; flex-direction: column; min-width: calc(100% / 4); max-width: 50%; }
+.code-grid-col:not(:first-child) { border-left: 1px solid #eff2f6; }
+.code-grid-col:first-child:last-child { border-right: 1px solid #eff2f6; }
+.btn-expand { display: block; width: 100%; margin-top: auto; border-top: 1px solid #eaeefb; height: 34px; box-sizing: border-box; background-color: #fff; text-align: center; font-size: 12px; color: #d3dce6; cursor: pointer; position: relative;  }
+.btn-expand:before { content: '▼'; display: inline; margin-right: 5px; transition: all .2s; }
+.btn-expand span { opacity: 0; margin-right: -30px; transition: all .2s; }
+.btn-expand:hover { color: #409eff; background-color: #f9fafc; }
+.btn-expand:hover span { font-size: 12px; opacity: 1; margin-right: 0; }
+.btn-expand.on:before { content: '▲'; }
+.btn-expand.on span { font-size: 12px; opacity: 1; margin-right: 0; }
+.component-nav { box-sizing: border-box; width: 150px; height: 100%; padding: 42px 10px 30px; font-family: 'Helvetica Neue','Helvetica',sans-serif; background: #fff; border: 1px solid #ebebeb; box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5); position: fixed; top: 0; left: 0; z-index: 99999; overflow: auto; overflow-x: hidden; }
+.component-nav .t { margin-bottom: 15px; font-weight: 700; font-size: 16px; color: #333; }
+.component-nav a { display: block; padding: 10px 0 10px 10px; font-size: 14px; color: #444; position: relative; }
+.component-nav li.on a { color: #409eff; }
+.component-nav li.on a:after { content: '▶'; display: inline; font-size: 10px; position: absolute; top: 10px; right: 5px; }

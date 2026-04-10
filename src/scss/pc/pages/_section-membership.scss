@@ -1,0 +1,440 @@
+.section-membership {
+	.page-sub-head {
+		margin-top: 80px;
+		&:first-child { margin-top: 0; }
+
+		.title { @include font(32px,$extra-bold,1.2); }
+	}
+
+	.page-sub-noti {
+		margin-top: 12px;
+		& > .title {
+			min-width: 100px;
+			width: 100px;
+			padding-right: 0;
+		}
+		&::before {
+			display: none;
+		}
+	}
+
+	.grade-benefit {
+		margin-top: 28px;
+		.table-wrap { border-bottom: 1px solid $bg-color2; }
+		.table-layout {
+			& > tbody {
+				& > tr {
+					&:first-child {
+						height: 120px;
+					}
+					& > th {
+						background-color: #fff;
+						@include font(16px, $regular);
+					}
+					& > td {
+						padding: 16px;
+						@include font(16px, $bold);
+						.str { 
+							@include font(24px, $bold);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.membership-intro {
+	.page-head {
+		.title {
+			margin-bottom: 45px;
+			letter-spacing: -.025em;
+		}
+	}
+	.intro-box {
+		display: flex;
+		align-items: center;
+		width: 1200px;
+		min-height: 100px;
+		margin-top: 15px;
+		padding: 30px;
+		box-sizing: border-box;
+		background-color: $bg-color1;
+		.desc {
+			width: 600px;
+			margin-left: 10px;
+			@include font(20px, $bold);
+			letter-spacing: -.03em;
+			.str {
+				color: $secondary-color1;
+			}
+		}
+		.btn-area {
+			margin-left: auto;
+			.btn {
+				width: 120px;
+				background-color: #fff;
+
+				&:hover { color: $text-color1; }
+			}
+		}
+		
+	}
+	.new-benefit {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 25px;
+		.info {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 400px;
+			min-height: 420px;
+			border: solid 1px #f4f4f6;
+			&:not(:first-child) { left: -1px; }
+			& + .info {
+				border-left: 1px solid transparent;
+			}
+			& > .inner {
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				padding: 92px 30px 70px;
+				position: relative;
+			}
+			.title {
+				display: block;
+				margin-bottom: 9px;
+				@include font(24px, $extra-bold);
+				color: $text-color1;
+				letter-spacing: -.025em;
+				text-align: center;
+				word-wrap: break-word;
+			}
+			.desc {
+				margin-bottom: 12px;
+				color: $text-color1;
+				font-weight: 500;
+				font-size: 16px;
+				text-align: center;
+				letter-spacing: -.025em;
+
+				.str { font-weight: 800; }
+			}
+			.add {
+				margin-top: 4px;
+				margin-bottom: 12px;
+				color: #828287;
+				font-weight: 500;
+				font-size: 14px;
+				text-align: center;
+				letter-spacing: -.025em;
+			}
+			.tag {
+				box-sizing: border-box;
+				display: inline-block;
+				position: absolute;
+				min-width: 100px;
+				height: 60px;
+				padding: 0 20px;
+				top: 0;
+				left: 0;
+				background-color: #353537;
+				@include font(20px, $bold);
+				text-align: center;
+				line-height: 60px;
+				letter-spacing: -.05em;
+				color: #fff;
+			}
+			.box {
+				box-sizing: border-box;
+				display: inline-flex;
+				flex-direction: column;
+				justify-content: center;
+				min-width: 192px;
+				min-height: 100px;
+				padding: 20px 30px;
+				margin: auto auto 0;
+				border: 1px solid $primary-color;
+				position: relative;
+
+				&.mileage {
+					display: block;
+					padding: 20px 30px;
+					border: 1px solid $primary-color;
+					box-sizing: border-box;
+					text-align: center;
+					.txt {
+						@include font(40px, $bold);
+						color: $text-color1;
+						text-align: center;
+						word-wrap: break-word;
+					}
+				}
+				&.coupon {
+					min-width: 214px;
+					&:before {
+						content: '';
+						display: block;
+						width: 16px;
+						height: 48px;
+						background: #fff url('@@img/pc/mypage/coupon-bg-left.png') no-repeat;
+						background-size: cover;
+						position: absolute;
+						top: 50%;
+						left: -1px;
+						transform: translateY(-50%);
+					}
+					&:after {
+						content: '';
+						display: block;
+						width: 16px;
+						height: 48px;
+						background: #fff url('@@img/pc/mypage/coupon-bg-right.png') no-repeat;
+						background-size: cover;
+						position: absolute;
+						top: 50%;
+						right: -1px;
+						transform: translateY(-50%);
+					}
+				}
+				.data {
+					display: flex;
+					justify-content: center;
+					width: 100%;
+					line-height: 1;
+					color: $secondary-color1;
+					font-weight: 700;
+					font-size: 34px;
+					letter-spacing: -.04em;
+					text-align: center;
+					word-wrap: break-word;
+					word-break: break-all;
+				}
+				.txt {
+					color: $text-color1;
+					font-weight: 600;
+					font-size: 18.5px;
+					text-align: center;
+					word-wrap: break-word;
+					word-break: break-all;
+				}
+			}
+			.tit {
+				margin-top: 14px;
+				@include font(16px, $bold);
+				color: $text-color1;
+				word-wrap: break-word;
+			}
+			.con {
+				@include font(16px, $regular);
+				color: $text-color1;
+				font-size: 14px;
+				word-wrap: break-word;
+			}
+			.noti {
+				@include font(14px, $regular);
+				margin-top: 10px;
+				color: #828287;
+			}
+			dd {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.membership-benefit {
+	width: 100%;
+	padding: 80px 0 150px;
+
+	.grade-intro {
+		.title {
+			box-sizing: border-box;
+			width: 1280px;
+			padding: 0 40px;
+			margin: 0 auto 30px;
+			color: $text-color1;
+			font-weight: 700;
+			font-size: 32px;
+
+			.grade {
+				color: $secondary-color1;
+			}
+		}
+
+		.content {
+			background-color: #f4f4f6;
+
+			& > .wrap {
+				box-sizing: border-box;
+				width: 1200px;
+				padding: 70px 0 50px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+
+			.list {
+				display: flex;
+				width: 100%;
+				position: relative;
+
+				&:before {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 4px;
+					background-color: #d5d5d7;
+					border-radius: 2px;
+					position: absolute;
+					top: 68px;
+					left: 0;
+					z-index: 1;
+				}
+
+				dd {
+					width: calc(100% / 6);
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					&.active {
+						position: relative;
+						&:after {
+							content: '';
+							display: block;
+							width: 1200px;
+							height: 4px;
+							background-color: $primary-color;
+							border-radius: 2px;
+							position: absolute;
+							top: 68px;
+							right: 50%;
+							z-index: 2;
+						}
+
+						&:last-child {
+							&:after {
+								right: 0;
+							}
+						}
+
+						.txt {
+							font-size: 44px;
+						}
+
+						& ~ dd {
+							.img {
+								&:before {
+									background-color: #d5d5d7;
+								}
+							}
+						}
+					}
+				}
+
+				.img {
+					display: block;
+					width: 52px;
+					height: 47px;
+					padding-bottom: 22px;
+					background-repeat: no-repeat;
+					background-size: 52px 47px;
+					background-position: center top;
+					position: relative;
+					z-index: 3;
+
+					&.family { background-image: url('@@img/pc/membership/icon-family.png'); }
+					&.bronze { background-image: url('@@img/pc/membership/icon-bronze.png'); }
+					&.silver { background-image: url('@@img/pc/membership/icon-silver.png'); }
+					&.gold { background-image: url('@@img/pc/membership/icon-gold.png'); }
+					&.vip { background-image: url('@@img/pc/membership/icon-vip.png'); }
+					&.vvip { background-image: url('@@img/pc/membership/icon-vvip.png'); }
+
+					&:before {
+						content: '';
+						display: block;
+						width: 20px;
+						height: 20px;
+						background-color: $primary-color;
+						border-radius: 50%;
+						position: absolute;
+						bottom: -10px;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+
+				.txt {
+					box-sizing: border-box;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-wrap: wrap;
+					width: 100%;
+					padding: 15px 20px;
+					min-height: 92px;
+					color: $text-color1;
+					font-weight: 700;
+					font-size: 18px;
+					text-align: center;
+					word-break: break-all;
+				}
+			}
+
+			.status {
+				box-sizing: border-box;
+				display: inline-block;
+				width: 250px;
+				min-height: 100px;
+				padding: 30px 30px;
+				color: $text-color1;
+				font-weight: 700;
+				font-size: 18px;
+				background-color: #fff;
+				box-shadow: 0 0 14px 2px rgba(0,0,0,.07);
+				border-radius: 10px;
+				transform: translateX(-50px);
+				position: relative;
+
+				&:after {
+					content: '';
+					display: block;
+					width: 30px;
+					height: 18px;
+					background: url('@@img/pc/membership/ballon-bg.jpg') no-repeat;
+					background-size: cover;
+					position: absolute;
+					top: 0;
+					left: 34px;
+					transform: translateY(-100%);
+				}
+
+				&.right {
+					transform: translateX(calc(-100% + 50px));
+
+					&:after {
+						left: auto;
+						right: 34px;
+					}
+				}
+
+				.num {
+					display: inline-block;
+					margin-right: -4px;
+				}
+
+				.grade {
+					color: $secondary-color1;
+				}
+			}
+		}
+
+		& + .container-wrap { margin-top: 56px; }
+	}
+}

@@ -1,0 +1,77 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 최근 본 상품 // -->
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popupistoryList" class="common-popup is-right">
+	<div class="common-popup-inner popup-history-view">
+		<div class="header">
+			<h1 class="title">
+				최근 본 상품
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="history-view">
+				<div class="wrap">
+					<div class="head">
+						<p class="count">
+							전체
+							<span class="num">
+								8
+							</span>
+							개
+						</p>
+						<div class="action">
+							<button type="button" class="btn small outline2">전체삭제</button>
+						</div>
+					</div>
+					<ul class="list">
+						{% for i in range(0, 20) %}
+						<li>
+							<div class="item">
+								<a href="#">
+									<figure class="wrap">
+										<div class="img">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												<span class="main">
+													가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 최대 3줄 노출 이후
+												</span>
+											</p>
+											<p class="price">
+												<span class="hide">회원가</span>
+												<span class="con">
+													<span class="rate">
+														<span class="hide">할인율</span>
+														37%
+													</span>
+													<span class="num">
+														128,600
+													</span>
+													<span class="won">원</span>
+												</span>
+											</p>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+						</li>
+						{% endfor %}
+						<!-- 상품이 없을때 // -->
+						<li class="empty">
+							<p class="desc">
+								최근 본 상품이 없습니다.
+							</p>
+						</li>
+						<!-- // 상품이 없을때 -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+<!-- // 최근 본 상품 -->
+{%- endblock %}

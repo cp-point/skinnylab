@@ -1,0 +1,252 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '취소/교환/반품조회',
+		order: [1,2]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-order-list">
+	<div class="search-wrap">
+		<div class="content">
+			<div class="btn-group"> <!-- 버튼 선택 시 : .is-selected -->
+				<button type="button" class="btn outline2 thin primary">1주일</button>
+				<button type="button" class="btn outline2 thin primary">1개월</button>
+				<button type="button" class="btn outline2 thin primary is-selected">3개월</button>
+				<button type="button" class="btn outline2 thin primary">6개월</button>
+				<button type="button" class="btn outline2 thin primary set">기간설정</button>
+			</div>
+			<div class="calender-box">
+				<div class="calender">
+					<input type="text" id="calender01" name="calender01" title="조회 시작날짜 선택" class="text date-picker" readonly>
+					<span>~</span>
+					<input type="text" id="calender02" name="calender02" title="조회 종료날짜 선택" class="text date-picker" readonly>
+					<button type="button" href="#" class="btn thin primary search">조회</button>
+				</div>
+			</div>
+			
+			
+			<div class="select-wrap">
+				<select id="orderStatus" name="orderStatus" class="select" style="width: 100%;" title="주문 상태 선택">
+					<option value="0" selected>전체</option>
+					<option value="1">입금대기</option>
+					<option value="2">결제완료</option>
+					<option value="3">상품준비</option>
+					<option value="4">배송중</option>
+					<option value="5">배송완료</option>
+					<option value="6">구매확정</option>
+				</select>
+				<span class="arrow"></span>
+			</div>
+		</div>
+	</div>
+	<div class="container-wrap">
+		
+		<div class="order-list-wrap">
+			<div class="top-util-cont">
+				<div>
+					<span class="date">2021.04.17</span>
+				</div>
+				<a href="./order-detail-cancel.html" class="small-btn-util">주문상세</a>
+			</div>
+			
+			<ul class="prod-detail-list">
+				<li>
+					<p class="status-txt">교환신청</p>
+					<a href="#">
+						<figure class="prod-row-item">
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									<dl class="option">
+										<dt>수량</dt>
+										<dd><strong>1</strong>개</dd>
+									</dl>
+									<div class="price">
+										<strong>19,800</strong>원
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="btn-group">
+						<button type="button" class="btn outline thin block">교환철회</button>
+					</div>
+				</li>
+				<li>
+					<p class="status-txt">주문취소</p>
+					<a href="#">
+						<figure class="prod-row-item">
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									<dl class="option">
+										<dt>수량</dt>
+										<dd><strong>1</strong>개</dd>
+									</dl>
+									<div class="price">
+										<strong>19,800</strong>원
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="order-list-wrap">
+			<div class="top-util-cont">
+				<div>
+					<span class="date">2021.04.17</span>
+				</div>
+				<a href="./order-detail-return.html" class="small-btn-util">주문상세</a>
+			</div>
+			
+			<ul class="prod-detail-list">
+				<li>
+					<p class="status-txt">반품신청</p>
+					<a href="#">
+						<figure class="prod-row-item">
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									<dl class="option">
+										<dt>수량</dt>
+										<dd><strong>1</strong>개</dd>
+									</dl>
+									<div class="price">
+										<strong>19,800</strong>원
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="btn-group">
+						<button type="button" class="btn outline thin block">반품철회</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="order-list-wrap">
+			<div class="top-util-cont">
+				<div>
+					<span class="date">2021.04.17</span>
+				</div>
+				<a href="./order-detail-exchange.html" class="small-btn-util">주문상세</a>
+			</div>
+			
+			<ul class="prod-detail-list">
+				<li>
+					<p class="status-txt">교환 배송중</p>
+					<a href="#">
+						<figure class="prod-row-item">
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+								<div class="utility">
+									<dl class="option">
+										<dt>수량</dt>
+										<dd><strong>1</strong>개</dd>
+									</dl>
+									<div class="price">
+										<strong>19,800</strong>원
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+					<div class="btn-group">
+						<button type="button" class="btn outline thin block">배송조회</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="order-list-wrap empty"> <!-- 내역 없을 때 .empty -->
+			<ul class="prod-detail-list">
+				<li>
+					<div class="result-txt is-error">
+						<p class="com-txt">조회기간 동안의 내역이<br>없습니다.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+
+		<div class="btn-group center page-bot-group">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>
+	
+	</div>
+</div>
+<script>
+	$(function() {
+		$('.btn.set').on('click', function() {
+			$('.calender-box').toggleClass('is-open');
+		});
+	})
+</script>
+{%- endblock %}

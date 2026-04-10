@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- .common-popup 옵션클래스: top, bottom, left, right -->
+	<article id="popupCouponRegister" class="common-popup" data-motion-in="400" data-motion-out="200">
+		<div class="common-popup-inner popup-coupon-register">
+			<div class="header">
+				<h1 class="title">쿠폰 번호 등록</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button><!-- .js-pop-close 팝업 닫기 기능 -->
+			</div>
+			<div class="container">
+				<div class="coupon-register">
+					<div class="form-layout">
+						<dl class="row">
+							<dt class="hide">
+								<label for="couponnum">쿠폰번호</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="couponnum" name="couponnum" placeholder="쿠폰 번호 입력" class="text block">
+								</span>
+								<!-- 오류 메세지// -->
+								<p class="error-msg is-invalid">잘못된 쿠폰번호 입니다. 쿠폰번호를 확인해주세요.</p>
+								<!-- <p class="error-msg is-invalid">쿠폰번호를 입력해 주세요.</p>
+								<p class="error-msg is-invalid">쿠폰 사용기간이 종료되어 등록할 수 없습니다.</p> -->
+								<!-- //오류 메세지 -->
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="foot">
+					<div class="btn-group row">
+						<button type="button" class="btn large outline primary js-pop-close">취소</button>
+						<button type="button" class="btn large primary">확인</button>
+					</div>
+					<div class="add-area">
+						<p class="title">쿠폰 등록 안내</p>
+						<ul class="add-list">
+							<li>쿠폰 유효기간이 지난 경우 등록이 불가합니다.</li>
+							<li>쿠폰번호의 대소문자, 띄어쓰기를 구분하여 정확하게 입력해 주세요.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- // content -->
+</body>
+</html>

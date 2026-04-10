@@ -1,0 +1,57 @@
+<!-- 마이페이지 LNB -->
+<div class="content-menu-wrap">
+	<ul>
+		<li>
+			<a href="./index.html" class="dep01 {%if (pageInfo.order[0] == '0') %}is-active{% endif %}">마이페이지 홈</a>
+		</li>
+		<li>
+			<a href="./order-list.html" class="dep01 {%if (pageInfo.order[0] == '1') %}is-active{% endif %}">나의 쇼핑내역</a>
+			<div class="dep02">
+				<ul>
+					<li><a href="./order-list.html"{%if (pageInfo.order[0] == '1') and (pageInfo.order[1] == '0') %} class="is-active" {% endif %}>주문/배송 조회</a></li>
+					<li><a href="./order-list-regular.html"{%if (pageInfo.order[0] == '1') and (pageInfo.order[1] == '1') %} class="is-active" {% endif %}>정기배송 조회</a></li>
+					<li><a href="./order-list-claim.html"{%if (pageInfo.order[0] == '1') and (pageInfo.order[1] == '2') %} class="is-active" {% endif %}>취소/교환/반품 조회</a></li>
+					<li><a href="./order-list-gift.html"{%if (pageInfo.order[0] == '1') and (pageInfo.order[1] == '3') %} class="is-active" {% endif %}>선물함</a></li>
+					<li><a href="./order-list-gift.html"{%if (pageInfo.order[0] == '1') and (pageInfo.order[1] == '4') %} class="is-active" {% endif %}>이전주문내역 조희</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href="./coupon.html" class="dep01 {%if (pageInfo.order[0] == '2') %}is-active{% endif %}">나의 혜택내역</a>
+			<div class="dep02">
+				<ul>
+					<li><a href="./coupon.html"{%if (pageInfo.order[0] == '2') and (pageInfo.order[1] == '0') %} class="is-active" {% endif %}>보유쿠폰</a></li>
+					<li><a href="./mileage.html"{%if (pageInfo.order[0] == '2') and (pageInfo.order[1] == '1') %} class="is-active" {% endif %}>마일리지 조회</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href="#" class="dep01 {%if (pageInfo.order[0] == '3') %}is-active{% endif %}">나의 활동내역</a>
+			<div class="dep02">
+				<ul>
+					<li><a href="./wish-list.html"{%if (pageInfo.order[0] == '3') and (pageInfo.order[1] == '0') %} class="is-active" {% endif %}>찜한 상품</a></li>
+					<li><a href="./restock-notification-list.html"{%if (pageInfo.order[0] == '3') and (pageInfo.order[1] == '1') %} class="is-active" {% endif %}>재입고 알림</a></li>
+					<li><a href="./review-list.html"{%if (pageInfo.order[0] == '3') and (pageInfo.order[1] == '2') %} class="is-active" {% endif %}>상품 리뷰</a></li>
+					<li><a href="./join-event.html"{%if (pageInfo.order[0] == '3') and (pageInfo.order[1] == '3') %} class="is-active" {% endif %}>참여 이벤트</a></li>
+					<li><a href="./qna-list.html"{%if (pageInfo.order[0] == '3') and (pageInfo.order[1] == '4') %} class="is-active" {% endif %}>1:1문의내역</a></li>
+					<li><a href="./inquire-list.html"{%if (pageInfo.order[0] == '3') and (pageInfo.order[1] == '5') %} class="is-active" {% endif %}>상품문의 내역</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href="./fit-skinnylab-list.html" class="dep01 {%if (pageInfo.order[0] == '4') %}is-active{% endif %}">나만의 스키니랩</a>
+		</li>
+		<li>
+			<a href="./profile-manage.html" class="dep01 {%if (pageInfo.order[0] == '5') %}is-active{% endif %}">나의 정보관리</a>
+			<div class="dep02">
+				<ul>
+					<li><a href="./profile-manage.html"{%if (pageInfo.order[0] == '5') and (pageInfo.order[1] == '0') %} class="is-active" {% endif %}>회원정보 관리</a></li>
+					<li><a href="javascript:void(0);"{%if (pageInfo.order[0] == '5') and (pageInfo.order[1] == '1') %} class="is-active" {% endif %} onclick="UI.showLayerPop('',{ url: './popup-address-manage.html'}); return false;">배송지 관리</a></li>
+					<li><a href="./payment-manage.html"{%if (pageInfo.order[0] == '5') and (pageInfo.order[1] == '2') %} class="is-active" {% endif %}>결제수단 관리</a></li>
+					<li><a href="./refund-manage.html"{%if (pageInfo.order[0] == '5') and (pageInfo.order[1] == '3') %} class="is-active" {% endif %}>환불계좌 관리</a></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
+<!--// 마이페이지 LNB -->

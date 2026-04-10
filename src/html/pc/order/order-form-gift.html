@@ -1,0 +1,465 @@
+{%
+	set pageInfo = {
+		section: 'order',
+		title: '주문/결제',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-order order-form">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">주문/결제</h2>
+		</div>
+
+		<div class="order-form-layout">
+			<div class="head">
+				<h3 class="title">주문상품</h3>
+			</div>
+			<div class="gift-order">
+				<div class="box">
+					<div class="img">
+						<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스">
+					</div>
+					<div class="form">
+						<div class="btn-area">
+							<button type="button" class="btn outline thin primary">
+								<span>
+									<span class="icon-gift"></span>
+									나에게 선물하기
+								</span>
+							</button>
+						</div>
+						<div class="input">
+							<dl class="row">
+								<dt class="tit">
+									<label for="give">보내는분</label>
+								</dt>
+								<dd class="con">
+									<span class="input-gift-give">
+										<input type="text" id="give" name="give" value="홍길동" placeholder="보내는 분 이름" class="text">
+										<input type="text" id="give2" name="give2" value="010-1234-5678" placeholder="보내는 분 휴대폰 번호" class="text">
+									</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="tit">
+									<label for="receive">받는분</label>
+								</dt>
+								<dd class="con">
+									<span class="input-gift-receive">
+										<input type="text" id="receive" name="receive" value="" placeholder="받는 분 이름" class="text">
+										<input type="text" id="receive2" name="receive2" value="" placeholder="받는 분 휴대폰 번호" class="text">
+									</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="hide">
+									내용입력
+								</dt>
+								<dd class="con">
+									<div class="editor">
+										<textarea id="qnaEditor" name="message" cols="30" rows="7" placeholder="선물 받는 분에게 마음을 전달해보세요." class="editor-cont txt" maxlength="100"></textarea>
+										<p class="character">( <span class="num">0</span> / 100자 )</p>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<ul class="add-list">
+							<li>※ 선물 받으시는 분의 휴대폰 번호로 선물 메시지와 url이 발송됩니다.</li>
+						</ul>
+					</div>
+				</div>
+				<ul class="list">
+					<li>
+						<input type="radio" id="bg1" name="bg" checked>
+						<label for="bg1" style="background-image: url('{{base}}/img/pc/@dummy/bg-gift01.png');">배경1</label>
+					</li>
+					<li>
+						<input type="radio" id="bg2" name="bg">
+						<label for="bg2" style="background-image: url('{{base}}/img/pc/@dummy/event-thumb-img05.jpg');">배경2</label>
+					</li>
+					<li>
+						<input type="radio" id="bg3" name="bg">
+						<label for="bg3" style="background-image: url('{{base}}/img/pc/@dummy/bg-gift01.png');">배경3</label>
+					</li>
+					<li>
+						<input type="radio" id="bg4" name="bg">
+						<label for="bg4" style="background-image: url('{{base}}/img/pc/@dummy/event-thumb-img05.jpg');">배경4</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="payment-layout">
+			<div class="payment-info-wrap">
+				<div class="order-form-layout">
+					<div class="head">
+						<h3 class="title">주문상품</h3>
+					</div>
+					<div class="goods-order">
+						<ul class="list">
+							<li>
+								<div class="item">
+									<div class="thumb">
+										<div class="img">
+											<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="">
+											<!-- // 등록된 사진이 없을때 -->
+											<!-- <img src="{{base}}/img/pc/common/noimg.jpg" alt=""> -->
+											<!-- 등록된 사진이 없을때 // -->
+										</div>
+									</div>
+									<div class="content">
+										<div class="wrap">
+											<div class="head">
+												<p class="status">
+													<span class="tag primary">신제품</span>
+													<span class="tag secondary">베스트</span>
+													<span class="tag white">사은품</span>
+												</p>
+												<p class="title">
+													<span class="sub">
+														스키니랩
+													</span>
+													<span class="main">
+														가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스
+													</span>
+												</p>
+												<dl class="info">
+													<dt class="tit">옵션</dt>
+													<dd class="con">
+														선택된 옵션명 정보 모두 노출
+													</dd>
+												</dl>
+											</div>
+											<dl class="amount">
+												<dt class="hide">수량</dt>
+												<dd class="con">
+													<span class="num">
+														1
+													</span>
+													개
+												</dd>
+											</dl>
+											<dl class="price">
+												<dt class="hide">비회원가</dt>
+												<dd class="con sub">
+													<span class="num">
+														100
+													</span>
+													<span class="won">
+														원
+													</span>
+												</dd>
+												<dt class="hide">회원가</dt>
+												<dd class="con main">
+													<span class="num">
+														100
+													</span>
+													<span class="won">
+														원
+													</span>
+												</dd>
+											</dl>
+										</div>
+										<div class="add">
+											<div class="prod">
+												<div class="img">
+													<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="">
+													<!-- // 등록된 사진이 없을때 -->
+													<!-- <img src="{{base}}/img/pc/common/noimg.jpg" alt=""> -->
+													<!-- 등록된 사진이 없을때 // -->
+												</div>
+												<div class="content">
+													<p class="title">
+														사은품명 모두 노출
+													</p>
+													<dl class="info">
+														<dt class="tit">증정 기간 :</dt>
+														<dd class="con">
+															2021-04-09 16:40:41
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="order-form-layout">
+					<div class="head">
+						<h3 class="title">주문혜택</h3>
+					</div>
+					<div class="content-wrap">
+						<div class="form-layout order-benefit">
+							<dl class="row">
+								<dt class="title">
+									<label for="discount">할인</label>
+									<div class="discount-info">
+										<button type="button" class="btn-open" onclick="$('.discount-info .box').show(); return false;">할인정보 열기</button>
+										<div class="box" style="display: none;">
+											<p class="tit">할인</p>
+											<ul class="list">
+												<li>프로모션 할인 : 1,500원</li>
+												<li>회원 등급 할인 : 5,00원</li>
+											</ul>
+											<button type="button" class="btn-close" onclick="$('.discount-info .box').hide(); return false;">할인정보 닫기</button>
+										</div>
+									</div>
+								</dt>
+								<dd class="content">
+									<div class="input-discount">
+										<input type="text" id="discount" name="discount" placeholder="" value="-2,000" class="text block js-input-discount" disabled>
+									</div>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="coupon">쿠폰</label>
+								</dt>
+								<dd class="content">
+									<span class="input-discount-btn">
+										<button type="button" class="btn outline thin primary" onclick="UI.showLayerPop('',{ url: './popup-coupon-apply.html'}); return false;">
+											<span>조회/변경</span>
+										</button>
+										<span class="input-discount"><input type="text" id="coupon" name="coupon" placeholder="" value="-2,000" class="text won" disabled></span>
+									</span>
+								</dd>
+								<dd class="content block">
+									<p class="applicable-product">
+										<span>
+											적용상품 : 가르시니아 14포 x 2박스 4주분 상품명 최대 1줄 노출
+										</span>
+									</p>
+									<p class="add-msg">
+										<span>※ 쿠폰은 최대 할인 혜택이 적용되어있습니다.</span>
+									</p>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="mileage">
+										마일리지 (
+										<span class="str">
+											7,000
+										</span>
+										원)
+									</label>
+								</dt>
+								<dd class="content">
+									<span class="input-discount-btn">
+										<button type="button" class="btn outline thin primary">
+											<span>모두사용</span>
+										</button>
+										<!-- <button type="button" class="btn outline thin primary">
+											<span>사용취소 </span>
+										</button> -->
+										<span class="input-discount">
+											<input type="text" id="mileage" name="mileage" placeholder="" value="-1,000" class="text">
+										</span>
+									</span>
+								</dd>
+								<dd class="content block">
+									<p class="add-msg">
+										<span>※ 마일리지 사용은 최소 5,000원 부터 사용 가능합니다.</span>
+									</p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="order-form-layout">
+					<div class="head">
+						<h3 class="title">결제수단</h3>
+						<div class="util">
+							<label class="check"><input type="checkbox"> <span>이 결제 수단을 다음에도 사용</span></label>
+						</div>
+					</div>
+					<div class="content-wrap">
+						<div class="select-payment">
+							<p class="hide">결제수단 선택</p>
+
+							<input type="radio" id="payment1" name="payment" class="radio-payment creditcard">
+							<label for="payment1">신용카드</label>
+
+							<input type="radio" id="payment2" name="payment" class="radio-payment naverpay">
+							<label for="payment2">네이버페이</label>
+
+							<input type="radio" id="payment3" name="payment" class="radio-payment kakaopay">
+							<label for="payment3">카카오페이</label>
+
+							<input type="radio" id="payment4" name="payment" class="radio-payment mobilepay">
+							<label for="payment4">휴대폰결제</label>
+
+							<input type="radio" id="payment5" name="payment" class="radio-payment bank">
+							<label for="payment5">계좌이체</label>
+
+							<input type="radio" id="payment6" name="payment" class="radio-payment virtual">
+							<label for="payment6">가상계좌</label>
+						</div>
+					</div>
+				</div>
+				<div class="order-noti naverpay" style="display: none;">
+					<p class="title">네이버 페이 결제 안내</p>
+					<ul class="list">
+						<li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌정보를 등록하여 네이버페이지 비밀번호로 결제할 수 있는 간편결제 서비스 입니다.</li>
+						<li>결제가능카드 : 신한, 삼성, 현대, BC, 국민, 하나, 롯데, 씨티, NH농협</li>
+						<li>결제가능은행 : NH농협, 국민, 신한, 우리, 기업 SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우, 광주, 대구, 전북, 새마을금고, 제주은행</li>
+						<li>단, 네이버페이로 결제할 경우 네이버페이에서 제공하는 카드사별 무이자, 청구할인 혜택만 제공됩니다.</li>
+						<li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+					</ul>
+				</div>
+				<div class="order-noti mobilepay" style="display: none;">
+					<p class="title">휴대폰 결제 안내</p>
+					<ul class="list">
+						<li>휴대폰 결제 한도는 최대 50만원입니다. 단, 개인별 한도는 통신사별 정책에 따라 적용됩니다.</li>
+						<li>1년 이내 휴대폰 결제 내역이 없는 경우 결제가 불가능합니다.</li>
+						<li>결제하신 금액은 익월의 휴대폰 요금에 함께 청구됩니다.</li>
+					</ul>
+				</div>
+				<div class="order-noti bank" style="display: none;">
+					<p class="title">구매안전 서비스 제공 안내</p>
+					<ul class="list">
+						<li>저희 쇼핑몰은 고객님의 안전거래를 위해 계좌이체 또는 가상계좌 주문에 대해 이니시스 에스크로 구매안전서비스를 자동 적용하고 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 결제 정보 영역 -->
+			<div class="payment-cont-wrap">
+				<div class="payment-content">
+					<div class="login-wrap">
+						<p class="title payment">결제 정보</p>
+					</div>
+					<div class="payment-wrap">
+						<dl class="number-dl">
+							<dt>전체상품</dt>
+							<dd>
+								<span class="num">2</span>
+								<span class="won">개</span>
+							</dd>
+							<dt>상품금액</dt>
+							<dd>
+								<span class="num">290,000</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>할인금액</dt>
+							<dd class="discount">
+								<span class="num">-200,200</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>주문혜택 할인</dt>
+							<dd class="discount">
+								<span class="num">-3,000</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>마일리지 사용</dt>
+							<dd class="discount">
+								<span class="num">-5,000</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>배송비</dt>
+							<dd>
+								<span class="num">0</span>
+								<span class="won">원</span>
+							</dd>
+						</dl>
+						<dl class="number-dl bot">
+							<dt><span class="total-tit">결제 예정 금액</span></dt>
+							<dd class="total">
+								<span class="num">89,000</span>
+								<span class="won">원</span>
+							</dd>
+							<dt>적립 예정 마일리지</dt>
+							<dd>
+								<span class="num">2,680</span>
+								<span class="won">원</span>
+							</dd>
+						</dl>
+						<dl class="agreement">
+							<dt class="tit">
+								약관동의<span class="mark">*</span>
+							</dt>
+							<dd class="con">
+								<input type="checkbox" name="agreement" id="agreement1" class="check">
+								<label for="agreement1">
+									주문할 상품정보에 동의하십니까?<br>
+									(전자상거래법 제 8조 2항)
+								</label>
+							</dd>
+						</dl>
+						<div class="btn-group">
+							<a href="#" class="btn large secondary motion">
+								<span>
+									<span class="num">
+										83,800
+									</span>
+									원 결제하기
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// 결제 정보 영역 -->
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+
+<script>
+	$(function() {
+		var $giftOrder = $('.gift-order');
+		var initValue = $('.gift-order .list input:radio').filter(function(index, element) {
+			return $(element).is(':checked');
+		});
+		var imgUrl = 'url(' + $(initValue).next('label').css('background-image').replace('url(','').replace(')','').replace(/\"/gi, "") + ')';
+
+		$giftOrder.find('.box').css('background-image', imgUrl);
+
+		$giftOrder.on('change', 'input:radio', function(e) {
+			var $tg = $(e.target);
+
+			imgUrl = 'url(' + $tg.next('label').css('background-image').replace('url(','').replace(')','').replace(/\"/gi, "") + ')';
+
+			$giftOrder.find('.box').css('background-image', imgUrl);
+		});
+	});
+
+	$(function() {
+		var $selectPayment = $('.select-payment');
+		var $paymentLayout = $selectPayment.parents('.payment-layout');
+		var $tg;
+
+		var showNoti = function(target) {
+			if(target.hasClass('naverpay')) {
+				$paymentLayout.find('.order-noti.naverpay').show();
+			} else if(target.hasClass('mobilepay')) {
+				$paymentLayout.find('.order-noti.mobilepay').show();
+			} else if(target.hasClass('bank') || target.hasClass('virtual')) {
+				$paymentLayout.find('.order-noti.bank').show();
+			}
+		}
+
+		$tg = $selectPayment.find('input:radio').filter(function(index, element) {
+			return $(element).is(':checked');
+		});
+
+		showNoti($tg);
+
+		$selectPayment.on('change', 'input:radio', function(e) {
+			$tg = $(e.target);
+
+			$paymentLayout.find('.order-noti').hide();
+
+			showNoti($tg);
+		});
+	});
+</script>
+{%- endblock %}

@@ -1,0 +1,102 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '주문하신 상품에 대한 입금이 확인되었습니다.'
+	}
+%}
+
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<tr>
+	<td>
+		<table class="email-common-container" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width: 60px;"></td>
+				<td class="container-wrap">
+					<table class="page-content" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="txt com-txt1">
+								주문하신 상품에 대한 입금이<br>확인되었습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 38px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt2">
+								<strong>주문자명</strong>님,<br> 
+								저희 쇼핑몰을 이용하여 주셔서 감사합니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 30px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt4">
+								<strong class="color01">주문자명</strong>님께서 주문하신 상품에 대한 입금이 아래와 같이 확인되었습니다.<br>
+								고객님께 빠르고 정확하게 제품이 전달될 수 있도록 최선을 다하겠습니다.
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 58px;"></td>
+						</tr>
+						<tr>
+							<td class="txt com-txt3">
+								<strong>입금 정보 확인</strong>
+							</td>
+						</tr>
+						<tr>
+							<td style="height: 10px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="content-table">
+									<tr>
+										<th style="width: 125px;">주문번호</th>
+										<td style="width: 555px;">
+											<strong>{주문번호}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 125px;">구매상품</th>
+										<td style="width: 555px;">
+											<strong>{상품명 최대 1줄 노출} 외 {n}개</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 125px;">결제금액</th>
+										<td style="width: 555px;">
+											<strong>{총결제금액}원</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 125px;">결제수단</th>
+										<td style="width: 555px;">
+											<strong>가상계좌</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 125px;">입금자</th>
+										<td style="width: 555px;">
+											<strong>{입금자명}</strong>
+										</td>
+									</tr>
+									<tr>
+										<th style="width: 125px;">입금일시</th>
+										<td style="width: 555px;">
+											<strong>{년/월/일/시/분/초}</strong>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td style="width: 60px;"></td>
+			</tr>
+			{{ include('./notice.html') }}
+		</table>
+	</td>
+</tr>
+{%- endblock %}

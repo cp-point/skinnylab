@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>주문/결제 | 스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+	
+	<div class="wrapper">
+		
+		<!-- Content // -->
+		<header class="page-header">
+			<!-- Notice Bar // -->
+			<div class="noti-bar">
+				<div class="wrap">
+					<div class="img">
+						<a href="#" title="새 창 열기" target="_blank">
+							<img src="../../../img/mob/@dummy/noti-bar.jpg" alt="잠깐! 20% 할인 쿠폰 받아가세요!">
+						</a>
+					</div>
+				</div>
+				<div class="btn-area">
+					<button type="button" class="btn-close" onclick="$('.common-header').removeClass('is-noti'); $(this).parents('.noti-bar').hide(); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+			<!-- // Notice Bar -->
+			<div class="wrap">
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="utility-box left">
+					<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+				</div>
+				
+				
+				
+				
+				
+				<span class="page-title">주문/결제</span>
+			</div>
+			<div class="common-search-wrap">
+				<div class="content">
+					<div class="search-box">
+						<div class="search js-text-clear">
+							<label for="search" class="hide">검색</label>
+							<input type="text" id="search" name="search" value="" placeholder="검색어를 입력하세요." class="input">
+							<button type="button" class="btn-clear">입력값 지우기</button>
+							<button type="button" class="btn-submit">검색하기</button>
+						</div>
+					</div>
+					<dl class="keyword">
+						<dt class="title">인기 검색어</dt>
+						<dd class="content">
+							<a href="#">시서스</a>
+						</dd>
+						<dd class="content">
+							<a href="#">레몬밤</a>
+						</dd>
+						<dd class="content">
+							<a href="#">풋사과</a>
+						</dd>
+						<dd class="content">
+							<a href="#">ETIQA</a>
+						</dd>
+						<dd class="content">
+							<a href="#">콜라겐</a>
+						</dd>
+					</dl>
+				</div>
+				<button type="button" class="btn-close"></button>
+			</div>
+		</header>
+		<div id="content-main" class="common-container section-order order-form">
+			<div class="accordion-list order-accordion">
+				<dl class="item">
+					<dt class="title">
+						<a href="#">
+							<span class="tit">주문자 정보</span>
+							<span class="info">
+								<span class="name">
+									홍길동
+								</span>
+							</span>
+						</a>
+					</dt>
+					<dd class="content">
+						<div class="form-layout">
+							<dl class="row">
+								<dt class="title">
+									<label for="userName">수령자명<span class="emphasis">*</span></label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="userName" name="userName" placeholder="주문자명 입력" value="홍길동" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">주문자 명을 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="userPhone">휴대폰 번호<span class="emphasis">*</span></label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="userPhone" name="userPhone" placeholder="'-' 없이 숫자만 입력" value="010-1234-5678" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">휴대폰 번호를 입력해주세요.</span>
+									<span class="error-msg is-invalid">휴대폰번호를 정확히 입력해 주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="userEmail">이메일<span class="emphasis">*</span></label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="userEmail" name="userEmail" placeholder="이메일 주소 입력" value="sknylab@abc.com" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">이메일 주소를 입력해주세요.</span>
+									<span class="error-msg is-invalid">잘못된 형식의 이메일주소입니다.</span>
+								</dd>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<a href="#">
+							<span class="tit">배송지 정보</span>
+						</a>
+					</dt>
+					<dd class="content">
+						<!-- 등록된 배송지가 없음 때 // -->
+						<div class="form-layout delivery-form">
+							<dl class="row">
+								<dt class="title">
+									<label for="deliveryAddress">배송지명<span class="emphasis">*</span></label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<span class="input-text-btn">
+											<input type="text" class="text is-invalid" id="deliveryAddress" name="deliveryAddress" placeholder="배송지명 입력">
+											<button type="button" class="btn outline thin primary" onclick="UI.showLayerPop('',{ url: '../order/popup-address-manage.html'}); return false;">
+												<span>배송지 관리</span>
+											</button>
+										</span>
+									</span>
+									<span class="error-msg is-invalid">배송지명을 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="deliveryUser">수령자명<span class="emphasis">*</span></label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<span class="input-text-check-agree">
+											<input type="text" class="text is-invalid" id="deliveryUser" name="deliveryUser" placeholder="수령자명 입력">
+											<label class="check"><input type="checkbox"> <span>주문자 정보와 동일</span></label>
+										</span>
+									</span>
+									<span class="error-msg is-invalid">수령자명을 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="deliveryPhone">휴대폰 번호<span class="emphasis">*</span></label>
+								</dt>
+								<dd class="content">
+									<span class="input-text-del">
+										<input type="text" id="deliveryPhone" name="deliveryPhone" placeholder="'-' 없이 숫자만 입력" class="text block is-invalid">
+									</span>
+									<span class="error-msg is-invalid">휴대폰 번호를 입력해주세요.</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<span>주소<span class="emphasis">*</span></span>
+								</dt>
+								<dd class="content">
+									<span class="input-address-wrap">
+										<span class="input-address">
+											<label for="userZipcode" class="hide">우편번호 입력</label>
+											<input type="text" id="userZipcode" name="userZipcode" placeholder="" class="text block is-invalid" disabled>
+											<button type="button" class="btn outline thin primary">
+												<span>우편번호 찾기</span>
+											</button>
+										</span>
+										<span class="input-address">
+											<span class="txt-with-del">
+												<label for="userAddress2">상세주소 입력</label>
+												<input type="text" name="userAddress2" id="userAddress2" placeholder="상세주소 입력" class="text block is-invalid">
+											</span>
+										</span>
+										<span class="input-address">
+											<label for="deliveryMsg">배송메시지 선택</label>
+											<span class="select-wrap">
+												<select id="deliveryMsg" name="deliveryMsg" class="select">
+													<option value="">배송메시지 선택</option>
+													<option value="">직접 받겠습니다.</option>
+													<option value="">문 앞에 놓아주세요.</option>
+													<option value="">경비실에 맡겨주세요.</option>
+													<option value="">택배함에 넣어주세요.</option>
+													<option value="">배송 전 연락해주세요.</option>
+													<option value="">직접 입력</option>
+												</select>
+												<span class="arrow"></span>
+											</span>
+											<input type="text" name="deliveryMsg" id="deliveryMsg2" placeholder="배송메세지 직접 입력" class="text block">
+										</span>
+										<span class="error-msg is-invalid">우편번호를 검색해주세요.</span>
+										<span class="error-msg is-invalid">상세주소를 입력해주세요.</span>
+									</span>
+								</dd>
+							</dl>
+						</div>
+						<!-- // 등록된 배송지가 없음 때 -->
+						
+						<!-- 등록된 배송지가 있을 때 // -->
+						<div class="delivery-view">
+							<div class="item">
+								<p class="wrap">
+									<span class="con">
+										<span class="place">
+											집
+										</span>
+										<span class="name">
+											홍길동
+										</span>
+										<span class="status secondary">
+											기본배송지
+										</span>
+									</span>
+									<span class="address">
+										서울특별시 서초구 방배천로 118, 에이디앤스타일 2층 휴대폰 번호: 010-1234-5678
+									</span>
+								</p>
+								<div class="btn-area">
+									<a href="#" class="btn small outline thin primary" onclick="UI.showLayerPop('',{ url: '../order/popup-address-manage.html'}); return false;">
+										<span>배송지 관리</span>
+									</a>
+								</div>
+							</div>
+							<div class="msg">
+								<label for="deliveryMsg4" class="hide">배송메시지 선택</label>
+								<span class="select-wrap">
+									<select id="deliveryMsg4" name="deliveryMsg4" class="select">
+										<option value="">배송메시지 선택</option>
+										<option value="">직접 받겠습니다.</option>
+										<option value="">문 앞에 놓아주세요.</option>
+										<option value="">경비실에 맡겨주세요.</option>
+										<option value="">택배함에 넣어주세요.</option>
+										<option value="">배송 전 연락해주세요.</option>
+										<option value="">직접 입력</option>
+									</select>
+									<span class="arrow"></span>
+								</span>
+								<input type="text" name="deliveryMsg" id="deliveryMsg5" placeholder="배송메세지 직접 입력" class="text block">
+							</div>
+						</div>
+						<!-- // 등록된 배송지가 있을 때 -->
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<a href="#">
+							<span class="tit">주문 상품</span>
+							<span class="info">
+								<span class="amount">
+									<span class="num">
+										3
+									</span>
+									<span class="unit">개</span>
+								</span>
+							</span>
+						</a>
+					</dt>
+					<dd class="content">
+						<ul class="prod-detail-list">
+							<li>
+								<figure class="prod-row-item">
+									<span class="img">
+										<a href="#"><img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지"></a>
+									</span>
+									<figcaption class="content">
+										<div class="tag-group">
+											<span class="tag primary">신제품</span>
+											<span class="tag secondary">베스트</span>
+											<span class="tag white">사은품</span>
+										</div>
+										<div class="store-name">
+											스키니랩
+										</div>
+										<div class="title">
+											[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이어트 4주분 [NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이어트 4주분
+										</div>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+										<div class="utility">
+											<div class="price discount">
+												19,800원
+											</div>
+										</div>
+										<div class="utility">
+											<dl class="option">
+												<dt>수량</dt>
+												<dd>
+													<strong>
+														2
+													</strong>
+													개
+												</dd>
+											</dl>
+											<div class="price">
+												<strong>
+													128,600
+												</strong>
+												원
+											</div>
+										</div>
+										<div class="add">
+											<div class="prod">
+												<div class="img">
+													<a href="#" target="_blank">
+														<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="">
+													</a>
+													<!-- // 등록된 사진이 없을때 -->
+													<!-- <img src="../../../img/mob/common/noimg.jpg" alt=""> -->
+													<!-- 등록된 사진이 없을때 // -->
+												</div>
+												<div class="content">
+													<p class="title">
+														사은품명 모두 노출
+													</p>
+													<div class="utility">
+														<dl class="date">
+															<dt>증정 기간 :</dt>
+															<dd>
+																2021-04-09 16:40:41
+															</dd>
+														</dl>
+													</div>
+												</div>
+											</div>
+										</div>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure class="prod-row-item">
+									<span class="img">
+										<a href="#"><img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지"></a>
+									</span>
+									<figcaption class="content">
+										<div class="tag-group">
+											<span class="tag primary">신제품</span>
+											<span class="tag secondary">베스트</span>
+											<span class="tag white">사은품</span>
+										</div>
+										<div class="store-name">
+											스키니랩
+										</div>
+										<div class="title">
+											[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이어트 4주분 [NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이어트 4주분
+										</div>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+										<div class="utility">
+											<div class="price discount">
+												19,800원
+											</div>
+										</div>
+										<div class="utility">
+											<dl class="option">
+												<dt>수량</dt>
+												<dd>
+													<strong>
+														2
+													</strong>
+													개
+												</dd>
+											</dl>
+											<div class="price">
+												<strong>
+													128,600
+												</strong>
+												원
+											</div>
+										</div>
+									</figcaption>
+								</figure>
+							</li>
+							<li>
+								<figure class="prod-row-item">
+									<span class="img">
+										<a href="#"><img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지"></a>
+									</span>
+									<figcaption class="content">
+										<div class="tag-group">
+											<span class="tag primary">신제품</span>
+											<span class="tag secondary">베스트</span>
+											<span class="tag white">사은품</span>
+										</div>
+										<div class="store-name">
+											스키니랩
+										</div>
+										<div class="title">
+											[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이어트 4주분 [NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 다이어트 4주분
+										</div>
+										<dl class="option">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+										</dl>
+										<div class="utility">
+											<div class="price discount">
+												19,800원
+											</div>
+										</div>
+										<div class="utility">
+											<dl class="option">
+												<dt>수량</dt>
+												<dd>
+													<strong>
+														2
+													</strong>
+													개
+												</dd>
+											</dl>
+											<div class="price">
+												<strong>
+													128,600
+												</strong>
+												원
+											</div>
+										</div>
+									</figcaption>
+								</figure>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<a href="#">
+							<span class="tit">주문혜택</span>
+							<span class="info">
+								<span class="price">
+									<span class="num">
+										-8,000
+									</span>
+									<span class="unit">원</span>
+								</span>
+							</span>
+						</a>
+					</dt>
+					<dd class="content">
+						<div class="form-layout order-benefit">
+							<dl class="row">
+								<dt class="title">
+									<label for="discount">할인</label>
+									<div class="discount-info">
+										<button type="button" class="btn-open" onclick="$(this).parents('.discount-info').find('.box').show(); return false;">할인정보 열기</button>
+										<div class="box" style="display: none;">
+											<p class="tit">할인</p>
+											<ul class="list">
+												<li>상품 할인 : 500원</li>
+												<li>결제 할인 : 1,000원</li>
+												<li>회원 등급 할인 : 500원</li>
+											</ul>
+											<button type="button" class="btn-close" onclick="$(this).parents('.discount-info').find('.box').hide(); return false;">할인정보 닫기</button>
+										</div>
+									</div>
+								</dt>
+								<dd class="content">
+									<div class="input-discount">
+										<input type="text" id="discount" name="discount" placeholder="" value="-2,000" class="text block js-input-discount" disabled>
+									</div>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="coupon">
+										쿠폰
+									</label>
+									<span class="prod-name">
+										적용상품 : 가르시니아 14포 x 2박스 4주분 상품명 최대 1줄 노출
+									</span>
+								</dt>
+								<dd class="content">
+									<span class="input-discount-btn">
+										<span class="input-discount">
+											<input type="text" id="coupon" name="coupon" placeholder="" value="-2,000" class="text won" disabled>
+										</span>
+										<button type="button" class="btn outline thin primary" onclick="UI.showLayerPop('',{ url: './popup-coupon-apply.html'}); return false;">
+											<span>조회/변경</span>
+										</button>
+									</span>
+									<span class="add-msg">
+										<span>※ 쿠폰은 최대 할인 혜택이 적용되어있습니다.</span>
+									</span>
+								</dd>
+							</dl>
+							<dl class="row">
+								<dt class="title">
+									<label for="mileage">
+										마일리지 (
+										<span class="str">
+											7,000
+										</span>
+										원)
+									</label>
+								</dt>
+								<dd class="content">
+									<span class="input-discount-btn">
+										<span class="input-discount">
+											<input type="text" id="mileage" name="mileage" placeholder="" value="-1,000" class="text">
+										</span>
+										<button type="button" class="btn outline thin primary">
+											<span>모두사용</span>
+										</button>
+										<!-- <button type="button" class="btn outline thin primary">
+											<span>사용취소 </span>
+										</button> -->
+									</span>
+									<span class="add-msg">
+										<span>※ 마일리지 사용은 최소 5,000원 부터 사용 가능합니다.</span>
+									</span>
+								</dd>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<a href="#">
+							<span class="tit">결제 예정 금액</span>
+							<span class="info">
+								<span class="price">
+									<span class="num">
+										81,800
+									</span>
+									<span class="unit">원</span>
+								</span>
+							</span>
+						</a>
+					</dt>
+					<dd class="content">
+						<div class="payment-info">
+							<dl class="info">
+								<dt class="tit">전체상품</dt>
+								<dd class="con">
+									<span class="num">
+										2
+									</span>
+									<span class="unit">개</span>
+								</dd>
+							</dl>
+							<dl class="info">
+								<dt class="tit">상품금액</dt>
+								<dd class="con">
+									<span class="num">
+										290,000
+									</span>
+									<span class="unit">원</span>
+								</dd>
+							</dl>
+							<dl class="info">
+								<dt class="tit">할인금액</dt>
+								<dd class="con secondary">
+									<span class="num">
+										-200,000
+									</span>
+									<span class="unit">원</span>
+								</dd>
+							</dl>
+							<dl class="info">
+								<dt class="tit">주문혜택 할인</dt>
+								<dd class="con secondary">
+									<span class="num">
+										-3,000
+									</span>
+									<span class="unit">원</span>
+								</dd>
+							</dl>
+							<dl class="info">
+								<dt class="tit">마일리지 사용</dt>
+								<dd class="con secondary">
+									<span class="num">
+										-5,000
+									</span>
+									<span class="unit">원</span>
+								</dd>
+							</dl>
+							<dl class="info">
+								<dt class="tit">배송비</dt>
+								<dd class="con">
+									<span class="num">
+										0
+									</span>
+									<span class="unit">원</span>
+								</dd>
+							</dl>
+							<dl class="info total">
+								<dt class="tit">결제 예정 금액</dt>
+								<dd class="con">
+									<span class="num">
+										89,000
+									</span>
+									<span class="unit">원</span>
+								</dd>
+							</dl>
+							<dl class="info">
+								<dt class="tit">적립 예정 마일리지</dt>
+								<dd class="con">
+									<span class="num">
+										2,500
+									</span>
+									<span class="unit">원</span>
+								</dd>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+				<dl class="item">
+					<dt class="title">
+						<a href="#">
+							<span class="tit">결제 수단</span>
+							<span class="info">
+								<span class="payment">
+								</span>
+							</span>
+						</a>
+					</dt>
+					<dd class="content">
+						<div class="select-payment">
+							<p class="hide">결제수단 선택</p>
+							<input type="radio" id="payment1" name="payment" class="radio-payment creditcard">
+							<label for="payment1">신용카드</label>
+							<input type="radio" id="payment2" name="payment" class="radio-payment naverpay">
+							<label for="payment2">네이버페이</label>
+							<input type="radio" id="payment3" name="payment" class="radio-payment kakaopay">
+							<label for="payment3">카카오페이</label>
+							<input type="radio" id="payment4" name="payment" class="radio-payment mobilepay">
+							<label for="payment4">휴대폰결제</label>
+							<input type="radio" id="payment5" name="payment" class="radio-payment bank">
+							<label for="payment5">계좌이체</label>
+							<input type="radio" id="payment6" name="payment" class="radio-payment virtual">
+							<label for="payment6">가상계좌</label>
+							
+							<div class="util">
+								<label class="check"><input type="checkbox"> <span>이 결제 수단을 다음에도 사용</span></label>
+							</div>
+						</div>
+						
+						<div class="order-noti naverpay" style="display: none;">
+							<p class="title">네이버 페이 결제 안내</p>
+							<ul class="list">
+								<li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌정보를 등록하여 네이버페이지 비밀번호로 결제할 수 있는 간편결제 서비스 입니다.</li>
+								<li>결제가능카드 : 신한, 삼성, 현대, BC, 국민, 하나, 롯데, 씨티, NH농협</li>
+								<li>결제가능은행 : NH농협, 국민, 신한, 우리, 기업 SC제일, 부산, 경남, 수협, 우체국, 미래에셋대우, 광주, 대구, 전북, 새마을금고, 제주은행</li>
+								<li>단, 네이버페이로 결제할 경우 네이버페이에서 제공하는 카드사별 무이자, 청구할인 혜택만 제공됩니다.</li>
+								<li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+							</ul>
+						</div>
+						<div class="order-noti mobilepay" style="display: none;">
+							<p class="title">휴대폰 결제 안내</p>
+							<ul class="list">
+								<li>휴대폰 결제 한도는 최대 50만원입니다. 단, 개인별 한도는 통신사별 정책에 따라 적용됩니다.</li>
+								<li>1년 이내 휴대폰 결제 내역이 없는 경우 결제가 불가능합니다.</li>
+								<li>결제하신 금액은 익월의 휴대폰 요금에 함께 청구됩니다.</li>
+							</ul>
+						</div>
+						<div class="order-noti bank" style="display: none;">
+							<p class="title">구매안전 서비스 제공 안내</p>
+							<ul class="list">
+								<li>저희 쇼핑몰은 고객님의 안전거래를 위해 계좌이체 또는 가상계좌 주문에 대해 이니시스 에스크로 구매안전서비스를 자동 적용하고 있습니다.</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="agreement-area">
+				<dl class="item">
+					<dt class="title">
+						약관동의<span class="emphasis">*</span>
+					</dt>
+					<dd class="content">
+						<label class="check"><input type="checkbox"> <span>주문할 상품정보에 동의하십니까?<br>(전자상거래법 제 8조 2항)</span></label>
+					</dd>
+				</dl>
+			</div>
+			<div class="sticky-bottom">
+				<div class="btn-area">
+					<a href="#" class="btn large secondary">
+						<span>81,300원 결제하기</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(function() {
+				var $selectPayment = $('.select-payment');
+				var $item = $selectPayment.parents('.item');
+				var $tg;
+				
+				var showNoti = function(target) {
+					if(target.hasClass('naverpay')) {
+						$item.find('.order-noti.naverpay').show();
+					} else if(target.hasClass('mobilepay')) {
+						$item.find('.order-noti.mobilepay').show();
+					} else if(target.hasClass('bank') || target.hasClass('virtual')) {
+						$item.find('.order-noti.bank').show();
+					}
+				}
+				
+				$tg = $selectPayment.find('input:radio').filter(function(index, element) {
+					return $(element).is(':checked');
+				});
+				
+				showNoti($tg);
+				
+				$selectPayment.on('change', 'input:radio', function(e) {
+					$tg = $(e.target);
+					
+					$tg.parents('.item').find('.title .payment').text($tg.next('label').text().trim());
+					
+					$item.find('.order-noti').hide();
+					
+					showNoti($tg);
+				});
+			});
+		</script>
+		<!-- // Content -->
+		
+		<!-- bottom navigation, bottom banner // -->
+		<div class="bottom-nav-wrap">
+			<div class="inner-cont-wrap">
+				<button class="btn-promo is-hide">
+					<span class="logo"></span>
+					<span class="icon"></span>
+				</button>
+				<div class="menu">
+					<ul class="item-group">
+						<li>
+							<a href="#">
+								<span class="icon home"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon delivery"></span>
+							</a>
+						</li>
+					</ul>
+					<ul class="item-group">
+						<li>
+							<a href="#">
+								<span class="icon mypage">
+									<em class="new"></em> <!-- 쇼핑 다이어리 신규 알림 내역이 있을 때 노출  -->
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon profile">
+									<!-- 최근 본 상품이 있으면 상품 이미지 노출 -->
+									<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지" style="display: none;">
+									<!--// 최근 본 상품이 있으면 상품 이미지 노출 -->
+								</span>
+								<span class="txt hide">profile</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bot-banner-wrap">
+			<div class="banner-box">
+				<img src="../../../img/mob/common/bot-banner.jpg" alt="회원 한정 시크릿 특가 - 지금 가입하고 이유있는 초특가 상품 가져가세요~!">
+			</div>
+		</div>
+		<!-- // bottom navigation, bottom banner -->
+		
+		
+		<!-- Footer // -->
+		<footer class="common-footer">
+			<div class="wrap">
+				<h2 class="hide">푸터</h2>
+				<ul class="footer-menu">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">이용안내</a></li>
+					<li><a href="#">광고 제휴 문의 </a></li>
+				</ul>
+				<div class="utility">
+					<div class="contact">
+						<a href="tel:1644-7267" class="tel">1644-7267</a>
+						<dl class="time">
+							<dt>평일(주말제외)</dt>
+							<dd>09:30 ~ 18:00</dd>
+							<dt>점심시간</dt>
+							<dd>12:30 ~ 13:30</dd>
+						</dl>
+						<p class="notice">※ 토/일/공휴일 휴무</p>
+					</div>
+					
+					<dl class="dropdown ghost">
+						<dt class="title">
+							<button type="button" class="btn-open">FAMILY SITE</button>
+						</dt>
+						<dd class="content">
+							<ul class="list">
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>천지양</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>피트니스 스토어</span>
+									</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<p class="logo"></p>
+				<div class="info">
+					<dl>
+						<dt>상호명 :</dt>
+						<dd>헬스밸런스(주)</dd>
+					</dl>
+					<address>서울특별시 강남구 영동대로 511 (트레이드타워) 2104호</address>
+					<dl>
+						<dt>대표자 : </dt>
+						<dd>박성준, 김남경</dd>
+						<dt>개인정보관리책임자 : </dt>
+						<dd>염선호</dd>
+					</dl>
+					<dl>
+						<dt>사업자등록번호 : </dt>
+						<dd>314-81-84285 <a href="#" class="btn-info">사업자정보확인</a></dd>
+					</dl>
+					<dl>
+						<dt>통신판매업 : </dt>
+						<dd>2016-서울강남-02455</dd>
+					</dl>
+					<dl>
+						<dt>대표전화 : </dt>
+						<dd>1644-7267</dd>
+						<dt>FAX : </dt>
+						<dd>02-2071-3699</dd>
+					</dl>
+					<dl>
+						<dt>E-mail : </dt>
+						<dd>
+							<a href="mailto:hbalance@hbalance.co.kr">hbalance@hbalance.co.kr</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="service">
+					KG이니시스가 제공하는 결제시스템을 사용하고 있는 쇼핑몰임을 확인하여<br>
+					소비자들은 안심하고 결제할 수 있습니다.
+				</div>
+				<div class="btn-group">
+					<a href="#" target="_blank">이니페이 에스크로 가입사실 확인 &gt;</a>
+					<a href="#" target="_blank">이니시스 결제 인증마크 확인 &gt;</a>
+				</div>
+			</div>
+		</footer>
+		<!-- // Footer -->
+		
+		<!-- floating menu // -->
+		<div class="floating-menu">
+			<div class="wrap">
+				<ul>
+					<li>
+						<a href="#" class="btn-icon kakao"></a>
+					</li>
+					<li>
+						<a href="#" class="btn-icon gift"></a>
+					</li>
+					<li>
+						<button type="button" class="btn-icon top"></button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- // floating menu -->
+	</div>
+</body>
+</html>

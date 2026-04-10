@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- 옵션클래스: full, full-scroll, hidden-title -->
+	<article id="popup-call-friend" class="common-popup bottom" data-motion-in="400" data-motion-out="200">
+		<div class="common-popup-inner popup-call-friend">
+			<div class="header">
+				<h1 class="title">연락처 친구</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+			</div>
+			<div class="container">
+				<div class="body">
+					<div class="form-layout vertical">
+						<dl class="row">
+							<dt class="hide">
+								<label for="callName">받는 분 <span class="emphasis">*</span></label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="callName" name="callName" placeholder="받는 분 이름" class="text block underline">
+								</span>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="hide">
+								<label for="callPhone">휴대폰 번호<span class="emphasis">*</span></label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="callPhone" name="callPhone" placeholder="'-' 없이 숫자만 입력" class="text block underline">
+								</span>
+							</dd>
+						</dl>
+					</div>
+					<ul class="com-txt5 dot-list">
+						<li>선물 받으시는 분의 휴대폰 번호로 선물 메시지와 URL이 발송됩니다.</li>
+					</ul>
+				</div>
+				<div class="foot">
+					<div class="btn-group center">
+						<button class="btn large primary">
+							<span>입력완료</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- // content -->
+</body>
+</html>

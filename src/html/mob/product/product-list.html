@@ -1,0 +1,613 @@
+{%
+	set pageInfo = {
+		section: 'product',
+		title: 'THIN소재',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-list">
+	<div class="tab-wrap">
+		<div class="tab-menu">
+			<div class="wrap wrap swiper-container tab-swiper js-scroll-tab">
+				<ul class="list">
+					<li class="is-active">
+						<a href="#">전체</a>
+					</li>
+					<li>
+						<a href="#">시네트롤</a>
+					</li>
+					<li>
+						<a href="#">시서스</a>
+					</li>
+					<li>
+						<a href="#">레몬밤</a>
+					</li>
+					<li>
+						<a href="#">풋사과</a>
+					</li>
+				</ul>
+			</div>
+			<button type="button" class="all-btn">리스트 전체보기</button>
+		</div>
+	</div>
+	
+	<div class="visual-carousel">
+		<h2 class="hide">THIN소재</h2>
+		<div class="carousel swiper-container">
+			<ul class="list swiper-wrapper">
+				{% for i in range(0, 2) %}
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/mob/@dummy/visual-carousel-img01.jpg" alt="배너 이미지">
+						</div>
+					</a>
+				</li>
+				<li class="swiper-slide">
+					<a href="#">
+						<div class="img">
+							<img src="{{base}}/img/mob/@dummy/visual-carousel-img02.jpg" alt="배너 이미지">
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="action">
+			<p class="pagination"></p>
+			<div class="play">
+				<button type="button" class="btn-prev swiper-button-prev"></button>
+				<button type="button" class="btn-autoplay swiper-button-autoplay"></button>
+				<button type="button" class="btn-next swiper-button-next"></button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 추천 상품 영역 -->
+	<div class="recommend-product-wrap">
+		<div class="head">
+			<h3 class="title">THIN소재 추천상품</h3>
+		</div>
+		<div class="recommend-product">
+			<div class="swiper-container">
+				<ul class="goods-list2 swiper-wrapper">
+					{% for i in range(0, 3) %}
+					<li class="swiper-slide">
+						<div class="item">
+							<a href="../product/product-detail.html">
+								<figure class="prod-col-item recom">
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+									</div>
+									<figcaption class="content">
+										<div class="info">
+											<div class="tag-group">
+												<span class="tag primary">신제품</span>
+												<span class="tag secondary">베스트</span>
+												<span class="tag white">사은품</span>
+											</div>
+											<div class="store-name">스키니랩</div>
+											<div class="title">
+												가벼워지는 시서스다이어트
+												14포 X 4박스 + 석류 콜라겐
+												14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+											</div>
+										</div>
+										<div class="price">
+											<div class="nonmember">
+												<span class="tit">비회원가</span>
+												<span>321,000원</span>
+											</div>
+											<div class="member">
+												<p class="tit">회원가</p>
+												<div class="inner-box">
+													<span><strong class="discount">67%</strong></span>
+													<span class="num"><strong>128,600</strong>원</span>
+												</div>
+											</div>
+										</div>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="item">
+							<a href="../product/product-detail.html">
+								<figure class="prod-col-item recom">
+									<div class="img">
+										<img src="{{base}}/img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+									</div>
+									<figcaption class="content">
+										<div class="info">
+											<div class="tag-group">
+												<span class="tag secondary">베스트</span>
+												<span class="tag white">사은품</span>
+											</div>
+											<div class="title">
+												스키니랩 시네트롤
+												자몽 오렌지 다이어트
+											</div>
+										</div>
+										<div class="price">
+											<div class="nonmember">
+												<span class="tit">비회원가</span>
+												<span>321,000원</span>
+											</div>
+											<div class="member">
+												<p class="tit">회원가</p>
+												<div class="inner-box">
+													<span><strong class="discount">67%</strong></span>
+													<span class="num"><strong>128,600</strong>원</span>
+												</div>
+											</div>
+										</div>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--// 추천 상품 영역 -->
+	
+	<div class="prod-data">
+		<div class="inner-wrap">
+			<div class="prod-util">
+				<p class="count">
+					전체상품
+					<span class="num">
+						34
+					</span>
+					개
+				</p>
+				<div class="util">
+					<div class="sort">
+						<span class="select-wrap">
+							<label for="boardSort">게시물 정렬</label>
+							<select id="boardSort" name="boardSort" class="select2" style="width: 100px;">
+								<option value="">추천순</option>
+								<option value="">인기순</option>
+								<option value="">낮은가격순</option>
+								<option value="">높은가격순</option>
+								<option value="">상품리뷰순</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+					</div>
+					<div class="filter">
+						<button type="button" class="btn-filter">상세검색 열기</button>
+						<div class="option-area">
+							<div class="wrap">
+								<div class="head">
+									<p class="title">상세필터</p>
+									<button type="button" class="btn-filter-close">닫기</button>
+								</div>
+								<div class="type">
+									<label class="check"><input type="checkbox"> <span>품절상품 제외</span></label>
+									<label class="check"><input type="checkbox"> <span>정기배송</span></label>
+								</div>
+								<div class="option accordion-list">
+									<dl class="item">
+										<dt class="title">
+											<a href="#">기능</a>
+										</dt>
+										<dd class="content">
+											<label class="check-btn"><input type="checkbox"> <span>체지방 감소</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>탄력 단백질</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>배변활동</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>지방 전환 억제</span></label>
+										</dd>
+									</dl>
+									<dl class="item">
+										<dt class="title">
+											<a href="#">제형</a>
+										</dt>
+										<dd class="content">
+											<label class="check-btn"><input type="checkbox"> <span>정제</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>캡슐</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>배변활동</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>지방 전환 억제</span></label>
+										</dd>
+									</dl>
+									<dl class="item">
+										<dt class="title">
+											<a href="#">혜택</a>
+										</dt>
+										<dd class="content">
+											<label class="check-btn"><input type="checkbox"> <span>사은품</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>쿠폰</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>무료배송</span></label>
+											<label class="check-btn"><input type="checkbox"> <span>1+1</span></label>
+										</dd>
+									</dl>
+									<dl class="item">
+										<dt class="title">
+											<a href="#">가격</a>
+										</dt>
+										<dd class="content">
+											<div class="filter-con-slider">
+												<div class="range-slider-wrap">
+													<div class="bar">
+														<div id="rangeSlider" class="range-slider"></div>
+													</div>
+												</div>
+												<div class="con">
+													<dl class="result min">
+														<dt class="hide">최소</dt>
+														<dd class="num">
+															<span class="value"></span>
+															<span class="won">원</span>
+														</dd>
+													</dl>
+													<dl class="result max">
+														<dt class="hide">최고</dt>
+														<dd class="num">
+															<span class="value"></span>
+															<span class="won">원</span>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<div class="btn-group row">
+									<a href="#" class="btn outline primary reset-btn">초기화</a>
+									<a href="#" class="btn primary">검색</a>
+								</div>
+							</div>
+						</div>
+						<div class="dimmed"></div>
+					</div>
+				</div>
+			</div>
+			<ul class="prod-list">
+				{% for i in range(0, 2) %}
+				<li>
+					<a href="#">
+						<figure class="prod-col-item">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="info">
+									<div class="tag-group">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</div>
+									<div class="store-name">스키니랩</div>
+									<div class="title">
+										가벼워지는 시서스다이어트
+										14포 X 4박스 + 석류 콜라겐
+										14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+									</div>
+								</div>
+								<div class="price">
+									<div class="nonmember">
+										<span class="tit">비회원가</span>
+										<span>321,000원</span>
+									</div>
+									<div class="member">
+										<p class="tit">회원가</p>
+										<div class="inner-box">
+											<span><strong class="discount">67%</strong></span>
+											<span class="num"><strong>128,600</strong>원</span>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+						</a>
+				</li>
+				<li>
+					<a href="#">
+						<figure class="prod-col-item">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="info">
+									<div class="title">
+										행복한 시서스 다이어트 14정 x 8박스 16주분
+									</div>
+								</div>
+								<div class="price">
+									<div class="nonmember">
+										<span>321,000원</span>
+									</div>
+									<div class="member">
+										<p class="tit">회원가</p>
+										<div class="inner-box">
+											<span><strong class="discount">67%</strong></span>
+											<span class="num"><strong>128,600</strong>원</span>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<figure class="prod-col-item soldout"><!-- 품절일 때 .soldout 추가-->
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							<span class="img">
+								<div class="soldout-box"><!-- 품절일 때 .soldout-box 노출-->
+									<div class="inner-box">
+										<p class="txt">일시품절</p>
+										<button type="button" onclick="UI.showLayerPop('', { url: './popup-restock-notification-register.html' }); return false;" class="btn small outline thin primary">재입고 알림</button>
+									</div>
+								</div>
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="info">
+									<div class="tag-group">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</div>
+									<div class="store-name">스키니랩</div>
+									<div class="title">
+										가벼워지는 시서스다이어트
+										14포 X 4박스 + 석류 콜라겐
+										14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+									</div>
+								</div>
+								<div class="price">
+									<div class="nonmember">
+										<span class="tit">비회원가</span>
+										<span>321,000원</span>
+									</div>
+									<div class="member">
+										<p class="tit">회원가</p>
+										<div class="inner-box">
+											<span><strong class="discount">67%</strong></span>
+											<span class="num"><strong>128,600</strong>원</span>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<figure class="prod-col-item">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="info">
+									<div class="tag-group">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</div>
+									<div class="store-name">스키니랩</div>
+									<div class="title">
+										가벼워지는 시서스다이어트
+										14포 X 4박스 + 석류 콜라겐
+										14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+									</div>
+								</div>
+								<div class="price">
+									<div class="nonmember">
+										<span class="tit">비회원가</span>
+										<span>321,000원</span>
+									</div>
+									<div class="member">
+										<p class="tit">회원가</p>
+										<div class="inner-box">
+											<span><strong class="discount">67%</strong></span>
+											<span class="num"><strong>128,600</strong>원</span>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<figure class="prod-col-item">
+							<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+							<span class="img">
+								<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지">
+							</span>
+							<figcaption class="content">
+								<div class="info">
+									<div class="tag-group">
+										<span class="tag primary">신제품</span>
+										<span class="tag secondary">베스트</span>
+										<span class="tag white">사은품</span>
+									</div>
+									<div class="store-name">스키니랩</div>
+									<div class="title">
+										가벼워지는 시서스다이어트
+										14포 X 4박스 + 석류 콜라겐
+										14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+									</div>
+								</div>
+								<div class="price">
+									<div class="nonmember">
+										<span class="tit">비회원가</span>
+										<span>321,000원</span>
+									</div>
+									<div class="member">
+										<p class="tit">회원가</p>
+										<div class="inner-box">
+											<span><strong class="discount">67%</strong></span>
+											<span class="num"><strong>128,600</strong>원</span>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="btn-group center">
+				<button type="button" class="btn-list-more">
+					더보기
+					<span class="icon-plus"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 상품이 없을때 -->
+	<div class="result-txt is-error">
+		<p class="com-txt">등록된 상품이 없습니다.<br>더 좋은 상품으로 찾아뵙겠습니다.</p>
+	</div>
+	<!-- //상품이 없을때 -->
+
+	<div class="dimmed"></div>
+</div>
+
+<script>
+	$(function() {
+		var $html = $('html')
+		
+		// tab-menu
+		$('.tab-menu .all-btn').click(function(){
+			var $tabMenuDimmed = $('.product-list > .dimmed')
+			var $tabMenu = $('.tab-menu')
+			
+			$tabMenu.find('.wrap .list').css("transform", "translate3d(0,0,0)");
+
+			if($tabMenu.hasClass('on') == true) {
+				$tabMenuDimmed.hide()
+				$tabMenu.removeClass('on')
+				$html.removeClass('product-fixed')
+			}else {
+				$tabMenuDimmed.show()
+				$tabMenu.addClass('on')
+				$html.addClass('product-fixed')
+			}
+		})
+
+		// visual-carousel
+		var visualCarouselSwiper = new Swiper('.visual-carousel .swiper-container', {
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			speed: 1000,
+			loop: true,
+			allowTouchMove: true,
+			effect: 'fade',
+			pagination: {
+				el: '.visual-carousel .pagination',
+				type: 'fraction',
+				formatFractionCurrent: function(number) {
+					return number < 10 ? '0' + number : number;
+				},
+				formatFractionTotal: function(number) {
+					return number < 10 ? '0' + number : number;
+				}
+			},
+			navigation: {
+				nextEl: '.visual-carousel .swiper-button-next',
+				prevEl: '.visual-carousel .swiper-button-prev',
+			}
+		});
+
+		$('.visual-carousel .btn-autoplay').on('click', function() {
+			var $this = $(this);
+
+			if($this.hasClass('is-stop')) {
+				visualCarouselSwiper.autoplay.start();
+			} else {
+				visualCarouselSwiper.autoplay.stop();
+			}
+
+			$this.toggleClass('is-stop');
+		});
+
+		// 추천상품 슬라이드
+		var recomCarouselSwiper = new Swiper('.recommend-product .swiper-container', {
+			allowTouchMove: true,
+			slidesPerView: 1.8,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 20,
+			breakpoints: {
+				768: {
+					slidesPerView: 3.5,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 5,
+				}
+			}
+		});
+		
+		// prod-data filter
+		var $filterDimmed = $('.filter .dimmed')
+		var $optionArea = $('.filter .option-area')
+
+		$('.btn-filter').click(function(){
+			$filterDimmed.fadeIn(function(){
+				$optionArea.animate({
+					right: '0%'
+				},200)
+			});
+
+			$html.addClass('product-fixed')
+		})
+
+		$('.btn-filter-close').click(function(){
+			$optionArea.animate({
+				right: '-90%'
+			},200,function(){
+				$filterDimmed.fadeOut();
+			})
+
+			$html.removeClass('product-fixed')
+			$('.option-area .option .item').removeClass('on')
+			$('.option-area .option .content').hide()
+			$('.option-area input[type=checkbox]').prop('checked', false);
+		});
+
+		$('.option-area .reset-btn').click(function(){
+			$('.option-area input[type=checkbox]').prop('checked', false);
+		})
+
+		$(".filter-con-slider #rangeSlider").slider({
+			range: true,
+			values: [0, 250000],
+			min: 0,
+			max: 500000,
+			slide: function( event, ui ) {
+				$(".filter-con-slider .min .value").text(ui.values[0]);
+				$(".filter-con-slider .max .value").text(ui.values[1]);
+			}
+		});
+
+		// 초기값
+		$(".filter-con-slider .min .value").text($(".filter-con-slider #rangeSlider").slider("values")[0]);
+		$(".filter-con-slider .max .value").text($(".filter-con-slider #rangeSlider").slider("values")[1]);
+	});
+</script>
+{%- endblock %}

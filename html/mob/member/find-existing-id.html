@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- 옵션클래스: full, full-scroll, hidden-title -->
+	<article id="popup-member-find" class="common-popup" data-motion-in="400" data-motion-out="200">
+		<div class="common-popup-inner popup-member-find">
+			<div class="header">
+				<h1 class="title">기존 아이디 찾기</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+			</div>
+			<div class="container">
+				<div class="head">
+					<div class="page-top-desc">
+						<div class="com-txt">
+							스키니랩이 <strong>헬스밸런스</strong><br>
+							<strong>통합 멤버십으로 변경</strong>되어 정보를<br>
+							입력 후 아이디를 찾아주세요!
+						</div>
+					</div>
+				</div>
+				<div class="body">
+					<div class="form-layout large">
+						<dl class="row">
+							<dt class="title">
+								<label for="userId">아이디</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="userId" name="userId" placeholder="아이디 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+								</span>
+								<p class="error-msg is-invalid" style="display: none;">아이디를 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="userId">이름</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="userName" name="userName" placeholder="이름 입력" class="text large block underline"> <!-- 입력오류일때: .is-invalid -->
+								</span>
+								<p class="error-msg is-invalid" style="display: none;">이름을 입력해주세요.</p> <!-- 입력오류일때 오류 문구 노출 -->
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="foot">
+					<div class="btn-group">
+						<button type="button" class="btn large primary block">기존 아이디 찾기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- // content -->
+</body>
+</html>

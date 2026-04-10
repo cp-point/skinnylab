@@ -1,0 +1,96 @@
+{%
+	set pageInfo = {
+		section: 'customer',
+		title: '공지사항'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header customer">
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/customer.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-notice-list">
+	<div class="main-wrap">
+		<div class="intergrated-search">
+			<form action="about:blank" method="get" class="search-box">
+				<div class="search js-text-clear">
+					<label for="search" class="hide">검색</label>
+					<input type="text" id="search" name="search" value="" placeholder="궁금하신 내용을 입력해주세요." class="input">
+					<button type="button" class="btn-clear">입력값 지우기</button>
+					<button type="button" class="btn-submit">검색하기</button>
+				</div>
+			</form>
+			<!-- 검색결과// -->
+			<!-- <p class="result">
+				<span class="str">‘회원가입’</span>
+				에 대한 검색결과 
+				<span class="str">
+					4
+				</span>
+				개 
+			</p> -->
+			<!-- //검색결과 -->
+		</div>
+	
+		<div class="tab-button">
+			<div class="wrap swiper-container tab-swiper js-scroll-tab">
+				<ul class="list">
+					<li class="is-active">
+						<a href="#">
+							전체
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							일반
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							배송안내
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							시스템점검
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	
+
+		<ul class="board-list">
+			{% for i in range(0,20) %}
+			<li class="item">
+				<a href="#">
+					<dl>
+						<dt>
+							<span class="type">[시스템점검]</span>
+							<span class="tit">제목 최대 1줄 노출 이후 말줄임 제목 최대 1줄 노출 이후 말줄임 제목 최대 1줄 노출 이후 말줄임 제목 최대 1줄 노출 이후 말줄임 제목 최대 1줄 노출 이후 말줄임 제목 최대 1줄 노출 이후 말줄임</span>
+						</dt>
+						<dd class="date">2021-02-03</dd>
+					</dl>
+				</a>
+			</li>
+			{% endfor %}
+			<!-- 검색 결과 없을때 -->
+			<!-- <li class="empty">
+				<p class="desc">검색 결과가 없습니다.</p>
+			</li> -->
+		</ul>
+
+		<div class="btn-group center">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>
+	</div>
+</div>
+{%- endblock %}

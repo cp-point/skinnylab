@@ -1,0 +1,37 @@
+{%
+	set pageInfo = {
+		section: 'order',
+		title: '주문/결제',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-order order-complete">
+	<div class="status-info">
+		<h2 class="title">주문 실패</h2>
+		<div class="icon fail"></div>
+		<p class="desc">
+			<span class="str">주문/결제가 실패되었습니다.</span>
+		</p>
+		<dl class="info">
+			<dt class="tit">실패사유 : </dt>
+			<dd class="con">사유 모두 노출 사유 모두 노출 사유 모두 노출</dd>
+		</dl>
+	</div>
+
+	<div class="page-foot">
+		<div class="btn-area">
+			<a href="#" class="btn large outline primary motion">
+				<span>장바구니 가기</span>
+			</a>
+			<a href="#" class="btn large primary motion">
+				<span>홈으로</span>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

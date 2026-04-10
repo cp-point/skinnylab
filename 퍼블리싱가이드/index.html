@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>헬스밸런스 스키니랩 - HTML Guide</title>
+	
+	<link rel="stylesheet" href="inc/bootstrap.css">
+	<link rel="stylesheet" href="inc/highlight.css">
+	<link rel="stylesheet" href="inc/solarized_light.min.css">
+
+	<style>
+		.markdown-body {
+			width: 1000px;
+			margin: 0 auto;
+			padding: 45px;
+			border: 1px solid #ddd;
+			font-family: 'Malgun Gothic';
+		}
+		.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 { font-weight: 600; }
+		.markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 { margin-top: 1.5em; margin-bottom: .5em; }
+		.markdown-body h2 { margin-top: 2em; margin-bottom: 1em; padding-bottom: .3em; border-bottom: 3px solid #eaeaef; }
+		.markdown-body h3 { padding-bottom: .3em; border-bottom: 1px solid #eaeaef; }
+		@media screen and (max-width: 1024px) {
+			.markdown-body { width: auto; padding: 4%; }
+		}
+	</style>
+
+	<script src="inc/jquery.min.js"></script>
+	<script src="inc/bootstrap.min.js"></script>
+	<script src="inc/remarkable.min.js"></script>
+	<script src="inc/highlight.min.js"></script>
+	<script src="inc/index.js"></script>
+	
+</head>
+<body>
+
+<xmp id="inputEl" style="display: none;">
+# HTML Guide
+
+> 헬스밸런스 스키니랩  
+(주)에이디앤스타일 / Seconds Factory 사업부 / 김용범
+
+- - -
+
+**목차**
+
+1. [기본 정보](#sec1)
+2. [코딩 환경](#sec2)
+3. [파일 디렉토리](#sec3)
+4. [코딩 가이드](#sec4)
+	1. [Style Guide](#sec4-1)
+	2. [SCSS 구조](#sec4-2)
+	3. [HTML 구조](#sec4-3)
+	4. [이미지 스프라이트 자동화](#sec4-4)
+	5. [Email 가이드](#sec4-5)
+
+- - -
+
+## 1. 기본 정보 <a href="#sec1" id="sec1">#</a>
+
+- 문서타입 : `HTML5`
+- 기본언어 : `ko`
+- 인코딩 : `UTF-8`
+- 작업 범위 :
+	- PC웹, Mobile웹 한국어
+- 브라우저 지원범위
+	- **Chrome, Firefox, Safari, Opera** : Last 2~10 versions
+	- **iOS** : 8+
+	- **Android** : 5+
+
+## 2. 코딩환경 <a href="#sec2" id="sec2">#</a>
+
+프로젝트 소스 빌드를 위해 **[node.js](https://nodejs.org/)**와 **[gulp](https://gulpjs.com/)**를 사용합니다.  
+코딩환경을 실행하고 소스파일을 빌드해서 배포용 HTML, CSS를 생성하는 구조입니다.
+
+프로젝트에서 사용되는 주요 모듈은 아래와 같습니다.
+
+모듈명 | 설명
+---- | ----
+gulp | task 자동화 도구
+gulp-nunjucks-render | html 모듈화를 위한 템플릿 엔진
+gulp.spritesmith-multi | 이미지 스프라이트 및 스프라이트 CSS 자동 생성
+gulp-sass | CSS 전처리기 SASS 사용
+gulp-autoprefixer | CSS prefix 자동화
+browser-sync | 로컬 웹서버
+gulp-w3cjs | W3C 문법 검사
+gulp-htmlhint | HTML 컨벤션 검사
+stylelint | CSS 컨벤션 검사
+gulp-inline-css | Inline Style HTML 생성
+
+### 코딩환경 설치
+
+**node.js**  
+[node.js 웹사이트(https://nodejs.org/)](https://nodejs.org/)에서 다운로드 후 설치  
+(참고: 구축 시점에 사용된 node.js 버전은 v12.14.0 입니다.)
+
+**Install**  
+package.json이 있는 프로젝트 폴더에서 명령프롬프트를 열고 아래 명령을 실행하면 프로젝트에 필요한 모듈이 설치됩니다.
+``` bash
+npm install
+```
+
+### 코딩환경 실행
+
+기본으로 **default task**가 실행되면서 **watch** 상태가 되어 소스파일이 변경되면 자동으로 컴파일됩니다.  
+그리고 dist폴더 기준으로 웹서버가 실행되어 http://localhost:7010/ 또는 네트워크에서 http://컴퓨터IP:7010/ 으로 접속 가능합니다.
+
+##### (참고) npm start 실행 에러 발생 시 확인사항
+- 프로젝트 폴더에서 `package-lock.json` 파일과 설치 후 생성된 `node_modules` 폴더를 삭제하고, 다시 `npm install` 후 실행
+- 웹서버 포트 충돌 가능성 : 다른 터미널에서 이미 코딩환경이 구동되고 있는 지 확인
+
+#### NPM Scripts Task
+
+프로젝트에 구성된 Task 정보는 아래와 같습니다.  
+`npm run Task명`과 같이 실행할 수 있습니다. (start Task는 run 생략가능)
+
+Task Name | 내용
+---- | ----
+start | 코딩환경 실행 (build + watch + webserver)
+build | 웹서버와 watch 기능없이 소스 빌드만 수행합니다.
+watch | 웹서버와 watch 기능을 실행합니다.
+w3c | dist폴더의 html파일들에 대해 W3C 유효성 검사를 수행하고 터미널에 오류 내역을 출력합니다.
+inlineBuild | dist/email폴더의 html,css파일을 Inline Style HTML파일로 생성합니다.
+
+#### Gulp Task
+
+NPM Task에 의해 실행되는 gulp task들에 대한 설명입니다.
+
+Task Name | 내용
+---- | ----
+server | **코딩용 웹서버 실행.**<br>dist폴더 기준으로 웹서버 실행.
+html | **HTML 템플릿**<br>src의 HTML에 대해 템플릿 및 include 기능을 적용해서 결과파일을 dist폴더에 생성합니다.
+spriteAndStyle | **CSS관련 Task.**<br>아래 작업들이 순차 실행됩니다.<br>1. 이미지 스프라이트 생성<br>2. SASS 컴파일<br>3. 이미지경로 치환<br>4. 오토프리픽스 적용<br>6. 미디어쿼리 코드 그루핑<br>7. CSS 압축<br>5. dist폴더에 배포
+watch | **파일 변경을 감지.**<br>src폴더의 파일이 변경되면 자동으로 관련 Task를 수행합니다.
+build | 배포용 html, css파일을 빌드하여 생성합니다.
+inlineBuild | 배포용 Inline Style HTML 생성합니다.
+**default** | **server, build, watch Task가 순차 실행됩니다.**
+
+- - -
+
+## 3. 파일 디렉토리 <a href="#sec3" id="sec3">#</a>
+
+본 프로젝트는 html, scss, sprite image를 `src`에서 관리하고 `dist`로 생성되는 구조입니다.  
+나머지 img, js 등의 리소스는 `dist`에서 관리합니다.
+
+전체 html page 목록을 아래 파일에서 관리합니다.
+- **dist/html-list-pc.html, dist/html-list-mob.html**
+
+<table class="table table-bordered">
+	<colgroup>
+		<col class="col-xs-1">
+		<col class="col-xs-1">
+		<col class="col-xs-1">
+		<col class="col-xs-1">
+		<col class="col-xs-5">
+	</colgroup>
+	<thead>
+		<tr>
+			<th>1depth</th>
+			<th>2depth</th>
+			<th>3depth</th>
+			<th>4depth</th>
+			<th>설명</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>package.json</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>프로젝트 정보 설정파일</td>
+		</tr>
+		<tr>
+			<td>node_modules</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>nodejs 모듈 디렉토리 (npm install 후 생성됨)</td>
+		</tr>
+		<tr>
+			<td>.gitignore</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>버전관리 ignore 대상 설정파일</td>
+		</tr>
+		<tr>
+			<td>gulpfile.js</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>Gulp Task 설정파일</td>
+		</tr>
+		<tr>
+			<td>.browserslistrc</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>autoprefixer 브라우저 지원범위 설정파일</td>
+		</tr>
+		<tr>
+			<td>.htmlhintrc</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>HTML 구문 검사 설정파일</td>
+		</tr>
+		<tr>
+			<td>.stylelintrc.json</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>SCSS 구문 검사 설정파일</td>
+		</tr>
+		<tr>
+			<td rowspan="16">dist</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>배포파일 디렉토리.<br>개발파트에 전달되는 폴더</td>
+		</tr>
+		<tr>
+			<td>css</td>
+			<td>-</td>
+			<td>-</td>
+			<td>배포용 CSS (압축됨)</td>
+		</tr>
+		<tr>
+			<td rowspan="3">email</td>
+			<td>css</td>
+			<td>-</td>
+			<td>Email CSS</td>
+		</tr>
+		<tr>
+			<td>html</td>
+			<td>-</td>
+			<td>빌드 된 HTML</td>
+		</tr>
+		<tr>
+			<td>export</td>
+			<td>-</td>
+			<td>배포용 Email HTML</td>
+		</tr>
+		<tr>
+			<td>font</td>
+			<td>-</td>
+			<td>-</td>
+			<td>웹폰트</td>
+		</tr>
+		<tr>
+			<td rowspan="3">html</td>
+			<td>-</td>
+			<td>-</td>
+			<td rowspan="3">섹션별 HTML 디렉토리. <br>각종 include 처리된 완성파일</td>
+		</tr>
+		<tr>
+			<td>pc</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>mob</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td rowspan="6">img</td>
+			<td>-</td>
+			<td>-</td>
+			<td>이미지 디렉토리</td>
+		</tr>
+		<tr>
+			<td>email</td>
+			<td>-</td>
+			<td>email 이미지 디렉토리</td>
+		</tr>
+		<tr>
+			<td rowspan="3">pc</td>
+			<td>-</td>
+			<td>PC 이미지 디렉토리</td>
+		</tr>
+		<tr>
+			<td>@dummy</td>
+			<td>임시 사용 이미지 디렉토리</td>
+		</tr>
+		<tr>
+			<td>sprite</td>
+			<td>자동생성된 스프라이트 이미지 디렉토리</td>
+		</tr>
+		<tr>
+			<td>mob</td>
+			<td>-</td>
+			<td>모바일 이미지 디렉토리</td>
+		</tr>
+		<tr>
+			<td rowspan="2">js</td>
+			<td>-</td>
+			<td>-</td>
+			<td>자바스크립트 디렉토리</td>
+		</tr>
+		<tr>
+			<td>lib</td>
+			<td>-</td>
+			<td>각종 스크립트 라이브러리 디렉토리</td>
+		</tr>
+		<tr>
+			<td rowspan="19">src</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>소스파일 디렉토리</td>
+		</tr>
+		<tr>
+			<td rowspan="3">email</td>
+			<td>-</td>
+			<td>-</td>
+			<td>Email 소스 디렉토리</td>
+		</tr>
+		<tr>
+			<td>css</td>
+			<td>-</td>
+			<td>Email CSS</td>
+		</tr>
+		<tr>
+			<td>html</td>
+			<td>-</td>
+			<td>Email HTML</td>
+		</tr>
+		<tr>
+			<td rowspan="5">html</td>
+			<td>-</td>
+			<td>-</td>
+			<td>HTML 소스 디렉토리</td>
+		</tr>
+		<tr>
+			<td rowspan="3">pc</td>
+			<td>-</td>
+			<td>PC HTML 소스 디렉토리</td>
+		</tr>
+		<tr>
+			<td>@guide</td>
+			<td>공통 컴포넌트 가이드와 레이아웃 샘플</td>
+		</tr>
+		<tr>
+			<td>@inc</td>
+			<td>레이아웃 HTML, include를 위해 분리한 HTML</td>
+		</tr>
+		<tr>
+			<td>mob</td>
+			<td>-</td>
+			<td>모바일 HTML 소스 디렉토리</td>
+		</tr>
+		<tr>
+			<td>img-sprites</td>
+			<td>-</td>
+			<td>-</td>
+			<td>스프라이트 이미지 디렉토리<br>하위 폴더 단위로 스프라이트 세트 생성됨</td>
+		</tr>
+		<tr>
+			<td rowspan="9">scss</td>
+			<td>-</td>
+			<td>-</td>
+			<td>SCSS 소스 디렉토리</td>
+		</tr>
+		<tr>
+			<td rowspan="7">pc</td>
+			<td>-</td>
+			<td>PC SCSS 소스 디렉토리</td>
+		</tr>
+		<tr>
+			<td>base</td>
+			<td>Reset 및 공통환경</td>
+		</tr>
+		<tr>
+			<td>components</td>
+			<td>각종 공통 컴포넌트 CSS</td>
+		</tr>
+		<tr>
+			<td>helpers</td>
+			<td>환경변수, 함수, 믹스인</td>
+		</tr>
+		<tr>
+			<td>layout</td>
+			<td>레이아웃 CSS</td>
+		</tr>
+		<tr>
+			<td>pages</td>
+			<td>섹션별 페이지 CSS</td>
+		</tr>
+		<tr>
+			<td>vendors</td>
+			<td>벤더 CSS 디렉토리</td>
+		</tr>
+		<tr>
+			<td>mob</td>
+			<td>-</td>
+			<td>모바일 SCSS 소스 디렉토리</td>
+		</tr>
+	</tbody>
+</table>
+
+- - -
+
+## 4. 코딩 가이드 <a href="#sec4" id="sec4">#</a>
+
+### 4.1 Style Guide <a href="#sec4-1" id="sec4-1">#</a>
+
+#### 4.1.1 공통 설정 및 가이드
+- 들여쓰기는 탭문자 1개, 탭 사이즈는 4로 합니다.
+- 파일 인코딩은 UTF-8으로 합니다.
+- HTML, CSS, JS, IMG 파일명 단어 구분은 하이픈(-)으로 합니다.
+
+#### 4.1.2 HTML
+
+##### HTML 문법
+- 속성(attribute)값은 항상 쌍따옴표를 사용합니다.
+- 단일 태그는 슬래시(`/`)로 닫지 않습니다. (예: `<br />`, `<img />`)
+- 문서 최상위 요소인 `html` 요소에 `lang` 속성으로 언어를 지정합니다.
+- 문자열 인코딩을 선언합니다.
+
+``` html
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>페이지 제목</title>
+	</head>
+	<body>
+		<img src="logo.png" alt="이미지 대체텍스트">
+		<h1 class="hello-world">Hello, world!</h1>
+	</body>
+</html>
+```
+
+##### CSS, JS 삽입
+HTML5 에서는 CSS와 JS를 링크할 때 `type` 속성을 생략합니다.
+``` html
+<!-- CSS 링크 -->
+<link rel="stylesheet" href="style.css">
+
+<!-- 문서 내부 CSS -->
+<style></style>
+
+<!-- JS 링크 -->
+<script src="script.js"></script>
+
+<!-- 문서 내부 JS -->
+<script></script>
+```
+
+##### Boolean 속성 <a href="#user-content-boolean-속성-">#</a>
+불리언 속성에는 값을 지정하지 않습니다.
+
+```html
+<input type="text" disabled>
+<input type="checkbox" value="1" checked>
+<option value="1" selected>1</option>
+```
+
+##### 문서 개요(HTML5 아웃라인)
+HTML5 아웃라인 알고리즘에 따라 섹셔닝 요소와 헤딩 요소를 이용하여 문서 개요를 논리적으로 구성합니다.  
+섹셔닝 요소(`section`, `article`, `nav`, `aside`)에는 헤딩 요소를 명시적으로 사용합니다. 
+
+#### 4.1.3 CSS
+
+##### CSS 문법
+- 쉼표(`,`)를 사용하여 선택자를 그룹핑하는 경우 쉼표 뒤에서 개행합니다.
+- 여는 중괄호(`{`) 앞에 공백을 한칸 놓습니다.
+- 닫는 중괄호(`}`)는 새로운 줄에 놓습니다.
+- 속성 선언 시 콜론(`:`) 뒤에는 공백문자 하나를 포함시킵니다.
+- 한 줄에 하나의 속성만 작성합니다.
+- 모든 속성 선언은 마지막에 세미콜론(`;`)으로 끝냅니다.
+- 다중 속성값들은 콤마 뒤에 공백문자를 포함합니다.(예: `box-shadow`).
+- `rgb()`, `rgba()` 값의 괄호 안에서는 콤마 뒤 공백문자를 넣지 않습니다.
+- 속성값에 소숫점을 사용할 때 `0.`을 사용하지 않습니다.(예: `0.5`대신 `.5`를, `-0.5px`대신 `-.5px`)
+- 축약 가능한 16진수 값은 축약합니다. (예: `#ffffff` 대신 `#fff`)
+- 속성값들에는 홑따옴표를 사용합니다. (예: `[type='text']`)
+- `url()` 값에는 홑따옴표를 사용합니다. (예: `url('/common/image.png')`)
+- 값이 `0`일 때는 단위를 생략합니다. (예: `margin: 0px;` 대신 `margin: 0;` 사용)
+
+```css
+/* Bad CSS */
+.selector,.selector-secondary,.selector[type=text]{
+	padding:15px;
+	margin:0px 0px 15px;
+	background-color:rgba(0, 0, 0, 0.5);
+	background-image:url(/common/image.png);
+	box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
+}
+
+/* Good CSS */
+.selector,
+.selector-secondary,
+.selector[type='text'] {
+	padding: 15px;
+	margin-bottom: 15px;
+	background-color: rgba(0,0,0,.5);
+	background-image: url('/common/image.png');
+	box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+}
+```
+
+##### 단일 속성값
+하나의 속성만 포함한다면 개행하지 않아도 됩니다.
+
+```css
+/* Single declarations on one line */
+.span1 { width: 60px; }
+.span2 { width: 140px; }
+.span3 { width: 220px; }
+
+/* Multiple declarations, one per line */
+.sprite {
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	background-image: url('../img/sprite.png');
+}
+```
+
+##### 클래스 네이밍 및 선택자
+- CSS 클래스는 소문자로만 작성하며 단어 구분은 하이픈(-)으로 합니다.
+- 짧고 간결하게 작성하되 `.btn`과 같이 쉽게 의미를 유추할 수 있는 정도로만 축약합니다.
+- 시각적 표현 대신 의미, 구조, 목적을 담아 작명하도록 노력합니다.
+- CSS 셀렉터 중첩이 3~4단계 이상 깊어지지 않도록 주의합니다.
+- SCSS 작성 시 CSS 벤더프리픽스는 자동으로 삽입되므로 `표준 속성만 사용`하고, 프리픽스 믹스인 사용은 하지 않습니다.
+- 믹스인과 함수의 사용 효율보다 읽기 쉬운 코드와 일관성이 우선하므로 과도한 믹스인은 자제합니다.
+
+### 4.2 SCSS 구조 <a href="#sec4-2" id="sec4-2">#</a>
+
+#### 공통 SCSS 변수
+프로젝트에서 공통으로 사용되는 값들은 `helper/_variables.scss`파일에 변수로 지정되어 있습니다.
+
+#### SCSS 파일 구조
+
+공통으로 사용될 요소는 컴포넌트로 분리하여 관리하고,   
+`pages`폴더에서는 웹사이트의 논리적 섹션 단위로 scss파일을 만들어서 해당 영역의 스타일을 정의합니다.  
+
+아래는 각 entry파일의 구조입니다.  
+
+ `**/*.scss`와 같은 형식으로 `@import`하고 있는 부분은 `gulp-sass-glob` 모듈이 적용되어 있어서  
+**해당 경로 하위의 all폴더/all파일명.scss**를 불러오는 표현이므로 내부에 폴더나 파일을 생성할때 자동으로 포함되어 import하게 됩니다.
+
+
+##### **`src/scss/../common.scss` CSS entry file**
+
+``` scss
+//
+// COMMON.SCSS
+// --------------------------------------------------
+
+// Helpers
+@import './helpers/variables';					// 환경변수 설정
+@import './helpers/functions';					// 함수
+@import './helpers/mixins';						// 믹스인
+@import './helpers/media';						// 미디어쿼리
+
+// Base
+@import './base/reset';							// CSS reset
+@import './base/com';							// 프로젝트 환경 스타일
+
+// Vendors
+@import './vendors/*-sprite.scss';				// 아이콘 스프라이트 SCSS (gulp.spritesmith 모듈이 자동생성)
+@import './vendors/jquery-ui';					// jQuery UI 스타일
+
+// Components
+@import './components/**/*.scss';				// 공통 컴포넌트
+
+// Layout
+@import './layout/**/*.scss';					// 레이아웃 스타일
+
+// Pages
+@import './pages/**/*.scss';					// 섹션별 페이지 스타일
+```
+
+### 4.3 HTML 구조 <a href="#sec4-3" id="sec4-3">#</a>
+
+#### 기본 레이아웃
+
+기본 레이아웃은 별도 분리되어 공통 사용됩니다.  
+`{% block content %}{% endblock %}`부분에는 각 본문파일의 내용이 조합됩니다.
+
+**`src/html/pc/@inc/layout.html`: PC 기본 레이아웃**
+
+``` html
+<!DOCTYPE html>
+<html lang="ko">
+{{ include('./head.html') }}
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+
+	<div class="wrapper">
+		<!-- Header // -->
+		{{ include('./header.html') }}
+		<!-- // Header -->
+
+		<!-- Content // -->
+		{% block content -%}{%- endblock %}
+		<!-- // Content -->
+
+		<!-- Footer // -->
+		{{ include('./footer.html') }}
+		<!-- // Footer -->
+
+		<!-- Floating Menu // -->
+		{{ include('./floating-menu.html') }}
+		<!-- // Floating Menu -->
+	</div>
+</body>
+</html>
+```
+**`src/html/mob/@inc/layout.html`: 모바일 기본 레이아웃**
+
+``` html
+<!DOCTYPE html>
+<html lang="ko">
+{{ include('./head.html') }}
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+
+	<div class="wrapper">
+		
+		<!-- Content // -->
+		{% block content -%}{%- endblock %}
+		<!-- // Content -->
+
+		{% if pageInfo.section != 'fit-skinnylab' -%}
+		<!-- bottom navigation, bottom banner // -->
+		{{ include('./bottom-nav.html') }}
+		<!-- // bottom navigation, bottom banner -->
+		{% endif %}
+
+		<!-- Footer // -->
+		{{ include('./footer.html') }}
+		<!-- // Footer -->
+
+		<!-- floating menu // -->
+		{{ include('./floating-menu.html') }}
+		<!-- // floating menu -->
+	</div>
+</body>
+</html>
+```
+
+#### 본문
+
+각 페이지 본문영역은 별도의 파일로 관리됩니다.
+
+`{% block content -%}` ~ `{%- endblock %}` 코드 블록의 내용이  
+`{% extends "@inc/layout.html" %}` 구문에 지정된 레이아웃에 조합되는 구조입니다.
+
+
+``` html
+{% extends '@inc/layout.html' %}
+
+{% block content -%}
+<div id="content-main" class="common-container section-섹션이름 섹션이름-페이지유형이름">
+	<!-- 페이지 내용 -->
+</div>
+{%- endblock %}
+```
+
+#### 본문 클래스 네이밍 가이드
+
+사이트의 정보구조를 2depth까지만 분류하는 `section - page` 설계 구조로 사이트 규모가 커져도 확장성있게 관리합니다.  
+
+본문영역 클래스는 `class="common-container - section-섹션이름 - 섹션이름-페이지유형이름"` 형태로 되어 있습니다.  
+
+섹션이름은 고유하게 지정하여 common, main, intro, board 등의 형태로 사용될 수 있습니다.  
+정해진 이름 그대로 `dist/html/../섹션이름`, `src/scss/../pages/_섹션이름.scss`처럼 HTML, CSS파일을 관리합니다.  
+
+`src/scss/../pages/_섹션이름.scss` 파일에서는 섹션 내에서 공유하는 스타일 또는 페이지유형별 스타일을 정의할 수 있습니다.  
+**페이지 스타일에 관련된 클래스명이 섹션이름을 규칙을 벗어나지 않게 철저하게 지역화해야 합니다.**  
+페이지유형이름은 유사한 형식의 페이지간에 공통으로 사용할 수도 있습니다.  
+
+섹션이름과 페이지유형이름은 두 단어 이상의 조합으로 사용해도 괜찮지만 정보구조를 추상화하는 노력을 통해  
+짧은 단어로 사용하기를 권장합니다.
+
+##### **`src/scss/../pages/_intro.scss`**
+``` scss
+// section-섹션이름
+
+// intro섹션 내에 공통으로 사용되는 스타일
+.section-intro {
+	// ...
+}
+
+// 섹션이름-페이지유형이름
+
+// intro섹션의 board페이지에 사용되는 스타일
+.intro-board {
+	// ...
+}
+```
+
+#### 공통 컴포넌트
+
+다른 섹션에서도 재사용할 가능성이 있는 요소는 전역 클래스 기준으로 네이밍해서 공통으로 사용해야 합니다.
+
+`src/scss/../components` 에 공통 컴포넌트들이 유형별로 정리되어 있습니다.  
+컴포넌트로 추가할 scss 파일명은 해당 컴포넌트의 클래스명을 사용하며,  
+사이트 전체적으로 구분한 섹션이름과 충돌되지 않게 주의합니다.
+
+`dist/html/../@guide/components-guide.html` 에서 공통 컴포넌트들에 대한 가이드를 확인할 수 있습니다.  
+컴포넌트 가이드페이지는 `src/html/../@guide/components-guide.html` 에서 편집합니다.
+
+
+### 4.4 이미지 스프라이트 자동화 <a href="#sec4-4" id="sec4-4">#</a>
+
+`gulp.spritesmith-multi` 모듈을 통해 이미지 스프라이트 세트를 쉽게 관리할 수 있습니다.  
+`src/img-sprites`의 하위폴더 단위로 자동으로 스프라이트 이미지와 SCSS 파일이 생성됩니다.  
+
+- 개별 아이콘 소스 : src/img-sprites/../ico  
+- 생성된 스프라이트 이미지 : dist/img/../sprite/ico.png  
+- 생성된 SCSS 파일 : src/scss/../vendors/_ico-sprite.scss  
+
+생성된 스프라이트는 `$폴더명-파일명` 형태의 변수와 `sprite` 등의 믹스인으로 사용합니다.
+
+#### **사용 예**
+
+``` css
+.question {
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		margin-top: -10px;
+		top: 50%;
+		left: 208px;
+
+		@include sprite($ico-faq-q);
+	}
+}
+
+.ico-file {
+	display: inline-block;
+	vertical-align: middle;
+
+	@include spriteIR($ico-file);
+	// spriteIR - sprite 믹스인을 Image Replace 방식으로 적용하는 믹스인
+}
+```
+
+### 4.5 Email 가이드 <a href="#sec5" id="sec4-5">#</a>
+
+`src/email`에서 작성 된 소스파일들이 `dist/email/html,css`로 빌드되며,  
+빌드 된 `dist/email/html,css` 파일들이 `dist/email/export`로 Inline Style HTML파일 생성.  
+
+**(참고) `dist/email/export`로 Inline Style HTML파일이 생성되지 않았을 때**
+- `dist/email/html,css`폴더 및 파일들이 있는지 확인하며, 없을시 `npm run build`로 빌드한 뒤에 `npm run inlineBuild` 실행.
+
+</xmp>
+
+<div id="outputEl" class="markdown-body">
+	<noscript>
+		이 화면이 나타날 경우 브라우저에서 자바스크립트 실행을 허용하면 문서를 보실 수 있습니다.<br>
+		차단된 콘텐츠 허용 버튼을 클릭하세요.<br>
+		<br>
+		<img src="inc/block-script.gif" alt="" style="border: 1px solid #666;">
+	</noscript>
+</div>
+
+</body>
+</html>

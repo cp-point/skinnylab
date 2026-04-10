@@ -1,0 +1,149 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [3,1]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-restock-notification">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">{{pageInfo.title}}</h2>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h3 class="title">재입고 알림 신청 내역</h3>
+				</div>
+				<div class="content-inner-wrap">
+					<div class="product-select">
+						<div class="util">
+							<div class="select">
+								<label class="check">
+									<input type="checkbox" name="allCheck" id="allCheck" class="check">
+									<span>전체선택</span>
+								</label>
+							</div>
+							<div class="del">
+								<button type="button" class="btn small outline2">선택삭제</button>
+							</div>
+						</div>
+						<ul class="list">
+							{% for i in range(0, 10) %}
+							<li>
+								<div class="item">
+									<div class="thumb">
+										<label class="check-only">
+											<input type="checkbox">
+											<span>상품선택</span>
+										</label>
+										<span class="img">
+											<a href="#">
+												<img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지">
+											</a>
+										</span>
+									</div>
+									<div class="content">
+										<div class="info">
+											<p class="name">
+												<a href="#">
+													가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명
+												</a>
+											</p>
+											<dl class="option">
+												<dt>옵션</dt>
+												<dd>선택된 옵션명 정보 모두 노출</dd>
+											</dl>
+										</div>
+										<div class="noti">
+											<p>알림기간</p>
+											<p class="date">
+												<strong>
+													2021.05.04~2021.06.03
+												</strong>
+											</p>
+											<p class="empasis">알림방법 SMS</p>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-close"><span>닫기</span></button>
+							</li>
+							{% endfor %}
+
+							<!-- 재입고 알림신청 내역 없음 // -->
+							<!-- <li class="empty">
+								재입고 알림<br>신청내역이 없습니다.
+							</li> -->
+							<!-- // 재입고 알림신청 내역 없음 -->
+						</ul>
+					</div>
+
+					<div class="common-pagination">
+						<a href="#" class="paging-btn prev">Prev</a>
+						<span class="paging-num">
+							<a href="#" class="on">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="paging-btn next">Next</a>
+					</div>
+
+					<div class="page-sub-noti">
+						<p class="title">재입고 알림 안내</p>
+						<ul class="list">
+							<li>재입고 알림은 신청일로부터 최대 1개월 이내 재 입고가 될 경우 알림이 발송됩니다.</li>
+							<li>재입고 알림은 먼저 신청한 순서대로 발송되며, 재 입고 알림을 받았더라도 구매 시점에 따라 품절이 발생할 수 있습니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+	$(function(){
+		// 제품목록 체크박스 컨트롤
+		var allCheck = $('input:checkbox[id="allCheck"]');
+		var itemCheck = $('.product-select .check-only input[type=checkbox]');
+
+		// 전체 선택 / 해제
+		allCheck.click(function(){
+			if(allCheck.prop("checked")) {
+				itemCheck.prop('checked', true);
+			} else {
+				itemCheck.prop('checked', false);
+			}
+		});
+
+		// 개별 선택 / 해제
+		itemCheck.each(function() {
+			$(this).click(function() {
+
+				if($(this).prop("checked")) {
+					checkBoxLen = itemCheck.length;
+					checkLen = $('.product-select .select input[type=checkbox]:checked').length;
+					
+					if(checkBoxLen == checkLen) { // 체크박스 전부 체크 됐을 경우
+						allCheck.prop('checked', true);
+					} else {
+						allCheck.prop('checked', false);
+					}
+				} else {
+					allCheck.prop('checked', false);
+				}
+				
+			});
+		});
+	})
+</script>
+{%- endblock %}

@@ -1,0 +1,132 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [3,4]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-qna-detail common-qna">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h3 class="title">{{pageInfo.title}}</h3>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h4 class="title">1:1문의내역 상세</h4>
+				</div>
+				<div class="content-inner-wrap">
+					<div class="top-banner">
+						<dl class="content">
+							<dt class="title">고객센터 이용안내</dt>
+							<dd class="desc">평일 09:30 ~ 18:00 주말/공휴일 휴무</dd>
+						</dl>
+						<div class="content">
+							<span class="tel">1644-7267</span>
+							<a href="#" class="btn outline thin primary">1:1문의하기</a>
+						</div>
+					</div>
+					
+					<div class="detail-wrap">
+						<div class="title-row">
+							<div class="utility">
+								<span class="icon-status ing"></span>
+								<span class="date">2021.05.03</span>
+							</div>
+							<p class="tit">문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목 노출 문의제목</p>
+							<div class="btn-group">
+								<a href="../customer/qna-write-member.html" class="btn outline thin small primary">수정</a>
+								<button type="button" class="btn outline thin small primary">삭제</button>
+							</div>
+						</div>
+						<dl class="row">
+							<dt class="title">문의유형</dt>
+							<dd class="content">
+								주문/결제
+								<!-- 선택 주문 상품 노출 -->
+								<ul class="list-cont">
+									<li>
+										<div class="top-info">
+											<span class="date">2021-04-09</span>
+											<span>주문번호 : 2021040914352712345</span>
+										</div>
+										<div class="item">
+											<span class="img">
+												<img src="../../../img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지">
+											</span>
+											<div class="info">
+												<p class="name">
+													가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명 최대 3줄 노출 이후 대 3줄 노출 3줄 노출 이후 대 3줄 노출
+												</p>
+												<dl class="option">
+													<dt>옵션</dt>
+													<dd>옵션명 최대 1줄 노출 이후 말줄임 처리 옵션명 최대 1줄 노출 이후 말줄임 처리</dd>
+												</dl>
+												<div class="utility">
+													1개
+													<span class="price">79,600원</span>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<!-- //선택 주문 상품 노출 -->
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">내용</dt>
+							<dd class="content">
+								부모님 댁으로 배송지를 바꾸고 싶어요. 빠른 답변 부탁 드립니다.<br>
+								어버이날 선물로 드릴거라서요~~!!!!
+								<ul class="upload-list">
+									<li><img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="상품 이미지"></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+								
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">알림방법</dt>
+							<dd class="content">
+								휴대폰 번호&nbsp;&nbsp;010-1234-5678
+							</dd>
+						</dl>
+						<dl class="reply-row"> <!-- 관리자에서 답변 작성 시 노출 -->
+							<dt class="title">답변</dt>
+							<dd class="content">
+								<span class="date">2021.04.16</span>
+								안녕하세요. 헬스밸런스 고객센터 입니다.<br>
+								고객님께서 문의하신 내용에 답변 드립니다.<br><br>
+
+								내용 내용 내용 내용 내용 내용 내용 내용<br> 
+								내용 내용 내용 내용 내용 내용 내용 내용<br><br> 
+
+								즐거운 하루 되세요.<br>
+								감사합니다.<br>
+							</dd>
+						</dl>
+					</div>
+
+					<div class="btn-group center page-bot-group">
+						<a href="./qna-list.html" class="btn large primary">
+							<span>목록보기</span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

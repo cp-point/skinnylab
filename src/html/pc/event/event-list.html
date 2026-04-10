@@ -1,0 +1,192 @@
+{%
+	set pageInfo = {
+		section: 'event',
+		title: '이벤트',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-event event-list">
+	<div class="page-head">
+		<h2 class="title">이벤트</h2>
+	</div>
+	<div class="tab-group-wrap">
+		<div class="tab-menu overline">
+			<div class="wrap">
+				<ul class="list tab-menu-box">
+					<li class="selected tab">
+						<a href="#">진행중 이벤트</a>
+					</li>
+					<li class="tab">
+						<a href="#">당첨자 발표</a>
+					</li>
+					<li class="tab">
+						<a href="#">종료 이벤트</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="tab-content">
+			<ul class="event-list">
+				{% for i in range(0, 24) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/event-thumb-img01.jpg" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<p class="title">
+											[1,000명 한정] 스키니랩 DNA 분석 프로 ···
+										</p>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="share">
+							<button type="button" class="btn-open" onclick="$(this).parents('.share').find('.content').show(); return false;">공유하기 열기</button>
+							<div class="content">
+								<div class="box">
+									<ul class="list">
+										<li>
+											<a href="#">
+												<span class="icon facebook"></span>
+												<span class="tit">페이스북</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon kakao"></span>
+												<span class="tit">카카오톡</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon url"></span>
+												<span class="tit">URL복사</span>
+											</a>
+										</li>
+									</ul>
+									<button type="button" class="btn-close" onclick="$(this).parents('.share').find('.content').hide(); return false;">공유하기 닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">진행중인 이벤트가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+		<div class="tab-content">
+			<ul class="event-list">
+				{% for i in range(0, 24) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/event-thumb-img01.jpg" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<p class="title type2">
+											[당첨자 발표] 스키니랩 DNA 분석 프로 ···
+										</p>
+										<p class="date">
+											2021-04-12
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">당첨자 발표 내역이 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+		<div class="tab-content">
+			<ul class="event-list">
+				{% for i in range(0, 24) -%}
+				<li>
+					<div class="item">
+						<a href="#">
+							<figure class="wrap">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/event-thumb-img01.jpg" alt="신제품 출시 기념 기획전">
+								</div>
+								<figcaption class="content">
+									<div class="wrap">
+										<p class="title type2">
+											[1,000명 한정] 스키니랩 DNA 분석 프로 ···
+										</p>
+										<p class="date">
+											2021-04-12 ~ 2021-04-30
+										</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+				<!-- 검색 결과 없을때 // -->
+				<!-- <li class="empty">
+					<p class="desc">종료된 이벤트가 없습니다.</p>
+				</li> -->
+				<!-- // 검색 결과 없을때 -->
+			</ul>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

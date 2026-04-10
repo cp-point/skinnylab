@@ -1,0 +1,126 @@
+{%
+	set pageInfo = {
+		section: 'common',
+		title: '이용안내',
+		order: [1,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/common.html') }}
+</header>
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-guide">
+	<div class="content">
+		<div class="guide-box-wrap">
+			<div class="guide-box">
+				<h3 class="title">회원/혜택 안내</h3>
+				<p class="desc">스키니랩은 회원제를 실시하고 있습니다.<br>회원가입비나 월/연 회비 등 어떠한 비용도 청구하지 않습니다.</p>
+				<p class="desc">회원가입 시 각종 할인쿠폰과 마일리지, 이벤트 등 다양한 혜택을 받으실 수 있습니다.</p>
+			</div>
+			<div class="guide-box">
+				<h3 class="title">주문/결제</h3>
+				<ol class="order-step">
+					<li>
+						<span class="str">STEP 1.</span>
+						상품 선택
+					</li>
+					<li>
+						<span class="str">STEP 2.</span>
+						구매하기 & 장바구니 담기
+					</li>
+					<li>
+						<span class="str">STEP 3.</span>
+						회원 로그인 & 비회원 주문
+					</li>
+					<li>
+						<span class="str">STEP 4.</span>
+						주문서작성
+					</li>
+					<li>
+						<span class="str">STEP 5.</span>
+						결제 방법 선택 및 결제
+					</li>
+					<li>
+						<span class="str">STEP 6.</span>
+						주문 & 결제 완료 (주문번호)
+					</li>
+				</ol>
+				<ul class="add">
+					<li>※ 비회원 주문의 경우 주문번호 및 주문비밀번호를 메모해 두시기 바랍니다.</li>
+				</ul>
+			</div>
+			<div class="guide-box">
+				<h3 class="title">배송 안내</h3>
+				<dl class="delivery-guide">
+					<dt>배송 방법 :</dt>
+					<dd>택배 (CJ 대한통운)</dd>
+				</dl>
+				<dl class="delivery-guide">
+					<dt>배송 지역 :</dt>
+					<dd>전국지역</dd>
+				</dl>
+				<dl class="delivery-guide">
+					<dt>배송 비용 :</dt>
+					<dd>배송 조건에 따라 상이</dd>
+				</dl>
+				<dl class="delivery-guide">
+					<dt>배송 기간 :</dt>
+					<dd>2일~7일</dd>
+				</dl>
+				<dl class="delivery-guide">
+					<dt>배송 조회 :</dt>
+					<dd class="block">
+						<ul>
+							<li>- 회원 > 로그인 > 마이페이지 > 주문/배송 조회</li>
+							<li>- 비회원 > 비회원 주문/조회 > 주문번호/주문비밀번호 입력 > 비회원 주문/배송 조회</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<div class="guide-box">
+				<h3 class="title">취소/교환/반품</h3>
+				<dl class="customer-guide">
+					<dt>
+						<span class="sub-tit">주문취소 : </span>
+						배송이 시작되기 전 단계까지 가능합니다.
+					</dt>
+					<dd class="add">※ 가상계좌의 경우, 주문 완료 > 3일 이내 입금이 되지 않을 경우 자동 주문 취소됩니다.</dd>
+				</dl>
+				<dl class="customer-guide">
+					<dt>
+						<span class="sub-tit">교환 : </span>
+						배송완료 후 7일 이후(구매확정) 전 단계까지 가능합니다.
+					</dt>
+					<dd></dd>
+				</dl>
+				<dl class="customer-guide">
+					<dt>
+						<span class="sub-tit">반품 : </span>
+						배송완료 후 7일 이후(구매확정) 전 단계까지 가능합니다.
+					</dt>
+					<dd class="add">※ 고객변심에 의한 배송비는 소비자가 부담하고, 상품에 이상에 의한 배송비는 판매자가 부담합니다.</dd>
+				</dl>
+			</div>
+			<div class="guide-box">
+				<h3 class="title">멤버십 안내</h3>
+				<p class="desc">스키니랩은 멤버십 제도를 운영하고 있습니다.<br>최종 결제 누적 금액에 따라 등급이 산정되며, 등급별로 혜택이 제공됩니다.</p>
+				<p class="desc">구매 취소 또는 환불된 결제 건에 대해 등급이 조정될 수 있습니다.</p>
+			</div>
+			<div class="guide-box">
+				<h3 class="title">마일리지 안내</h3>
+				<p class="desc">스키니랩 마일리지는 회원 등급에 따라 상품을<br>구매 & 리뷰 작성 시마일리지가 적립됩니다.</p>
+				<p class="desc">100마일리지는 100원과 같습니다.<br>최소 5,000마일리지 이상 보유해야 사용가능하며,<br>최대 50,000마일리지까지 사용 가능합니다.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

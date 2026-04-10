@@ -1,0 +1,291 @@
+{%
+	set pageInfo = {
+		section: 'order',
+		title: '주문/결제',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-order order-complete">
+	<div class="status-info">
+		<h2 class="title">주문 완료</h2>
+		<div class="icon"></div>
+		<p class="desc">
+			<span class="str">가상계좌로 주문이 접수 되었습니다.</span><br>
+			입금 기한 내 입금이 되지 않을 경우, 자동 주문취소됩니다.
+		</p>
+		<dl class="info">
+			<dt class="tit">주문번호 : </dt>
+			<dd class="con">
+				2021040914352712345
+			</dd>
+		</dl>
+	</div>
+
+	<div class="accordion-list order-detail">
+		<div class="item">
+			<h3 class="title">
+				<a href="#">결제 수단</a>
+			</h3>
+			<div class="content">
+				<div class="payment-option2">
+					<dl class="info price">
+						<dt class="tit">입금금액</dt>
+						<dd class="con">
+							<span class="num">
+								81,800
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+					<dl class="info bank">
+						<dt class="tit">입금은행</dt>
+						<dd class="con">
+							<span class="txt">
+								기업은행
+							</span>
+						</dd>
+					</dl>
+					<dl class="info account">
+						<dt class="tit">입금계좌</dt>
+						<dd class="con">
+							<span class="num">
+								075-005922-97-947
+							</span>
+							<span class="txt">
+								(헬스밸런스)
+							</span>
+						</dd>
+					</dl>
+					<dl class="info due">
+						<dt class="tit">입금기한</dt>
+						<dd class="con">
+							<span class="num">
+								2021-04-15
+							</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<h3 class="title">
+				<a href="#">주문 상품</a>
+			</h3>
+			<div class="content">
+				<div class="order-product">
+					<dl class="info">
+						<dt class="title">
+							<span class="tit">
+								<span class="main">
+									가벼워지는 시서스 다이어트 14포 x 4박스+ 석류 콜라겐 14포 x 2박스
+								</span>
+								<span class="option">
+									<span>옵션</span>
+									<span>
+										선택된 옵션명 정보 모두 노출
+									</span>
+								</span>
+							</span>
+							<span class="amount">
+								<span class="num">
+									1
+								</span>
+								<span class="unit">개</span>
+							</span>
+						</dt>
+						<dd class="price">
+							<span class="num">
+								128,600
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+					<dl class="info">
+						<dt class="title">
+							<span class="tit">
+								<span class="main">
+									가벼워지는 시서스 다이어트 14포 x 4박스+ 석류 콜라겐 14포 x 2박스
+								</span>
+								<span class="option">
+									<span>옵션</span>
+									<span>
+										선택된 옵션명 정보 모두 노출
+									</span>
+								</span>
+							</span>
+							<span class="amount">
+								<span class="num">
+									1
+								</span>
+								<span class="unit">개</span>
+							</span>
+							<span class="tit">
+								<span class="sub">
+									[ 1+1 ] 가벼워지는 시서스 다이어트 14포 x 4박스
+								</span>
+							</span>
+							<span class="amount">
+								<span class="num">
+									999,999,999
+								</span>
+								<span class="unit">개</span>
+							</span>
+						</dt>
+						<dd class="price">
+							<span class="num">
+								999,999,999
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<h3 class="title">
+				<a href="#">배송 정보</a>
+			</h3>
+			<div class="content">
+				<div class="delivery-info">
+					<dl class="info">
+						<dt class="tit">주문고객</dt>
+						<dd class="con">
+							홍길동 / 010-1234-5678 / sknylab@abc.com
+						</dd>
+					</dl>
+					<dl class="info">
+						<dt class="tit">수령고객</dt>
+						<dd class="con">
+							홍길동 / 010-1234-5678 / 서울시 서초구 방배천로 118 에이디앤스타일 1층
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<h3 class="title">
+				<a href="#">결제 정보</a>
+			</h3>
+			<div class="content">
+				<div class="payment-info">
+					<dl class="info">
+						<dt class="tit">전체상품</dt>
+						<dd class="con">
+							<span class="num">
+								2
+							</span>
+							<span class="unit">개</span>
+						</dd>
+					</dl>
+					<dl class="info">
+						<dt class="tit">상품금액</dt>
+						<dd class="con">
+							<span class="num">
+								290,000
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+					<dl class="info">
+						<dt class="tit">할인금액</dt>
+						<dd class="con secondary">
+							<span class="num">
+								-200,000
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+					<dl class="info">
+						<dt class="tit">주문혜택 할인</dt>
+						<dd class="con secondary">
+							<span class="num">
+								-3,000
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+					<dl class="info">
+						<dt class="tit">마일리지 사용</dt>
+						<dd class="con secondary">
+							<span class="num">
+								-5,000
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+					<dl class="info">
+						<dt class="tit">배송비</dt>
+						<dd class="con">
+							<span class="num">
+								0
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+					<dl class="info total">
+						<dt class="tit">총 결제 금액</dt>
+						<dd class="con">
+							<span class="num">
+								89,000
+							</span>
+							<span class="unit">원</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="item hidden-arrow">
+			<dl class="title">
+				<dt class="tit">적립 예정 마일리지</dt>
+				<dd class="con">
+					<div class="mileage-point">
+						<dl class="info">
+							<dt class="hide">적립 예정 마일리지</dt>
+							<dd class="price">
+								<span class="num">
+									2,500
+								</span>
+								<span class="unit">원</span>
+							</dd>
+						</dl>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<div class="item">
+			<h3 class="title">
+				<a href="#">증정 사은품</a>
+			</h3>
+			<div class="content">
+				<div class="gift-present">
+					<dl class="info">
+						<dt class="tit">사은품명 노출</dt>
+						<dd class="date">
+							증정 기간 : 
+							<span class="num">
+								2021-04-09 16:40:41
+							</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-foot">
+		<div class="btn-area">
+			<a href="#" class="btn large outline primary motion">
+				<span>주문 상세 보기</span>
+			</a>
+			<a href="#" class="btn large primary motion">
+				<span>계속 쇼핑하기</span>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

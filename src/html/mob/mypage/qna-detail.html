@@ -1,0 +1,134 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '1:1 문의내역 상세',
+		order: [6,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+
+
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-qna-detail">
+	<div class="container-wrap">
+		<h3 class="hide">1:1 문의내역</h3>
+
+		<div class="board-detail-wrap">
+			<div class="top">
+				<div class="utility">
+					<span class="status-tag ing">답변대기</span>
+					<span class="date">2021.02.03</span>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn outline2">수정</button>
+					<button type="button" class="btn outline2">삭제</button>
+				</div>
+				<div class="tit">
+					제목 최대 2줄 노출 제목 최대 2줄 노출 제목 최대 2줄 노출 제목 최대 2줄 노출 제목 최대 2줄 노출 제목 최대 2줄 노출
+					제목 최대 2줄 노출 제목 최대 2줄 노출 제목 최대 2줄 노출 제목 노출 제목 최대 2줄 노출 제목 최대 2줄 노출 제목 최대 2줄 노출 제목 노출
+				</div>
+			</div>
+			<div class="content">
+				<dl class="type">
+					<dt class="tit">문의유형</dt>
+					<dd>
+						<p>주문/결제</p>
+						<ul class="view-wrap">
+							<li class="view">
+								<p class="order-wrap">
+									<span class="date">2021-04-09</span>
+									<span class="order">주문번호 :
+										<span class="num">2021040914352712345</span>
+									</span>
+								</p>
+								<ul class="product-list">
+									<li class="product-item">
+										<figure>
+											<div class="img">
+												<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="상품이미지">
+											</div>
+											<figcaption class="content">
+												<p class="title">
+													<span class="main">
+														[NIGHT패키지] 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠 래피드 솔루션 다이어트 4주분+이지슬리밍 잔티젠
+													</span>
+												</p>
+												<p class="option">
+													<span class="tit">옵션</span>
+													<span class="desc">옵션명 모두 노출옵션명 모두 노출옵션명 모두 노출옵션노출옵션명 모두 노출옵션명 모두 노출옵션명 모두 노출</span>
+												</p>
+											</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="desc">
+					<dt class="tit">내용</dt>
+					<dd>
+						<p>부모님 댁으로 배송지를 바꾸고 싶어요. 빠른 답변 부탁드립니다. 어버이날 선물로 드릴거라서요~~!!!!</p>
+						<ul class="image-list">
+							{% for i in range(0, 5) %}
+							<li>
+								<div class="img">
+									<img src="../../../img/mob/@dummy/review-thumb-img01.jpg" alt="">
+								</div>
+							</li>
+							{% endfor %}
+						</ul>
+					</dd>
+				</dl>
+				<dl class="noti">
+					<dt class="tit">알림방법</dt>
+					<dd>
+						<p class="noti-phone">
+							휴대폰번호
+							<span class="userphone">010-1234-5678</span>
+						</p>
+						<!-- <p class="email-phone">
+							이메일
+							<span class="useremail">sknylab@abc.com</span>
+						</p> -->
+					</dd>
+				</dl>
+				<div class="reply">
+					<span class="tit">답변</span>
+					<div class="reply-wrap">
+						<div class="date">2021.04.16</div>
+						<div>
+							안녕하세요. 헬스밸런스 고객센터 입니다.<br>
+							고객님께서 문의하신 내용에 답변 드립니다.<br>
+							<div class="reply-con">
+								내용 내용 내용 내용 내용 내용 내용 내용 
+								내용 내용 내용 내용 내용 내용 내용 내용 
+							</div>
+							즐거운 하루 되세요.<br>
+							감사합니다.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn-group center">
+			<a href="../mypage/qna-list.html" class="btn primary large">목록보기</a>
+		</div>
+		
+	</div>
+</div>
+<!-- // Content -->
+<script>
+</script>
+{%- endblock %}

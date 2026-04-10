@@ -1,0 +1,263 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 상품문의(비회원) // -->
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popupRestockNotificationRegister" class="common-popup full-scroll">
+	<div class="common-popup-inner popup-inquiry-write">
+		<div class="header">
+			<h1 class="title">
+				상품문의
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<div class="order-box">
+					<figure class="item">
+						<div class="img">
+							<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="제품이미지">
+						</div>
+						<figcaption class="content">
+							<h2 class="title">
+								마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출 마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 최대 2줄 노출
+							</h2>
+							<dl class="option">
+								<dt class="tit">옵션</dt>
+								<dd class="con">
+									옵션명 최대 1줄 노출 이후 말줄임옵션명 최대 1줄 노출 이후 말줄임
+								</dd>
+							</dl>
+							<!-- <dl class="amount">
+								<dt class="hide">수량</dt>
+								<dd class="con">
+									1개
+								</dd>
+							</dl> -->
+						</figcaption>
+					</figure>
+				</div>
+
+				<ul class="add-list">
+					<li>상품 문의는 모두 비밀글로 등록됩니다.</li>
+				</ul>
+
+				<div class="popup-form-layout vertical">
+					<dl class="row">
+						<dt class="title">
+							<label for="type">유형</label>
+						</dt>
+						<dd class="content">
+							<span class="select-wrap">
+								<select id="type" name="type" class="select">
+									<option value="">유형 선택</option>
+									<option value="">상품문의</option>
+									<option value="">배송/교환문의</option>
+									<option value="">기타문의</option>
+								</select>
+								<span class="arrow"></span>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="userName">작성자</label>
+						</dt>
+						<dd class="content">
+							<input type="text" id="userName" name="userName" value="" placeholder="이름 입력" class="text block">
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="pw">문의 비밀번호</label>
+						</dt>
+						<dd class="content">
+							<input type="password" id="pw" name="pw" value="" placeholder="문의 비밀번호 입력" class="text block">
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="write">문의내용</label>
+						</dt>
+						<dd class="content">
+							<input type="text" id="write" name="write" value="" placeholder="제목 입력" class="text block">
+						</dd>
+						<dd class="content">
+							<!-- 에디터 영역 // -->
+							<div class="editor">
+								<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="문의 내용 입력" class="txt" maxlength="2000"></textarea>
+								<p class="character">( <span class="num">87</span> / 1,000자 )</p>
+							</div>
+							<!-- // 에디터 영역 -->
+						</dd>
+						<dd class="content">
+							<div class="image-upload">
+								<p class="hide">이미지업로드</p>
+								<ul class="list">
+									<li>
+										<div class="file">
+											<div class="input">
+												<input type="file" id="imageFile1" name="imageFile1" class="input-file">
+												<label for="imageFile1" class="btn-upload">파일 선택</label>
+											</div>
+											<div class="result">
+												<div class="content">
+													<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="">
+												</div>
+												<button class="btn-del">파일 삭제</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="file">
+											<div class="input">
+												<input type="file" id="imageFile2" name="imageFile2" class="input-file">
+												<label for="imageFile2" class="btn-upload">파일 선택</label>
+											</div>
+											<div class="result" style="display: none;">
+												<div class="content">
+													<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="">
+												</div>
+												<button class="btn-del">파일 삭제</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="file">
+											<div class="input">
+												<input type="file" id="imageFile3" name="imageFile3" class="input-file">
+												<label for="imageFile3" class="btn-upload">파일 선택</label>
+											</div>
+											<div class="result" style="display: none;">
+												<div class="content">
+													<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="">
+												</div>
+												<button class="btn-del">파일 삭제</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="file">
+											<div class="input">
+												<input type="file" id="imageFile4" name="imageFile4" class="input-file">
+												<label for="imageFile4" class="btn-upload">파일 선택</label>
+											</div>
+											<div class="result" style="display: none;">
+												<div class="content">
+													<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="">
+												</div>
+												<button class="btn-del">파일 삭제</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="file">
+											<div class="input">
+												<input type="file" id="imageFile5" name="imageFile5" class="input-file">
+												<label for="imageFile5" class="btn-upload">파일 선택</label>
+											</div>
+											<div class="result" style="display: none;">
+												<div class="content">
+													<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="">
+												</div>
+												<button class="btn-del">파일 삭제</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<ul class="add-explain">
+									<li>최대 5개 / 100MB 이하의 파일만 등록 가능합니다.</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="">알림선택</label>
+						</dt>
+						<dd class="content">
+							<span class="input-radio-text">
+								<input type="radio" id="noti1" name="noti" class="radio" checked>
+								<label for="noti1">휴대폰 번호</label>
+								<input type="text" id="userPhone" name="userPhone" value="" placeholder="'-' 없이 숫자만 입력해주세요." class="text">
+							</span>
+						</dd>
+						<dd class="content">
+							<span class="input-radio-text">
+								<input type="radio" id="noti2" name="noti" class="radio">
+								<label for="noti2">이메일</label>
+								<input type="text" id="userEmail" name="userEmail" value="" placeholder="이메일을 입력해주세요." class="text" disabled>
+							</span>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							공개 여부
+						</dt>
+						<dd class="content">
+							<div class="input-radio-wrap">
+								<input type="radio" id="open" name="private" class="radio" checked>
+								<label for="open">공개</label>
+								<input type="radio" id="closed" name="private" class="radio">
+								<label for="closed">비공개</label>
+							</div>
+						</dd>
+					</dl>
+				</div>
+
+				<div class="user-agreement">
+					<div class="wrap">
+						<dl class="row">
+							<dt class="title">
+								<input type="checkbox" name="agree" id="agree01" class="check">
+								<label for="agree01">비회원 개인정보 수집 동의</label>
+							</dt>
+							<dd class="content block">
+								<div class="info">
+									<ul class="list">
+										<li>- 수집항목: 이름, 전화번호, 이메일주소</li>
+										<li>- 수집/이용목적: 게시글 접수 및 결과 회신</li>
+										<li>- 이용기간: 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.</li>
+									</ul>
+									<p class="desc">단, 관계법령의 규정에 의하여 보전할 필요가 있는 경우 일정기간 동안 개인정보를 보관할 수 있습니다. <br>그 밖의 사항은 (주)스키니랩 개인정보처리방침을 준수합니다.</p>
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<a href="#" class="btn large outline primary cancel motion">
+						<span>취소</span>
+					</a>
+					<a href="#" class="btn large primary submit motion">
+						<span>등록</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+<!-- // 상품문의(비회원) -->
+
+<script>
+	$(function() {
+		var value = 0;
+
+		$( "#rangeSliderStar" ).slider({
+			range: "min",
+			value: 0,
+			min: 0,
+			max: 10,
+			slide: function( event, ui ) {
+				value = ui.value / 2;
+
+				$(".range-slider-star-wrap .result .num").text(value.toLocaleString());
+			}
+		});
+
+		// $(".range-slider-star-wrap .result .num").text(value.toLocaleString());
+	});
+</script>
+{%- endblock %}

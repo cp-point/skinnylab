@@ -1,0 +1,26 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup이름" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-이름">
+		<div class="header">
+			<h1 class="title">
+				페이지 외부 팝업
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="head">
+			</div>
+			<div class="body">
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<a href="#" class="btn primary">확인</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

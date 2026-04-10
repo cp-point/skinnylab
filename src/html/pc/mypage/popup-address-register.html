@@ -1,0 +1,84 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-address-manage" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-address-manage">
+		<div class="header">
+			<h1 class="title">배송지 등록</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title">
+							<label for="">배송지명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="" name="" placeholder="배송지명 입력" class="text block is-invalid"> <!-- 입력오류 일때 .is-invalid -->
+							</span>
+							<div class="check-wrap">
+								<label class="check"><input type="checkbox" checked> <span>기본 배송지로 설정</span></label>
+							</div>
+							<p class="error-msg is-invalid">배송지명을 입력해 주세요</p> <!-- 입력오류 일때  문구 노출 -->
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="">수령자명 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="" name="" placeholder="수령자명 입력" class="text block">
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">수령자명을 입력해 주세요</p>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="">휴대폰 번호 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-text-del">
+								<input type="text" id="" name="" placeholder="‘-’없이 숫자만 입력" class="text block">
+							</span>
+							<p class="error-msg is-invalid" style="display: none;">휴대폰번호를 입력해 주세요</p>
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="title">
+							<label for="">주소 <span class="emphasis">*</span></label>
+						</dt>
+						<dd class="content">
+							<span class="input-address-wrap">
+								<span class="input-address">
+									<label for="userZipcode" class="hide">우편번호 입력</label>
+									<input type="text" id="userZipcode" name="userZipcode" placeholder="" class="text block" disabled>
+									<button type="button" class="btn outline thin primary btn-find-address">
+										<span>우편번호 찾기</span>
+									</button>
+								</span>
+								<span class="input-address">
+									<span class="txt-with-del">
+										<label for="userAddress2">상세주소 입력</label>
+										<input type="text" name="userAddress2" id="userAddress2" placeholder="상세주소 입력" class="text block">
+									</span>
+								</span>
+								<p class="error-msg is-invalid" style="display: none;">상세주소를 입력해 주세요</p>
+							</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<button onclick="UI.showLayerPop('',{ url: './popup-address-manage.html'}); return false;" class="btn large outline primary">취소</button>
+					<button onclick="UI.showLayerPop('',{ url: './popup-address-manage.html'}); return false;" class="btn large primary">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{%- endblock %}

@@ -1,0 +1,184 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션 선택 // -->
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popupOptionSelect" class="common-popup">
+	<div class="common-popup-inner popup-option-select">
+		<div class="header">
+			<h1 class="title">
+				옵션 선택
+			</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="option-select">
+				<div class="img">
+					<img src="{{base}}/img/pc/@dummy/goods-img01.png" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+				</div>
+				<div class="content">
+					<div class="wrap">
+						<h2 class="title">
+							행복한 시서스 다이어트
+						</h2>
+						<div class="main-option">
+							<div class="option-dropdown ellipsis">
+								<div class="wrap">
+									<p class="title">
+										<button type="button">
+											옵션값11111111111111111111111111111111111111111111111111
+										</button>
+									</p>
+									<div class="list">
+										<ul class="inner">
+											<li>
+												<input type="radio" id="option1" name="option" checked>
+												<label for="option1">
+													옵션값11111111111111111111111111111111111111111111111111
+												</label>
+											</li>
+											<li>
+												<input type="radio" id="option2" name="option" disabled>
+												<label for="option2">
+													옵션값2222222222222222222222222222222222222222222222222
+												</label>
+											</li>
+											<li>
+												<input type="radio" id="option3" name="option">
+												<label for="option3">
+													옵션값3333333333333333333333333333333333333333333333333
+												</label>
+											</li>
+											<li>
+												<input type="radio" id="option4" name="option">
+												<label for="option4">
+													옵션값4444444444444444444444444444444444444444444444444
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="result">
+								<div class="counting">
+									<span class="input-amount-counting">
+										<label for="counting" class="hide">수량 선택</label>
+										<button type="button" class="btn-counting-minus">수량 한개 삭제</button>
+										<input type="number" id="counting" name="counting" value="5" class="count">
+										<button type="button" class="btn-counting-plus">수량 한개 추가</button>
+									</span>
+								</div>
+								<p class="price">
+									<span class="num">128,600</span>
+									<span class="won">원</span>
+								</p>
+							</div>
+						</div>
+						<div class="sub-option">
+							<div class="option-dropdown ellipsis">
+								<p class="title">
+									<button type="button">
+										옵션값11111111111111111111111111111111111111111111111111
+									</button>
+								</p>
+								<div class="list">
+									<ul class="inner">
+										<li>
+											<input type="radio" id="option5" name="option" checked>
+											<label for="option5">
+												옵션값11111111111111111111111111111111111111111111111111
+											</label>
+										</li>
+										<li>
+											<input type="radio" id="option6" name="option" disabled>
+											<label for="option6">
+												옵션값2222222222222222222222222222222222222222222222222
+											</label>
+										</li>
+										<li>
+											<input type="radio" id="option7" name="option">
+											<label for="option7">
+												옵션값3333333333333333333333333333333333333333333333333
+											</label>
+										</li>
+										<li>
+											<input type="radio" id="option8" name="option">
+											<label for="option8">
+												옵션값4444444444444444444444444444444444444444444444444
+											</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result">
+								<div class="item">
+									<p class="tit">상품명 노출 상품명 모두 노출</p>
+									<div class="counting">
+										<span class="input-amount-counting">
+											<label for="counting2" class="hide">수량 선택</label>
+											<button type="button" class="btn-counting-minus">수량 한개 삭제</button>
+											<input type="number" id="counting2" name="counting" value="5" class="count">
+											<button type="button" class="btn-counting-plus">수량 한개 추가</button>
+										</span>
+									</div>
+									<p class="price">
+										<span class="num">128,600</span>
+										<span class="won">원</span>
+									</p>
+									<button type="button" class="btn-close">추가옵션 삭제</button>
+								</div>
+								<!-- <div class="item">
+									<p class="tit">상품명 노출 상품명 모두 노출</p>
+									<div class="counting">
+										<span class="input-amount-counting">
+											<label for="counting3" class="hide">수량 선택</label>
+											<button type="button" class="btn-counting-minus">수량 한개 삭제</button>
+											<input type="number" id="counting3" name="counting" value="5" class="count">
+											<button type="button" class="btn-counting-plus">수량 한개 추가</button>
+										</span>
+									</div>
+									<p class="price">
+										<span class="num">128,600</span>
+										<span class="won">원</span>
+									</p>
+									<button type="button" class="btn-close">추가옵션 삭제</button>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-area">
+					<a href="#" class="btn large outline primary cancel motion">
+						<span>취소</span>
+					</a>
+					<a href="#" class="btn large primary submit motion">
+						<span>장바구니 담기</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+
+<script>
+	$(function() {
+		$('.option-dropdown').off('click').on('click', '.title button', function() {
+			var $tg = $(this);
+			var $tgTitle = $tg.parents('.title');
+			var $tgContent = $tgTitle.next('.list');
+			var isActive = $tgContent.is(':visible');
+
+			if(isActive) {
+				$tgContent.slideUp(200);
+				$tg.parents('.option-dropdown').removeClass('on');
+			} else {
+				$tgContent.slideDown(200);
+				$tg.parents('.option-dropdown').addClass('on');
+			}
+		});
+	});
+</script>
+<!-- // 옵션 선택 -->
+{%- endblock %}

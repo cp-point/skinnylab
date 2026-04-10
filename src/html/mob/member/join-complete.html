@@ -1,0 +1,113 @@
+{%
+	set pageInfo = {
+		section: 'member',
+		title: '회원가입 완료',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-join-completed">
+	
+	<div class="container-wrap">
+		<div class="result-txt is-sucess">
+			<p class="com-txt"><strong>홍길동</strong>님의 회원가입을 축하합니다.</p>
+			<div class="com-txt3">
+				스키니랩에서 제공하는<br>
+				다양한 상품을 둘러보세요!
+			</div>
+		</div>
+		
+		<div class="btn-group">
+			<a href="#" class="btn primary large block">
+				<span>홈으로</span>
+			</a>
+		</div>
+	</div>
+
+	<!-- 추천 상품 영역 -->
+	<div class="recommend-product">
+		<div class="head">
+			<h3 class="title">추천상품</h3>
+		</div>
+		<div class="swiper-container">
+			<ul class="goods-list2 swiper-wrapper">
+				{% for i in range(0, 5) %}
+				<li class="swiper-slide">
+					<div class="item">
+						<a href="#">
+							<figure class="prod-col-item recom"><!-- 추천상품 때 .recom 추가-->
+								<span class="img">
+									<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="제품 이미지">
+								</span>
+								<figcaption class="content">
+									<div class="info">
+										<div class="tag-group">
+											<span class="tag primary">신제품</span>
+											<span class="tag secondary">베스트</span>
+											<span class="tag white">사은품</span>
+										</div>
+										<div class="store-name">스키니랩</div>
+										<div class="title">
+											가벼워지는 시서스다이어트
+											14포 X 4박스 + 석류 콜라겐
+											14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+										</div>
+										<p class="tag-box">#2021신제품 #다이어트 #활활태울 #용기가필요한 순간</p>
+									</div>
+									<div class="price">
+										<div class="nonmember">
+											<span class="tit">비회원가</span>
+											<span>321,000원</span>
+										</div>
+										<div class="member">
+											<p class="tit">회원가</p>
+											<div class="inner-box">
+												<span><strong class="discount">67%</strong></span>
+												<span class="num"><strong>128,600</strong>원</span>
+											</div>
+										</div>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<!--// 추천 상품 영역 -->
+
+
+</div>
+<script>
+	$(function() {
+		// 추천상품 슬라이드
+		var recomCarouselSwiper = new Swiper('.recommend-product .swiper-container', {
+			slidesPerView: 1.8,
+			slidesPerGroup: 1,
+			initialSlide: 0,
+			spaceBetween: 30,
+			breakpoints: {
+				768: {
+					slidesPerView: 3.5,
+					slidesPerGroup: 1,
+				},
+				1024: {
+					slidesPerView: 5,
+				}
+			}
+		});
+	});
+</script>
+{%- endblock %}

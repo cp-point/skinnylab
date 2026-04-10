@@ -1,0 +1,109 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '나만의 스키니랩',
+		order: [4,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-fit-skinnylab">
+	<div class="container-wrap">
+		<div class="fit-skinnylab-intro">
+			<div class="wrap">
+				<p class="desc">스키니랩 Thin 연구소에서 <span class="str">자기관리의 완성을 위한 맞춤형 상품</span>을 찾아보세요!</p>
+			</div>
+			<div class="btn-group row">
+				<a href= "#" class="btn outline thin primary">자기관리 솔루션</a>
+			</div>
+		</div>
+		<ul class="fit-skinnylab-list">
+			{% for i in range(0, 5) %}
+			<li>
+				<dl class="item">
+					<dt class="title">
+						<span class="tit">
+							<span class="name">
+								홍길동
+							</span>
+							님의 건강 설문 결과입니다.
+						</span>
+					</dt>
+					<dd class="info">
+						<span class="result">
+							<span class="tit">DIET TYPE</span>
+							<span class="con">
+								LF/저지방식 , EF/규칙적인 운동, LK/저칼로리식
+							</span>
+						</span>
+						<span class="result">
+							<span class="tit">NUTRITION</span>
+							<span class="con">
+								칼슘, 멀티비타민, 식물성단백질
+							</span>
+						</span>
+					</dd>
+					<dd class="date">
+						2021.05.03
+					</dd>
+					<dd class="btn-area">
+						<a href="#" class="btn small outline2">
+							<span>결과 보기</span>
+						</a>
+					</dd>
+				</dl>
+			</li>
+			<li>
+				<dl class="item">
+					<dt class="title">
+						<span class="tit">
+							<span class="name">
+								원빈
+							</span>
+							님의 건강 설문 결과입니다.
+						</span>
+					</dt>
+					<dd class="info">
+						<span class="result">
+							<span class="tit">NUTRITION</span>
+							<span class="con">
+								칼슘, 멀티비타민, 식물성단백질
+							</span>
+						</span>
+					</dd>
+					<dd class="date">
+						2021.05.03
+					</dd>
+					<dd class="btn-area">
+						<a href="#" class="btn small outline2">
+							<span>결과 보기</span>
+						</a>
+					</dd>
+				</dl>
+			</li>
+			{% endfor %}
+			<!-- 내역 없음// -->
+			<!-- <li class="empty">
+				<p class="desc">지난 설문 결과 내역이 없습니다.</p>
+			</li> -->
+			<!-- //내역 없음 -->
+		</ul>
+		<div class="btn-group center page-bot-group">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>
+	</div>
+</div>
+{%- endblock %}

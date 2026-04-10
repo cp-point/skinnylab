@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- 옵션클래스: full, full-scroll, hidden-title -->
+	<article id="popup-order-complete" class="common-popup">
+		<div class="common-popup-inner popup-order-complete">
+			<div class="header">
+				<h1 class="title">주문 완료</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+			</div>
+			<div class="container">
+				<div class="body">
+					<div class="result-txt is-sucess">
+						<p class="com-txt">가상계좌로 주문이 접수 되었습니다.</p>
+						<p class="com-txt3">입금 기한 내 입금이 되지 않을 경우, <br>자동 주문취소됩니다.</p>
+						<p class="com-txt4">
+							주문번호 : 2021040914352712345
+						</p>
+					</div>
+					<div class="accordion-list order-accordion">
+						<dl class="item">
+							<dt class="title">
+								<a href="#">
+									<span class="tit">결제 수단</span>
+								</a>
+							</dt>
+							<dd class="content">
+								<div class="payment-info">
+									<dl class="info">
+										<dt class="tit">입금금액</dt>
+										<dd class="con">
+											<span class="num">
+												81,800
+											</span>
+											<span class="unit">원</span>
+										</dd>
+									</dl>
+									<dl class="info">
+										<dt class="tit">입금은행</dt>
+										<dd class="con">
+											<span class="bank">
+												기업은행
+											</span>
+										</dd>
+									</dl>
+									<dl class="info">
+										<dt class="tit">입금계좌</dt>
+										<dd class="con">
+											<span class="account">
+												<span class="num">
+													075-005922-97-947
+												</span>
+												<span class="name">
+													(헬스밸런스)
+												</span>
+											</span>
+										</dd>
+									</dl>
+									<dl class="info">
+										<dt class="tit">입금기한</dt>
+										<dd class="con">
+											<span class="str">
+												2021-04-15
+											</span>
+										</dd>
+									</dl>
+								</div>
+							</dd>
+						</dl>
+						<dl class="item">
+							<dt class="title">
+								<a href="#">
+									<span class="tit">주문 상품</span>
+								</a>
+							</dt>
+							<dd class="content">
+								<ul class="prod-detail-list">
+									<li>
+										<figure class="prod-row-item">
+											<figcaption class="content">
+												<div class="title">
+													가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐  14포 x 2박스
+												</div>
+												<dl class="option">
+													<dt>옵션</dt>
+													<dd>
+														선택된 옵션명 정보 모두 노출
+													</dd>
+												</dl>
+												<div class="utility">
+													<dl class="option">
+														<dt>수량</dt>
+														<dd>
+															<strong>
+																2
+															</strong>
+															개
+														</dd>
+													</dl>
+													<div class="price">
+														<strong>
+															19,800
+														</strong>
+														원
+													</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+									<li>
+										<figure class="prod-row-item">
+											<figcaption class="content">
+												<div class="title">
+													가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐  14포 x 2박스
+												</div>
+												<div class="option-title">
+													[1+1] 가벼워지는 시서스 다이어트 14포 x 4박스ㅣ1개
+												</div>
+												<div class="utility">
+													<dl class="option">
+														<dt>수량</dt>
+														<dd>
+															<strong>
+																2
+															</strong>
+															개
+														</dd>
+													</dl>
+													<div class="price">
+														<strong>
+															19,800
+														</strong>
+														원
+													</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="item">
+							<dt class="title">
+								<a href="#">
+									<span class="tit">배송 정보</span>
+								</a>
+							</dt>
+							<dd class="content">
+								<div class="delivery-info">
+									<dl class="info">
+										<dt class="tit">주문고객</dt>
+										<dd class="con">
+											<span>
+												홍길동
+											</span>
+											<span>
+												010-1234-5678
+											</span>
+											<span>
+												sknylab@abc.com
+											</span>
+										</dd>
+									</dl>
+									<dl class="info">
+										<dt class="tit">수령고객</dt>
+										<dd class="con">
+											<span>
+												홍길동
+											</span>
+											<span>
+												010-1234-5678
+											</span>
+											<span>
+												서울시 서초구 방배천로 118 에이디앤스타일 1층
+											</span>
+										</dd>
+									</dl>
+								</div>
+							</dd>
+						</dl>
+						<dl class="item">
+							<dt class="title">
+								<a href="#">
+									<span class="tit">결제 정보</span>
+								</a>
+							</dt>
+							<dd class="content">
+								<div class="payment-info">
+									<dl class="info">
+										<dt class="tit">총 상품 금액</dt>
+										<dd class="con">
+											<span class="num">
+												290,000
+											</span>
+											<span class="unit">원</span>
+										</dd>
+									</dl>
+									<dl class="info">
+										<dt class="tit">총 할인 금액</dt>
+										<dd class="con secondary">
+											<span class="num">
+												-0
+											</span>
+											<span class="unit">원</span>
+										</dd>
+									</dl>
+									<dl class="info">
+										<dt class="tit">주문혜택 할인</dt>
+										<dd class="con secondary">
+											<span class="num">
+												-1,000
+											</span>
+											<span class="unit">원</span>
+										</dd>
+									</dl>
+									<dl class="info">
+										<dt class="tit">배송비</dt>
+										<dd class="con">
+											<span class="num">
+												0
+											</span>
+											<span class="unit">원</span>
+										</dd>
+									</dl>
+									<dl class="info total">
+										<dt class="tit">총 결제 금액</dt>
+										<dd class="con">
+											<span class="num">
+												280,000
+											</span>
+											<span class="unit">원</span>
+										</dd>
+									</dl>
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="foot">
+					<div class="btn-group row">
+						<a href="#" class="btn large outline primary js-pop-close">
+							<span>주문 상세 보기</span>
+						</a>
+						<a href="#" class="btn large primary">
+							<span>계속 쇼핑하기</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- // content -->
+</body>
+</html>

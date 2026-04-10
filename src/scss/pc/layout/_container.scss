@@ -1,0 +1,47 @@
+.common-container {
+	flex-grow: 1;
+	box-sizing: border-box;
+	width: 1280px;
+	margin: 0 auto;
+	padding: 80px 40px 150px;
+
+	.container-wrap {
+		box-sizing: border-box;
+		width: 1280px;
+		padding: 0 40px 0;
+		margin: 0 auto;
+	}
+
+	.page-head {
+		.title {
+			margin: 50px 0 20px;
+			color: $text-color1;
+			font-weight: 800;
+			font-size: 48px;
+			text-align: left;
+			letter-spacing: -.05em;
+		}
+
+		& + .board-head { margin-top: 24px; }
+		& + .visual-carousel { margin-top: 44px; }
+	}
+
+	.page-foot {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 60px;
+
+		.btn-area {
+			.btn {
+				&:not(:first-child) { margin-left: 20px; }
+			}
+		}
+
+		.order-noti {
+			margin-top: 36px;
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+	}
+}

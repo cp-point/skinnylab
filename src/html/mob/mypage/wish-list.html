@@ -1,0 +1,174 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '찜한 상품',
+		order: [6,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-wishlist">
+	<div class="container-wrap">
+		<h3 class="hide">찜한 상품</h3>
+		<div class="product-select">
+			<div class="util">
+				<div class="select">
+					<label class="check">
+						<input type="checkbox" name="allCheck" id="allCheck" class="check">
+						<span>전체선택</span>
+					</label>
+				</div>
+				<div class="del">
+					<button type="button" class="btn small outline2">선택삭제</button>
+				</div>
+			</div>
+			<ul class="list">
+				{% for i in range(0,5) %}
+				<li>
+					<button type="button" class="btn-close"><span>닫기</span></button>
+					<div class="item">
+						<a href="#">
+							<div class="thumb">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지">
+								</div>
+								<label class="check-only">
+									<input type="checkbox" class="check">
+									<span>상품선택</span>
+								</label>
+							</div>
+							<div class="content">
+								<div class="info">
+									<p class="name">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명
+									</p>
+									<dl class="option">
+										<dt>옵션</dt>
+										<dd>선택된 옵션명 정보 모두 노출</dd>
+									</dl>
+									<div class="price">
+										<strong>128,600</strong>원
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="status-box">
+						<div class="btn-group row">
+							<a href="#" class="btn outline2">바로구매</a>
+							<a href="#" class="btn outline2">장바구니 담기</a>
+							<!-- <a href="#" class="btn outline thin small secondary" onclick="UI.showLayerPop('', { url: '../product/popup-restock-notification-register.html' }); return false;">재입고 알림</a> -->
+						</div>
+					</div>
+				</li>
+				<!-- 품절일때// -->
+				<li class="soldout">
+					<div class="item">
+						<a href="#">
+							<div class="thumb">
+								<div class="img">
+									<img src="{{base}}/img/pc/@dummy/goods-thumb-img140x140.jpg" alt="상품 이미지">
+								</div>
+								<label class="check-only">
+									<input type="checkbox" class="check">
+									<span>상품선택</span>
+								</label>
+							</div>
+							<div class="content">
+								<div class="info">
+									<p class="name">
+										가벼워지는 시서스다이어트 14포 X 4박스 + 석류 콜라겐 14포 x 2박스 상품명
+									</p>
+									<dl class="option">
+										<dt>옵션</dt>
+										<dd>선택된 옵션명 정보 모두 노출</dd>
+									</dl>
+									<div class="price">
+										<strong>128,600</strong>원
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="status-box">
+						<div class="btn-group row">
+							<!-- <a href="#" class="btn outline2 thin small primary">바로구매</a>
+							<a href="#" class="btn outline2 thin small primary">장바구니 담기</a> -->
+							<a href="#" class="btn outline thin secondary" onclick="UI.showLayerPop('', { url: '../product/popup-restock-notification-register.html' }); return false;">재입고 알림</a>
+						</div>
+					</div>
+					<button type="button" class="btn-close"><span>닫기</span></button>
+				</li>
+				<!-- //품절일때 -->
+				{% endfor %}
+			</ul>
+
+			<!-- 찜한 상품 없음 // -->
+			<div class="empty">
+				<p class="desc">찜한 상품이 없습니다.</p>
+			</div>
+			<!-- // 찜한 상품 없음 -->
+
+		</div>
+		<div class="btn-group center">
+			<button type="button" class="btn-list-more">
+				더보기
+				<span class="icon-plus"></span>
+			</button>
+		</div>		
+	</div>
+</div>
+
+<script>
+	$(function(){
+		// 제품목록 체크박스 컨트롤
+		var allCheck = $('input:checkbox[id="allCheck"]');
+		var itemCheck = $('.product-select .check-only input[type=checkbox]');
+
+		// 전체 선택 / 해제
+		allCheck.click(function(){
+			if(allCheck.prop("checked")) {
+				itemCheck.prop('checked', true);
+			} else {
+				itemCheck.prop('checked', false);
+			}
+		});
+
+		// 개별 선택 / 해제
+		itemCheck.each(function() {
+			$(this).click(function() {
+
+				if($(this).prop("checked")) {
+					checkBoxLen = itemCheck.length;
+					checkLen = $('.product-select .select input[type=checkbox]:checked').length;
+					
+					if(checkBoxLen == checkLen) { // 체크박스 전부 체크 됐을 경우
+						allCheck.prop('checked', true);
+					} else {
+						allCheck.prop('checked', false);
+					}
+				} else {
+					allCheck.prop('checked', false);
+				}
+				
+			});
+		});
+	
+		// 문의 유형 - 선택 주문 상품 노출 닫기
+		$('.mypage-wishlist .product-select .list .btn-close').click(function(){
+			$(this).parent().hide()
+		})
+	
+	})
+</script>
+{%- endblock %}

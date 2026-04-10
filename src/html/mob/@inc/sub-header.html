@@ -1,0 +1,85 @@
+{% if pageInfo.section == 'mypage' -%}
+<div class="utility-box left">
+	<button type="button" class="icon-btn back" onclick="window.history.go(-1);" {%if (pageInfo.order[0] == '0') %}style="display: none;"{% endif %}><span class="hide">뒤로가기</span></button>
+	<button type="button" class="icon-btn search" {%if (pageInfo.order[0] == '0') %}style="margin-left: 0;"{% endif %}><span class="hide">검색하기</span></button>
+</div>
+<div class="utility-box right">
+	<button type="button" class="icon-btn cart">
+		<span class="hide">장바구니</span>
+		<span class="num">99</span>
+	</button>
+	<button type="button" class="icon-btn menu btn-gnb-menu"></button>
+</div>
+{{ include('../@inc/gnb.html') }}
+{% endif %}
+
+{% if pageInfo.section == 'search' -%}
+<div class="utility-box left">
+	<button type="button" class="icon-btn logo"><span class="hide">스키니랩</span></button>
+</div>
+<div class="utility-box right">
+	<button type="button" class="icon-btn cart">
+		<span class="hide">장바구니</span>
+		<span class="num">99</span>
+	</button>
+	<button type="button" class="icon-btn search-on"><span class="hide">검색하기</span></button>
+	<button type="button" class="icon-btn menu btn-gnb-menu"></button>
+</div>
+{{ include('../@inc/gnb.html') }}
+{% endif %}
+
+{% if pageInfo.section == 'cart' -%}
+<div class="utility-box left">
+	<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+</div>
+<div class="utility-box right">
+	<button type="button" class="icon-btn home btn-gnb-menu"></button>
+</div>
+{% endif %}
+
+{% if (pageInfo.section == 'customer') or (pageInfo.section == 'bulletin') or (pageInfo.section == 'promotion') or (pageInfo.section == 'membership') or (pageInfo.section == 'event') or (pageInfo.section == 'intro') -%}
+<div class="utility-box left">
+	<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+</div>
+<div class="utility-box right">
+	<button type="button" class="icon-btn search"><span class="hide">검색하기</span></button>
+	<button type="button" class="icon-btn cart">
+		<span class="hide">장바구니</span>
+		<span class="num">99</span>
+	</button>
+</div>
+{% endif %}
+
+{% if pageInfo.section == 'order' or (pageInfo.section == 'common') -%}
+<div class="utility-box left">
+	<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+</div>
+{% endif %}
+
+{% if pageInfo.section == 'product' -%}
+<div class="utility-box left">
+	<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+	<button type="button" class="icon-btn home btn-gnb-menu" {%if (pageInfo.order[0] == '0') %}style="display: none;"{% endif %}></button>
+</div>
+<div class="utility-box right">
+	<button type="button" class="icon-btn search"><span class="hide">검색하기</span></button>
+	<button type="button" class="icon-btn cart">
+		<span class="hide">장바구니</span>
+		<span class="num">99</span>
+	</button>
+</div>
+{% endif %}
+
+{% if pageInfo.section == 'fit-skinnylab' -%}
+<div class="utility-box left">
+	<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+	<button type="button" class="icon-btn home btn-gnb-menu"></button>
+</div>
+<div class="utility-box right">
+	<button type="button" class="icon-btn search"><span class="hide">검색하기</span></button>
+	<button type="button" class="icon-btn cart">
+		<span class="hide">장바구니</span>
+		<span class="num">99</span>
+	</button>
+</div>
+{% endif %}

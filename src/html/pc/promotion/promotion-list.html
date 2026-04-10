@@ -1,0 +1,109 @@
+{%
+	set pageInfo = {
+		section: 'promotion',
+		title: '기획전',
+		order: '0'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-promotion promotion-list">
+	<div class="page-head">
+		<h2 class="title">기획전</h2>
+	</div>
+	<!-- 기획전 목록// -->
+	<ul class="exhibition-list">
+		{% for i in range(1, 5) %}
+		<li class="wrap">
+			<div class="item">
+				<a href="#">
+					<figure>
+						<div class="img">
+							<img src="{{base}}/img/pc/@dummy/exhibition-thumb-img0{{i}}.jpg" alt="신제품 출시 기념 기획전">
+						</div>
+						<figcaption class="content">
+							<p class="title">
+								신제품 출시 기념 기획전
+							</p>
+							<p class="date">
+								<span class="start">2021-05-01</span>~<span class="finish">2021-06-30</span>
+							</p>
+						</figcaption>
+					</figure>
+				</a>
+				<div class="share">
+					<button type="button" class="btn-open" onclick="$(this).parents('.share').find('.content').show(); return false;">공유하기 열기</button>
+					<div class="content">
+						<div class="box">
+							<ul class="list">
+								<li>
+									<a href="#">
+										<span class="icon facebook"></span>
+										<span class="tit">페이스북</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="icon kakao"></span>
+										<span class="tit">카카오톡</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="icon url"></span>
+										<span class="tit">URL복사</span>
+									</a>
+								</li>
+							</ul>
+							<button type="button" class="btn-close" onclick="$(this).parents('.share').find('.content').hide(); return false;">공유하기 닫기</button>
+						</div>
+					</div>
+				</div>
+				<ul class="mapping-list">
+					<li>
+						<a href="#">
+							<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="기획전 관련 상품 이미지">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="기획전 관련 상품 이미지">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="{{base}}/img/pc/@dummy/goods-thumb-img120x120.jpg" alt="기획전 관련 상품 이미지">
+						</a>
+					</li>
+					<li class="more">
+						<a href="#">
+							<img src="{{base}}/img/pc/common/icon-close.png" alt="더보기">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		{% endfor %}
+		<!-- 검색 결과 없을때 // -->
+		<!-- <li class="empty">
+			<p class="desc">진행중인 기획전이 없습니다.</p>
+		</li> -->
+		<!-- // 검색 결과 없을때 -->
+	</ul>
+	<!--//product-->
+	<div class="common-pagination">
+		<a href="#" class="paging-btn prev">Prev</a>
+		<span class="paging-num">
+			<a href="#" class="on">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>
+		</span>
+		<a href="#" class="paging-btn next">Next</a>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

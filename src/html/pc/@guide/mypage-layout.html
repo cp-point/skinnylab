@@ -1,0 +1,33 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [1,1]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-order">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h3 class="title">{{pageInfo.title}}</h3>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h4 class="title">정기배송조회</h4>
+				</div>
+				<div class="content-inner-wrap">
+					컨텐츠 영역
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

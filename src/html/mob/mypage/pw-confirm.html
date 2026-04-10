@@ -1,0 +1,55 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '비밀번호 확인',
+		order: [1,1]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+
+
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-pw-confirm">
+	<div class="container-wrap">
+		<h3 class="hide">비밀번호 확인</h3>
+
+		<div class="content-main-wrap">
+			<div class="intro">
+				회원님의 개인정보 보호를 위해<br>비밀번호를 입력해 주세요.
+			</div>
+			<div class="form-layout">
+				<dl class="row">
+					<dt class="title hide">
+						<label for="pwconfirm">비밀번호 확인</label>
+					</dt>
+					<dd class="content">
+						<span class="input-text-del">
+							<input type="text" id="pwconfirm" name="" placeholder="비밀번호 입력" class="text block">
+						</span>
+						<p class="error-msg is-invalid">비밀번호를 입력해 주세요.</p>
+					</dd>
+				</dl>
+			</div>
+			<div class="btn-group center">
+				<a href="#" class="btn primary large">
+					<span>확인</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+</script>
+{%- endblock %}

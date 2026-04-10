@@ -1,0 +1,269 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마일리지 조회 &lt; 마이페이지',
+		order: [2,1]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-mileage">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">마이페이지</h2>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h3 class="title">마일리지 조회</h3>
+				</div>
+				<div class="content-inner-wrap">
+					<div class="search-wrap">
+						<div class="btn-group"> <!-- 버튼 선택 시 : .is-selected -->
+							<button type="button" class="btn outline2 thin primary">1주일</button>
+							<button type="button" class="btn outline2 thin primary">1개월</button>
+							<button type="button" class="btn outline2 thin primary is-selected">3개월</button>
+							<button type="button" class="btn outline2 thin primary">6개월</button>
+						</div>
+						<div class="calender">
+							<input type="text" id="calender01" name="calender01" class="text date-picker" style="width: 190px;">
+							<span>~</span>
+							<input type="text" id="calender02" name="calender02" class="text date-picker" style="width: 190px;">
+							<a href="#" class="btn thin primary">조회</a>
+						</div>
+					</div>
+					<dl class="mileage-status">
+						<dt>보유 마일리지</dt>
+						<dd>
+							<span class="num">
+								999,999,999
+							</span>
+							원
+						</dd>
+						<dt>당월 소멸 예정 마일리지</dt>
+						<dd>
+							<span class="num">
+								999,999,999
+							</span>
+							원
+						</dd>
+					</dl>
+					<ul class="mileage-list">
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										주문사용
+									</span>
+									<span class="point">
+										<span class="num">
+											999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status">
+										사용
+									</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										상품평(텍스트)작성 상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성
+									</span>
+									<span class="point">
+										<span class="num">
+											+999,999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status secondary">적립</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										마일리지 유효기간 종료로 인한 소멸
+									</span>
+									<span class="point">
+										<span class="num">
+											-999,999,999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status">
+										사용
+									</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										상품평(텍스트)작성 상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성상품평(텍스트)작성
+									</span>
+									<span class="point">
+										<span class="num">
+											+999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status">
+										사용
+									</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										상품평(텍스트)작성
+									</span>
+									<span class="point">
+										<span class="num">
+											-999,999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status secondary">적립</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 상품평(텍스트)작성 
+									</span>
+									<span class="point">
+										<span class="num">
+											999,999,999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status">
+										사용
+									</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										상품평(텍스트)작성
+									</span>
+									<span class="point">
+										<span class="num">
+											999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status">
+										사용
+									</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<span class="main">
+									<span class="title">
+										상품평(텍스트)작성
+									</span>
+									<span class="point">
+										<span class="num">
+											+999,999
+										</span>
+										원
+									</span>
+								</span>
+								<span class="sub">
+									<span class="status">
+										사용
+									</span>
+									<span class="date">
+										2021.05.03
+									</span>
+								</span>
+							</div>
+						</li>
+						<!-- 내역 없음// -->
+						<!-- <li class="empty">
+							<p class="desc">조회기간 동안의 내역이 없습니다.</p>
+						</li> -->
+						<!-- //내역 없음 -->
+					</ul>
+
+					<div class="common-pagination">
+						<a href="#" class="paging-btn prev">Prev</a>
+						<span class="paging-num">
+							<a href="#" class="on">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="paging-btn next">Next</a>
+					</div>
+
+					<div class="page-sub-noti">
+						<p class="title">마일리지 안내</p>
+						<ul class="list">
+							<li>마일리지 유효기간은 적립일로부터 1년이며, 사용하지 않은 마일리지는 소멸되며 복구 되지 않습니다.</li>
+							<li>주문 취소 시, 사용한 마일리지는 마일리지의 유효기간이 남아있는 경우에만 복구됩니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

@@ -1,0 +1,31 @@
+{% macro include(fileName) -%}
+	{% include fileName ignore missing -%}
+{% endmacro -%}
+<!DOCTYPE html>
+<html lang="ko">
+{{ include('./head.html') }}
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+
+	<div class="wrapper">
+		
+		<!-- Content // -->
+		{% block content -%}{%- endblock %}
+		<!-- // Content -->
+
+		{% if pageInfo.section != 'fit-skinnylab' -%}
+		<!-- bottom navigation, bottom banner // -->
+		{{ include('./bottom-nav.html') }}
+		<!-- // bottom navigation, bottom banner -->
+		{% endif %}
+
+		<!-- Footer // -->
+		{{ include('./footer.html') }}
+		<!-- // Footer -->
+
+		<!-- floating menu // -->
+		{{ include('./floating-menu.html') }}
+		<!-- // floating menu -->
+	</div>
+</body>
+</html>

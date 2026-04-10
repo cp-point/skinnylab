@@ -1,0 +1,53 @@
+{%
+	set pageInfo = {
+		section: 'login',
+		title: '회원가입'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-member member-existing-membership-info">
+	<div class="member-layout">
+		<h2 class="hide">회원가입</h2>
+
+		<div class="head">
+			<h3 class="title">HB 멤버십 계정<br> 통합 안내</h3>
+			<p class="desc">
+				<span class="name">
+					홍길동
+				</span>
+				님은<br>
+				<strong>HB 통합 멤버십에 이미 가입</strong>
+				되어 있습니다.
+			</p>
+		</div>
+
+		<div class="body">
+			<div class="user-info">
+				<dl class="item">
+					<dt class="title">
+						HB 멤버십 ID
+					</dt>
+					<dd class="content">
+						<span class="info-id">
+							sk******b@gmail.com
+						</span>
+					</dd>
+				</dl>
+				<div class="btn-area">
+					<a href="#" class="btn primary large long motion">
+						<span>HB 멤버십 계정 통합 동의</span>
+					</a>
+				</div>
+				<p class="caution">
+					계정 통합에 동의하시면 스키니랩의 적립금/쿠폰 정보가 합쳐지며<br>
+					<span class="str">헬스밸런스의 모든 패밀리 사이트에서 하나의 ID로 로그인</span> 하실 수 있습니다.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

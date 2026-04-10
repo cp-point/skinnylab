@@ -1,0 +1,116 @@
+{%
+	set pageInfo = {
+		section: 'customer',
+		title: 'FAQ'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-customer customer-faq">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">고객센터</h2>
+		</div>
+	</div>
+
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">고객센터</a>
+				</li>
+				<li class="selected">
+					<a href="#">FAQ</a>
+				</li>
+				<li>
+					<a href="#">1:1문의</a>
+				</li>
+				<li>
+					<a href="#">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<div class="faq">
+			<h3 class="hide">FAQ</h3>
+			<div class="integrated-search">
+				<div class="search-box">
+					<div class="search js-text-clear">
+						<label for="search" class="hide">검색</label>
+						<input type="text" id="search" name="search" value="" placeholder="궁금하신 내용을 입력해주세요." class="input">
+						<button type="button" class="btn-clear">입력값 지우기</button>
+						<button type="button" class="btn-submit">검색하기</button>
+					</div>
+				</div>
+				<!-- <p class="result">
+					<span class="str">‘회원가입’</span>
+					에 대한 검색결과 
+					<span class="str">
+						4
+					</span>
+					개 
+				</p> -->
+			</div>
+			<div class="tab-button">
+				<div class="wrap">
+					<ul class="list">
+						<li class="selected">
+							<a href="#">전체</a>
+						</li>
+						<li>
+							<a href="#">회원/멤버십</a>
+						</li>
+						<li>
+							<a href="#">주문/결제</a>
+						</li>
+						<li>
+							<a href="#">배송</a>
+						</li>
+						<li>
+							<a href="#">취소/교환/반품</a>
+						</li>
+						<li>
+							<a href="#">기타</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="accordion-list qna-list">
+				{% for i in range(0,10) %}
+				<dl class="item">
+					<dt class="title">
+						<a href="#">
+							<strong class="main">[회원/멤버십]</strong>
+							<span class="sub">비밀번호를 어떻게 찾을 수 있나요?</span>
+						</a>
+					</dt>
+					<dd class="content">
+						<p class="txt">우측 상단의 [로그인]을 클릭하신 후, [비밀번호 찾기]를 통해 쉽게 안내받으실 수 있습니다.<br>이메일 또는 가입하신 휴대폰 번호로 인증절차를 완료 후 신규 비밀번호로 변경하시고 로그인 하실 수 있습니다.</p>
+					</dd>
+				</dl>
+				{% endfor %}
+				<!-- 검색 결과 없을때 -->
+				<!-- <p class="empty">
+					검색 결과가 없습니다.
+				</p> -->
+			</div>
+			<div class="common-pagination">
+				<a href="#" class="paging-btn prev">Prev</a>
+				<span class="paging-num">
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="paging-btn next">Next</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}

@@ -1,0 +1,297 @@
+{%
+	set pageInfo = {
+		section: 'fit-skinnylab',
+		title: '나만의 스키니랩',
+		order: 0
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container fit-skinnylab">
+	<div class="survey-layout">
+		<div class="survey-head">
+			<h2 class="title">
+				<span class="str">step 1.</span>
+				기초 조사를 통한 BMI 산출
+			</h2>
+			<p class="desc">고객님의 기초 정보를 <br>알려주세요.</p>
+			<div class="page-progress step1">
+				<div class="fill"></div>
+			</div>
+		</div>
+		<form action="about:blank" method="post" class="basic-form">
+			<div class="box">
+				<dl class="item name">
+					<dt class="title">
+						<label for="userName">이름 (닉네임)</label>
+					</dt>
+					<dd class="content">
+						<span class="input-area">
+							<input type="text" name="userName" id="userName" placeholder="이름(닉네임) 입력란" value="" class="input-text">
+						</span>
+					</dd>
+				</dl>
+				<dl class="item gender">
+					<dt class="title hide">
+						<label for="userGender">성별</label>
+					</dt>
+					<dd class="content">
+						<span class="input-area">
+							<input type="radio" name="userGender" id="female" class="input-radio">
+							<label for="female">여</label>
+							<input type="radio" name="userGender" id="male" class="input-radio">
+							<label for="male">남</label>
+						</span>
+					</dd>
+				</dl>
+			</div>
+			<dl class="item age">
+				<dt class="title">
+					<label for="userAge">연령선택</label>
+					<button type="button" class="btn-open" onclick="$(this).parents('.item').addClass('input'); return false;">열기</button>
+				</dt>
+				<dd class="content">
+					<span class="hide">
+						<input type="text" name="userAge" id="userAge" placeholder="" value="0" class="input-text" readonly>
+					</span>
+					<span class="result">
+						<span class="num">0</span>
+						<span class="txt">살</span>
+					</span>
+					<span class="range-slider-vetical-wrap">
+						<span class="bar">
+							<span id="sliderAge" class="range-slider-min"></span>
+						</span>
+					</span>
+					<span class="btn-area">
+						<button type="button" class="btn-check">check</button>
+						<button type="button" class="btn-reset" onclick="$(this).parents('.item').removeClass('completed'); return false;">재설정</button>
+					</span>
+				</dd>
+			</dl>
+			<dl class="item height">
+				<dt class="title">
+					<label for="userHeight">키선택</label>
+					<button type="button" class="btn-open" onclick="$(this).parents('.item').addClass('input'); return false;">열기</button>
+				</dt>
+				<dd class="content">
+					<span class="hide">
+						<input type="text" name="userHeight" id="userHeight" placeholder="" value="0" class="input-text" readonly>
+					</span>
+					<span class="result">
+						<span class="num">0</span>
+						<span class="txt">cm</span>
+					</span>
+					<span class="range-slider-vetical-wrap">
+						<span class="bar">
+							<span id="sliderHeight" class="range-slider-min"></span>
+						</span>
+					</span>
+					<span class="btn-area">
+						<button type="button" class="btn-check">check</button>
+						<button type="button" class="btn-reset" onclick="$(this).parents('.item').removeClass('completed'); return false;">재설정</button>
+					</span>
+				</dd>
+			</dl>
+			<dl class="item weight">
+				<dt class="title">
+					<label for="userWeight">체중선택</label>
+					<button type="button" class="btn-open" onclick="$(this).parents('.item').addClass('input'); return false;">열기</button>
+				</dt>
+				<dd class="content">
+					<span class="hide">
+						<input type="text" name="userWeight" id="userWeight" placeholder="" value="0" class="input-text">
+					</span>
+					<span class="result">
+						<span class="num">0</span>
+						<span class="txt">kg</span>
+					</span>
+					<span class="range-slider-vetical-wrap">
+						<span class="bar">
+							<span id="sliderWeight" class="range-slider-min"></span>
+						</span>
+					</span>
+					<span class="btn-area">
+						<button type="button" class="btn-check">check</button>
+						<button type="button" class="btn-reset" onclick="$(this).parents('.item').removeClass('completed'); return false;">재설정</button>
+					</span>
+				</dd>
+			</dl>
+		</form>
+		<div class="survey-foot">
+			<p class="contents-progress">
+				<a href="#" class="submit">다음</a>
+				<span class="bar">
+					<span class="fill"></span>
+				</span>
+			</p>
+			<div class="info">
+				<ul class="add">
+					<li>※ 입력하시는 개인정보는 BMI (Body Mass Index) 산출을 위함입니다. <br>다른 용도로 사용되지 않습니다.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+
+<script>
+	// 진행상태기능을 위한 초기 옵션클래스
+	$('.survey-foot .contents-progress').addClass('ongoing');
+
+	// 연령선택 slider
+	$("#sliderAge").slider({
+		orientation: "vertical",
+		range: "min",
+		value: 0,
+		min: 0,
+		max: 200,
+		slide: function(event,ui) {
+			$(event.target).parents('.item').find('.input-text').val(ui.value.toLocaleString());
+			$(event.target).parents('.item').find('.result .num').text(ui.value.toLocaleString());
+		}
+	});
+
+	// 키선택 slider
+	$("#sliderHeight").slider({
+		orientation: "vertical",
+		range: "min",
+		value: 0,
+		min: 0,
+		max: 200,
+		slide: function(event,ui) {
+			$(event.target).parents('.item').find('.input-text').val(ui.value.toLocaleString());
+			$(event.target).parents('.item').find('.result .num').text(ui.value.toLocaleString());
+		}
+	});
+
+	// 체중선택 slider
+	$("#sliderWeight").slider({
+		orientation: "vertical",
+		range: "min",
+		value: 0,
+		min: 0,
+		max: 200,
+		slide: function(event,ui) {
+			$(event.target).parents('.item').find('.input-text').val(ui.value.toLocaleString());
+			$(event.target).parents('.item').find('.result .num').text(ui.value.toLocaleString());
+		}
+	});
+
+	$(function() {
+		// 진행상태 업데이트
+		function updateProgress() {
+			var total = $('.basic-form .item').length;
+			var count;
+
+			count = $('.basic-form .item').filter(function(index, element) {
+				return $(element).hasClass('completed');
+			}).length;
+
+			$('.contents-progress .fill').css('width', ((count / total) * 100).toFixed(2) + '%');
+
+			if(total === count) {
+				$('.survey-foot .contents-progress').addClass('completed')
+			} else {
+				$('.survey-foot .contents-progress').removeClass('completed')
+			}
+		}
+		updateProgress();
+
+		function guide() {
+			var arrItem = $('.basic-form .item');
+			var waitSliderItemArr = arrItem.filter(function(index, element) {
+				return !$(element).hasClass('completed') && !$(element).hasClass('name') && !$(element).hasClass('gender');
+			});
+
+			if($('.basic-form .item.name').hasClass('completed') && $('.basic-form .item.gender').hasClass('completed')) {
+				$(waitSliderItemArr[0]).addClass('input');
+			} if(!$('.basic-form .item.name').hasClass('completed') && !$('.basic-form .item.gender').hasClass('completed')) {
+				$(waitSliderItemArr[0]).addClass('input');
+			}
+		}
+
+		// 초기셋팅
+		function init() {
+			if($('.basic-form .item.name').find('.input-text').val().length >= 2) $('.basic-form .item.name').addClass('completed');
+			if($('.basic-form .item.gender').find('.input-radio').is(':checked')) $('.basic-form .item.gender').addClass('completed');
+
+			$('.basic-form .item.age, .item.height, .item.weight').each(function(index, element) {
+				var $item = $(element);
+				var $inputText = $item.find('.input-text');
+
+				if($inputText.val() > 0) {
+					$item.addClass('input completed');
+					$item.find('.result .num').text($inputText.val());
+				}
+			});
+
+			updateProgress();
+		}
+		init();
+
+		// 이름입력
+		$('.basic-form .item.name').find('.input-text').on('keyup', function(e) {
+			$tgText = $(e.target);
+			$tgItem = $tgText.parents('.item');
+
+			if($tgText.val().length >= 2) {
+				$tgItem.addClass('completed');
+			} else {
+				$tgItem.removeClass('completed');
+			}
+
+			updateProgress();
+			guide();
+		});
+
+		// 성별선택
+		$('.basic-form .item.gender').on('change', '.input-radio', function(e) {
+			if($(e.target).is(':checked')) $('.basic-form .item.gender').addClass('completed');
+
+			updateProgress();
+			guide();
+		});
+
+		// 성별선택, 키선택, 체중선택 slider상태값에 따른 check버튼 활성화
+		$('.range-slider-min').each(function(index, element) {
+			$(element).on('slidechange', function(event, ui) {
+				if($(element).slider('value') > 0) {
+					$(element).parents('.item').find('.btn-check').addClass('on');
+				} else {
+					$(element).parents('.item').find('.btn-check').removeClass('on');
+				}
+			});
+
+			// 슬라이더 값 입력완료 후 이벤트
+			$(element).on('slidestop', function(event, ui) {
+				if($(element).slider('value') <= 0) return false;
+
+				setTimeout(function() {
+					$(event.target).parents('.item').addClass('completed');
+					updateProgress();
+					guide();
+				}, 800);
+			});
+		});
+
+		// 성별선택, 키선택, 체중선택 check버튼
+		$('.basic-form .item.age, .item.height, .item.weight').on('click', '.btn-check', function(e) {
+			if($(e.target).parents('.item').find('.input-text').val() <= 0) return false;
+			$(e.target).parents('.item').addClass('completed');
+
+			updateProgress();
+			guide();
+		});
+
+		// 성별선택, 키선택, 체중선택 reset버튼
+		$('.basic-form .item.age, .item.height, .item.weight').on('click', '.btn-reset', function(e) {
+			$(e.target).parents('.item').removeClass('completed');
+
+			updateProgress();
+		});
+	});
+</script>
+{%- endblock %}

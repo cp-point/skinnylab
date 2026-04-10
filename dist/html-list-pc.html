@@ -1,0 +1,1699 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8">
+<title>헬스밸런스 스키니랩 PC - HTML LIST</title>
+<style>
+/* stylelint-disable */
+/* Basic Style START (dohoons, 200803, 200908, 201011, 201106, 201305, 201607, 201802, 201908) */
+html, body { height:100%; -webkit-text-size-adjust:none; font-family:dotum,"돋움",Arial,Sans-serif; font-size:12px; }
+body, input, select, button, textarea, h1, h2, h3, h4, h5, h6, table { line-height:1.5; font:inherit; color:inherit; }
+html, body, div, form, input, select, button, textarea, legend, fieldset, figure, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, blockquote, address, p, th, td, caption { margin:0; padding:0; }
+ol, ul, li { list-style:none; }
+img, fieldset { vertical-align:middle; border:0 none; }
+input, select, textarea { vertical-align:middle; resize:none; }
+input[type=text], input[type=password], input[type=submit], input[type=tel], input[type=number], input[type=email], input[type=url], input[type=search], textarea { -webkit-appearance:none; border-radius:0; }
+button { border:0 none; background:transparent; cursor:pointer; }
+hr { display:none; }
+legend, .hide { position:absolute; left:-9999px; }
+table caption { width:0; height:0; visibility:hidden; text-indent:-9999px; font-size:0; line-height:0; }
+table { border-collapse:collapse; border-spacing:0; }
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption { display:block; }
+
+a { color:inherit; text-decoration:none; }
+a:active, a:hover, a:focus { text-decoration:underline; }
+/* Basic Style END */
+
+a:link, a:visited { color:#2d7fe0; }
+a:active, a:hover, a:focus { background:#eee; }
+html, body { font-family: 'Malgun Gothic',sans-serif; }
+body { min-width:1700px; color:#666; overflow: scroll; overflow-x: auto; }
+header { position: relative; }
+.group-filter { line-height: 1.8; margin: 10px 15px 0; font-size: 11px; }
+.group-filter input { margin-left: 10px; }
+.group-filter label { color: #2d7fe0; }
+.filter-input { box-sizing: border-box; width: 180px; height: 30px; margin-top: -15px; padding: 0 15px; background: transparent; border: 1px solid #ccc; box-shadow: inset 2px 2px 5px rgba(0,0,0,.2); position: absolute; top: 50%; right: 20px; }
+h1 { padding:10px 20px; font-weight:bold; font-size:16px; color:#999; background: -webkit-gradient(linear, left top, left bottom, from(#ffffff),color-stop(50%, #f3f3f3),color-stop(51%, #ededed),to(#ffffff));background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); border-bottom:1px solid #eee; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+h2 { padding:0 0 10px; font-size:14px; }
+.container { box-sizing:border-box; padding:20px; overflow:hidden; }
+table { width:100%; font-size:12px; color:#333; table-layout:fixed; border-collapse:collapse; border-spacing:0; border-right:1px solid #ccc; border-bottom:1px solid #ccc; }
+table thead th { padding:5px; background:#f5f5f5; border-left:1px solid #ccc; border-top:1px solid #ccc; }
+table tbody td { padding:5px 10px; word-wrap:break-word; border-left:1px solid #ccc; border-top:1px solid #ccc; }
+table .center { text-align:center; }
+table .group:not(:first-child) td { border-top:10px solid #eee; }
+table .sub-group td { border-top:3px double #bbb; }
+table span, table .up { color:#2d7fe0; }
+a.cms:before { content: '['; display: inline; }
+a.cms:after { content: ']'; display: inline; }
+</style>
+<script>
+// 모든 링크 새창으로 변경
+function linkTargetChange() {
+	var arr = document.querySelectorAll('a');
+	for(var i=arr.length; i--; ) {
+		arr[i].target = "_blank";
+	}
+}
+// 링크 URL 자동
+function setLink() {
+	var arr = document.querySelectorAll('a.path');
+	for(var i=arr.length; i--; ) {
+		arr[i].href = 'html/pc/' + arr[i].innerHTML;
+	}
+}
+// 미리보기 URL 설정
+function previewLink() {
+	var arr = document.querySelectorAll('a.preview');
+	var path = location.href.split('/');
+	path.length = path.length - 1;
+	path = path.join('/');
+	for(var i=arr.length; i--; ) {
+		arr[i].href = 'http://troy.labs.daum.net/?url='
+			+ encodeURIComponent(path + '/' + arr[i].parentNode.parentNode.querySelector('a.path').getAttribute('href'))
+			+ '&device=T700;'; // 갤럭시탭S
+	}
+}
+// 리스트 검색 필터
+function listFilter() {
+	var input, filter, table, tr, len, td, i;
+	var searchIndex = 3; // 검색 대상 td index 설정
+	var input = document.getElementById("filterInput");
+	var filter = input.value.toUpperCase();
+	var table = document.getElementById("mainTable");
+	var tr = table.querySelector('tbody').getElementsByTagName("tr");
+	var textArr = Array.prototype.map.call(tr, function(row) {
+		const td = row.getElementsByTagName('td');
+		return td[0].innerText + td[1].innerText + td[2].innerText + td[3].innerText + td[4].innerText;
+	});
+	var len = tr.length;
+
+	for(var i = 0; i < len; i++) {
+		td = tr[i].getElementsByTagName("td")[searchIndex];
+		if(td) {
+			if(textArr[i].toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
+			}
+		}
+	}
+}
+function setRowFilter() {
+	var tr = document.querySelectorAll('#mainTable tbody tr');
+	var len = tr.length;
+	var groupNames = [];
+	var groupIndex = -1;
+	var groupFilter = document.querySelector('.group-filter');
+	for(var i = 0; i < len; i++) {
+		var className = tr[i].className;
+		if(className === 'group') {
+			groupNames.push(tr[i].querySelectorAll("td")[0].innerText);
+			groupIndex++;
+		}
+		tr[i].classList.add('seq'+groupIndex);
+		tr[i].setAttribute('id', 'seq' + groupIndex);
+	}
+	groupFilter.innerHTML = groupNames.reduce(function(acc, v, i) {
+		return acc + '<input type="radio" name="groupFilter" value="' + i + '"> <a href="#seq' + i + '"><strong>' + v + '↓</strong></a>';
+	}, '<label><input type="radio" name="groupFilter" value="-1" checked> <strong>전체</strong></label>');
+	Array.prototype.forEach.call(groupFilter.querySelectorAll('input'), function(el) {
+		el.addEventListener('change', function(e) {
+			var checked = groupFilter.querySelector('input:checked').value;
+			for(var i = 0; i < len; i++) {
+				if(checked === '-1') {
+					tr[i].style.display = 'table-row';
+				} else if (checked === tr[i].className.split('seq')[1]) {
+					tr[i].style.display = 'table-row';
+				} else {
+					tr[i].style.display = 'none';
+				}
+			}
+		});
+	});
+}
+window.onload = function() {
+	linkTargetChange();
+	setLink();
+	previewLink();
+	setRowFilter();
+};
+</script>
+</head>
+<body>
+<header>
+	<h1>헬스밸런스 스키니랩 PC - HTML LIST</h1>
+	<input type="text" id="filterInput" class="filter-input" onkeyup="listFilter()" placeholder="메뉴명/화면ID 검색.." title="검색">
+</header>
+<div class="group-filter"></div>
+<div class="container">
+	<table id="mainTable">
+		<colgroup>
+			<col style="width:220px;">
+			<col style="width:220px;">
+			<col style="width:280px;">
+			<col style="width:220px;">
+			<col style="width:140px;">
+			<col style="width:300px;">
+			<col style="width:80px;">
+			<col style="width:auto;">
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">1 Depth</th>
+				<th scope="col">2 Depth</th>
+				<th scope="col">3 Depth</th>
+				<th scope="col">4 Depth</th>
+				<th scope="col">화면ID</th>
+				<th scope="col">경로 (html)</th>
+				<th scope="col">상태</th>
+				<th scope="col">비고</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="group">
+				<td>가이드</td>
+				<td>컴포넌트 가이드</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">@guide/components-guide.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>가이드</td>
+				<td>레이아웃</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">@guide/layout.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>가이드</td>
+				<td>마이페이지 레이아웃</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center"></td>
+				<td><a href="#auto" class="path">@guide/mypage-layout.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>메인</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_MAI_01</td>
+				<td><a href="#auto" class="path">main/index.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>공통</td>
+				<td>이용약관</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_03</td>
+				<td><a href="#auto" class="path">common/terms.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td>개인정보처리방침</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_04</td>
+				<td><a href="#auto" class="path">common/privacy.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td>이용안내</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_05</td>
+				<td><a href="#auto" class="path">common/guide.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td>광고 제휴 문의</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_06</td>
+				<td><a href="#auto" class="path">common/advertising-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td>광고 제휴 문의</td>
+				<td>작성(회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_06</td>
+				<td><a href="#auto" class="path">common/advertising-write-member.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td>광고 제휴 문의</td>
+				<td>작성(비회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_06</td>
+				<td><a href="#auto" class="path">common/advertising-write-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td><strong class="up">[팝업]</strong> 정기배송가이드</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_06</td>
+				<td><a href="#auto" class="path">common/popup-delivery-guide.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td><strong class="up">[팝업]</strong> 최근 본 상품</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_06</td>
+				<td><a href="#auto" class="path">common/popup-history-view.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>공통</td>
+				<td><strong class="up">[팝업]</strong> 브라우저 안내</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CM_06</td>
+				<td><a href="#auto" class="path">common/popup-browser-info.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>통합검색</td>
+				<td>상품</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_SC_02</td>
+				<td><a href="#auto" class="path">search/product.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>통합검색</td>
+				<td>리뷰</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_SC_02</td>
+				<td><a href="#auto" class="path">search/review.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>통합검색</td>
+				<td>기획전</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_SC_02</td>
+				<td><a href="#auto" class="path">search/exhibition.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>통합검색</td>
+				<td>이벤트</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_SC_02</td>
+				<td><a href="#auto" class="path">search/event.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>회원</td>
+				<td>로그인</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_LOG_01</td>
+				<td><a href="#auto" class="path">member/login.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>비밀번호 변경 안내</td>
+				<td>-</td>
+				<td class="center">SL_FO_LOG_04</td>
+				<td><a href="#auto" class="path">member/pw-change-guide.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>휴면 계정 안내</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_LOG_05</td>
+				<td><a href="#auto" class="path">member/inactive-account-guide.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>아이디 찾기</td>
+				<td>-</td>
+				<td class="center">SL_FO_LOG_09</td>
+				<td><a href="#auto" class="path">member/find-id.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>아이디 찾기</td>
+				<td>완료</td>
+				<td class="center">SL_FO_LOG_10</td>
+				<td><a href="#auto" class="path">member/find-id-complete.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>비밀번호 찾기</td>
+				<td>-</td>
+				<td class="center">SL_FO_LOG_11</td>
+				<td><a href="#auto" class="path">member/find-pw.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>비밀번호 찾기</td>
+				<td>변경</td>
+				<td class="center">SL_FO_LOG_12</td>
+				<td><a href="#auto" class="path">member/find-pw-change.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>기존 아이디 찾기</td>
+				<td>-</td>
+				<td class="center">SL_FO_LOG_13</td>
+				<td><a href="#auto" class="path">member/find-existing-id.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>로그인</td>
+				<td>기존 아이디 찾기</td>
+				<td>완료</td>
+				<td class="center">SL_FO_LOG_14</td>
+				<td><a href="#auto" class="path">member/find-existing-id-complete.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_MEM_01</td>
+				<td><a href="#auto" class="path">member/join.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>유형선택</td>
+				<td>-</td>
+				<td class="center">SL_FO_MEM_05</td>
+				<td><a href="#auto" class="path">member/join-type.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>회원정보 입력(기존)</td>
+				<td>-</td>
+				<td class="center">SL_FO_MEM_01</td>
+				<td><a href="#auto" class="path">member/join-form-existing.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>회원정보 입력(신규)</td>
+				<td>-</td>
+				<td class="center">SL_FO_MEM_01</td>
+				<td><a href="#auto" class="path">member/join-form-new.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>회원정보 입력(SNS회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_MEM_02</td>
+				<td><a href="#auto" class="path">member/join-form-sns.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>회원정보 입력</td>
+				<td><strong class="up">[팝업]</strong> 이용약관</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">member/popup-terms.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>회원정보 입력</td>
+				<td><strong class="up">[팝업]</strong> 개인정보 처리방침</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">member/popup-privacy.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>완료</td>
+				<td>-</td>
+				<td class="center">SL_FO_MEM_03</td>
+				<td><a href="#auto" class="path">member/join-complete.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>기존 계정 확인</td>
+				<td>-</td>
+				<td class="center">SL_FO_MEM_04</td>
+				<td><a href="#auto" class="path">member/existing-account-confirm.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>회원</td>
+				<td>회원가입</td>
+				<td>기존 계정 확인</td>
+				<td>HB 멤버십 계정 통합 안내</td>
+				<td class="center">SL_FO_MEM_05</td>
+				<td><a href="#auto" class="path">member/existing-membership-info.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>상품</td>
+				<td>목록</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_01</td>
+				<td><a href="#auto" class="path">product/product-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>목록</td>
+				<td><strong class="up">[팝업]</strong> 옵션선택</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_01</td>
+				<td><a href="#auto" class="path">product/popup-option-select.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>목록</td>
+				<td><strong class="up">[팝업]</strong> 재입고 알림 신청</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_01</td>
+				<td><a href="#auto" class="path">product/popup-restock-notification-register.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/product-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td>최소정보노출</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/product-detail-mini.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td>품절</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/product-detail-soldout.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td>정기배송</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/product-detail-regular.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td>데이터가 없을때</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/product-detail-nodata.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td><strong class="up">[팝업]</strong> 상품리뷰 이미지 보기</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/popup-review-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td><strong class="up">[팝업]</strong> 상품리뷰 작성</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/popup-review-write.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td><strong class="up">[팝업]</strong> 상품문의(회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/popup-inquire-write-member.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>상품</td>
+				<td>상세</td>
+				<td><strong class="up">[팝업]</strong> 상품문의(비회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">product/popup-inquire-write-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td>일반배송(회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/order-form-member.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td>일반배송(비회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/order-form-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td>정기배송</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/order-form-regular.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td>선물하기</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/order-form-gift.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td><strong class="up">[팝업]</strong> 배송지 관리</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/popup-address-manage.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td><strong class="up">[팝업]</strong> 쿠폰 조회/변경</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/popup-coupon-apply.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td><strong class="up">[팝업]</strong> 비회원 개인정보 수집&middot;이용 동의</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/popup-nonmember-privacy.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>작성</td>
+				<td><strong class="up">[팝업]</strong> 정기배송 서비스 이용 및 자동승인 동의</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/popup-regular-service.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>완료</td>
+				<td>일반배송(회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_02</td>
+				<td><a href="#auto" class="path">order/order-complete-member.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>완료</td>
+				<td>일반배송(회원)</td>
+				<td>계좌이체</td>
+				<td class="center">SL_FO_ORD_02</td>
+				<td><a href="#auto" class="path">order/order-complete-member-account.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>완료</td>
+				<td>일반배송(비회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_02</td>
+				<td><a href="#auto" class="path">order/order-complete-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>완료</td>
+				<td>일반배송(비회원)</td>
+				<td></td>
+				<td class="center">SL_FO_ORD_02</td>
+				<td><a href="#auto" class="path">order/order-complete-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>완료</td>
+				<td>일반배송(가상계좌)</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_02</td>
+				<td><a href="#auto" class="path">order/order-complete-virtual.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>완료</td>
+				<td>정기배송</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_02</td>
+				<td><a href="#auto" class="path">order/order-complete-regular.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>완료</td>
+				<td>선물하기</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_02</td>
+				<td><a href="#auto" class="path">order/order-complete-gift.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>주문/결제</td>
+				<td>실패</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_ORD_01</td>
+				<td><a href="#auto" class="path">order/order-fail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>장바구니</td>
+				<td>일반배송(회원)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_01</td>
+				<td><a href="#auto" class="path">cart/cart-general-member.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>장바구니</td>
+				<td>일반배송(회원)</td>
+				<td>상품 없는 경우</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_01</td>
+				<td><a href="#auto" class="path">cart/cart-general-member-nodata.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>장바구니</td>
+				<td>일반배송(회원)</td>
+				<td>배송지 없는 경우</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_01</td>
+				<td><a href="#auto" class="path">cart/cart-no-addr.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>장바구니</td>
+				<td>일반배송(비회원)</td>
+				<td>비로그인</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_01</td>
+				<td><a href="#auto" class="path">cart/cart-general-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>장바구니</td>
+				<td>일반배송(비회원)</td>
+				<td>상품 없는 경우</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_01</td>
+				<td><a href="#auto" class="path">cart/cart-general-nonmember-nodata.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>장바구니</td>
+				<td>정기배송(회원)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_02</td>
+				<td><a href="#auto" class="path">cart/cart-regular-member.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>장바구니</td>
+				<td>정기배송(회원)</td>
+				<td>상품 없는 경우</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_02</td>
+				<td><a href="#auto" class="path">cart/cart-regular-member-nodata.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>장바구니</td>
+				<td>정기배송(비회원)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CAR_02</td>
+				<td><a href="#auto" class="path">cart/cart-regular-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>HB 멤버십</td>
+				<td>HB 멤버십 소개(로그인전)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_GNB_05</td>
+				<td><a href="#auto" class="path">membership/intro.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>HB 멤버십</td>
+				<td>HB 멤버십 소개(로그인후)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_GNB_05</td>
+				<td><a href="#auto" class="path">membership/benefit.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>기획전</td>
+				<td>목록</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_GNB_05</td>
+				<td><a href="#auto" class="path">promotion/promotion-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>기획전</td>
+				<td>상세(2단)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">promotion/promotion-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>기획전</td>
+				<td>상세(3단)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">promotion/promotion-detail-type2.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>기획전</td>
+				<td>상세(4단)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">promotion/promotion-detail-type3.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>이벤트</td>
+				<td>목록</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_GNB_03</td>
+				<td><a href="#auto" class="path">event/event-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(안내)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-announce.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(신청)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-apply.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(출석체크-매일혜택지급 7일)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-day-week.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(출석체크-매일혜택지급 30일)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-day-month.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(출석체크-누적혜택지급 7일)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-accum-week.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(출석체크-누적혜택지급 30일)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-accum-month.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(당첨자발표)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-win.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>이벤트</td>
+				<td>상세(종료이벤트)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">event/event-detail-end.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>게시판</td>
+				<td>상품후기</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">SL_FO_GNB_02</td>
+				<td><a href="#auto" class="path">bulletin/review-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>게시판</td>
+				<td>상품후기</td>
+				<td><strong class="up">[팝업]</strong> 상세</td>
+				<td>-</td>
+				<td class="center">SL_FO_PRD_02</td>
+				<td><a href="#auto" class="path">bulletin/popup-review-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>게시판</td>
+				<td>스키니랩TV</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">SL_FO_GNB_08</td>
+				<td><a href="#auto" class="path">bulletin/tv-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>게시판</td>
+				<td>스키니랩TV</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">SL_FO_GNB_07</td>
+				<td><a href="#auto" class="path">bulletin/tv-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>마이페이지</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_MY_01</td>
+				<td><a href="#auto" class="path">mypage/index.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>주문/배송 조회</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_03</td>
+				<td><a href="#auto" class="path">mypage/order-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>주문/배송 조회</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_04</td>
+				<td><a href="#auto" class="path">mypage/order-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>주문/배송 조회</td>
+				<td>상세</td>
+				<td><strong class="up">[팝업]</strong> 주문 취소</td>
+				<td class="center">IA_SL_FO_MY_05</td>
+				<td><a href="#auto" class="path">mypage/popup-order-cancel.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>주문/배송 조회</td>
+				<td>상세</td>
+				<td><strong class="up">[팝업]</strong> 교환 신청</td>
+				<td class="center">IA_SL_FO_MY_07</td>
+				<td><a href="#auto" class="path">mypage/popup-exchange-request.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>주문/배송 조회</td>
+				<td>상세</td>
+				<td><strong class="up">[팝업]</strong> 반품 신청</td>
+				<td class="center">IA_SL_FO_MY_09</td>
+				<td><a href="#auto" class="path">mypage/popup-return-request.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>정기배송 신청내역</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_15</td>
+				<td><a href="#auto" class="path">mypage/order-list-regular.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>정기배송 신청내역</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/order-detail-regular.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>취소/교환/반품 조회</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_11</td>
+				<td><a href="#auto" class="path">mypage/order-list-claim.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>취소/교환/반품 조회</td>
+				<td>상세(취소)</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_04</td>
+				<td><a href="#auto" class="path">mypage/order-detail-cancel.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>취소/교환/반품 조회</td>
+				<td>상세(교환)</td>
+				<td></td>
+				<td class="center">IA_SL_FO_MY_04</td>
+				<td><a href="#auto" class="path">mypage/order-detail-exchange.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>취소/교환/반품 조회</td>
+				<td>상세(교환)</td>
+				<td>직접반송 신청 시</td>
+				<td class="center">IA_SL_FO_MY_04</td>
+				<td><a href="#auto" class="path">mypage/order-detail-exchange01.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>취소/교환/반품 조회</td>
+				<td>상세(반품)</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_04</td>
+				<td><a href="#auto" class="path">mypage/order-detail-return.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>취소/교환/반품 조회</td>
+				<td>상세(반품)</td>
+				<td>직접반송 신청 시</td>
+				<td class="center">IA_SL_FO_MY_04</td>
+				<td><a href="#auto" class="path">mypage/order-detail-return01.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>선물함</td>
+				<td>목록(받은 선물)</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/order-list-gift.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>선물함</td>
+				<td>목록(보낸 선물)</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_04</td>
+				<td><a href="#auto" class="path">mypage/order-list-gift.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>선물함</td>
+				<td><strong class="up">[팝업]</strong> 상세(받은 선물)</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/popup-order-detail-receive.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>선물함</td>
+				<td>상세(보낸 선물)</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/order-detail-send.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>이전주문내역 조회</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/order-list-prev.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>이전주문내역 조회</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/order-detail-prev.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>보유쿠폰</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_18</td>
+				<td><a href="#auto" class="path">mypage/coupon.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>보유쿠폰</td>
+				<td><strong class="up">[팝업]</strong> 쿠폰 번호 등록</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/popup-coupon-register.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>보유쿠폰</td>
+				<td><strong class="up">[팝업]</strong> 쿠폰 적용 상품 보기</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/popup-coupon-applicable-product.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>마일리지 조회</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_19</td>
+				<td><a href="#auto" class="path">mypage/mileage.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>찜한 상품</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_13</td>
+				<td><a href="#auto" class="path">mypage/wish-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>재입고 알림 신청내역</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/restock-notification-list.html</a></td>
+				<td class="center">완료</td>
+				<td>--</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>상품 리뷰</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_20</td>
+				<td><a href="#auto" class="path">mypage/review-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>참여 이벤트</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_24</td>
+				<td><a href="#auto" class="path">mypage/join-event.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>1:1문의 내역</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_22</td>
+				<td><a href="#auto" class="path">mypage/qna-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>1:1문의 내역</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/qna-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>상품문의 내역</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_23</td>
+				<td><a href="#auto" class="path">mypage/inquire-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>상품문의 내역</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/inquire-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>나만의 스키니랩</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/fit-skinnylab-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>나만의 스키니랩</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/fit-skinnylab-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>회원정보 관리</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/profile-manage.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>회원정보 관리</td>
+				<td>비밀번호 확인</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_25</td>
+				<td><a href="#auto" class="path">mypage/pw-confirm.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>회원정보 관리</td>
+				<td>개인정보 수정</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_27</td>
+				<td><a href="#auto" class="path">mypage/profile-modify.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>회원정보 관리</td>
+				<td>비밀번호 수정</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_26</td>
+				<td><a href="#auto" class="path">mypage/pw-modify.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>회원정보 관리</td>
+				<td>회원탈퇴</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_28</td>
+				<td><a href="#auto" class="path">mypage/member-withdraw.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td><strong class="up">[팝업]</strong> 배송지 관리</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_29</td>
+				<td><a href="#auto" class="path">mypage/popup-address-manage.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td><strong class="up">[팝업]</strong> 배송지 등록</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_30</td>
+				<td><a href="#auto" class="path">mypage/popup-address-register.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>자동결제수단 관리</td>
+				<td>등록</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/payment-manage.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>자동결제수단 관리</td>
+				<td>수정</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/payment-manage-modify.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>환불계좌 관리</td>
+				<td>등록</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_31</td>
+				<td><a href="#auto" class="path">mypage/refund-manage.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>환불계좌 관리</td>
+				<td>수정</td>
+				<td>-</td>
+				<td class="center">IA_SL_FO_MY_31</td>
+				<td><a href="#auto" class="path">mypage/refund-manage-modify.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>마이페이지</td>
+				<td>환불계좌 관리</td>
+				<td><strong class="up">[팝업]</strong> 환불계좌 등록</td>
+				<td>-</td>
+				<td class="center">-</td>
+				<td><a href="#auto" class="path">mypage/popup-refund-register.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>고객센터</td>
+				<td>고객센터</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">customer/service-center.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>고객센터</td>
+				<td>고객센터</td>
+				<td><strong class="up">[팝업]</strong> 1:1 답변확인</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_05</td>
+				<td><a href="#auto" class="path">customer/popup-qna-answer-confirm.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>고객센터</td>
+				<td>FAQ</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_03</td>
+				<td><a href="#auto" class="path">customer/faq.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>고객센터</td>
+				<td>1:1문의</td>
+				<td>작성(회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_05</td>
+				<td><a href="#auto" class="path">customer/qna-write-member.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>고객센터</td>
+				<td>1:1문의</td>
+				<td>작성(비회원)</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_05</td>
+				<td><a href="#auto" class="path">customer/qna-write-nonmember.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>고객센터</td>
+				<td>1:1문의</td>
+				<td>작성</td>
+				<td><strong class="up">[팝업]</strong> 주문상품 선택</td>
+				<td class="center">SL_FO_CS_05</td>
+				<td><a href="#auto" class="path">customer/popup-qna-order-select.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>고객센터</td>
+				<td>공지사항</td>
+				<td>목록</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_02</td>
+				<td><a href="#auto" class="path">customer/notice-list.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>고객센터</td>
+				<td>공지사항</td>
+				<td>상세</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_02</td>
+				<td><a href="#auto" class="path">customer/notice-detail.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>소개</td>
+				<td>회사소개</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">intro/company.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>소개</td>
+				<td>브랜드소개</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">intro/brand.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>소개</td>
+				<td>브랜드소개</td>
+				<td>muscletech</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">intro/muscletech.html</a></td>
+				<td class="center">-</td>
+				<td>-</td>
+			</tr>
+			<tr class="group">
+				<td>나만의 스키니랩</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">fit-skinnylab/intro.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>나만의 스키니랩</td>
+				<td>기초 조사 (STEP1)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">fit-skinnylab/basic-form.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>나만의 스키니랩</td>
+				<td>설문 조사 (STEP2)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">fit-skinnylab/survey-form.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>나만의 스키니랩</td>
+				<td>설문 결과 (STEP3)</td>
+				<td>-</td>
+				<td>-</td>
+				<td class="center">SL_FO_CS_01</td>
+				<td><a href="#auto" class="path">fit-skinnylab/survey-result.html</a></td>
+				<td class="center">완료</td>
+				<td>-</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+{% extends site + '/@inc/layout-empty.html' %}
+
+{% block content -%}
+<!-- 옵션클래스: full, full-scroll, hidden-title -->
+<article id="popup-review-write" class="common-popup" data-motion-in="400" data-motion-out="200">
+	<div class="common-popup-inner popup-review-write">
+		<div class="header">
+			<h1 class="title">상품리뷰 작성</h1>
+			<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+		</div>
+		<div class="container">
+			<div class="body">
+				<div class="order-box">
+					<figure class="prod-row-item">
+						<span class="img">
+							<a href="#"><img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지"></a>
+						</span>
+						<figcaption class="content">
+							<div class="title">
+								[NIGHT패키지] 래피드 솔루션 다이어트
+								4주분+이지슬리밍 잔티젠 다이어트 4주분
+								[NIGHT패키지] 래피드 솔루션 다이어트
+								4주분+이지슬리밍 잔티젠 다이어트 4주분
+							</div>
+							<dl class="option">
+								<dt>옵션</dt>
+								<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+							</dl>
+						</figcaption>
+					</figure>
+				</div>
+				<ul class="com-txt5 dot-list">
+					<li>상품 리뷰는 건강기능식품 특성 상 관리자의 승인 후 게시 가능합니다. </li>
+					<li>상품 리뷰 등록 이후 수정/삭제는 불가능합니다.</li>
+				</ul>
+				<div class="select-grade">
+					<span class="com-txt3">별점을 선택해주세요.</span>
+					<div class="range-slider-star-wrap">
+						<div class="bar">
+							<div id="rangeSliderStar" class="range-slider-star"></div>
+						</div>
+						<p class="result">
+							<span class="num">0</span>점
+						</p>
+					</div>
+				</div>
+				<div class="form-layout vertical">
+					<dl class="row">
+						<dt class="title hide">
+							<label for="reivewEditor">상품 후기 입력</label>
+						</dt>
+						<dd class="content">
+							<!-- 에디터 영역 -->
+							<div class="editor">
+								<textarea id="reivewEditor" name="reivewEditor" cols="30" rows="10" placeholder="후기 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+								<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+							</div>
+							<!-- // 에디터 영역 -->
+
+							<div class="image-upload">
+								<span class="hide">이미지업로드</span>
+								<span class="list">
+									<span class="item">
+										<span class="file">
+											<span class="input">
+												<input type="file" id="imageFile1" name="imageFile1" class="input-file">
+												<label for="imageFile1" class="btn-upload">파일 선택</label>
+											</span>
+											<span class="result">
+												<span class="content">
+													<img src="{{base}}/img/mob/@dummy/bot-nav-banner.jpg" alt="">
+												</span>
+												<button class="btn-del">파일 삭제</button>
+											</span>
+										</span>
+									</span>
+									<span class="file-uploads" style="overflow: hidden; position: relative; text-align: center; display: flex;">
+										{% for i in range(2, 6) %}
+										<span class="item">
+											<span class="file">
+												<span class="input">
+													<input type="file" id="imageFile{{i}}" name="imageFile{{i}}" class="input-file">
+													<label for="imageFile1" class="btn-upload">파일 선택</label>
+												</span>
+												<span class="result" style="display: none;">
+													<span class="content">
+														<img src="{{base}}/img/mob/@dummy/bot-nav-banner.jpg" alt="">
+													</span>
+													<button class="btn-del">파일 삭제</button>
+												</span>
+											</span>
+										</span>
+										{% endfor %}
+									</span>
+								</span>
+								<ul class="com-txt5 dot-list">
+									<li>최대 5개 / 100MB 이하의 파일만 등록 가능합니다.</li>
+								</ul>
+							</div>
+
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="btn-group center">
+					<button type="button" class="btn large outline primary">취소</button>
+					<button type="button" class="btn large primary">등록</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+<script>
+	$(function() {
+		// 별점 입력
+		var value = 0;
+		$( "#rangeSliderStar" ).slider({
+			range: "min",
+			value: 0,
+			min: 0,
+			max: 10,
+			slide: function( event, ui ) {
+				value = ui.value / 2;
+				
+				$(".range-slider-star-wrap .result .num").text(value.toLocaleString());
+			}
+		});
+	});
+</script>
+{%- endblock %}

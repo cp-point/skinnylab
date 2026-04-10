@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<!-- content // -->
+	<!-- 옵션클래스: full, full-scroll, hidden-title -->
+	<article id="popup-review-write" class="common-popup" data-motion-in="400" data-motion-out="200">
+		<div class="common-popup-inner popup-review-write">
+			<div class="header">
+				<h1 class="title">상품문의</h1>
+				<button type="button" class="btn-close js-pop-close"><span>닫기</span></button>
+			</div>
+			<div class="container">
+				<div class="body">
+					<div class="order-box">
+						<figure class="prod-row-item">
+							<span class="img">
+								<a href="#"><img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="제품 이미지"></a>
+							</span>
+							<figcaption class="content">
+								<div class="title">
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+									[NIGHT패키지] 래피드 솔루션 다이어트
+									4주분+이지슬리밍 잔티젠 다이어트 4주분
+								</div>
+								<dl class="option">
+									<dt>옵션</dt>
+									<dd>선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출 선택된 옵션명 정보 모두 노출</dd>
+								</dl>
+							</figcaption>
+						</figure>
+					</div>
+					<ul class="com-txt5 dot-list">
+						<li>상품 문의는 모두 비밀글로 등록됩니다.</li>
+					</ul>
+					
+					<div class="form-layout vertical">
+						<dl class="row">
+							<dt class="title">
+								<label for="type">문의 유형 <span class="emphasis">*</span></label>
+							</dt>
+							<dd class="content">
+								<span class="select-wrap" style="width: 100%;">
+									<select id="type" name="type" class="select">
+										<option value="">유형 선택</option>
+										<option value="">상품문의</option>
+										<option value="">배송/교환문의</option>
+										<option value="">기타문의</option>
+									</select>
+									<span class="arrow"></span>
+								</span>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="userName">작성자 <span class="emphasis">*</span></label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="userName" name="userName" placeholder="작성자명 입력" class="text block">
+								</span>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="userPW">문의 비밀번호 <span class="emphasis">*</span></label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="password" id="userPW" name="userPW" placeholder="비밀번호 입력" class="text block">
+								</span>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="subject">제목 <span class="emphasis">*</span></label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="text" id="subject" name="subject" placeholder="제목 입력" class="text block">
+								</span>
+							</dd>
+							<dd class="content">
+								<!-- 에디터 영역 -->
+								<div class="editor">
+									<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="문의 내용 입력" class="editor-cont txt" maxlength="1000"></textarea>
+									<p class="character">( <span class="num">0</span> / 1,000자 )</p>
+								</div>
+								<!-- // 에디터 영역 -->
+								
+								<div class="image-upload">
+									<p class="hide">이미지업로드</p>
+									<ul class="list">
+										<li class="item">
+											<div class="file">
+												<div class="input">
+													<input type="file" id="imageFile1" name="imageFile1" class="input-file">
+													<label for="imageFile1" class="btn-upload">파일 선택</label>
+												</div>
+												<div class="result">
+													<div class="content">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+													</div>
+													<button class="btn-del">파일 삭제</button>
+												</div>
+											</div>
+										</li>
+										
+										<li class="item">
+											<div class="file">
+												<div class="input">
+													<input type="file" id="imageFile2" name="imageFile2" class="input-file">
+													<label for="imageFile1" class="btn-upload">파일 선택</label>
+												</div>
+												<div class="result" style="display: none;">
+													<div class="content">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+													</div>
+													<button class="btn-del">파일 삭제</button>
+												</div>
+											</div>
+										</li>
+										
+										<li class="item">
+											<div class="file">
+												<div class="input">
+													<input type="file" id="imageFile3" name="imageFile3" class="input-file">
+													<label for="imageFile1" class="btn-upload">파일 선택</label>
+												</div>
+												<div class="result" style="display: none;">
+													<div class="content">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+													</div>
+													<button class="btn-del">파일 삭제</button>
+												</div>
+											</div>
+										</li>
+										
+										<li class="item">
+											<div class="file">
+												<div class="input">
+													<input type="file" id="imageFile4" name="imageFile4" class="input-file">
+													<label for="imageFile1" class="btn-upload">파일 선택</label>
+												</div>
+												<div class="result" style="display: none;">
+													<div class="content">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+													</div>
+													<button class="btn-del">파일 삭제</button>
+												</div>
+											</div>
+										</li>
+										
+										<li class="item">
+											<div class="file">
+												<div class="input">
+													<input type="file" id="imageFile5" name="imageFile5" class="input-file">
+													<label for="imageFile1" class="btn-upload">파일 선택</label>
+												</div>
+												<div class="result" style="display: none;">
+													<div class="content">
+														<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+													</div>
+													<button class="btn-del">파일 삭제</button>
+												</div>
+											</div>
+										</li>
+										
+									</ul>
+									<ul class="com-txt5 dot-list">
+										<li>최대 5개 / 100MB 이하의 파일만 등록 가능합니다.</li>
+									</ul>
+								</div>
+							</dd>
+						</dl>
+						<dl class="row">
+							<dt class="title">
+								<label for="">알림선택 <span class="emphasis">*</span></label>
+							</dt>
+							<dd class="content">
+								<span class="input-radio-text">
+									<input type="radio" id="noti1" name="noti" class="radio" checked="">
+									<label for="noti1">휴대폰 번호</label>
+									<input type="text" id="userPhone" name="userPhone" value="" placeholder="'-' 없이 숫자만 입력해주세요." class="text">
+								</span>
+							</dd>
+							<dd class="content">
+								<span class="input-radio-text">
+									<input type="radio" id="noti2" name="noti" class="radio">
+									<label for="noti2">이메일</label>
+									<input type="text" id="userEmail" name="userEmail" value="" placeholder="이메일을 입력해주세요." class="text">
+								</span>
+							</dd>
+						</dl>
+					</div>
+					<div class="user-agreement">
+						<div class="wrap">
+							<dl class="row">
+								<dt class="title">
+									<input type="checkbox" name="agree" id="agree01" class="check">
+									<label for="agree01">비회원 개인정보 수집 동의</label>
+								</dt>
+								<dd class="content block">
+									<div class="info">
+										<ul class="list">
+											<li>- 수집항목: 이름, 휴대폰 번호, 이메일주소</li>
+											<li>- 수집/이용목적: 게시글 접수 및 결과 회신</li>
+											<li>- 이용기간: 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.</li>
+										</ul>
+										<p class="desc">단, 관계법령의 규정에 의하여 보전할 필요가 있는 경우 일정기간 동안 개인정보를 보관할 수 있습니다. <br>그 밖의 사항은 (주)스키니랩 개인정보처리방침을 준수합니다.</p>
+									</div>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="foot">
+					<div class="btn-group center">
+						<button type="button" class="btn large outline primary">취소</button>
+						<button type="button" class="btn large primary">등록</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<script>
+		$(function() {
+			// 별점 입력
+			var value = 0;
+			$( "#rangeSliderStar" ).slider({
+				range: "min",
+				value: 0,
+				min: 0,
+				max: 10,
+				slide: function( event, ui ) {
+					value = ui.value / 2;
+					
+					$(".range-slider-star-wrap .result .num").text(value.toLocaleString());
+				}
+			});
+			
+			// 알림선택 인풋박스 활성화/비활성화
+			var radioList = $('.form-layout input[type=radio]').not(':disabled');
+			var radioInput = $('.input-radio-text input[type=text]');
+			
+			radioList.each(function() {
+				$(this).on('click', function() {
+					if($(this).prop("checked")) {
+						radioInput.attr('disabled', true);
+						$(this).next().next().attr('disabled', false);
+					}
+				});
+			});
+			
+		});
+	</script>
+	<!-- // content -->
+</body>
+</html>

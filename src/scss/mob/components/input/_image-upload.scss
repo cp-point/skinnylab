@@ -1,0 +1,112 @@
+
+.image-upload {
+	margin-top: 10px;
+
+	// 개발관련 선택자
+	.file-uploads {
+		display: inline-block !important;
+		text-align: left !important;
+		overflow: visible !important;
+		font-size: 0;
+	}
+
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+
+		& > span,
+		.file-uploads {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		li,
+		.item {
+			display: inline-block;
+			margin-right: 5px;
+
+			&:last-child { margin-right: 0; }
+
+			.file {
+				display: block;
+				@include size(62px,62px);
+				position: relative;
+
+				.input {
+					display: block;
+					@include size(62px,62px);
+					background: url('@@img/mob/common/btn-add-image.png') no-repeat center center #f4f4f6;
+					background-size: 35px 27px;
+
+					.input-file {
+						@include size(100%,100%);
+						text-indent: -99999px;
+					}
+
+					.btn-upload {
+						position: absolute;
+						top: -99999px;
+					}
+				}
+
+				.result {
+					position: absolute;
+					top: 0;
+					left: 0;
+					@include size(62px,62px);
+					background-color: #f4f4f6;
+
+					.content {
+						@include size(100%,100%);
+						position: relative;
+
+						img {
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+
+					.btn-del {
+						position: absolute;
+						top: 2px;
+						right: 2px;
+						@include size(20px,20px);
+						background: url('@@img/mob/common/btn-clear01.png') no-repeat;
+						background-size: 20px 20px;
+						text-indent: -99999px;
+					}
+				}
+			}
+		}
+	}
+
+	.dot-list {
+		margin-top: 5px;
+		letter-spacing: -.05em;
+		li ~ li { margin-top: 0; }
+	}
+
+	.add-explain {
+		margin: 10px 0 15px;
+	
+		li {
+			position: relative;
+			padding-left: 10px;
+			@include font(14px,$medium);
+			color: #828287;
+
+			&::before {
+				@include before-after();
+				@include size(3px,3px);
+				border-radius: 50%;
+				background-color: $primary-color;
+				left: 0;
+				top: 49%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

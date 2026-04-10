@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+Thumbs.db
+.DS_Store
+
+dist/html
+dist/email/html
+dist/email/css
+dist/email/export
+dist/css
+src/scss/**/vendors/*-sprite.scss

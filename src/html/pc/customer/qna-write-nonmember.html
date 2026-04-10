@@ -1,0 +1,285 @@
+{%
+	set pageInfo = {
+		section: 'customer',
+		title: '1:1 문의'
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-customer customer-qna-write">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">고객센터</h2>
+		</div>
+	</div>
+
+	<div class="tab-menu overline">
+		<div class="wrap">
+			<ul class="list">
+				<li>
+					<a href="#">고객센터</a>
+				</li>
+				<li>
+					<a href="#">FAQ</a>
+				</li>
+				<li class="selected">
+					<a href="#">1:1문의</a>
+				</li>
+				<li>
+					<a href="#">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<h3 class="hide">1:1문의</h3>
+		<ul class="add-explain">
+			<li>회원 고객님의 경우, 로그인 버튼을 눌러 로그인해주세요. <a href="../member/login.html">로그인</a></li>
+			<li>문의하신 내용에 대한 답변은 마이페이지 > 나의 활동 내역 > 1:1문의내역에서 확인 하실 수 있습니다.</li>
+		</ul>
+
+		<div class="board-write">
+			<dl class="row">
+				<dt>작성자 <span class="mark">*</span></dt>
+				<dd>
+					<input type="text" id="qnaName" name="qnaName" value="" placeholder="이름 입력" class="text block small" maxlength="50">
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>문의 비밀번호 <span class="mark">*</span></dt>
+				<dd>
+					<input type="password" id="qnaPw" name="qnaPw" value="" placeholder="비밀번호 입력" class="text block small" minlength="8">
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>문의유형 <span class="mark">*</span></dt>
+				<dd class="qna-type">
+					<div class="type-wrap">
+						<span class="select-wrap">
+							<select id="qnaType" name="qnaType" class="select">
+								<option value="">유형 선택</option>
+								<option value="">회원/멤버십</option>
+								<option value="">주문/결제</option>
+								<option value="">배송</option>
+								<option value="">취소/교환/반품</option>
+								<option value="">영수증/증빙서류</option>
+								<option value="">상품/이벤트</option>
+								<option value="">기타</option>
+							</select>
+							<span class="arrow"></span>
+						</span>
+						<!-- 주문 상품 선택 버튼 -->
+						<span class="btn-wrap">
+							<button type="button" onclick="UI.showLayerPop('',{ url: './popup-qna-order-select.html'}); return false;" class="btn outline thin primary">
+								<span>주문 상품 선택</span>
+							</button>
+						</span>
+						<!-- //주문 상품 선택 버튼 -->
+					</div>
+					<ul class="add-explain">
+						<li>비회원 주문관련 1:1 문의의 경우, 비회원 주문조회에서 인증 후 상품 선택이 가능합니다.</li>
+					</ul>
+					<!-- 선택 주문 상품 노출 -->
+					<ul class="view-wrap">
+						<li class="view">
+							<button type="button" class="btn-close"><span>닫기</span></button>
+							<p class="order-wrap">
+								<span class="date">2021-04-09</span>
+								<span class="order">주문번호 :
+									<span class="num">2021040914352712345</span>
+								</span>
+							</p>
+							<ul class="product-list">
+								<li class="product-item">
+									<figure>
+										<div class="img">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<figcaption class="content">
+											<p class="title">
+												<span class="sub">
+													스키니랩
+												</span>
+												<span class="main">
+													마시는 시네트롤 자몽 다이어트 14포 x 4박스 상품명 모두 노출
+												</span>
+											</p>
+											<p class="option">
+												<span class="tit">옵션</span>
+												<span class="desc">옵션명 모두 노출</span>
+											</p>
+											<p class="num">
+												<span class="product">1</span>개
+												<span class="price">79,600</span>원
+											</p>
+										</figcaption>
+									</figure>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- //선택 주문 상품 노출 -->
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>제목 <span class="mark">*</span></dt>
+				<dd>
+					<input type="text" id="qnaTitle" name="qnaTitle" value="" placeholder="제목 입력" class="text block" maxlength="40">
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>내용<span class="mark">*</span></dt>
+				<dd class="content-wrap">
+					<!-- 에디터 영역 // -->
+					<div class="editor">
+						<textarea id="qnaEditor" name="qnaEditor" cols="30" rows="10" placeholder="문의 내용 입력" class="txt" maxlength="2000"></textarea>
+						<p class="character">( <span class="num">0</span> / 2,000자 )</p>
+					</div>
+					<!-- // 에디터 영역 -->
+					<div class="image-upload">
+						<p class="hide">이미지업로드</p>
+						<ul class="list">
+							<li>
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile1" name="imageFile1" class="input-file">
+										<label for="imageFile1" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile2" name="imageFile2" class="input-file">
+										<label for="imageFile2" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile3" name="imageFile3" class="input-file">
+										<label for="imageFile3" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile4" name="imageFile4" class="input-file">
+										<label for="imageFile4" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="file">
+									<div class="input">
+										<input type="file" id="imageFile5" name="imageFile5" class="input-file">
+										<label for="imageFile5" class="btn-upload">파일 선택</label>
+									</div>
+									<div class="result" style="display: none;">
+										<div class="content">
+											<img src="../../../img/pc/@dummy/goods-img01.png" alt="">
+										</div>
+										<button class="btn-del">파일 삭제</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<ul class="add-explain">
+							<li>최대 5개 / 100MB 이하의 파일만 등록 가능합니다.</li>
+						</ul>
+					</div>
+				</dd>
+			</dl>
+			<dl class="row">
+				<dt>알림선택</dt>
+				<dd class="input-radio-wrap">
+					<span class="input-radio-text">
+						<input type="radio" id="noti1" name="noti" class="radio" checked>
+						<label for="noti1">휴대폰 번호</label>
+						<input type="text" id="userPhone" name="userPhone" value="" placeholder="'-' 없이 숫자만 입력해주세요." class="text" maxlength="11">
+					</span>
+					<span class="input-radio-text">
+						<input type="radio" id="noti2" name="noti" class="radio">
+						<label for="noti2">이메일</label>
+						<input type="text" id="userEmail" name="userEmail" value="" placeholder="이메일을 입력해주세요." class="text" maxlength="100">
+					</span>
+				</dd>
+			</dl>
+		</div>
+
+		<div class="user-agreement">
+			<div class="wrap">
+				<dl class="row">
+					<dt class="title">
+						<input type="checkbox" name="agree" id="agree02" class="check">
+						<label for="agree02">비회원 개인정보 수집 동의</label>
+					</dt>
+					<dd class="content block">
+						<div class="info">
+							<ul class="list">
+								<li>- 수집항목: 이름, 휴대폰 번호, 이메일주소</li>
+								<li>- 수집/이용목적: 게시글 접수 및 결과 회신</li>
+								<li>- 이용기간: 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.</li>
+							</ul>
+							<p class="desc">단, 관계법령의 규정에 의하여 보전할 필요가 있는 경우 일정기간 동안 개인정보를 보관할 수 있습니다. <br>그 밖의 사항은 (주)스키니랩 개인정보처리방침을 준수합니다.</p>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		
+		<div class="btn-wrap">
+			<a href="#" class="btn large outline primary">
+				<span>취소</span>
+			</a>
+			<a href="#" class="btn large primary">
+				<span>등록</span>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+	$(function(){
+		// 문의 유형 - 선택 주문 상품 노출 닫기
+		$('.customer-qna-write .board-write .view-wrap .view .btn-close').click(function(){
+			$(this).parent().hide()
+		})
+
+		// textarea 글자수 체크
+		$('#qnaEditor').keyup(function(){
+			var content = $(this).val();
+			$('.character .num').html(content.length);
+		});
+	})
+</script>
+{%- endblock %}

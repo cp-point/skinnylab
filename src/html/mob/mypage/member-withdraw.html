@@ -1,0 +1,127 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '회원탈퇴',
+		order: [1,1]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<header class="page-header">
+	{{ include('../@inc/noti-bar.html') }}
+	<div class="wrap">
+		{{ include('../@inc/sub-header.html') }}
+		<span class="page-title">{{pageInfo.title}}</span>
+	</div>
+	{{ include('../@inc/search.html') }}
+	{{ include('../@inc/gnb.html') }}
+</header>
+
+
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-member-withdraw">
+	<div class="container-wrap">
+		<h3 class="hide">회원탈퇴</h3>
+
+		<div class="content-main-wrap">
+			<div class="head">
+				<p class="main">헬스밸런스 통합 회원탈퇴 안내</p>
+				<p class="sub">회원탈퇴를 하시면 <span class="str">헬스밸런스 통합 회원이 탈퇴 처리</span>되며,<br>
+					통합 ID로 사용하신 모든 사이트 및 회원전용 서비스를<br>
+					이용하실 수 없습니다.
+				</p>
+			</div>
+
+			<div class="withdraw">
+				<div class="info">
+					<dl>
+						<dt class="title">
+							탈퇴 처리 사이트
+						</dt>
+						<dd class="content">
+							<ul class="list">
+								<li>스키니랩 (www.skinnylab.co.kr)</li>
+								<li>피트니스 스토어 (www.fitnessstore.co.kr)</li>
+								<li>천지양 (www.healthbalance.co.kr)</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="title">
+							회원탈퇴 유의사항
+						</dt>
+						<dd class="content">
+							<ul class="list">
+								<li>진행 중인 주문/클레임/정기배송 신청 건이 있으신 경우 탈퇴가 되지 않습니다.</li>
+								<li>회원탈퇴를 하시면 보유하고 계신 마일리지, 쿠폰 혜택은 복원되지 않습니다.</li>
+								<li>회원탈퇴하시면 30일간 동일한 아이디(이메일 주소)로 재가입이 불가합니다.</li>
+								<li>회원탈퇴 후 동일한 아이디로 재가입 시, 신규회원으로 가입되며 탈퇴 전 회원정보/주문정보 등은 복원되지 않습니다.</li>
+								<li>교환/반품/환불 처리 등을 위해 전자상거래 등에서의 소비자보호에 관한 법률에 따라 청약철회에 관한 기록,<br>대금결제 및 재화 등 공급에 관한 기록은 일정 기간 동안 보관됩니다.</li>
+								<li>작성하신 상품 리뷰, 문의사항, 댓글 등 내용은 삭제되지 않으며, 삭제를 원하시는 경우 회원탈퇴 전,<br>해당 게시물을 삭제 요청하신 뒤 탈퇴해 주시기 바랍니다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="title">
+							회원탈퇴 사유
+						</dt>
+						<dd class="content reason">
+							<span class="select-wrap">
+								<select id="reasonSelect" name="reasonSelect" class="select">
+									<option value="reason">탈퇴 사유 선택</option>
+									<option value="reason01">상품 종류 부족</option>
+									<option value="reason02">상품 가격 불만</option>
+									<option value="reason03">상품 품질 불만</option>
+									<option value="reason04">쿠폰/할인 등 혜택 불만</option>
+									<option value="reason05">방문 빈도 낮음</option>
+									<option value="reason06">개인정보 유출 우려</option>
+									<option value="reason07">직접 입력</option>
+								</select>
+								<span class="arrow"></span>
+							</span>
+							<div class="reasonTxt">
+								<textarea id="reasonTxt" name="reasonTxt" cols="30" rows="10" placeholder="탈퇴 사유 입력" class="txt" maxlength="1000"></textarea>
+								<p class="character">( 
+									<span class="num"> 0</span> / 1,000자 )</p>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="user-agreement">
+					<p class="title">헬스밸런스 통합 회원 탈퇴 동의</p>
+					<div class="all-check">
+						<input type="checkbox" name="agreeAll" id="agreeAll" class="check">
+						<label for="agreeAll">위의 내용을 모두 확인하였으며, 헬스밸런스 통합 회원탈퇴에 동의합니다.</label>
+					</div>
+				</div>
+			</div>
+			<div class="btn-group row">
+				<a href="./profile-manage.html" class="btn large outline primary"><span>취소</span></a>
+				<a href="#" class="btn large primary"><span>회원탈퇴</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+<script>
+		$(function(){
+
+		$('#reasonSelect').change(function(){
+			var state = $('#reasonSelect option:selected').val();
+
+			if ( state == 'reason07' ) {
+				$('.reasonTxt').show();
+			} else {
+				$('.reasonTxt').hide();
+			}
+		})
+
+		// textarea 글자수 체크
+		$('#reasonTxt').keyup(function(){
+			var content = $(this).val();
+			$('.character .num').html(content.length);
+		});
+	});
+</script>
+{%- endblock %}

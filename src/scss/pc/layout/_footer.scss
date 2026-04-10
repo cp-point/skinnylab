@@ -1,0 +1,180 @@
+.common-footer {
+	flex-shrink: 0;
+	background-color: $primary-color;
+
+	& > .wrap {
+		box-sizing: border-box;
+		display: flex;
+		width: 1280px;
+		padding: 140px 40px 110px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.logo {
+		width: 240px;
+		height: 0;
+		max-height: 0;
+		padding-top: 34px;
+		background: url('@@img/pc/common/logo-footer.png') no-repeat;
+		background-size: cover;
+		overflow: hidden;
+	}
+
+	.util-menu {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 55px;
+		left: 42px;
+
+		li {
+			&:not(:first-child) { margin-left: 35px; }
+			&:nth-child(2) {
+				a { font-size: 21px; }
+			}
+		}
+
+		a {
+			color: #f6f6f6;
+			font-weight: 700;
+			font-size: 20px;
+			letter-spacing: -.02em;
+			transition: all .2s;
+
+			&:hover { text-decoration: underline; }
+		}
+	}
+
+	.dropdown {
+		min-width: 200px;
+		position: absolute;
+		top: 36px;
+		right: 40px;
+
+		.content {
+			.list {
+				background-color: #272729;
+
+				a {
+					padding: 0 20px;
+					background-color: #272729;
+				}
+			}
+		}
+	}
+
+	.info {
+		width: 315px;
+		margin-left: 74px;
+
+		address {
+			margin-bottom: 6px;
+			color: #c1c1c3;
+			font-weight: 500;
+			font-size: 14px;
+			letter-spacing: -.02em;
+		}
+
+		dl {
+			dt {
+				display: inline-block;
+				color: #c1c1c3;
+				font-weight: 500;
+				font-size: 14px;
+				letter-spacing: -.02em;
+			}
+
+			dd {
+				display: inline-block;
+				color: #c1c1c3;
+				font-weight: 500;
+				font-size: 14px;
+				letter-spacing: .015em;
+
+				& + dt { margin-left: 12px; }
+			}
+
+			a {
+				&:hover { text-decoration: underline; }
+			}
+
+			& + dl { margin-top: 5px; }
+			& + address { margin-top: 5px; }
+		}
+	}
+
+	.contact {
+		width: 222px;
+		margin-left: 60px;
+
+		dd {
+			display: flex;
+			align-items: center;
+			color: #c1c1c3;
+			font-weight: 300;
+			font-size: 12px;
+
+			&.phone {
+				line-height: 1.2;
+				margin-top: -8px;
+				color: #fff;
+				font-weight: 700;
+				font-size: 40px;
+
+				& + .time { margin-top: 20px; }
+			}
+
+			&.time {
+				margin-top: 6px;
+				color: #fff;
+				font-weight: 700;
+				font-size: 16px;
+
+				span {
+					& + span { margin-left: auto; }
+				}
+			}
+
+			&.add { margin-top: 20px; }
+		}
+	}
+
+	.service {
+		margin-left: auto;
+
+		.certi {
+			display: flex;
+			margin-right: -5px;
+
+			li {
+				&:first-child { margin-left: auto; }
+			}
+
+			a {
+				display: block;
+				width: 49px;
+				height: 0;
+				max-height: 0;
+				padding-top: 49px;
+				background-repeat: no-repeat;
+				background-size: 39px 39px;
+				background-position: center center;
+				overflow: hidden;
+
+				&.inipay { background-image: url('@@img/pc/common/logo-inipay.png'); }
+				&.escrow { background-image: url('@@img/pc/common/logo-escrow.png'); }
+			}
+		}
+
+		.desc {
+			line-height: 1.6;
+			margin-top: 12px;
+			color: #c1c1c3;
+			font-weight: 300;
+			font-size: 12px;
+			letter-spacing: -.01em;
+			text-align: right;
+		}
+	}
+}

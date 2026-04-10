@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>장바구니 | 스키니랩</title>
+	
+	
+	<link rel="stylesheet" href="../../../js/lib/jquery-ui.css">
+	<link rel="stylesheet" href="../../../js/lib/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/mob/common.css">
+	<script src="../../../js/lib/jquery-3.4.1.min.js"></script>
+	<script src="../../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../../js/lib/swiper.min.js"></script>
+	<script src="../../../js/lib/TweenMax.js"></script>
+	<script src="../../../js/lib/aos.js"></script>
+	<script src="../../../js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../../js/ui-common-mob.js"></script>
+	
+</head>
+<body>
+	<a href="#content-main" class="skip-navi">본문 바로가기</a>
+	
+	<div class="wrapper">
+		
+		<!-- Content // -->
+		<header class="page-header">
+			<!-- Notice Bar // -->
+			<div class="noti-bar">
+				<div class="wrap">
+					<div class="img">
+						<a href="#" title="새 창 열기" target="_blank">
+							<img src="../../../img/mob/@dummy/noti-bar.jpg" alt="잠깐! 20% 할인 쿠폰 받아가세요!">
+						</a>
+					</div>
+				</div>
+				<div class="btn-area">
+					<button type="button" class="btn-close" onclick="$('.common-header').removeClass('is-noti'); $(this).parents('.noti-bar').hide(); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+			<!-- // Notice Bar -->
+			<div class="wrap">
+				
+				
+				
+				
+				<div class="utility-box left">
+					<button type="button" class="icon-btn back" onclick="window.history.go(-1);"><span class="hide">뒤로가기</span></button>
+				</div>
+				<div class="utility-box right">
+					<button type="button" class="icon-btn home btn-gnb-menu"></button>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<span class="page-title">장바구니</span>
+			</div>
+			<div class="common-search-wrap">
+				<div class="content">
+					<div class="search-box">
+						<div class="search js-text-clear">
+							<label for="search" class="hide">검색</label>
+							<input type="text" id="search" name="search" value="" placeholder="검색어를 입력하세요." class="input">
+							<button type="button" class="btn-clear">입력값 지우기</button>
+							<button type="button" class="btn-submit">검색하기</button>
+						</div>
+					</div>
+					<dl class="keyword">
+						<dt class="title">인기 검색어</dt>
+						<dd class="content">
+							<a href="#">시서스</a>
+						</dd>
+						<dd class="content">
+							<a href="#">레몬밤</a>
+						</dd>
+						<dd class="content">
+							<a href="#">풋사과</a>
+						</dd>
+						<dd class="content">
+							<a href="#">ETIQA</a>
+						</dd>
+						<dd class="content">
+							<a href="#">콜라겐</a>
+						</dd>
+					</dl>
+				</div>
+				<button type="button" class="btn-close"></button>
+			</div>
+		</header>
+		<div id="content-main" class="common-container section-cart cart-regular">
+			<div class="tab-menu tab4 cart-page-tab">
+				<div class="wrap">
+					<ul class="list">
+						<li>
+							<a href="#">
+								일반배송 (4)
+							</a>
+						</li>
+						<li class="is-active">
+							<a href="#">
+								정기배송 (2)
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cart-main-wrap">
+				<div class="list-cont-wrap">
+					<div class="top-area">
+						<div>
+							<label class="check"><input type="checkbox" id="allCheck" name="allCheck"> <span>전체선택</span></label>
+						</div>
+						<div class="btn-group">
+							<a href="#" class="btn small outline2">
+								<span>선택삭제</span>
+							</a>
+							<a href="#" class="btn small outline2">
+								<span>품절상품삭제</span>
+							</a>
+						</div>
+					</div>
+					<ul class="prod-list">
+						<!-- 구매 제품 목록 //-->
+						<li>
+							<figure class="prod-item">
+								<div>
+									<div class="item-check">
+										<div class="check-only"><input type="checkbox"><span></span></div>
+									</div>
+									<div class="img">
+										<a href="../product/product-detail.html">
+											<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="상품이미지">
+										</a>
+									</div>
+								</div>
+								<figcaption class="content">
+									<div class="info">
+										<div class="tab-group">
+											<span class="tag primary">신제품</span>
+											<span class="tag secondary">베스트</span>
+											<span class="tag white">사은품</span>
+										</div>
+										<div class="btn-group">
+											<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+											<a href="#" class="btn-del"></a>
+										</div>
+									</div>
+									<div class="title-price">
+										<div class="title">
+											<span class="sub">스키니랩</span>
+											<span class="main">
+												가벼워지는 시서스 다이어트 14포 x 4박스	+ 석류 콜라겐 14포 x 2박스
+											</span>
+										</div>
+									</div>
+									<div class="option">
+										<dl class="option-info first">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출</dd>
+											<dd class="btn-wrap"><a href="javascript:void(0);" onclick="UI.showLayerPop('',{ url: './popup-option-select.html'}); return false;" class="btn-option">옵션변경</a></dd>
+										</dl>
+									</div>
+									<div class="price">
+										<div class="count-group">
+											<a href="#" class="btn-count minus"></a>
+											<input type="text" value="1" readonly>
+											<a href="#" class="btn-count plus"></a>
+										</div>
+										<div class="non-member">
+											<span class="num">321,000</span>
+											<span class="won">원</span>
+										</div>
+										<div class="member">
+											<span class="num discount">67%</span>
+											<span class="num">128,600</span>
+											<span class="won">원</span>
+										</div>
+									</div>
+									
+									<div class="bot-util-group">
+										<p class="msg">정기배송 예정일 <strong>4월 15일 도착 예정</strong></p>
+										<div class="util-box">
+											<label for="deliveryCycle03" class="hide">배송주기</label>
+											<div class="select-wrap">
+												<select id="deliveryCycle03" name="deliveryCycle03" class="select">
+													<option value="">선택</option>
+													<option value="">1개월</option>
+													<option value="">2개월</option>
+													<option value="">3개월</option>
+													<option value="">4개월</option>
+													<option value="">5개월</option>
+													<option value="">6개월</option>
+												</select>
+												<span class="arrow"></span>
+											</div>
+											<label for="paymentDate03" class="hide">결제 예정일</label>
+											<input type="text" id="paymentDate03" name="paymentDate03" value="" class="text date-picker" style="width: 160px;" readonly="readonly">
+										</div>
+									</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure class="prod-item"> <!-- 상품 최소 노출일 때 뱃지영역(.tab-group), 옵션영역(.option-info.first), 증정사은품영역(.option-info.gift) 숨김처리 또는 삭제 -->
+								<div>
+									<div class="item-check">
+										<div class="check-only"><input type="checkbox"><span></span></div>
+									</div>
+									<div class="img">
+										<a href="../product/product-detail.html">
+											<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="상품이미지">
+										</a>
+									</div>
+								</div>
+								<figcaption class="content">
+									<div class="info">
+										<div class="tab-group">
+											<span class="tag primary">신제품</span>
+											<span class="tag secondary">베스트</span>
+											<span class="tag white">사은품</span>
+										</div>
+										<div class="btn-group">
+											<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+											<a href="#" class="btn-del"></a>
+										</div>
+									</div>
+									<div class="title-price">
+										<div class="title">
+											<span class="sub">스키니랩</span>
+											<span class="main">
+												가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스 가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스 가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스
+											</span>
+										</div>
+										<div class="price">
+											<div class="non-member">
+												<span class="num">321,000</span>
+												<span class="won">원</span>
+											</div>
+											<div class="member">
+												<span class="num discount">67%</span>
+												<span class="num">128,600</span>
+												<span class="won">원</span>
+											</div>
+											<div class="count-group">
+												<a href="#" class="btn-count minus"></a>
+												<input type="text" value="1" readonly>
+												<a href="#" class="btn-count plus"></a>
+											</div>
+										</div>
+									</div>
+									<div class="option">
+										<dl class="option-info first" style="display: none;">
+											<dt>옵션</dt>
+											<dd>선택된 옵션명 정보 모두 노출, 선택된 옵션명 정보 모두 노출 <a href="javascript:void(0);" onclick="UI.showLayerPop('',{ url: './popup-option-select.html'}); return false;" class="btn-option">옵션변경</a></dd>
+										</dl>
+										<dl class="option-info gift" style="display: none;">
+											<dt>증정 사은품</dt>
+											<dd class="gift">
+												<span class="img"><img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="사은품 이미지"></span>
+												<div class="desc">
+													<p class="name">사은품명 모두 노출</p>
+													증정 기간 : 2020.04.01~2020.04.31
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<div class="bot-util-group">
+										<p class="msg">정기배송 예정일 <strong>4월 15일 도착 예정</strong></p>
+										<div class="util-box">
+											<label for="deliveryCycle01" class="hide">배송주기</label>
+											<div class="select-wrap">
+												<select id="deliveryCycle01" name="deliveryCycle01" class="select">
+													<option value="">선택</option>
+													<option value="">1개월</option>
+													<option value="">2개월</option>
+													<option value="">3개월</option>
+													<option value="">4개월</option>
+													<option value="">5개월</option>
+													<option value="">6개월</option>
+												</select>
+												<span class="arrow"></span>
+											</div>
+											<label for="paymentDate02" class="hide">결제 예정일</label>
+											<input type="text" id="paymentDate02" name="paymentDate02" value="" class="text date-picker" title="결제 예정일" style="width: 160px; left: 0;" readonly="readonly">
+										</div>
+									</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure class="prod-item soldout"> <!-- 제품 품절일 때  .prod-item.soldout-->
+								<div>
+									<div class="item-check">
+										<div class="check-only"><input type="checkbox" disabled><span></span></div>
+									</div>
+									<div class="img">
+										<a href="../product/product-detail-soldout.html">
+											<img src="../../../img/mob/@dummy/goods-thumb-img140x140.jpg" alt="상품이미지">
+										</a>
+									</div>
+								</div>
+								<figcaption class="content">
+									<div class="info">
+										<div class="tab-group">
+											<span class="tag primary">신제품</span>
+											<span class="tag secondary">베스트</span>
+											<span class="tag white">사은품</span>
+										</div>
+										<div class="btn-group">
+											<label class="check-like"><input type="checkbox"> <span>찜하기</span></label>
+											<a href="#" class="btn-del"></a>
+										</div>
+									</div>
+									<div class="title-price">
+										<div class="title">
+											<span class="sub">스키니랩</span>
+											<span class="main">
+												가벼워지는 시서스 다이어트 14포 x 4박스 + 석류 콜라겐 14포 x 2박스
+											</span>
+										</div>
+										<div class="price">
+											<div class="non-member">
+												<span class="num">321,000</span>
+												<span class="won">원</span>
+											</div>
+											<div class="member">
+												<span class="num discount">67%</span>
+												<span class="num">128,600</span>
+												<span class="won">원</span>
+											</div>
+											<div class="count-group">
+												<a href="#" class="btn-count minus"></a>
+												<input type="text" value="1" readonly>
+												<a href="#" class="btn-count plus"></a>
+											</div>
+										</div>
+										<div class="bot-btn-group">
+											<a href="#" class="btn outline thin secondary" onclick="UI.showLayerPop('',{ url: '../product/popup-restock-notification-register.html'}); return false;">
+												<span>재입고 알림</span>
+											</a>
+										</div>
+									</div>
+								</figcaption>
+							</figure>
+						</li>
+						<!--// 구매 제품 목록 -->
+					</ul>
+				</div>
+			</div>
+			<!-- 추천 상품 영역 -->
+			<div class="recommend-product">
+				<div class="head">
+					<h3 class="title">이런 정기배송 상품은 어떠세요?</h3>
+				</div>
+				<div class="swiper-container">
+					<ul class="goods-list2 swiper-wrapper">
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+						<li class="swiper-slide">
+							<div class="item">
+								<a href="#">
+									<figure class="prod-col-item recom">
+										<div class="img">
+											<a href="../product/product-detail.html">
+												<img src="../../../img/mob/@dummy/recome-goods-img01.jpg" alt="스키니랩 래피드x시네트롤 스키버닝패키지 스키니랩">
+											</a>
+										</div>
+										<figcaption class="content">
+											<div class="info">
+												<div class="store-name">스키니랩</div>
+												<div class="title">
+													가벼워지는 시서스다이어트
+													14포 X 4박스 + 석류 콜라겐
+													14포 x 2박스 상품명 최대 14포 x 2박스 상품명 최대
+												</div>
+											</div>
+											<div class="price">
+												<div class="member">
+													<div class="inner-box">
+														<!-- <span><strong class="discount">67%</strong></span> -->
+														<span class="num"><strong>128,600</strong>원</span>
+													</div>
+												</div>
+											</div>
+										</figcaption>
+										
+									</figure>
+								</a>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			<!--// 추천 상품 영역 -->
+			
+			<div class="cart-notice">
+				<p class="title">유의사항</p>
+				<div class="content">
+					<ul>
+						<li>장바구니에 담긴 상품은 50개까지 저장되며, 최대 30일 동안 보관됩니다.</li>
+						<li>판매종료/일시품절 상품은 별도로 표기됩니다.</li>
+						<li>결제 예정 금액은 쿠폰 및 마일리지 사용에 따라 변경될 수 있습니다.</li>
+						<li>카드 분실 및 한도초과, 통신 지연 등으로 최초 자동결제 예정일 (배송일 3일전 오전 8시)에 실패된 경우 안내 메시지가 발송되고, 오후 15시에 재결제가 진행됩니다.</li>
+						<li>두번의 결제가 모두 실패되면, 정기배송 신청이 취소됩니다.</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 정기배송 스와이프 영역 // -->
+			<div class="sticky-bottom">
+				<div class="content-area">
+					<button type="button" class="btn-open" onclick="$(this).parents('.sticky-bottom').find('.con-detail, .payment-area, .btn-open').toggleClass('on'); return false;">결제 예정 정보 버튼</button>
+					<div class="order-info">
+						<div class="con-detail bill">
+							<div class="box">
+								<dl class="list">
+									<dt>상품금액</dt>
+									<dd>
+										<span class="price">89,800</span>원
+									</dd>
+								</dl>
+								<dl class="list">
+									<dt>할인금액</dt>
+									<dd class="str">
+										<span class="price">-12,970</span>원
+									</dd>
+								</dl>
+								<dl class="list">
+									<dt>배송비</dt>
+									<dd>
+										<strong>무료배송</strong>
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="con-main">
+							<dl>
+								<dt><strong>결제예정금액</strong></dt>
+								<dd>
+									<span class="price">76,830</span>원
+								</dd>
+							</dl>
+						</div>
+						<div class="payment-area">
+							<p class="noti">※ 네이버 N페이 서비스를 이용 시 <span class="secondary">스키니랩 회원혜택은 미적용</span> 됩니다.</p>
+							<div class="naverpay-box">
+								
+								<!-- 네이버 페이 api 영역 // -->
+								<script type="text/javascript" src="https://test-pay.naver.com/customer/js/mobile/naverPayButton.js" charset="UTF-8"></script>
+								<script type="text/javascript" >
+									//<![CDATA[
+									naver.NaverPayButton.apply({
+										TYPE: "C", // 버튼 모음 종류 설정
+										COLOR: 1, // 버튼 모음의 색 설정
+										COUNT: 2, // 버튼 개수 설정. 구매하기 버튼만 있으면(장바구니 페이지) 1, 관심상품 버튼도 있으면(상품 상세 페이지) 2를 입력.
+										ENABLE: "Y", // 품절 등의 이유로 버튼 모음을 비활성화할 때에는 "N" 입력
+										"":""
+									});
+									//]]>
+								</script>
+								<!-- // 네이버 페이 api 영역 -->
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="btn-area">
+					<a href="#" class="btn large secondary btn-order">
+						<span>정기배송 신청(2)</span>
+					</a>
+				</div>
+				
+			</div>
+			<!-- // 정기배송 스와이프 영역 -->
+		</div>
+		<script>
+			$(function() {
+				
+				// 제품목록 체크박스 컨트롤
+				var allCheck = $('input:checkbox[id="allCheck"]');
+				var itemCheck = $('.prod-item .item-check input[type=checkbox]').not(':disabled');
+				
+				// 전체 선택 / 해제
+				allCheck.click(function(){
+					if(allCheck.prop("checked")) {
+						itemCheck.prop('checked', true);
+					} else {
+						itemCheck.prop('checked', false);
+					}
+				});
+				
+				// 개별 선택 / 해제
+				itemCheck.each(function() {
+					$(this).click(function() {
+						
+						if($(this).prop("checked")) {
+							checkBoxLen = itemCheck.length;
+							checkLen = $('.prod-item .item-check input[type=checkbox]:checked').length;
+							
+							if(checkBoxLen == checkLen) { // 체크박스 전부 체크 됐을 경우
+								allCheck.prop('checked', true);
+							} else {
+								allCheck.prop('checked', false);
+							}
+						} else {
+							allCheck.prop('checked', false);
+						}
+						
+					});
+				});
+				
+				// 추천상품 슬라이드
+				var recomCarouselSwiper = new Swiper('.recommend-product .swiper-container', {
+					slidesPerView: 1.8,
+					slidesPerGroup: 1,
+					initialSlide: 0,
+					spaceBetween: 30,
+					breakpoints: {
+						768: {
+							slidesPerView: 3.5,
+							slidesPerGroup: 1,
+						},
+						1024: {
+							slidesPerView: 5,
+						}
+					}
+				});
+				
+				//datepicker 위치수정
+				// $('.ui-datepicker ').css({ "left" : "calc(50vw - 40px)!important", "transform": "translate(-50%,15px)"});
+				
+				
+			});
+		</script>
+		<!-- // Content -->
+		
+		<!-- bottom navigation, bottom banner // -->
+		<div class="bottom-nav-wrap">
+			<div class="inner-cont-wrap">
+				<button class="btn-promo is-hide">
+					<span class="logo"></span>
+					<span class="icon"></span>
+				</button>
+				<div class="menu">
+					<ul class="item-group">
+						<li>
+							<a href="#">
+								<span class="icon home"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon delivery"></span>
+							</a>
+						</li>
+					</ul>
+					<ul class="item-group">
+						<li>
+							<a href="#">
+								<span class="icon mypage">
+									<em class="new"></em> <!-- 쇼핑 다이어리 신규 알림 내역이 있을 때 노출  -->
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon profile">
+									<!-- 최근 본 상품이 있으면 상품 이미지 노출 -->
+									<img src="../../../img/mob/@dummy/goods-thumb-img360x360.jpg" alt="제품 이미지" style="display: none;">
+									<!--// 최근 본 상품이 있으면 상품 이미지 노출 -->
+								</span>
+								<span class="txt hide">profile</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bot-banner-wrap">
+			<div class="banner-box">
+				<img src="../../../img/mob/common/bot-banner.jpg" alt="회원 한정 시크릿 특가 - 지금 가입하고 이유있는 초특가 상품 가져가세요~!">
+			</div>
+		</div>
+		<!-- // bottom navigation, bottom banner -->
+		
+		
+		<!-- Footer // -->
+		<footer class="common-footer">
+			<div class="wrap">
+				<h2 class="hide">푸터</h2>
+				<ul class="footer-menu">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">이용안내</a></li>
+					<li><a href="#">광고 제휴 문의 </a></li>
+				</ul>
+				<div class="utility">
+					<div class="contact">
+						<a href="tel:1644-7267" class="tel">1644-7267</a>
+						<dl class="time">
+							<dt>평일(주말제외)</dt>
+							<dd>09:30 ~ 18:00</dd>
+							<dt>점심시간</dt>
+							<dd>12:30 ~ 13:30</dd>
+						</dl>
+						<p class="notice">※ 토/일/공휴일 휴무</p>
+					</div>
+					
+					<dl class="dropdown ghost">
+						<dt class="title">
+							<button type="button" class="btn-open">FAMILY SITE</button>
+						</dt>
+						<dd class="content">
+							<ul class="list">
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>천지양</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" title="새창 열림">
+										<span>피트니스 스토어</span>
+									</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<p class="logo"></p>
+				<div class="info">
+					<dl>
+						<dt>상호명 :</dt>
+						<dd>헬스밸런스(주)</dd>
+					</dl>
+					<address>서울특별시 강남구 영동대로 511 (트레이드타워) 2104호</address>
+					<dl>
+						<dt>대표자 : </dt>
+						<dd>박성준, 김남경</dd>
+						<dt>개인정보관리책임자 : </dt>
+						<dd>염선호</dd>
+					</dl>
+					<dl>
+						<dt>사업자등록번호 : </dt>
+						<dd>314-81-84285 <a href="#" class="btn-info">사업자정보확인</a></dd>
+					</dl>
+					<dl>
+						<dt>통신판매업 : </dt>
+						<dd>2016-서울강남-02455</dd>
+					</dl>
+					<dl>
+						<dt>대표전화 : </dt>
+						<dd>1644-7267</dd>
+						<dt>FAX : </dt>
+						<dd>02-2071-3699</dd>
+					</dl>
+					<dl>
+						<dt>E-mail : </dt>
+						<dd>
+							<a href="mailto:hbalance@hbalance.co.kr">hbalance@hbalance.co.kr</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="service">
+					KG이니시스가 제공하는 결제시스템을 사용하고 있는 쇼핑몰임을 확인하여<br>
+					소비자들은 안심하고 결제할 수 있습니다.
+				</div>
+				<div class="btn-group">
+					<a href="#" target="_blank">이니페이 에스크로 가입사실 확인 &gt;</a>
+					<a href="#" target="_blank">이니시스 결제 인증마크 확인 &gt;</a>
+				</div>
+			</div>
+		</footer>
+		<!-- // Footer -->
+		
+		<!-- floating menu // -->
+		<div class="floating-menu">
+			<div class="wrap">
+				<ul>
+					<li>
+						<a href="#" class="btn-icon kakao"></a>
+					</li>
+					<li>
+						<a href="#" class="btn-icon gift"></a>
+					</li>
+					<li>
+						<button type="button" class="btn-icon top"></button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- // floating menu -->
+	</div>
+</body>
+</html>

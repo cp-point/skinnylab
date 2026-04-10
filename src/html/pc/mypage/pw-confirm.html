@@ -1,0 +1,57 @@
+{%
+	set pageInfo = {
+		section: 'mypage',
+		title: '마이페이지',
+		order: [5,0]
+	}
+%}
+{% extends site + '/@inc/layout.html' %}
+
+{% block content -%}
+<!-- Content // -->
+<div id="content-main" class="common-container section-{{pageInfo.section}} {{pageInfo.section}}-pw-confirm">
+	<div class="container-wrap">
+		<div class="page-head">
+			<h2 class="title">{{pageInfo.title}}</h2>
+		</div>
+		{{ include('../mypage/@inc/top-info.html') }}
+
+		<div class="page-content">
+			{{ include('../mypage/@inc/left-menu.html') }}
+			<div class="content-main-wrap">
+				<div class="page-sub-head">
+					<h3 class="title">회원정보 관리</h3>
+				</div>
+				<div class="content-inner-wrap">
+					<dl class="pw-confirm">
+						<dt class="title">
+							<h4>비밀번호 확인</h4>
+						</dt>
+						<dd class="desc">회원님의 개인정보 보호를 위해 비밀번호를 입력해 주세요.</dd>
+					</dl>
+					<div class="form-layout">
+						<dl class="row">
+							<dt class="title hide">
+								<label for="passwd">비밀번호</label>
+							</dt>
+							<dd class="content">
+								<span class="input-text-del">
+									<input type="password" id="passwd" name="passwd" value="" placeholder="비밀번호 입력" class="text block" minlength="8">
+								</span>
+								<!-- 오류 메세지 -->
+								<p class="error-msg is-invalid">비밀번호를 입력해 주세요.</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="btn-wrap">
+						<a href="#" class="btn large primary">
+							<span>확인</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Content -->
+{%- endblock %}
